@@ -1,0 +1,30 @@
+loopback up
+--- network check inside namespace:
+no network: outbound connection failed as intended
+seeded 25 tickets into /tmp/claude-0/-home-user-nagarvani-aiCP/c83c8895-8a97-5d2e-becd-f70ecf33e416/scratchpad/fresh/instance/nagarvani.sqlite3: {'auto_routed': 19, 'review': 4, 'resolved': 2}; 9 open tickets overdue
+--- run.py output:
+[ok]   classifier artefact: artefacts/classifier.joblib
+[warn] Whisper model 'small' not found in models/. Typed complaints work; audio is disabled.
+WARNING ASR unavailable: Whisper model 'small' not found in /tmp/claude-0/-home-user-nagarvani-aiCP/c83c8895-8a97-5d2e-becd-f70ecf33e416/scratchpad/fresh/models/faster-whisper-small. Run: python scripts/fetch_models.py
+[ok]   database: instance/nagarvani.sqlite3 (25 tickets)
+  NagarVani is running:  http://127.0.0.1:5077/
+  (Ctrl+C to stop)
+ * Serving Flask app 'nagarvani.app'
+ * Debug mode: off
+INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5077
+INFO [33mPress CTRL+C to quit[0m
+GET / -> 200
+GET /queue -> 200
+GET /about -> 200
+GET /health -> 200
+GET /ticket/1 -> 200
+GET /export/W08.csv -> 200
+GET /corrections.jsonl -> 200
+GET /queue?status=review -> 200
+--- typed complaint:
+302 http://127.0.0.1:5077/ticket/26
+--- audio upload with no model present:
+{"code":"asr_failed","message_en":"The audio is saved as ticket #27 for an officer to listen to. You can also type the complaint.","message_mr":"\u0911\u0921\u093f\u0913 \u091c\u0924\u0928 \u0915\u0947\u0932\u093e \u0906\u0939\u0947 (\u0924\u0915\u094d\u0930\u093e\u0930 \u0915\u094d\u0930\u092e\u093e\u0902\u0915 27). \u0905\u0927\u093f\u0915\u093e\u0930\u0940 \u0924\u094b \u0910\u0915\u0924\u0940\u0932. \u0924\u0941\u092e\u094d\u0939\u0940 \u0924\u0915\u094d\u0930\u093e\u0930 \u091f\u093e\u0907\u092a\u0939\u0940 \u0915\u0930\u0942 \u0936\u0915\u0924\u093e.","ok":false,"ticket_id":27,"ticket_url":"/ticket/27"}
+--- health:
+{"asr_error":"Whisper model 'small' not found in /tmp/claude-0/-home-user-nagarvani-aiCP/c83c8895-8a97-5d2e-becd-f70ecf33e416/scratchpad/fresh/models/faster-whisper-small. Run: python scripts/fetch_models.py","asr_model":"small","asr_model_loaded":false,"classifier_error":null,"classifier_loaded":true,"database_ok":true}

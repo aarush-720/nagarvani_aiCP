@@ -56,7 +56,7 @@ The logistic-regression C is chosen by 5-fold CV on the training set only, from
   one band when vulnerable people or places are mentioned (R30). R32 escalates one band at
   3 or more reports of the same issue.
 * Rule IDs are grouped (R0x life safety, R2x urgency, R30/R32 modifiers, R40 low priority).
-  They do not run consecutively, and the rule count (23) is whatever the knowledge base
+  They do not run consecutively, and the rule count (24, over 30 cue groups) is whatever the knowledge base
   needed. It was not made to match the brief's "19 rules over 23 cue groups".
 
 ## D6. External set: label mapping

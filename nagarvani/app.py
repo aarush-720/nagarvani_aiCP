@@ -28,7 +28,8 @@ def _read_json(path: Path):
 def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask:
     app = Flask(__name__)
     app.config.update(SECRET_KEY="nagarvani-local-demo",       # local single-user demo; see limitations
-                      MAX_CONTENT_LENGTH=25 * 1024 * 1024, JSON_AS_ASCII=False)
+                      MAX_CONTENT_LENGTH=25 * 1024 * 1024)
+    app.json.ensure_ascii = False                          # readable Devanagari in JSON responses
     store = Store(db_path)
     uploads = Path(upload_dir or (config.INSTANCE / "uploads"))
     uploads.mkdir(parents=True, exist_ok=True)

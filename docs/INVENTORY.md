@@ -38,4 +38,4 @@ numbers (see `results/` and `docs/HANDOVER.md`); they are not expected to match.
 
 ## Entry points of the rebuilt system
 
-See `README.md` (layout and commands) and `docs/PROGRESS.md`.
+See `README.md` (layout and commands), `docs/HANDOVER.md` (status) and `docs/PROGRESS.md`.
