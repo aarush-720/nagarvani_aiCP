@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}अधिकारी रांग{% endblock %}
+{% macro table(rows, title_mr, title_en) %}
+<section class="card">
+  <h2>{{ title_mr }} ({{ rows|length }})<span class="en">{{ title_en }}</span></h2>
+  {% if rows %}
+  <table>
+    <tr><th>#</th><th>Priority</th><th>विभाग / Dept</th><th>वॉर्ड / Ward</th><th>नोंद / Received</th><th>मुदत / Deadline</th><th>तक्रार / Complaint</th><th></th></tr>
+    {% for r in rows %}
+    <tr class="{{ 'overdue' if r.overdue }}">
+      <td><a href="{{ url_for('ticket', tid=r.id) }}">#{{ r.id }}</a></td>
+      <td>{% if r.priority %}<span class="badge {{ r.priority }}">{{ r.priority }}</span>{% endif %}
+          {% if r.overdue %}<span class="flag overdue">OVERDUE</span>{% endif %}</td>
+      <td>{{ r.department or '—' }}</td>
+      <td>{{ WARDS[r.ward].en if r.ward else '—' }}</td>
+      <td>{{ ist(r.created_utc) }}</td>
+      <td>{{ ist(r.deadline_utc) }}</td>
+      <td>{{ r.text[:90] }}{{ '…' if r.text|length > 90 }}
+        <div>{% if r.report_count > 1 %}<span class="flag">{{ r.report_count }} reports</span>{% endif %}
+          {% if r.dup_pending %}<span class="flag warn">duplicate? decide</span>{% endif %}
+          {% if r.transcript_uncertain %}<span class="flag warn">transcript uncertain</span>{% endif %}
+          {% if r.failure %}<span class="flag overdue">processing failed</span>{% endif %}
+          {% if r.confirmed %}<span class="flag">confirmed</span>{% endif %}
+          {% if r.escalation %}<span class="flag warn">escalated</span>{% endif %}</div>
+        {% if r.review_reason %}<div class="muted" style="font-size:.8em">{{ r.review_reason }}</div>{% endif %}</td>
+      <td>{% if r.status not in ('resolved', 'merged') %}
+        <form method="post" action="{{ url_for('ticket_action', tid=r.id) }}">
+          <input type="hidden" name="next" value="{{ request.full_path }}">
+          {% if r.department and r.ward %}<button class="small" name="action" value="confirm">Confirm</button>{% endif %}
+          <button class="small secondary" name="action" value="resolve">Resolve</button>
+          <a class="button small secondary" href="{{ url_for('ticket', tid=r.id) }}">Correct…</a>
+        </form>{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}<p class="muted">काहीही नाही / Nothing here.</p>{% endif %}
+</section>
+{% endmacro %}
+{% block content %}
+<h1>अधिकारी रांग<span class="en">Officer queue — sorted by priority, then deadline</span></h1>
+<form method="get" class="card row">
+  <div><label>वॉर्ड / Ward office</label><select name="ward"><option value="">सर्व / All</option>
+    {% for c, w in WARDS.items() %}<option value="{{ c }}" {{ 'selected' if f.ward == c }}>{{ w.mr }} / {{ w.en }}</option>{% endfor %}</select></div>
+  <div><label>विभाग / Department</label><select name="department"><option value="">सर्व / All</option>
+    {% for c, d in DEPTS.items() %}<option value="{{ c }}" {{ 'selected' if f.department == c }}>{{ d.mr }} / {{ d.en }}</option>{% endfor %}</select></div>
+  <div><label>स्थिती / Status</label><select name="status">
+    <option value="">उघड्या / Open</option>
+    {% for s in ['review', 'auto_routed', 'routed', 'merged', 'resolved', 'all'] %}<option value="{{ s }}" {{ 'selected' if f.status == s }}>{{ s }}</option>{% endfor %}</select></div>
+  <div><label>&nbsp;</label><button>फिल्टर / Filter</button></div>
+</form>
+
+{{ table(review, "तपासणीसाठी", "Awaiting review — the gate or duplicate check sent these to a person") }}
+{{ table(other, "मार्गस्थ व इतर", "Routed (automatically or by an officer)" if not f.status or f.status in ('auto_routed', 'routed') else "Tickets with status " ~ f.status) }}
+
+<section class="card">
+  <h2>निर्यात<span class="en">Export</span></h2>
+  <p>वॉर्डनिहाय CSV (Excel मध्ये मराठी नीट दिसते) <span class="en">Per-ward CSV of open tickets (UTF-8 with BOM so Excel shows Devanagari):</span></p>
+  <p>{% for c, w in WARDS.items() %}<a class="button small secondary" href="{{ url_for('export', ward=c) }}">{{ w.en }}</a> {% endfor %}</p>
+  <p><a class="button small secondary" href="{{ url_for('corrections') }}">corrections.jsonl ({{ n_corrections }})</a>
+    <span class="muted">Officer corrections are logged as possible training data for a future retraining step. Retraining is <strong>not implemented</strong>.</span></p>
+</section>
+{% endblock %}

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -20,7 +21,7 @@ CREATE TABLE IF NOT EXISTS tickets (
     text TEXT NOT NULL,                 -- what the citizen finally submitted
     asr_json TEXT,
     ward_hint TEXT,
-    status TEXT NOT NULL,               -- received | auto_routed | review | merged | resolved
+    status TEXT NOT NULL,               -- received | auto_routed | review | routed | merged | resolved
     department TEXT,
     confidence REAL,
     ward TEXT,
@@ -38,6 +39,7 @@ CREATE TABLE IF NOT EXISTS tickets (
     trace_json TEXT,
     submission_key TEXT UNIQUE,
     confirmed INTEGER NOT NULL DEFAULT 0,
+    escalation TEXT,                    -- e.g. 'R32 at report 3: P3 -> P2'
     resolved_utc TEXT
 );
 CREATE INDEX IF NOT EXISTS ix_block ON tickets(ward, department, status);
@@ -53,7 +55,7 @@ CREATE TABLE IF NOT EXISTS corrections (
 );
 """
 
-OPEN_STATUSES = ("auto_routed", "review")
+OPEN_STATUSES = ("auto_routed", "review", "routed")
 
 
 def utcnow() -> datetime:
@@ -75,6 +77,7 @@ class Store:
             Path(self.path).parent.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(self.path, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
+        self.lock = threading.RLock()
         self.conn.execute("PRAGMA foreign_keys = ON")
         self.conn.executescript(SCHEMA)
         self.conn.commit()
@@ -87,20 +90,23 @@ class Store:
         fields.setdefault("status", "received")
         cols = ", ".join(fields)
         q = ", ".join("?" for _ in fields)
-        cur = self.conn.execute(f"INSERT INTO tickets ({cols}) VALUES ({q})", list(fields.values()))
-        self.conn.commit()
+        with self.lock:
+            cur = self.conn.execute(f"INSERT INTO tickets ({cols}) VALUES ({q})", list(fields.values()))
+            self.conn.commit()
         return cur.lastrowid
 
     def update(self, ticket_id: int, **fields):
         fields["updated_utc"] = iso(utcnow())
         sets = ", ".join(f"{k} = ?" for k in fields)
-        self.conn.execute(f"UPDATE tickets SET {sets} WHERE id = ?", [*fields.values(), ticket_id])
-        self.conn.commit()
+        with self.lock:
+            self.conn.execute(f"UPDATE tickets SET {sets} WHERE id = ?", [*fields.values(), ticket_id])
+            self.conn.commit()
 
     def add_correction(self, ticket_id, field, old, new, text, note=""):
-        self.conn.execute("INSERT INTO corrections (ticket_id, created_utc, field, old_value, new_value, text, note)"
-                          " VALUES (?, ?, ?, ?, ?, ?, ?)", (ticket_id, iso(utcnow()), field, old, new, text, note))
-        self.conn.commit()
+        with self.lock:
+            self.conn.execute("INSERT INTO corrections (ticket_id, created_utc, field, old_value, new_value, text, note)"
+                              " VALUES (?, ?, ?, ?, ?, ?, ?)", (ticket_id, iso(utcnow()), field, old, new, text, note))
+            self.conn.commit()
 
     # ---- reads -------------------------------------------------------------------------
     def get(self, ticket_id: int):

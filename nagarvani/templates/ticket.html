@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block title %}तक्रार #{{ t.id }}{% endblock %}
+{% macro dept(code) %}{% if code and DEPTS.get(code) %}{{ DEPTS[code].mr }} <span class="muted">({{ DEPTS[code].en }}, {{ code }})</span>{% else %}—{% endif %}{% endmacro %}
+{% macro ward(code) %}{% if code and WARDS.get(code) %}{{ WARDS[code].mr }} <span class="muted">({{ WARDS[code].en }}, {{ code }})</span>{% else %}—{% endif %}{% endmacro %}
+{% block content %}
+<h1>तक्रार #{{ t.id }} — निर्णय कसा झाला<span class="en">Ticket #{{ t.id }} — how each decision was made</span></h1>
+<p class="muted">नोंद / Received: {{ ist(t.created_utc) }} · स्थिती / Status: <strong>{{ t.status }}</strong>
+  {% if t.priority %}· <span class="badge {{ t.priority }}">{{ t.priority }}</span>{% endif %}
+  {% if overdue %}<span class="flag overdue">मुदत संपली / OVERDUE</span>{% endif %}
+  {% if t.transcript_uncertain %}<span class="flag warn">⚠ अनिश्चित मजकूर / transcript uncertain</span>{% endif %}
+</p>
+
+{% if t.failure %}
+<div class="card error"><strong>स्वयंचलित प्रक्रिया अयशस्वी — अधिकारी हाताने तपासतील.</strong>
+  <span class="en">Automatic processing failed; the complaint is saved and waiting in the review queue.</span>
+  <div class="mono">{{ t.failure }}</div></div>
+{% endif %}
+
+{% if t.escalation %}<div class="card notice"><strong>प्राधान्य वाढवले / Escalated:</strong> {{ t.escalation }}</div>{% endif %}
+{% if parent %}<div class="card notice">ही तक्रार <a href="{{ url_for('ticket', tid=parent.id) }}">#{{ parent.id }}</a> मध्ये एकत्र केली आहे.
+  <span class="en">This report was merged into ticket #{{ parent.id }} (now {{ parent.report_count }} reports, priority {{ parent.priority }}).</span></div>{% endif %}
+{% if children %}<div class="card notice">एकाच समस्येच्या {{ t.report_count }} तक्रारी.<span class="en">{{ t.report_count }} reports of this issue. Merged: {% for c in children %}<a href="{{ url_for('ticket', tid=c.id) }}">#{{ c.id }}</a> {% endfor %}</span></div>{% endif %}
+
+<!-- 1. What was heard -->
+<section class="card step">
+  <h2><span class="num">1</span>काय ऐकले / लिहिले<span class="en">What was heard or typed</span></h2>
+  {% if asr_info %}
+    <p><strong>मूळ ऐकलेला मजकूर / Raw transcript:</strong> {{ t.raw_transcript or '—' }}</p>
+    <p class="muted mono">model {{ asr_info.model }} · audio {{ asr_info.duration }} s · transcribed in {{ asr_info.seconds }} s ·
+      language forced to "{{ asr_info.language }}" · avg log-prob {{ asr_info.avg_logprob }} · no-speech prob {{ asr_info.no_speech_prob }}
+      {% if asr_info.vocab_prompt %}· vocabulary prompt ON{% endif %}</p>
+    {% if t.raw_transcript and t.raw_transcript.strip() != t.text.strip() %}
+      <p><strong>नागरिकाने दुरुस्त केलेला मजकूर / Citizen's edited text (used for triage):</strong> {{ t.text }}</p>
+    {% else %}<p class="muted">नागरिकाने बदल केला नाही. <span class="en inline">The citizen made no edit.</span></p>{% endif %}
+    {% if t.transcript_uncertain %}<p class="flag warn">⚠ Average log-probability below {{ cfg.ASR_UNCERTAIN_LOGPROB }} (a heuristic). The officer should listen to the audio. ASR confidence does not affect routing.</p>{% endif %}
+  {% elif t.channel in ('upload', 'microphone') %}
+    <p>ऑडिओ मिळाला पण मजकूर तयार झाला नाही. <span class="en inline">Audio received but no transcript was produced.</span></p>
+  {% else %}
+    <p><strong>टाइप केलेला मजकूर / Typed text:</strong> {{ t.text or '—' }}</p>
+  {% endif %}
+  {% if t.audio_path %}<audio controls src="{{ url_for('ticket_audio', tid=t.id) }}"></audio>{% endif %}
+  {% if trace %}<p class="muted mono">normalised: {{ trace.normalised }}</p>{% endif %}
+</section>
+
+{% if trace %}
+<!-- 2. Department -->
+<section class="card step">
+  <h2><span class="num">2</span>विभाग<span class="en">Department — TF-IDF character + word n-grams → logistic regression</span></h2>
+  {% for d, p in trace.top3 %}
+    <div><strong>{{ loop.index }}.</strong> {{ dept(d) }} — <strong>{{ '%.2f'|format(p) }}</strong></div>
+    <div class="bar {{ 'top' if loop.first }}"><span style="width: {{ (p * 100)|round(1) }}%"></span>
+      <i class="threshold" style="left: {{ cfg.GATE_MIN_CONFIDENCE * 100 }}%" title="gate threshold"></i></div>
+  {% endfor %}
+  <p>विश्वास / Confidence = top probability = <strong>{{ '%.2f'|format(trace.confidence) }}</strong>
+    (gate threshold {{ cfg.GATE_MIN_CONFIDENCE }}, dashed line).</p>
+</section>
+
+<!-- 3. Location -->
+<section class="card step">
+  <h2><span class="num">3</span>ठिकाण<span class="en">Location — gazetteer alias match, then fuzzy fallback</span></h2>
+  {% set w = trace.ward %}
+  <p><strong>वॉर्ड कार्यालय / Ward office:</strong> {{ ward(w.ward) if w.ward else 'ठरवता आले नाही / not resolved' }}</p>
+  <p><strong>पद्धत / Method:</strong> {{ w.method }}{% if w.method == 'fuzzy' %} (similarity {{ w.score }} ≥ {{ cfg.FUZZY_MIN_RATIO }}){% endif %}
+    {% if w.matched_text %}· matched "<strong>{{ w.matched_text }}</strong>"{% endif %}
+    {% if w.matched_alias %} → gazetteer alias "{{ w.matched_alias }}"{% endif %}</p>
+  {% if w.candidates and not w.ward %}<p>Candidate ward offices: {% for c in w.candidates %}{{ ward(c) }}{{ ', ' if not loop.last }}{% endfor %}</p>{% endif %}
+  <p><strong>कारण / Reason:</strong> {{ w.reason }}</p>
+  {% if w.hint %}<p class="muted">Dropdown choice: {{ ward(w.hint) }} — {{ 'used' if w.hint_used else 'not used' }}.</p>{% endif %}
+</section>
+
+<!-- 4. Severity -->
+<section class="card step">
+  <h2><span class="num">4</span>तीव्रता<span class="en">Severity — forward-chaining rules (data/severity_rules.json)</span></h2>
+  <table>
+    <tr><th>#</th><th>Rule</th><th>जुळलेले शब्द / Matched cues</th><th>Action</th></tr>
+    {% for f in trace.severity.fired %}
+    <tr><td>{{ loop.index }}</td><td><strong>{{ f.rule }}</strong> {{ f.name }}</td>
+      <td>{% for g, term in f.cues.items() %}<span class="mono">{{ g }}</span>: "{{ term }}"{{ '; ' if not loop.last }}{% else %}—{% endfor %}</td>
+      <td>{{ f.action }}</td></tr>
+    {% endfor %}
+  </table>
+  {% if trace.severity.overridden %}
+    <p class="muted">Overridden: {% for o in trace.severity.overridden %}{{ o.rule }} proposed {{ o.proposed }}, overridden by {{ o.by }} (most urgent wins){{ '; ' if not loop.last }}{% endfor %}</p>
+  {% endif %}
+  <p><strong>अंतिम प्राधान्य / Final band:</strong> <span class="badge {{ trace.severity.band }}">{{ trace.severity.band }}</span>
+    {{ BANDS[trace.severity.band].mr }} / {{ BANDS[trace.severity.band].en }}</p>
+  <p><strong>मुदत / SLA deadline:</strong> {{ ist(trace.deadline_utc) }} ({{ trace.sla_hours }} h after receipt).
+    <span class="en">SLA hours are the team's proposed values, not official PMC figures.</span></p>
+  {% if t.priority and t.priority != trace.severity.band %}<p class="muted">Current priority {{ t.priority }} (changed after triage: escalation or officer correction).</p>{% endif %}
+</section>
+
+<!-- 5. Duplicates -->
+<section class="card step">
+  <h2><span class="num">5</span>पुनरावृत्ती<span class="en">Duplicates — character 2–4-gram cosine, same ward office and department, place names masked</span></h2>
+  {% set d = trace.duplicate %}
+  <p><strong>निर्णय / Decision:</strong> {{ d.decision }} — {{ d.reason }}</p>
+  {% if d.score is not none %}
+    <div class="scale"><span class="mark" style="left: {{ (d.score * 100)|round(1) }}%"></span>
+      <span class="tick" style="left:{{ cfg.DUP_REVIEW * 100 }}%">{{ cfg.DUP_REVIEW }} review</span>
+      <span class="tick" style="left:{{ cfg.DUP_MERGE * 100 }}%">{{ cfg.DUP_MERGE }} merge</span></div>
+    <p>Score {{ '%.2f'|format(d.score) }} against {{ d.compared }} open ticket(s) in the block.
+      {% if d.ticket_id %}Best match: <a href="{{ url_for('ticket', tid=d.ticket_id) }}">#{{ d.ticket_id }}</a>.{% endif %}
+      {% if d.decision == 'merge' and trace.gate.decision == 'MERGED' %}This is report {{ d.report_count }} of the issue.{% endif %}</p>
+  {% endif %}
+  <p class="muted mono">compared text (place names removed): {{ trace.masked_text }}</p>
+</section>
+
+<!-- 6. Gate -->
+<section class="card step">
+  <h2><span class="num">6</span>मार्ग<span class="en">Routing gate — auto-route only if confidence ≥ {{ cfg.GATE_MIN_CONFIDENCE }} and the ward office is known</span></h2>
+  <div class="decision {{ trace.gate.decision }}">
+    {% if trace.gate.decision == 'AUTO_ROUTED' %}AUTO-ROUTED · थेट विभागाकडे
+    {% elif trace.gate.decision == 'MERGED' %}MERGED · आधीच्या तक्रारीत एकत्र
+    {% else %}SENT TO REVIEW · अधिकारी तपासणी{% endif %}</div>
+  <p>{{ trace.gate.reason }}</p>
+  <p class="muted">Routed to: {{ dept(t.department) }} · {{ ward(t.ward) }}</p>
+</section>
+{% endif %}
+
+<div class="card ack">
+  तुमची तक्रार नोंदवली गेली आहे. तक्रार क्रमांक: #{{ t.id }}.
+  {% if t.status == 'review' %}अधिकारी ती तपासून योग्य विभागाकडे पाठवतील.{% elif t.status == 'merged' %}याच समस्येची तक्रार आधीच नोंदवलेली आहे; तुमची तक्रार तिच्यासोबत जोडली आहे.{% else %}ती संबंधित विभागाकडे पाठवली आहे.{% endif %}
+  <span class="en">Your complaint is registered as ticket #{{ t.id }}.</span>
+</div>
+
+<!-- Officer actions -->
+<section class="card">
+  <h2>अधिकारी कृती<span class="en">Officer actions (logged to the corrections table)</span></h2>
+  {% if t.dup_pending and candidate %}
+  <form method="post" action="{{ url_for('ticket_action', tid=t.id) }}" class="notice">
+    Possible duplicate of <a href="{{ url_for('ticket', tid=candidate.id) }}">#{{ candidate.id }}</a> (similarity {{ '%.2f'|format(t.dup_score or 0) }}): "{{ candidate.text }}"<br>
+    <button name="action" value="dup_merge">एकत्र करा / Merge</button>
+    <button name="action" value="dup_keep" class="secondary">वेगळे ठेवा / Keep separate</button>
+  </form>
+  {% endif %}
+  {% if t.status not in ('resolved', 'merged') %}
+  <form method="post" action="{{ url_for('ticket_action', tid=t.id) }}">
+    <div class="row">
+      <div><label>विभाग / Department</label><select name="department">{% for c, d in DEPTS.items() %}<option value="{{ c }}" {{ 'selected' if c == t.department }}>{{ d.mr }} / {{ d.en }}</option>{% endfor %}</select></div>
+      <div><label>वॉर्ड / Ward office</label><select name="ward"><option value="">—</option>{% for c, w in WARDS.items() %}<option value="{{ c }}" {{ 'selected' if c == t.ward }}>{{ w.mr }} / {{ w.en }}</option>{% endfor %}</select></div>
+      <div><label>प्राधान्य / Priority</label><select name="priority"><option value="">—</option>{% for b in BANDS %}<option value="{{ b }}" {{ 'selected' if b == t.priority }}>{{ b }}</option>{% endfor %}</select></div>
+    </div>
+    <label>टीप / Note (optional)</label><input type="text" name="note">
+    <p><button name="action" value="correct" class="secondary">दुरुस्ती जतन करा / Save correction</button>
+      <button name="action" value="confirm">पुष्टी करा / Confirm</button>
+      <button name="action" value="resolve" class="danger">निकाली / Mark resolved</button></p>
+  </form>
+  {% else %}<p class="muted">No actions: ticket is {{ t.status }}.</p>{% endif %}
+</section>
+{% endblock %}
