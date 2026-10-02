@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+models/*
+!models/README.md
+instance/
+*.sqlite3
+data/audio/*
+!data/audio/README.md
+!data/audio/manifest.example.csv
+uploads/

@@ -1,0 +1,3 @@
+# Frozen data must be byte-identical on every OS (checksums in data/FROZEN.sha256).
+data/** -text
+artefacts/** binary

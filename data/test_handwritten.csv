@@ -1,0 +1,161 @@
+id,text,language,department,locality,ward,loc_case,severity
+T001,"कोथरूडमध्ये डहाणूकर कॉलनीजवळ रस्त्यावर मोठे खड्डे पडलेत, रोज दुचाकीस्वार घसरतात",mr,ROAD,kothrud,W08,exact,P2
+T002,बाणेर रस्त्याचे डांबरीकरण अर्धवट सोडून ठेकेदार गायब झाला आहे,mr,ROAD,baner,W01,exact,P3
+T003,"हडपसर गाडीतळ परिसरात फुटपाथचे दगड उखडले आहेत, ज्येष्ठ नागरिकांना चालता येत नाही",mr,ROAD,hadapsar,W05,exact,P3
+T004,सदाशिव पेठेत केबलसाठी खोदलेला रस्ता महिनाभर तसाच उघडा आहे,mr,ROAD,sadashiv_peth,W06,exact,P3
+T005,"कात्रज चौकाजवळ पुलावरच्या रस्त्याला मोठी भेग पडली आहे, अवजड वाहने जातात",mr,ROAD,katraj,W13,exact,P2
+T006,"आमच्या सोसायटीसमोरचा गतिरोधक खूप उंच आहे, त्यावर रंगही नाही",mr,ROAD,,UNRESOLVED,none,P4
+T007,"धायरी फाट्यावर रस्त्याच्या मध्यभागी खोल खड्डा आहे, काल रात्री एका रिक्षाचा अपघात झाला",mr,ROAD,dhayari,W11,exact,P2
+T008,विमाननगरमधील अंतर्गत रस्त्यावरील पेव्हर ब्लॉक निखळले आहेत,mr,ROAD,viman_nagar,W09,exact,P3
+T009,येरवडा में मुख्य सड़क पर गड्ढों की वजह से रोज़ ट्रैफिक जाम होता है,hi,ROAD,yerawada,W15,exact,P3
+T010,वानवडी में नई बनी सड़क एक बारिश में ही उखड़ गई,hi,ROAD,wanowrie,W14,exact,P3
+T011,"karvenagar madhe rastyavar khup khadde ahet, gadi chalavta yet nahi",rom,ROAD,karvenagar,W12,exact,P3
+T012,kondwa la footpath tutla ahe ani lokanna rastyavarun chalava lagta,rom,ROAD,kondhwa,W07,misspelt,P3
+T013,"Mundhwa bridge javal road khachla ahe, motha khadda padlay",rom,ROAD,mundhwa,W05,exact,P2
+T014,"Aundh मध्ये road वरचे potholes भरले नाहीत, तीन वेळा complaint केली",mix,ROAD,aundh,W01,exact,P3
+T015,"Karve road वर signal जवळ मोठा खड्डा आहे, कोणी ऐकत नाही",mix,ROAD,,UNRESOLVED,ambiguous,P3
+T016,Kharadi IT park जवळ divider तुटलंय आणि लोखंडी rods बाहेर आलेत,mix,ROAD,kharadi,W09,exact,P2
+T017,"बिबेवाडीत आठवडाभर घंटागाडी आलेली नाही, घरात कचरा साचला आहे",mr,SWM,bibwewadi,W03,misspelt,P2
+T018,"नाना पेठेत कोपऱ्यावर कचऱ्याचा मोठा ढीग झाला आहे, भटकी कुत्री तो पसरवतात",mr,SWM,nana_peth,W02,exact,P3
+T019,कर्वेनगरमधील मोकळ्या प्लॉटवर लोक रात्री कचरा टाकून जातात,mr,SWM,karvenagar,W12,exact,P3
+T020,"धानोरीत कोणीतरी कचरा जाळतोय, धुरामुळे लहान मुलांना खोकला लागला आहे",mr,SWM,dhanori,W15,exact,P2
+T021,मंडईजवळ सडलेल्या भाजीपाल्याचा कचरा तीन दिवस पडून आहे,mr,SWM,,UNRESOLVED,unknown,P3
+T022,शिवणे भागात कचरावेचक ओला आणि सुका कचरा एकत्रच घेऊन जातात,mr,SWM,shivane,W12,exact,P4
+T023,मगरपट्टा रस्त्याच्या कडेला बांधकामाचा राडारोडा टाकला आहे,mr,SWM,magarpatta,W05,exact,P3
+T024,सहकारनगरमधील सार्वजनिक कचराकुंडी तुटली असून कचरा रस्त्यावर सांडतो,mr,SWM,sahakarnagar,W13,exact,P3
+T025,"कोरेगाव पार्क में चार दिन से कूड़ा नहीं उठाया गया, बहुत बदबू है",hi,SWM,koregaon_park,W04,exact,P3
+T026,"सातारा रोड पर लोग खुले में कचरा फेंकते हैं, सफाई कर्मचारी आते ही नहीं",hi,SWM,,UNRESOLVED,ambiguous,P3
+T027,Ghantagadi Pashan la don divsapasun aali nahi,rom,SWM,pashan,W01,exact,P3
+T028,"kachra kundi bharun vahat ahe Sadashiv peth madhe, vaas sahan hot nahi",rom,SWM,sadashiv_peth,W06,exact,P3
+T029,hadapsr bhajimandai javal kachryacha dheeg jalat ahe,rom,SWM,hadapsar,W05,misspelt,P2
+T030,Balewadi high street जवळ garbage pickup रोज miss होतो,mix,SWM,balewadi,W01,exact,P3
+T031,"सोसायटीच्या gate बाहेर dry waste चे bags पडून आहेत, कोणी उचलत नाही",mix,SWM,,UNRESOLVED,none,P4
+T032,Viman Nagar मध्ये garbage truck उशिरा येतो आणि अर्धा कचरा सोडून जातो,mix,SWM,viman_nagar,W09,exact,P3
+T033,वडगाव शेरीत तीन दिवसांपासून नळाला एक थेंबही पाणी आलेले नाही,mr,WATER,wadgaon_sheri,W09,exact,P2
+T034,पद्मावती परिसरात नळाला पिवळसर आणि घाण वासाचे पाणी येत आहे,mr,WATER,padmavati,W13,exact,P2
+T035,मुख्य जलवाहिनी फुटून कोंढव्यात रस्त्यावर पाण्याचे तळे साचले आहे,mr,WATER,kondhwa,W07,inflected,P2
+T036,आमच्या इमारतीत पाणी इतक्या कमी दाबाने येते की टाकीच भरत नाही,mr,WATER,,UNRESOLVED,none,P3
+T037,गुरुवार पेठेत पाणीपुरवठ्याची वेळ न सांगता बदलली जाते,mr,WATER,guruwar_peth,W02,exact,P4
+T038,"एरंडवणे भागात पिण्याच्या पाण्यात गटाराचे पाणी मिसळल्यासारखा वास येतो, घरात दोघे आजारी आहेत",mr,WATER,erandwane,W08,exact,P1
+T039,"बावधनमधील सार्वजनिक नळाचा व्हॉल्व्ह तुटला आहे, दिवसभर पाणी वाया जाते",mr,WATER,bavdhan,W08,exact,P3
+T040,वारजे माळवाडीत टँकर मागवला होता पण दोन दिवस झाले अजून आला नाही,mr,WATER,warje_malwadi,W12,exact,P2
+T041,"धनकवडी में नल से बहुत कम पानी आता है, ऊपर की मंज़िल तक नहीं पहुँचता",hi,WATER,dhankawadi,W13,exact,P3
+T042,"रामटेकडी में पाइपलाइन लीक हो रही है, सड़क पर पानी बह रहा है",hi,WATER,ramtekdi,W14,exact,P3
+T043,"Kalas madhe nalala gadhul pani yet ahe, pinyasarkha nahi",rom,WATER,kalas,W15,exact,P2
+T044,"amchya bhagat char divas pani nahi, tanker pathva lavkar",rom,WATER,,UNRESOLVED,none,P2
+T045,"Bopodi la pani fakt ardha tas yet, te pan ratri ushira",rom,WATER,bopodi,W01,exact,P3
+T046,"Salunke Vihar मध्ये water supply दोन दिवसांपासून बंद आहे, कोणतीही notice नाही",mix,WATER,salunke_vihar,W14,exact,P2
+T047,Baner मध्ये नवीन nal connection साठी अर्ज केला पण तीन महिने झाले,mix,WATER,baner,W01,exact,P4
+T048,"Fatima Nagar मध्ये meter जवळ pipe burst झालाय, पाणी सगळीकडे वाहतंय",mix,WATER,fatima_nagar,W14,exact,P2
+T049,"येवलेवाडीत ड्रेनेज तुंबले आहे, सांडपाणी घरात शिरत आहे",mr,DRAIN,yewalewadi,W07,exact,P1
+T050,"शनिवार पेठेत मॅनहोलचे झाकण गायब आहे, रात्री कोणीही पडू शकते",mr,DRAIN,shaniwar_peth,W06,exact,P1
+T051,"हिंगणे भागात गटार भरून वाहत आहे, सगळीकडे दुर्गंधी पसरली आहे",mr,DRAIN,hingne,W11,exact,P2
+T052,पावसाळी गटारांची जाळी कचऱ्याने बंद झाल्याने चौकात गुडघाभर पाणी साचते,mr,DRAIN,,UNRESOLVED,none,P2
+T053,माणिकबागेत नाल्याची सफाई पावसाळ्यापूर्वी झालेली नाही,mr,DRAIN,manikbaug,W11,exact,P3
+T054,टिंगरेनगरमध्ये ड्रेनेज लाइन फुटून सांडपाणी रस्त्यावर वाहत आहे,mr,DRAIN,tingre_nagar,W15,exact,P2
+T055,"वडगावमध्ये चेंबरचे काम झाल्यानंतर झाकण रस्त्यापेक्षा उंच राहिले आहे, गाड्या आदळतात",mr,DRAIN,,UNRESOLVED,ambiguous,P3
+T056,मॉडेल कॉलनीत उघड्या गटारामुळे डासांचा त्रास वाढला आहे,mr,DRAIN,model_colony,W10,exact,P3
+T057,"चंदननगर में नाली जाम है, गंदा पानी घरों के सामने जमा है",hi,DRAIN,chandan_nagar,W09,exact,P2
+T058,"गोखलेनगर में सीवर का ढक्कन टूटा है, बच्चे पास में खेलते हैं",hi,DRAIN,gokhalenagar,W10,exact,P1
+T059,"Dhanakwadi madhe drainage chokeup zala ahe, ghaan pani road var",rom,DRAIN,dhankawadi,W13,misspelt,P2
+T060,"gutter cha zakan tutla ahe Wanwadi la, koni padel",rom,DRAIN,wanowrie,W14,exact,P1
+T061,"Vishrantwadi chowkat pavsache pani sachte, nichra hot nahi",rom,DRAIN,vishrantwadi,W15,exact,P3
+T062,"Kasba Peth मध्ये drainage overflow होतोय, घाण वास येतो",mix,DRAIN,kasba_peth,W06,exact,P2
+T063,"Sangamwadi जवळ open nala आहे, कोणतेही barricade नाही",mix,DRAIN,sangamwadi,W04,exact,P2
+T064,आमच्या building च्या basement मध्ये sewage चे पाणी येतंय,mix,DRAIN,,UNRESOLVED,none,P1
+T065,"डेक्कनमध्ये नदीपात्राजवळचे पथदिवे आठवडाभर बंद आहेत, रात्री अंधार असतो",mr,ELEC,deccan,W10,exact,P3
+T066,"बिबवेवाडीत विजेच्या खांबावरून तारा लोंबकळत आहेत, खाली मुले खेळतात",mr,ELEC,bibwewadi,W03,exact,P1
+T067,"सुस रोडवर दिवसाही पथदिवे सुरू असतात, विजेची नासाडी होते",mr,ELEC,sus_road,W01,exact,P4
+T068,कळसमध्ये पथदिव्याचा खांब वाकला असून कधीही पडेल अशी स्थिती आहे,mr,ELEC,kalas,W15,exact,P1
+T069,कौसरबाग परिसरात तीन पथदिवे वारंवार बंद-चालू होतात,mr,ELEC,kausar_baug,W07,exact,P4
+T070,"गल्लीतला एकमेव पथदिवा गेल्या महिन्यापासून बंद आहे, महिलांना रात्री भीती वाटते",mr,ELEC,,UNRESOLVED,none,P2
+T071,"मार्केट यार्डजवळ खांबाला हात लावला तर करंट लागतो, पावसात खूप धोका आहे",mr,ELEC,market_yard,W03,exact,P1
+T072,मयूर कॉलनीतील उद्यानाजवळचे दिवे लावावेत अशी विनंती आहे,mr,ELEC,mayur_colony,W08,exact,P4
+T073,"हिंगणे में स्ट्रीट लाइट दस दिन से बंद है, रात को बहुत अंधेरा रहता है",hi,ELEC,hingne,W11,exact,P3
+T074,"पुणे स्टेशन के पास बिजली का खुला बॉक्स पड़ा है, तार बाहर निकले हैं",hi,ELEC,pune_station,W04,exact,P1
+T075,"Kharadi la streetlight band ahe, ratri khup andhar asto",rom,ELEC,kharadi,W09,exact,P3
+T076,"Ganesh peth madhe khamba var wire latkat ahe, shock lagu shakto",rom,ELEC,ganesh_peth,W02,exact,P1
+T077,dhayri phatyavar divebatti band,rom,ELEC,dhayari,W11,misspelt,P3
+T078,Chandan Nagar मध्ये street light चा pole पूर्ण गंजलाय,mix,ELEC,chandan_nagar,W09,exact,P3
+T079,Koregaon Park lane 7 मधले lights रात्री 10 नंतर बंद होतात,mix,ELEC,koregaon_park,W04,exact,P3
+T080,"Sahakar nagar मध्ये light pole ला current येतोय, काल कुत्र्याला shock लागला",mix,ELEC,sahakarnagar,W13,exact,P1
+T081,"हडपसरमधील साचलेल्या पाण्यात डासांची पैदास झाली आहे, फवारणी करा",mr,HEALTH,hadapsar,W05,exact,P3
+T082,"आमच्या सोसायटीत पाच जणांना डेंग्यू झाला आहे, धूरफवारणी कधीच होत नाही",mr,HEALTH,,UNRESOLVED,none,P1
+T083,"भवानी पेठेतील सार्वजनिक शौचालय अत्यंत घाण आहे, पाणीही नाही",mr,HEALTH,bhavani_peth,W02,exact,P3
+T084,"गुलटेकडीत उंदरांचा उपद्रव वाढला आहे, घरात शिरतात",mr,HEALTH,gultekdi,W03,exact,P3
+T085,"मुंढव्यात रस्त्यावरच्या हातगाड्यांवर उघडे अन्न विकले जाते, माश्या बसतात",mr,HEALTH,mundhwa,W05,inflected,P3
+T086,विश्रातवाडी परिसरात काविळीचे अनेक रुग्ण आढळले आहेत,mr,HEALTH,vishrantwadi,W15,misspelt,P1
+T087,पाशाणमध्ये गेल्या दोन महिन्यात एकदाही डास फवारणी झालेली नाही,mr,HEALTH,pashan,W01,misspelt,P3
+T088,बालाजीनगरमधील बंद पडलेल्या टायर दुकानात पाणी साचून अळ्या झाल्या आहेत,mr,HEALTH,balaji_nagar,W13,exact,P3
+T089,"कल्याणी नगर में मच्छरों का बहुत आतंक है, फॉगिंग करवाइए",hi,HEALTH,kalyani_nagar,W09,exact,P3
+T090,"स्वारगेट के सार्वजनिक शौचालय की सफाई हफ्तों से नहीं हुई, बहुत गंदगी है",hi,HEALTH,,UNRESOLVED,unknown,P3
+T091,"Dhanori madhe dengue che khup rugn ahet, fogging kara",rom,HEALTH,dhanori,W15,exact,P1
+T092,Upper Indiranagar la dasancha tras khup vadhla ahe,rom,HEALTH,upper_indiranagar,W03,exact,P3
+T093,Nana peth chya public toilet madhe pani nahi ani light pan nahi,rom,HEALTH,nana_peth,W02,exact,P3
+T094,Wanowrie मध्ये mosquito fogging शेवटची कधी झाली कोणालाच माहीत नाही,mix,HEALTH,wanowrie,W14,exact,P3
+T095,"Kothrud depot जवळ hotel चे खराब अन्न उघड्यावर टाकतात, उंदीर वाढलेत",mix,HEALTH,kothrud,W08,exact,P3
+T096,"Yerwada मध्ये malaria चे cases वाढलेत, survey करा",mix,HEALTH,yerawada,W15,exact,P2
+T097,"प्रभात रस्त्यावर जुने झाड उन्मळून रस्त्यावर पडले आहे, वाहतूक बंद आहे",mr,TREE,,UNRESOLVED,unknown,P1
+T098,औंधमध्ये झाडाची मोठी फांदी विजेच्या तारांवर लोंबकळत आहे,mr,TREE,aundh,W01,exact,P1
+T099,कात्रज उद्यानातील झोपाळे आणि बाकडे तुटले आहेत,mr,TREE,katraj,W13,exact,P4
+T100,आमच्या सोसायटीसमोरचे झाड रात्री कोणीतरी परवानगीशिवाय तोडले,mr,TREE,,UNRESOLVED,none,P3
+T101,"शिवाजीनगरमधील बागेत गवत वाढले आहे, सापांची भीती आहे",mr,TREE,shivajinagar,W10,exact,P3
+T102,वारजेत रस्त्याकडेच्या झाडाच्या फांद्या पथदिव्यांवर आल्याने अंधार पडतो,mr,TREE,warje,W12,exact,P3
+T103,"सॅलिसबरी पार्क भागात वाळलेले झाड कधीही पडू शकते, शेजारी शाळा आहे",mr,TREE,salisbury_park,W03,exact,P1
+T104,ताडीवाला रोडवरील झाडांची छाटणी पावसाळ्यापूर्वी करावी,mr,TREE,tadiwala_road,W04,exact,P4
+T105,बानेर में आंधी से एक पेड़ गाड़ियों पर गिर गया है,hi,TREE,baner,W01,exact,P1
+T106,"बगीचे में पानी नहीं डाला जाता, सारे पौधे सूख गए हैं",hi,TREE,,UNRESOLVED,none,P4
+T107,"Erandwane la jhadachi mothi phandi tutun latkat ahe, khali lok basatat",rom,TREE,erandwane,W08,exact,P1
+T108,"Magarpatta road var jhade todli jat ahet, parvangi ahe ka vichara",rom,TREE,magarpatta,W05,exact,P3
+T109,Narayan peth madhil baget khelnyachi sadhane tutli ahet,rom,TREE,narayan_peth,W06,exact,P4
+T110,"Bavdhan मध्ये tree trimming चे काम अर्धवट सोडले, फांद्या रस्त्यावर पडून आहेत",mix,TREE,bavdhan,W08,exact,P3
+T111,Gokhale nagar मधल्या garden चे gate तुटलंय आणि रात्री दारुडे बसतात,mix,TREE,gokhalenagar,W10,exact,P3
+T112,"Senapati Bapat road वर मोठं झाड वाकलंय, कधीही पडेल",mix,TREE,sb_road,W10,exact,P1
+T113,लक्ष्मी रस्त्यावर फेरीवाल्यांनी पूर्ण फुटपाथ व्यापला आहे,mr,ENCROACH,,UNRESOLVED,unknown,P3
+T114,खराडीत दुकानदारांनी दुकानासमोर शेड टाकून रस्ता अडवला आहे,mr,ENCROACH,kharadi,W09,exact,P3
+T115,कोथरूडमध्ये पदपथावर अनधिकृत टपऱ्या उभ्या राहिल्या आहेत,mr,ENCROACH,kothrud,W08,exact,P3
+T116,बुधवार पेठेत रस्त्याच्या कडेला बेवारस वाहने महिनोंमहिने पडून आहेत,mr,ENCROACH,budhwar_peth,W06,exact,P4
+T117,"सिंहगड रोडवर अनधिकृत होर्डिंग वाकले आहे, जोरदार वाऱ्यात पडू शकते",mr,ENCROACH,sinhagad_road,W11,exact,P1
+T118,"शाळेच्या गेटसमोर हातगाडीवाले उभे राहतात, मुलांना रस्ता ओलांडता येत नाही",mr,ENCROACH,,UNRESOLVED,none,P2
+T119,टिंबर मार्केटमध्ये व्यापाऱ्यांनी सार्वजनिक रस्त्यावर माल ठेवला आहे,mr,ENCROACH,timber_market,W02,exact,P3
+T120,"चंदननगर चौकात रस्त्यावरच भाजी बाजार भरतो, रुग्णवाहिकेलाही जागा नसते",mr,ENCROACH,chandan_nagar,W09,exact,P2
+T121,"हडपसर में फुटपाथ पर ठेले वालों का कब्ज़ा है, पैदल चलना मुश्किल है",hi,ENCROACH,hadapsar,W05,exact,P3
+T122,बोपोडी में सरकारी ज़मीन पर अवैध झोपड़ियाँ बन रही हैं,hi,ENCROACH,bopodi,W01,exact,P3
+T123,FC road var feriwalyanni footpath adavla ahe,rom,ENCROACH,fc_road,W10,exact,P3
+T124,Ramtekdi madhe road var lokanni gaadya kayamchya park kelya ahet,rom,ENCROACH,ramtekdi,W14,exact,P4
+T125,Dhole Patil road la dukanacha saman footpath var thevla jato,rom,ENCROACH,dhole_patil_road,W04,exact,P4
+T126,Tingre Nagar मध्ये illegal stalls मुळे footpath वर चालायला जागाच नाही,mix,ENCROACH,tingre_nagar,W15,exact,P3
+T127,Paud road वर banner आणि flex लावून signal झाकला गेलाय,mix,ENCROACH,paud_road,W08,exact,P2
+T128,Market yard gate जवळ hawkers चा कायम traffic jam होतो,mix,ENCROACH,market_yard,W03,exact,P3
+T129,बावधनमध्ये शेजारी परवानगीशिवाय चौथा मजला बांधत आहेत,mr,BUILD,bavdhan,W08,exact,P3
+T130,"कसबा पेठेतील जुना वाडा धोकादायक झाला आहे, भिंतीचा भाग कोसळला आहे",mr,BUILD,kasba_peth,W06,exact,P1
+T131,धायरीत नाल्याच्या काठावर अनधिकृत इमारत उभी राहत आहे,mr,BUILD,dhayari,W11,exact,P3
+T132,"बांधकाम सुरू असलेल्या इमारतीवरून विटा खाली पडतात, जाळी लावलेली नाही",mr,BUILD,,UNRESOLVED,none,P1
+T133,"येरवड्यात रात्री उशिरापर्यंत बांधकामाचे काम चालते, मोठा आवाज होतो",mr,BUILD,yerawada,W15,inflected,P4
+T134,नारायण पेठेत इमारतीच्या गच्चीवर बेकायदा शेड उभारली आहे,mr,BUILD,narayan_peth,W06,exact,P4
+T135,पाषाणमध्ये टेकडीवर खोदकाम करून बंगले बांधले जात आहेत,mr,BUILD,pashan,W01,exact,P3
+T136,"कल्याणीनगरमधील बांधकामाच्या खड्ड्याला कुंपण नाही, कोणी पडू शकते",mr,BUILD,kalyani_nagar,W09,exact,P1
+T137,मगरपट्टा के पास बिना नक्शा पास कराए दुकानें बनाई जा रही हैं,hi,BUILD,magarpatta,W05,exact,P3
+T138,"लोहगाव में पुरानी इमारत की बालकनी कभी भी गिर सकती है, लोग नीचे से गुजरते हैं",hi,BUILD,,UNRESOLVED,unknown,P1
+T139,Katraj la parvangi nastana teen majli building bandhli jat ahe,rom,BUILD,katraj,W13,exact,P3
+T140,Wadgaon madhe junya imaratichi bhint padayla ali ahe,rom,BUILD,,UNRESOLVED,ambiguous,P1
+T141,Model colony madhe bungalow cha extra bandhkam footpath var aala ahe,rom,BUILD,model_colony,W10,exact,P3
+T142,"Viman nagar मध्ये construction site वरची धूळ घरात येते, कोणतेही cover नाही",mix,BUILD,viman_nagar,W09,exact,P3
+T143,"Shivane मध्ये illegal floor चे काम सुरू आहे, notice देऊनही थांबले नाही",mix,BUILD,shivane,W12,exact,P3
+T144,Erandwane मध्ये building च्या terrace वर mobile tower परवानगीशिवाय उभा केलाय,mix,BUILD,erandwane,W08,exact,P3
+T145,हिंगण्यात पिसाळलेल्या कुत्र्याने तीन मुलांना चावा घेतला आहे,mr,VET,hingne,W11,inflected,P1
+T146,"आमच्या गल्लीत भटक्या कुत्र्यांची संख्या खूप वाढली आहे, रात्री भुंकत राहतात",mr,VET,,UNRESOLVED,none,P3
+T147,संगमवाडी पुलाजवळ मेलेली गाय दोन दिवसांपासून पडून आहे,mr,VET,sangamwadi,W04,exact,P2
+T148,"कर्वेनगर परिसरात मोकाट जनावरे रस्त्यावर बसतात, अपघात होतात",mr,VET,karvenagar,W12,exact,P2
+T149,"गोखलेनगरमध्ये माकडांचा उपद्रव, घरातून अन्न पळवतात",mr,VET,gokhalenagar,W10,exact,P3
+T150,बाणेरमध्ये भटक्या कुत्र्यांची नसबंदी करावी अशी विनंती,mr,VET,baner,W01,exact,P4
+T151,"कोंढवा खुर्दमध्ये जखमी कुत्रा रस्त्यावर तडफडत आहे, कोणी तरी मदत पाठवा",mr,VET,kondhwa,W07,exact,P2
+T152,सदाशिव पेठेत उघड्यावर कोंबड्यांची कत्तल करून घाण टाकली जाते,mr,VET,sadashiv_peth,W06,exact,P3
+T153,कोथरुड में आवारा कुत्तों ने एक बुज़ुर्ग को काट लिया,hi,VET,kothrud,W08,exact,P1
+T154,"पिंपरी में सड़क पर मरा हुआ कुत्ता पड़ा है, बहुत बदबू आ रही है",hi,VET,,UNRESOLVED,unknown,P2
+T155,"Mundhwa la bhatki kutri gadyanchya mage dhavtat, accident hotat",rom,VET,mundhwa,W05,exact,P2
+T156,Sadesatra nali la mela dukkar padla ahe,rom,VET,sade_satra_nali,W05,misspelt,P2
+T157,Warje la gai rastyat basun traffic jam karatat,rom,VET,warje,W12,exact,P3
+T158,Kothrood bus stop जवळ stray dogs चा group लोकांवर धावून येतो,mix,VET,kothrud,W08,misspelt,P2
+T159,"Salisbury park मध्ये dead dog पडलाय, smell येतोय",mix,VET,salisbury_park,W03,exact,P2
+T160,"Erandwane मध्ये पिसाळलेला dog फिरतोय, मुलांना बाहेर सोडत नाही",mix,VET,erandwane,W08,exact,P1

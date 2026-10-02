@@ -1,70 +1,41 @@
-# Phase 0 inventory
+# Inventory
 
-Date: 2026-10-02. Branch: `claude/nagarvani-final-mvp-y345l5`.
+## History of this repository
 
-## Finding: the repository is empty
-
-The brief says this repository holds an existing prototype: Python, scikit-learn,
-Flask and SQLite code, a 2,000-item template training set, a 160-item hand-written
-test set, a 59-locality gazetteer and a 19-rule severity base. None of it is here.
-
-What was checked:
-
-| Check | Result |
+| When | What was found |
 |---|---|
-| Local working tree (`/home/user/nagarvani_aiCP`) | Only `.git/`. No files at all. |
-| Local git history | `No commits yet` on the branch. |
-| `git ls-remote origin` (github.com/aarush-720/nagarvani_aiCP) | No refs. The remote has no branches. |
-| GitHub API, list branches | `[]` |
-| Filesystem search for `*nagarvani*` | Nothing outside this empty clone and tool caches. |
+| Start of build (2026-10-02) | Remote and local repo empty; no commits. |
+| After GitHub access fixed | `main` held one upload: `nagarvani_midsem/` (Colab notebook, viva guide, 460-row seed CSV, two figures). |
+| Clarified by the developer | That midsem notebook **is** the team's final prototype. The build restarts from scratch. |
 
-## Update: `main` now holds a midsem upload, not the final prototype
+## What the midsem prototype contained (now in `archive/midsem/`)
 
-After GitHub access was fixed, `main` had one commit (`8d79321`, "Add files via
-upload") containing `nagarvani_midsem/`:
-
-| File | What it is |
+| File | Content |
 |---|---|
-| `NagarVani_final.ipynb` | 22-cell Colab notebook: Gradio UI, Whisper; no Flask, no SQLite |
-| `nagarvani_seed_dataset_AB.csv` | 460 rows (`text, department, source, severity_label`) |
-| `NagarVani_viva_guide.md` | Midsem demo and viva guide |
-| `confusion_matrix.png`, `tau_curve.png` | Midsem figures |
+| `NagarVani_final.ipynb` | 22 cells. Gradio UI, openai-whisper `large-v3` on a Colab GPU, TF-IDF char 2-5 + civic-lexicon features + logistic regression (C=10), 12 life-safety rules + department default bands, abstention threshold chosen from out-of-fold CV, in-memory ticket list. No Flask, no SQLite, no location resolution, no duplicate detection. |
+| `nagarvani_seed_dataset_AB.csv` | 460 complaints: Set A 200 (8 departments x 25), Set B 260 (8 departments + `other`, with P1-P4 severity labels). AI-drafted, human-checked by the team. |
+| `NagarVani_viva_guide.md` | Midsem demo script and numbers card. |
+| `confusion_matrix.png`, `tau_curve.png` | Midsem figures. |
 
-This is the midsem version that section 3 of the brief calls abandoned (a Gradio
-notebook with an 8-department taxonomy). Its labels are `roads, water_supply,
-drainage, solid_waste, street_lights, trees_garden, encroachment, health_mosquito`,
-plus `other`. The final prototype has 10 departments (ROAD ... VET), 2,000 template
-training rows, a 160-row hand-written test set, 15 ward offices, a 59-locality
-gazetteer, a 19-rule expert system and a Flask/SQLite app. None of that is in the
-upload. None of the section 2 numbers can come from this notebook, because the
-taxonomy and the data are different.
+## Where the brief's section 2 differs from what existed
 
-I left the files where they are. Moving them into `archive/` belongs to a build
-that has not started yet.
+Every item in section 2 of the build brief was absent: there was no 10-department taxonomy,
+no 2,000-row template training set, no 160-row hand-written test set, no gazetteer, no
+19-rule expert system, no duplicate detector, no gate on ward resolution and no Flask app.
+The midsem notebook used 8 departments + `other`, 460 seed rows and a different model.
 
-## Where this differs from section 2 of the brief
+**None of the numbers in the brief's section 2 table can be reproduced from anything that
+existed.** No code or data in the repository produced them. This build produces its own
+numbers (see `results/` and `docs/HANDOVER.md`); they are not expected to match.
 
-Every item in section 2 is missing: the code, the training data, the test data,
-the gazetteer, the rule base, the evaluation scripts, the Flask app and any pinned
-dependencies.
+## What was reused from the midsem prototype
 
-## Reported vs reproduced
+* The 15 ward-office names (spellings as in the notebook; still to be verified against PMC).
+* The proposed SLA hours: P1 24 h, P2 72 h, P3 168 h, P4 360 h.
+* The idea of life-safety rules with exclusion words (e.g. झाडला "swept" must not trigger the tree rule).
+* The 460-row seed CSV, copied unchanged to `data/external/midsem_seed_AB.csv` and used only as an
+  **external evaluation set** (never for training or rule writing).
 
-| Quantity | Reported | Reproduced |
-|---|---|---|
-| All 15 rows of the section 2 table | as in brief | **Not reproducible: no code or data** |
+## Entry points of the rebuilt system
 
-## Why the build stopped here
-
-This is the brief's planned stop at the end of Phase 0, reached for a stronger
-reason than a number mismatch. The ground rules forbid regenerating the training
-set, test set, gazetteer or rules, and forbid inventing numbers. Writing a new
-prototype from the summary would produce different data and different numbers,
-and the submitted report would no longer describe the code. So nothing was built.
-
-## What is needed to continue
-
-Push the prototype as it was when the reported numbers were produced (all source
-files, `data/` with the train/test CSVs, gazetteer and rules, plus any
-requirements file) to this repository, ideally on `main`. Then start a new
-session with the same brief. Phase 0 will restart from step 1.
+See `README.md` (layout and commands) and `docs/PROGRESS.md`.
