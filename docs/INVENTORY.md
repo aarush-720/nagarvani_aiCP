@@ -18,6 +18,30 @@ What was checked:
 | GitHub API, list branches | `[]` |
 | Filesystem search for `*nagarvani*` | Nothing outside this empty clone and tool caches. |
 
+## Update: `main` now holds a midsem upload, not the final prototype
+
+After GitHub access was fixed, `main` had one commit (`8d79321`, "Add files via
+upload") containing `nagarvani_midsem/`:
+
+| File | What it is |
+|---|---|
+| `NagarVani_final.ipynb` | 22-cell Colab notebook: Gradio UI, Whisper; no Flask, no SQLite |
+| `nagarvani_seed_dataset_AB.csv` | 460 rows (`text, department, source, severity_label`) |
+| `NagarVani_viva_guide.md` | Midsem demo and viva guide |
+| `confusion_matrix.png`, `tau_curve.png` | Midsem figures |
+
+This is the midsem version that section 3 of the brief calls abandoned (a Gradio
+notebook with an 8-department taxonomy). Its labels are `roads, water_supply,
+drainage, solid_waste, street_lights, trees_garden, encroachment, health_mosquito`,
+plus `other`. The final prototype has 10 departments (ROAD ... VET), 2,000 template
+training rows, a 160-row hand-written test set, 15 ward offices, a 59-locality
+gazetteer, a 19-rule expert system and a Flask/SQLite app. None of that is in the
+upload. None of the section 2 numbers can come from this notebook, because the
+taxonomy and the data are different.
+
+I left the files where they are. Moving them into `archive/` belongs to a build
+that has not started yet.
+
 ## Where this differs from section 2 of the brief
 
 Every item in section 2 is missing: the code, the training data, the test data,
