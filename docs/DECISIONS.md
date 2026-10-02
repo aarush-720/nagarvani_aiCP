@@ -131,3 +131,32 @@ numbers, so they are left for the team to decide on in a deliberate re-freeze.
 | F1 | `data/gazetteer.json`: alias `banner` for Baner | `Paud road वर banner आणि flex लावून signal झाकला गेलाय` (T127) | The English word "banner" matches Baner (W01) as well as Paud Road (W08), so the place is ruled ambiguous and the ticket goes to review. | Removing the alias would resolve T127 (ward correct 135→136/137) and could change the gate figures. |
 | F2 | Fuzzy fallback with no stopword for बाहेर | `सोसायटीच्या gate बाहेर dry waste चे bags पडून आहेत` (T031) | बाहेर ("outside") ≈ बाणेर at ratio 0.80, so the ward is wrongly resolved to W01. | Adding बाहेर to `fuzzy_stopwords` fixes it (correctly unresolved 22→23/23). |
 | F3 | Suffix list cannot undo stem changes | `हिंगण्यात ...` (T145) | हिंगणे→हिंगण्यात changes the stem, so there is no exact or fuzzy match. (कोंढव्यात, मुंढव्यात, येरवड्यात do pass fuzzy.) | A stem rule (-े/-ा → -्यात) would change ward numbers. |
+
+## D13. The default ASR model ("small") was not chosen by measurement
+
+The brief asks to time candidate models on this machine and to pick the largest one that
+transcribes a 15-second clip in about 20 s. That could not be done in the build sandbox:
+the models could not be downloaded (D8), and no speech clip exists. The default `small` is
+a placeholder. It is a multilingual model of moderate size, chosen without any timing.
+The team should run `python scripts/fetch_models.py --benchmark <15 s Marathi clip>` on
+the demo laptop. That writes `results/asr_benchmark.json` with the timings and a
+recommendation. Then set `NAGARVANI_ASR_MODEL`.
+
+## D14. ASR guard thresholds are heuristics
+
+These thresholds were set by hand and have not been validated on real audio:
+* Length: 1-60 s.
+* "Mostly silence": fewer than 10% of 30 ms frames have RMS ≥ 0.01.
+* Repetition: a 2-4 word phrase three times in a row, a single word four times in a row,
+  or fewer than 30% distinct words in a transcript of 6 or more words.
+* Whisper no-speech probability ≥ 0.80.
+* "Transcript uncertain" flag: average log-probability < -1.0.
+
+None of them affects the routing gate. They are described as heuristics in the code, the
+UI and the README.
+
+## D15. Whisper decoding options
+
+Beam size 5. `condition_on_previous_text=False` to reduce repetition loops. The VAD filter
+is off: clips are short and the silence guard runs first, and the VAD would hide the
+duration and silence behaviour the guards report on. The language is always forced.
