@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}मूल्यमापन व मर्यादा{% endblock %}
+{% macro pct(r) %}{% if r and r.total %}{{ '%.1f'|format(100 * r.rate) }}% ({{ r.count }}/{{ r.total }}){% else %}n/a{% endif %}{% endmacro %}
+{% block content %}
+<h1>मूल्यमापन व मर्यादा<span class="en">Evaluation results and limitations</span></h1>
+<p class="muted">Every number on this page is read from files written by the evaluation scripts
+  (<span class="mono">results/eval.json</span>, <span class="mono">results/asr_eval.json</span>, <span class="mono">results/asr_benchmark.json</span>).
+  Reproduce with <span class="mono">python eval/evaluate.py</span>.</p>
+
+{% if ev %}
+{% set d, g, w, s, b = ev.department, ev.gate, ev.ward, ev.severity, ev.baselines %}
+<section class="card">
+  <h2>विभाग वर्गीकरण<span class="en">Department classifier — {{ d.n_test }} test complaints (Marathi, Hindi, romanised, code-mixed)</span></h2>
+  <table>
+    <tr><th>Quantity</th><th>Value</th></tr>
+    <tr><td>Accuracy</td><td><strong>{{ pct(d.accuracy) }}</strong></td></tr>
+    <tr><td>Macro-F1</td><td>{{ '%.3f'|format(d.macro_f1) }}</td></tr>
+    <tr><td>Top-3 accuracy</td><td>{{ pct(d.top3_accuracy) }}</td></tr>
+    <tr><td>Keyword baseline accuracy</td><td>{{ pct(b.keyword.accuracy) }}</td></tr>
+    <tr><td>Character-only logistic regression (comparison only; not adopted)</td><td>{{ pct(b.char_only_logreg.accuracy) }}</td></tr>
+    <tr><td>5-fold cross-validation accuracy inside the template training data</td><td>{{ '%.1f'|format(100 * d.cv_accuracy_on_train) }}%</td></tr>
+    <tr><td>External check: team's midsem seed set (coarse label mapping)</td><td>{{ pct(ev.external_midsem.department_accuracy_coarse) }}</td></tr>
+  </table>
+  <p class="muted">By language: {% for k, v in d.accuracy_by_language.items() %}{{ k }} {{ pct(v) }}{{ ' · ' if not loop.last }}{% endfor %}</p>
+</section>
+
+<section class="card">
+  <h2>वॉर्ड व मार्ग<span class="en">Ward resolution and routing gate</span></h2>
+  <table>
+    <tr><td>Ward correct, where the text names a known place</td><td>{{ pct(w.correct) }}</td></tr>
+    <tr><td>Correctly left unresolved (no place, unknown or ambiguous place)</td><td>{{ pct(w.correctly_left_unresolved) }}</td></tr>
+    <tr><td>Auto-routed share</td><td><strong>{{ pct(g.auto_routed) }}</strong></td></tr>
+    <tr><td>Auto-routed tickets with correct department and ward</td><td>{{ pct(g.auto_routed_correct_department_and_ward) }}</td></tr>
+    <tr><td>Department errors caught by the gate (sent to review)</td><td>{{ pct(g.department_errors_caught_by_gate) }}</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>तीव्रता<span class="en">Severity expert system</span></h2>
+  <table>
+    <tr><td>Band accuracy (using the predicted department)</td><td>{{ pct(s.band_accuracy_predicted_department) }}</td></tr>
+    <tr><td>P1 (life-safety) recall</td><td>{{ pct(s.p1_recall) }}</td></tr>
+    <tr><td>P1 precision</td><td>{{ pct(s.p1_precision) }}</td></tr>
+    <tr><td>Learned logistic-regression severity baseline</td><td>{{ pct(s.learned_logreg_baseline.accuracy) }}</td></tr>
+    <tr><td>Agreement with the team's own midsem severity labels</td><td>{{ pct(ev.external_midsem.severity_band_agreement) }}</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>पुनरावृत्ती<span class="en">Duplicate detection — 60 pre-blocked pairs</span></h2>
+  {% macro dd(x) %}merged {{ x.merge }}, sent to review {{ x.review }}, new ticket {{ x.new }}{% endmacro %}
+  <table>
+    <tr><td>30 true duplicate pairs</td><td>{{ dd(ev.duplicates.true_duplicate_pairs) }}</td></tr>
+    <tr><td>… of which written in the same script</td><td>{{ dd(ev.duplicates.true_duplicates_same_script) }}</td></tr>
+    <tr><td>… of which one in Devanagari, one romanised</td><td>{{ dd(ev.duplicates.true_duplicates_cross_script) }}</td></tr>
+    <tr><td>30 non-duplicate pairs (same ward and department)</td><td>{{ dd(ev.duplicates.non_duplicate_pairs) }}</td></tr>
+    <tr><td>Merge precision / recall</td><td>{{ pct(ev.duplicates.merge_precision) }} / {{ pct(ev.duplicates.merge_recall) }}</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>आवाज ओळख<span class="en">Speech recognition</span></h2>
+  {% if ae %}
+    <p>Real-audio evaluation: {{ ae.n_clips }} clips, {{ ae.speakers }} speakers, model {{ ae.model }}.</p>
+    <table><tr><th>Setting</th><th>WER</th><th>CER</th><th>Dept accuracy from audio</th><th>from reference text</th></tr>
+    {% for name, st in ae.settings.items() %}<tr><td>{{ name }}</td><td>{{ st.overall.wer }}</td><td>{{ st.overall.cer }}</td>
+      <td>{{ pct(st.from_audio.department_accuracy) }}</td><td>{{ pct(ae.from_reference_text.department_accuracy) }}</td></tr>{% endfor %}</table>
+  {% else %}
+    <p><strong>Real-audio evaluation has not been run</strong> (no recorded clips in <span class="mono">data/audio/</span> yet).
+      Whisper is used zero-shot; its accuracy on Marathi complaints is not measured.</p>
+  {% endif %}
+  {% if bench %}<p class="muted">Model timing on this machine: {% for r in bench.timings %}{{ r.model }} {{ r.transcribe_seconds }} s{{ ', ' if not loop.last }}{% endfor %}
+    for a {{ bench.clip_seconds }} s clip ({{ bench.device }}); recommended {{ bench.recommended }}.</p>
+  {% else %}<p class="muted">Model timing has not been measured on this machine (run <span class="mono">python scripts/fetch_models.py --benchmark CLIP</span>).</p>{% endif %}
+  {% set n = ev.simulated_noise %}
+  <p><strong>Simulation, not ASR:</strong> with {{ (100 * n.character_error_probability)|round|int }}% random character errors injected into the typed test text,
+    department macro-F1 is {{ '%.3f'|format(n.department_macro_f1) }} and ward accuracy is {{ pct(n.ward_accuracy_exact_only) }} with exact matching only,
+    {{ pct(n.ward_accuracy_with_fuzzy) }} with the fuzzy fallback.</p>
+</section>
+{% else %}
+<div class="card error">results/eval.json is missing. Run <span class="mono">python eval/evaluate.py</span>.</div>
+{% endif %}
+
+<section class="card">
+  <h2>मर्यादा<span class="en">Limitations</span></h2>
+  <ul>
+    <li>All training and test data was written for this project (training templates, test complaints and duplicate pairs drafted during the build; the external check uses the team's own midsem seed set). <strong>No real PMC complaints were used.</strong></li>
+    {% if ev %}<li>Accuracy inside the template data ({{ '%.1f'|format(100 * ev.department.cv_accuracy_on_train) }}%) is
+      {{ '%.1f'|format(100 * ev.department.cv_accuracy_on_train - 100 * ev.department.accuracy.rate) }} points higher than on the separately written test complaints
+      and {{ '%.1f'|format(100 * ev.department.cv_accuracy_on_train - 100 * ev.external_midsem.department_accuracy_coarse.rate) }} points higher than on the team's midsem set.
+      The figures on separately written text are the ones that mean anything, and real complaints would likely be harder still. The test complaints share an author with the templates, so even the test figure is probably optimistic.</li>{% endif %}
+    <li>The severity rules and the test-set severity labels were written by the same author, so the severity agreement figure is in-sample. The agreement with the team's independently written midsem labels is lower.</li>
+    <li>Speech recognition is zero-shot Whisper with no Marathi fine-tuning. {% if ae %}Measured error rates are shown above.{% else %}Real-audio evaluation has not been run.{% endif %} The character-noise results are a simulation and are labelled as such.</li>
+    <li>ASR guards (length, silence, repetition, no-speech) and the "transcript uncertain" flag use hand-set heuristic thresholds. ASR confidence does not affect routing.</li>
+    <li>No integration with PMC CARE (it has no public API). Output is a local SQLite database and per-ward CSV files.</li>
+    <li>SLA hours ({% for b, v in BANDS.items() %}{{ b }} {{ v.sla_hours }} h{{ ', ' if not loop.last }}{% endfor %}) are the team's proposed values, not official PMC figures.</li>
+    <li>Locality-to-ward assignments come from a hand-made gazetteer, not official ward boundaries. Places not in the gazetteer, ambiguous names and place names whose spelling changes when inflected can go unresolved and are sent to a person.</li>
+    <li>No authentication: single user, single machine. Officer corrections are logged but no retraining is implemented.</li>
+  </ul>
+</section>
+{% endblock %}

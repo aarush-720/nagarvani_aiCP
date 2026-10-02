@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}तक्रार नोंदवा{% endblock %}
+{% block content %}
+<h1>तुमची तक्रार सांगा<span class="en">Tell us your civic complaint</span></h1>
+<p class="muted">आम्ही नाव किंवा फोन नंबर विचारत नाही. <span class="en inline">We do not ask for your name or phone number.</span></p>
+
+<form id="intake" method="post" action="{{ url_for('submit') }}">
+  <input type="hidden" name="submission_key" value="{{ submission_key }}">
+  <input type="hidden" name="channel" id="channel" value="typed">
+  <input type="hidden" name="upload_id" id="upload_id" value="">
+  <input type="hidden" name="raw_transcript" id="raw_transcript" value="">
+  <input type="hidden" name="asr_json" id="asr_json" value="">
+
+  <div class="card">
+    <label>भाषा<span class="en">Language spoken (passed to speech recognition; not auto-detected)</span></label>
+    <label class="inline" style="display:inline;font-weight:400"><input type="radio" name="language" value="mr" checked> मराठी <span class="en inline">Marathi</span></label>
+    &nbsp;&nbsp;
+    <label class="inline" style="display:inline;font-weight:400"><input type="radio" name="language" value="hi"> हिंदी <span class="en inline">Hindi</span></label>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h2>१. बोला<span class="en">Speak</span></h2>
+      {% if state.asr %}
+        <button type="button" id="rec">🎙 रेकॉर्ड सुरू करा / Start recording</button>
+        <p id="rec-status" class="muted"></p>
+      {% else %}
+        <p class="notice">आवाज ओळख सध्या उपलब्ध नाही. कृपया तक्रार टाइप करा.<span class="en">Speech recognition is not available on this computer (Whisper model "{{ asr_model }}" not found in models/). Please type the complaint.</span></p>
+      {% endif %}
+    </div>
+    <div class="card">
+      <h2>२. ऑडिओ फाईल<span class="en">Or upload an audio file (WhatsApp voice note, MP3, M4A, WAV)</span></h2>
+      <input type="file" id="file" accept="audio/*,.ogg,.opus,.m4a,.webm,.mp4" {{ '' if state.asr else 'disabled' }}>
+      <button type="button" id="upload" class="secondary" {{ '' if state.asr else 'disabled' }}>पाठवा / Transcribe</button>
+      <p id="upload-status" class="muted"></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>३. तक्रार<span class="en">Your complaint (type it, or check the transcript)</span></h2>
+    <div id="asr-box" class="notice hidden">
+      <strong>आम्ही असे ऐकले — कृपया तपासा आणि चूक असल्यास दुरुस्त करा.</strong>
+      <span class="en">This is what we heard. Please check it and correct any mistakes before submitting.</span>
+      <div id="asr-meta" class="muted mono"></div>
+    </div>
+    <div id="asr-error" class="error hidden"></div>
+    <textarea name="text" id="text" required placeholder="उदा. कोथरूडमध्ये रस्त्यावर मोठा खड्डा आहे"></textarea>
+    <label id="check-label" class="hidden" style="font-weight:400">
+      <input type="checkbox" id="checked"> मी मजकूर तपासला आहे <span class="en inline">I have checked the text</span>
+    </label>
+
+    <label for="ward_hint">वॉर्ड कार्यालय (ऐच्छिक)<span class="en">Ward office — optional. Used only if the complaint text does not name a place we recognise.</span></label>
+    <select name="ward_hint" id="ward_hint">
+      <option value="">— माहीत नाही / Don't know —</option>
+      {% for code, w in WARDS.items() %}<option value="{{ code }}">{{ w.mr }} / {{ w.en }}</option>{% endfor %}
+    </select>
+    <p><button type="submit" id="submit">तक्रार नोंदवा / Submit complaint</button></p>
+  </div>
+</form>
+
+<details class="card examples">
+  <summary>उदाहरणे (मायक्रोफोन चालत नसल्यास)<span class="en">Example complaints — click to fill the box (fallback if the microphone fails)</span></summary>
+  {% for ex in examples %}
+    <div><button type="button" class="secondary small" data-text="{{ ex.text }}">{{ ex.label }}</button>
+      <span class="muted" style="font-size:.8em">{{ ex.text }}</span></div>
+  {% endfor %}
+</details>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='intake.js') }}"></script>{% endblock %}

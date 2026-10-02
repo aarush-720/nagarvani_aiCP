@@ -1,0 +1,15 @@
+{
+  "_note": "Frozen data file (see data/FROZEN.sha256). Civic keyword lexicon used ONLY by the keyword baseline in eval/evaluate.py (count substring hits per department, pick the maximum; ties and zero hits fall back to the first department in taxonomy order). Not used by the classifier.",
+  "keywords": {
+    "ROAD": ["खड्ड", "रस्त", "रोड", "road", "rasta", "rasty", "फुटपाथ", "footpath", "pothole", "khadd", "सड़क", "गड्ढ", "डांबर", "पेव्हर", "गतिरोधक", "divider", "दुभाजक"],
+    "SWM": ["कचर", "kachr", "garbage", "कूड़", "घंटागाडी", "ghantagadi", "dustbin", "कचरे", "राडारोडा", "waste", "कचराकुंडी", "kundi"],
+    "WATER": ["नळ", "nal", "पाणी", "paani", "pani", "पानी", "टँकर", "tanker", "पाईपलाईन", "pipeline", "पाइपलाइन", "pressure", "दाब", "जलवाहिनी", "water supply", "पाणीपुरवठा"],
+    "DRAIN": ["ड्रेनेज", "drainage", "गटार", "gutter", "चेंबर", "chamber", "मॅनहोल", "manhole", "नाल्य", "नाला", "nala", "सांडपाणी", "मैनहोल", "नाली", "सीवर", "sewage"],
+    "ELEC": ["दिव", "light", "लाइट", "खांब", "khamb", "अंधार", "andhar", "अंधेर", "बल्ब", "pole", "करंट", "current", "divebatti", "वायर", "wire"],
+    "HEALTH": ["डास", "das", "मच्छर", "mosquito", "fogging", "फॉगिंग", "फवारणी", "डेंग्यू", "dengue", "शौचालय", "toilet", "उंद", "मलेरिया", "malaria", "कावीळ", "काविळ"],
+    "TREE": ["झाड", "jhad", "jhaad", "फांदी", "फांद्या", "phandi", "उद्यान", "बाग", "garden", "पेड़", "tree", "बगीच", "छाटणी"],
+    "ENCROACH": ["अतिक्रमण", "फेरीवाल", "feriwal", "hawker", "टपऱ्या", "stall", "हातगाडी", "ठेले", "कब्ज", "kabja", "होर्डिंग", "hoarding", "शेड", "banner"],
+    "BUILD": ["बांधकाम", "bandhkam", "construction", "मजला", "floor", "इमारत", "imarat", "building", "परवानगी", "parvangi", "अनधिकृत", "बेकायदा", "illegal", "वाडा"],
+    "VET": ["कुत्र", "kutr", "कुत्त", "dog", "गाय", "gai", "जनावर", "माकड", "मेलेल", "मृत", "dead", "पिसाळ", "dukkar", "डुक्कर", "कोंबड"]
+  }
+}

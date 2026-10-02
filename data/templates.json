@@ -1,0 +1,80 @@
+{
+  "_note": "Frozen data file (see data/FROZEN.sha256). Templates for the synthetic training set. scripts/generate_train.py combines frames x issue phrases x gazetteer localities with a fixed seed to write data/train.csv. Each issue phrase carries the severity band its author assigned (used only by the learned severity baseline). Written independently of data/test_handwritten.csv.",
+  "seed": 20261002,
+  "language_totals": {"mr": 907, "hi": 336, "rom": 388, "mix": 369},
+  "no_location_share": 0.25,
+  "frames": {
+    "mr": ["{loc}मध्ये {issue}", "{loc} येथे {issue}", "{loc} परिसरात {issue}", "{issue}", "आमच्या भागात {issue}", "{loc}मध्ये {issue}, {tail}", "{issue}. {tail}", "{loc} भागात {issue}"],
+    "hi": ["{loc} में {issue}", "{loc} इलाके में {issue}", "{issue}", "हमारे इलाके में {issue}", "{loc} में {issue}, {tail}", "{issue}। {tail}"],
+    "rom": ["{loc} madhe {issue}", "{loc} la {issue}", "{issue}", "amchya area madhe {issue}", "{loc} madhe {issue}, {tail}", "{issue}, {tail}"],
+    "mix": ["{loc} मध्ये {issue}", "{loc} area मध्ये {issue}", "{issue}", "आमच्या society जवळ {issue}", "{loc} मध्ये {issue}, {tail}", "{issue}, {tail}"]
+  },
+  "tails": {
+    "mr": ["कृपया लवकर लक्ष द्या", "तक्रार करूनही काही झाले नाही", "लवकर कारवाई करा", "नागरिक त्रस्त आहेत", "कोणीही दखल घेत नाही"],
+    "hi": ["कृपया जल्दी ध्यान दें", "कोई सुनवाई नहीं हो रही", "तुरंत कार्रवाई करें", "लोग परेशान हैं"],
+    "rom": ["please lavkar bagha", "complaint karun pan kahi zala nahi", "lavkar action ghya", "lok trast ahet"],
+    "mix": ["please लवकर action घ्या", "complaint करूनही response नाही", "लवकर काहीतरी करा please", "रोजचा problem झालाय"]
+  },
+  "issues": {
+    "ROAD": {
+      "mr": [["रस्त्यावर खूप खड्डे पडले आहेत", "P3"], ["रस्त्याचे काम अर्धवट सोडले आहे", "P3"], ["फुटपाथ तुटलेला आहे", "P3"], ["डांबरीकरणानंतर लगेच रस्ता उखडला", "P3"], ["गतिरोधकावर पट्टे रंगवलेले नाहीत", "P4"], ["रस्ता खोदून परत बुजवला नाही", "P3"], ["मोठ्या खड्ड्यामुळे दुचाकीचा अपघात झाला", "P2"], ["रस्ता खचला आहे आणि मोठा खड्डा तयार झाला", "P2"], ["पेव्हर ब्लॉक निघाले आहेत", "P3"], ["दुभाजक तुटून सळ्या बाहेर आल्या आहेत", "P2"]],
+      "hi": [["सड़क पर बड़े गड्ढे हैं", "P3"], ["सड़क का काम अधूरा छोड़ दिया गया है", "P3"], ["फुटपाथ टूटा हुआ है", "P3"], ["गड्ढे की वजह से एक्सीडेंट हुआ", "P2"], ["नई सड़क कुछ दिनों में उखड़ गई", "P3"]],
+      "rom": [["rastyavar khup khadde ahet", "P3"], ["road che kaam ardhavat sodla ahe", "P3"], ["footpath tutla ahe", "P3"], ["khaddyamule accident zala", "P2"], ["rasta khodun tasach sodla ahe", "P3"], ["speed breaker la patte nahit", "P4"], ["sadak mein gadde bahut hain", "P3"]],
+      "mix": [["road वर मोठे potholes आहेत", "P3"], ["road चे काम अर्धवट सोडलंय", "P3"], ["footpath पूर्ण तुटलाय", "P3"], ["pothole मुळे accident झाला", "P2"], ["paver blocks निघाले आहेत", "P3"], ["road खोदून तसाच सोडलाय", "P3"], ["speed breaker ला marking नाही", "P4"]]
+    },
+    "SWM": {
+      "mr": [["कचरा गाडी आलेली नाही", "P3"], ["कचऱ्याचा ढीग साचला आहे", "P3"], ["कचराकुंडी भरून वाहत आहे", "P3"], ["लोक उघड्यावर कचरा टाकतात", "P3"], ["कचरा जाळला जात आहे, धूर पसरतो", "P2"], ["घंटागाडी वेळेवर येत नाही", "P3"], ["राडारोडा रस्त्याकडेला टाकला आहे", "P3"], ["ओला सुका कचरा वेगळा उचलला जात नाही", "P4"], ["बाजारातील कचरा उचलला जात नाही", "P3"], ["कचराकुंडी तुटली आहे", "P4"]],
+      "hi": [["कूड़ा नहीं उठाया गया", "P3"], ["कचरे का ढेर लगा है", "P3"], ["कूड़ा जलाया जा रहा है, धुआं फैल रहा है", "P2"], ["कचरा गाड़ी समय पर नहीं आती", "P3"], ["कूड़ेदान भर गया है", "P3"]],
+      "rom": [["kachra gaadi aali nahi", "P3"], ["kachryacha dheeg padla ahe", "P3"], ["kachra jalat ahet, dhur yeto", "P2"], ["ghantagadi vel var yet nahi", "P3"], ["kachra kundi bharleli ahe", "P3"], ["ola suka kachra ekatra uchalta", "P4"], ["kooda nahi uthaya gaya", "P3"]],
+      "mix": [["garbage उचलला नाही", "P3"], ["कचऱ्याचा मोठा dump झालाय", "P3"], ["garbage जाळतात, धूर घरात येतो", "P2"], ["garbage van वेळेवर येत नाही", "P3"], ["dustbin overflow होतोय", "P3"], ["wet dry waste वेगळा घेत नाहीत", "P4"], ["debris रस्त्यावर टाकलाय", "P3"]]
+    },
+    "WATER": {
+      "mr": [["नळाला पाणी आलेले नाही", "P2"], ["पाणी कमी दाबाने येते", "P3"], ["नळाला गढूळ पाणी येते", "P2"], ["जलवाहिनी फुटली आहे, पाणी वाया जात आहे", "P2"], ["पाणी येण्याची वेळ अनिश्चित असते", "P4"], ["टँकर पाठवा, पिण्यासाठी पाणी नाही", "P2"], ["नवीन नळजोडणी झालेली नाही", "P4"], ["व्हॉल्व्ह गळत आहे", "P3"], ["पिण्याच्या पाण्यात अळ्या दिसतात, लोक आजारी आहेत", "P1"], ["फक्त थोडा वेळ पाणी येते", "P3"]],
+      "hi": [["नल में पानी नहीं आ रहा", "P2"], ["पानी का प्रेशर बहुत कम है", "P3"], ["नल में गंदा पानी आ रहा है", "P2"], ["पाइपलाइन फट गई है", "P2"], ["पानी का टैंकर भेजिए", "P2"]],
+      "rom": [["nalala pani aala nahi", "P2"], ["pani kami pressure ne yeta", "P3"], ["gadhul pani yeta nalala", "P2"], ["pipeline futli ahe", "P2"], ["tanker pathva pani nahi", "P2"], ["navin nal connection milala nahi", "P4"], ["nal mein pani nahi aa raha", "P2"]],
+      "mix": [["water supply बंद आहे", "P2"], ["low pressure मुळे पाणी वर जात नाही", "P3"], ["dirty पाणी येतंय नळाला", "P2"], ["pipeline leak झाली आहे", "P3"], ["tanker पाठवा please", "P2"], ["water timing रोज बदलते", "P4"], ["valve leak होतोय", "P3"]]
+    },
+    "DRAIN": {
+      "mr": [["ड्रेनेज तुंबले आहे", "P2"], ["गटार उघडे आहे, दुर्गंधी येते", "P3"], ["मॅनहोलचे झाकण तुटले आहे", "P1"], ["सांडपाणी घरात येत आहे", "P1"], ["पावसाचे पाणी साचते, निचरा होत नाही", "P2"], ["नाल्यात कचरा अडकला आहे", "P3"], ["ड्रेनेज लाइन फुटली आहे", "P2"], ["नाल्याची सफाई झालेली नाही", "P3"], ["गटार भरून वाहत आहे", "P2"], ["चेंबर रस्त्यापेक्षा उंच आहे", "P3"]],
+      "hi": [["नाली जाम है", "P2"], ["गटर का पानी सड़क पर बह रहा है", "P2"], ["मैनहोल का ढक्कन गायब है", "P1"], ["सीवर का पानी घर में आ रहा है", "P1"], ["नाले की सफाई नहीं हुई", "P3"]],
+      "rom": [["drainage tumbla ahe", "P2"], ["gutter overflow hot ahe", "P2"], ["manhole cha zakan nahi", "P1"], ["sandpani gharat yetay", "P1"], ["pavsache pani sachte", "P2"], ["nalyachi saphai zali nahi", "P3"], ["nali jam hai", "P2"]],
+      "mix": [["drainage block झालंय", "P2"], ["gutter overflow होतोय, वास येतो", "P2"], ["manhole cover गायब आहे", "P1"], ["sewage चे पाणी घरात येतंय", "P1"], ["rain water साचतंय", "P2"], ["nala cleaning झाली नाही", "P3"], ["chamber cover तुटलंय", "P1"]]
+    },
+    "ELEC": {
+      "mr": [["पथदिवे बंद आहेत", "P3"], ["रस्त्यावर अंधार असतो, दिवे लागत नाहीत", "P3"], ["विजेची तार खांबावरून लोंबकळत आहे", "P1"], ["दिवसाही पथदिवे चालू असतात", "P4"], ["पथदिव्याचा खांब वाकला आहे", "P2"], ["खांबाला करंट येतो", "P1"], ["पथदिवा सतत बंद-चालू होतो", "P4"], ["नवीन पथदिवे लावावेत", "P4"], ["दिव्याचा बल्ब फुटला आहे", "P3"], ["गल्लीत एकही दिवा चालू नाही", "P3"]],
+      "hi": [["स्ट्रीट लाइट बंद है", "P3"], ["बिजली का तार लटक रहा है", "P1"], ["खंभे में करंट आ रहा है", "P1"], ["रात को अंधेरा रहता है, लाइट नहीं जलती", "P3"], ["दिन में भी लाइट जलती रहती है", "P4"]],
+      "rom": [["streetlight band ahe", "P3"], ["divebatti lagat nahi", "P3"], ["wire latkat ahe khambavar", "P1"], ["khambala current yeto", "P1"], ["divsa pan light chalu asto", "P4"], ["ratri andhar asto", "P3"], ["street light band hai", "P3"]],
+      "mix": [["street light बंद आहे", "P3"], ["light pole वाकलाय", "P2"], ["wire खांबावरून लटकतेय", "P1"], ["pole ला current आहे", "P1"], ["lights दिवसा चालू असतात", "P4"], ["रात्री पूर्ण dark असतं", "P3"], ["street light flicker होतो", "P4"]]
+    },
+    "HEALTH": {
+      "mr": [["डासांचा खूप त्रास आहे", "P3"], ["धूरफवारणी झालेली नाही", "P3"], ["सार्वजनिक शौचालय घाण आहे", "P3"], ["उंदरांचा उपद्रव वाढला आहे", "P3"], ["डेंग्यूचे अनेक रुग्ण आढळले", "P1"], ["साचलेल्या पाण्यात डासांच्या अळ्या आहेत", "P3"], ["उघड्यावर अन्न विकले जाते", "P3"], ["शौचालयात पाणी नाही", "P3"], ["मलेरियाचे रुग्ण वाढत आहेत", "P2"], ["कावीळीची साथ पसरली आहे", "P1"]],
+      "hi": [["मच्छरों का बहुत आतंक है", "P3"], ["फॉगिंग नहीं हुई", "P3"], ["सार्वजनिक शौचालय गंदा है", "P3"], ["डेंगू के कई मरीज़ मिले हैं", "P1"], ["चूहों की समस्या बढ़ गई है", "P3"]],
+      "rom": [["dasancha khup tras ahe", "P3"], ["fogging zali nahi", "P3"], ["public toilet ghan ahe", "P3"], ["dengue che rugn vadhle", "P1"], ["undir khup zale ahet", "P3"], ["machhar bahut hain", "P3"], ["malaria che cases ahet", "P2"]],
+      "mix": [["mosquito चा त्रास वाढलाय", "P3"], ["fogging करा please", "P3"], ["public toilet खूप dirty आहे", "P3"], ["dengue चे cases वाढलेत", "P1"], ["rats चा problem आहे", "P3"], ["mosquito breeding होतंय साचलेल्या पाण्यात", "P3"], ["toilet मध्ये water नाही", "P3"]]
+    },
+    "TREE": {
+      "mr": [["झाड रस्त्यावर पडले आहे", "P1"], ["झाडाची फांदी तुटून लोंबकळत आहे", "P1"], ["झाडांची छाटणी करावी", "P4"], ["परवानगीशिवाय झाड तोडले", "P3"], ["उद्यानातील खेळणी तुटली आहेत", "P4"], ["बागेत गवत वाढले आहे", "P3"], ["वाळलेले झाड कधीही पडेल", "P1"], ["उद्यानाची देखभाल होत नाही", "P4"], ["झाडाच्या फांद्या तारांना लागतात", "P2"], ["बागेतील बाकडे तुटले आहेत", "P4"]],
+      "hi": [["पेड़ सड़क पर गिर गया है", "P1"], ["पेड़ की डाल टूटकर लटक रही है", "P1"], ["बगीचे की देखभाल नहीं होती", "P4"], ["बिना अनुमति पेड़ काटा गया", "P3"], ["पार्क के झूले टूटे हैं", "P4"]],
+      "rom": [["jhad rastyavar padla ahe", "P1"], ["jhadacha motha bhag tutun lombakalto", "P1"], ["jhadanchi chhatni kara", "P4"], ["jhad parvangi shivay todla", "P3"], ["baget gavat vadhla ahe", "P3"], ["garden madhe khelni tutli", "P4"], ["ped gir gaya hai", "P1"]],
+      "mix": [["tree रस्त्यावर पडलंय", "P1"], ["मोठी branch लटकतेय", "P1"], ["tree trimming करा", "P4"], ["tree illegal तोडलं", "P3"], ["garden मध्ये swings तुटलेत", "P4"], ["park ची maintenance नाही", "P4"], ["झाड वाकलंय, पडेल असं वाटतं", "P1"]]
+    },
+    "ENCROACH": {
+      "mr": [["फेरीवाल्यांनी फुटपाथ अडवला आहे", "P3"], ["अनधिकृत टपऱ्या उभ्या आहेत", "P3"], ["दुकानदारांनी रस्त्यावर माल ठेवला आहे", "P3"], ["बेवारस वाहने पडून आहेत", "P4"], ["अनधिकृत होर्डिंग लावले आहे", "P3"], ["हातगाड्यांमुळे वाहतूक कोंडी होते", "P3"], ["रस्त्यावर बाजार भरतो", "P3"], ["सार्वजनिक जागेवर कब्जा केला आहे", "P3"], ["दुकानदारांनी पत्र्याचे छत रस्त्यापर्यंत वाढवले आहे", "P3"], ["रस्त्यालगतचा जाहिरात फलक धोकादायकरीत्या झुकला आहे", "P1"]],
+      "hi": [["पैदल रास्ते पर रेहड़ी वालों ने जगह घेर ली है", "P3"], ["अवैध दुकानें लगी हैं", "P3"], ["सड़क पर सामान रखकर रास्ता रोका है", "P3"], ["लावारिस गाड़ियां खड़ी हैं", "P4"], ["अवैध होर्डिंग लगा है", "P3"]],
+      "rom": [["footpath var feriwale basun jaga ghetat", "P3"], ["anadhikrut tapri ahet", "P3"], ["dukandarane rastyavar saman thevla", "P3"], ["junya gadya padun ahet", "P4"], ["hatgadyamule traffic hota", "P3"], ["illegal hoarding lavla ahe", "P3"], ["thele walon ka kabza hai", "P3"]],
+      "mix": [["hawkers नी footpath block केलाय", "P3"], ["illegal stalls उभे आहेत", "P3"], ["shop चा माल road वर ठेवतात", "P3"], ["abandoned vehicles पडून आहेत", "P4"], ["illegal banner लावलेत", "P3"], ["footpath वर encroachment आहे", "P3"], ["hoarding वाकलंय, पडू शकतं", "P1"]]
+    },
+    "BUILD": {
+      "mr": [["परवानगीशिवाय बांधकाम सुरू आहे", "P3"], ["अनधिकृत मजला बांधला जात आहे", "P3"], ["जुनी इमारत धोकादायक झाली आहे, भाग कोसळत आहे", "P1"], ["बांधकामाची धूळ घरात येते", "P3"], ["रात्री बांधकामाचा आवाज होतो", "P4"], ["गच्चीवर बेकायदा शेड बांधली", "P4"], ["नाल्यावर अनधिकृत बांधकाम केले", "P3"], ["बांधकामाच्या ठिकाणी सुरक्षा जाळी नाही", "P2"], ["इमारतीची भिंत पडायला आली आहे", "P1"], ["नकाशा मंजूर न करता इमारत बांधली", "P3"]],
+      "hi": [["बिना अनुमति निर्माण हो रहा है", "P3"], ["अवैध मंज़िल बनाई जा रही है", "P3"], ["पुरानी इमारत गिर सकती है", "P1"], ["निर्माण की धूल घर में आती है", "P3"], ["रात में निर्माण का शोर होता है", "P4"]],
+      "rom": [["parvangi shivay bandhkam chalu ahe", "P3"], ["illegal majla bandhla", "P3"], ["juni imarat kosalnyachya sthitit ahe", "P1"], ["bandhkamachi dhul gharat yete", "P3"], ["ratri bandhkamacha aavaj", "P4"], ["avaidh nirman ho raha hai", "P3"], ["bhint padayla ali ahe", "P1"]],
+      "mix": [["permission शिवाय construction चालू आहे", "P3"], ["illegal floor बांधतायत", "P3"], ["old building धोकादायक आहे, कधीही कोसळेल", "P1"], ["construction dust मुळे त्रास होतो", "P3"], ["रात्री construction noise असतो", "P4"], ["terrace वर illegal shed बांधलंय", "P4"], ["site वर safety net नाही", "P2"]]
+    },
+    "VET": {
+      "mr": [["भटक्या कुत्र्यांचा त्रास वाढला आहे", "P3"], ["कुत्र्याने मुलाला चावा घेतला", "P1"], ["मेलेले जनावर रस्त्यावर पडले आहे", "P2"], ["मोकाट गायी रस्त्यात बसतात", "P3"], ["पिसाळलेला कुत्रा फिरत आहे", "P1"], ["माकडांचा उपद्रव वाढला आहे", "P3"], ["कुत्र्यांची नसबंदी करावी", "P4"], ["जखमी जनावर रस्त्यावर पडले आहे", "P2"], ["रात्रभर कुत्री भुंकतात", "P4"], ["डुकरांचा वावर वाढला आहे", "P3"]],
+      "hi": [["आवारा कुत्तों का आतंक है", "P3"], ["कुत्ते ने बच्चे को काट लिया", "P1"], ["मरा हुआ जानवर पड़ा है", "P2"], ["सड़क पर आवारा गायें बैठी रहती हैं", "P3"], ["बंदरों का उत्पात बढ़ गया है", "P3"]],
+      "rom": [["bhatki kutri khup ahet", "P3"], ["kutryane chavla", "P1"], ["mela kutra padla ahe", "P2"], ["gai rastyat bastat", "P3"], ["pisalela kutra firtoy", "P1"], ["makadancha tras ahe", "P3"], ["awara kutte bahut hain", "P3"]],
+      "mix": [["stray dogs चा त्रास आहे", "P3"], ["dog ने chavla, injection घ्यावं लागलं", "P1"], ["dead animal पडलंय", "P2"], ["cows road वर बसतात", "P3"], ["rabid dog फिरतोय", "P1"], ["monkeys चा त्रास आहे", "P3"], ["dogs रात्रभर भुंकतात", "P4"]]
+    }
+  }
+}

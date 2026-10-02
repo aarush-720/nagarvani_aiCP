@@ -1,0 +1,28 @@
+{
+  "C": 100.0,
+  "selection": "min mean 5-fold CV log-loss on train",
+  "cv_by_C": {
+    "0.1": {
+      "accuracy": 0.9865,
+      "log_loss": 1.6044616111433565
+    },
+    "1.0": {
+      "accuracy": 0.999,
+      "log_loss": 0.45918991077341875
+    },
+    "10.0": {
+      "accuracy": 0.999,
+      "log_loss": 0.09320799610906447
+    },
+    "100.0": {
+      "accuracy": 0.999,
+      "log_loss": 0.023439176643978342
+    }
+  },
+  "cv_accuracy": 0.999,
+  "cv_log_loss": 0.023439176643978342,
+  "n_train": 2000,
+  "sklearn": "1.9.1",
+  "train_sha256": "54598ddbda786f40cc77542db7b23f9881c570504a40119b2444c07cfca4e2da",
+  "char_only": false
+}

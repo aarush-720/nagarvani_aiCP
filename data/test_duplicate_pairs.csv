@@ -1,0 +1,61 @@
+pair_id,department,ward,text_a,text_b,is_duplicate,cross_script
+D01,ROAD,W08,कोथरूडमध्ये डहाणूकर कॉलनीजवळ रस्त्यावर मोठे खड्डे पडले आहेत,डहाणूकर कॉलनी कोथरूड येथे रस्त्यावर खूप मोठे खड्डे आहेत,1,0
+D02,SWM,W03,बिबवेवाडीत घंटागाडी आठवडाभर आली नाही,आठवडा झाला बिबवेवाडीत घंटागाडी आलेली नाही,1,0
+D03,WATER,W09,वडगाव शेरीत तीन दिवसांपासून नळाला पाणी नाही,वडगाव शेरी भागात नळाला तीन दिवस पाणी आलेले नाही,1,0
+D04,DRAIN,W06,शनिवार पेठेत मॅनहोलचे झाकण गायब आहे,"शनिवार पेठ येथे मॅनहोलला झाकण नाही, झाकण गायब झाले आहे",1,0
+D05,ELEC,W03,बिबवेवाडीत खांबावरून तारा लोंबकळत आहेत,बिबवेवाडी येथे विजेच्या खांबावरच्या तारा खाली लोंबकळत आहेत,1,0
+D06,HEALTH,W05,"हडपसरमध्ये डासांचा खूप त्रास आहे, फवारणी करा","हडपसर भागात डास वाढले आहेत, फवारणी करावी",1,0
+D07,TREE,W01,औंधमध्ये झाडाची फांदी तारांवर पडली आहे,औंध येथे मोठ्या झाडाची फांदी विजेच्या तारांवर पडली,1,0
+D08,ENCROACH,W10,FC road var feriwalyanni footpath adavla ahe,"FC road la footpath var feriwale basle ahet, footpath adavla",1,0
+D09,BUILD,W08,बावधनमध्ये परवानगीशिवाय चौथा मजला बांधला जात आहे,बावधन येथे विनापरवाना चौथ्या मजल्याचे बांधकाम सुरू आहे,1,0
+D10,VET,W08,कोथरूडमध्ये भटक्या कुत्र्यांनी एका आजोबांना चावा घेतला,"कोथरूड येथे भटके कुत्रे लोकांना चावत आहेत, आजोबांना चावा घेतला",1,0
+D11,ROAD,W11,dhayari phata var rastyat motha khadda ahe,Dhayari phatyavar road madhe khup motha khadda padlay,1,0
+D12,SWM,W01,Pashan la ghantagadi don divas aali nahi,ghantagadi Pashan madhe don divsapasun aaleli nahi,1,0
+D13,WATER,W14,"रामटेकडी में पाइपलाइन लीक है, सड़क पर पानी बह रहा है",रामटेकडी में पाइपलाइन से पानी लीक होकर सड़क पर बह रहा है,1,0
+D14,DRAIN,W11,हिंगणे भागात गटार भरून वाहत आहे,"हिंगणे येथे गटार तुंबून वाहत आहे, खूप वास येतो",1,0
+D15,ELEC,W09,Kharadi la streetlight band ahe,Kharadi madhe streetlight don divas band ahe,1,0
+D16,HEALTH,W15,विश्रांतवाडीत काविळीचे रुग्ण वाढले आहेत,"विश्रांतवाडी भागात कावीळ पसरली आहे, अनेक रुग्ण आहेत",1,0
+D17,TREE,W10,"Senapati Bapat road वर झाड वाकलंय, कधीही पडेल","Senapati Bapat road वरचं मोठं झाड वाकलं आहे, पडण्याची भीती",1,0
+D18,ENCROACH,W09,चंदननगर चौकात रस्त्यावर भाजी बाजार भरतो,चंदननगर चौकात भाजीवाले रस्त्यावरच बाजार भरवतात,1,0
+D19,BUILD,W06,कसबा पेठेतील जुन्या वाड्याची भिंत कोसळली आहे,"कसबा पेठ येथील जुना वाडा कोसळत आहे, भिंत पडली",1,0
+D20,VET,W04,संगमवाडी पुलाजवळ मेलेली गाय पडून आहे,संगमवाडी पूल येथे मृत गाय दोन दिवस पडून आहे,1,0
+D21,ROAD,W09,विमाननगरमध्ये पेव्हर ब्लॉक निखळले आहेत,विमाननगर येथे रस्त्यावरचे पेव्हर ब्लॉक उखडले आहेत,1,0
+D22,WATER,W15,Kalas madhe nalala gadhul pani yet ahe,Kalas la nalala ghan gadhul pani yetay,1,0
+D23,SWM,W15,"धानोरीत कचरा जाळला जात आहे, धूर येतो","धानोरी येथे रोज कचरा जाळतात, धुराचा त्रास होतो",1,0
+D24,DRAIN,W14,gutter cha zakan tutla ahe Wanwadi la,Wanwadi madhe gutter che zakan tutle ahe,1,0
+D25,ROAD,W01,Aundh मध्ये road वरचे potholes भरले नाहीत,औंधमध्ये रस्त्यावरील खड्डे अजून बुजवले नाहीत,1,1
+D26,WATER,W13,धनकवडी में नल से कम पानी आता है,धनकवडीत नळाला कमी दाबाने पाणी येते,1,1
+D27,ELEC,W02,Ganesh peth madhe khamba var wire latkat ahe,गणेश पेठेत खांबावर वायर लटकत आहे,1,1
+D28,VET,W12,Warje la gai rastyat bastat,वारजेत गायी रस्त्यात बसतात,1,1
+D29,HEALTH,W09,"कल्याणी नगर में मच्छरों का आतंक है, फॉगिंग करवाइए","कल्याणीनगरमध्ये डासांचा त्रास, फॉगिंग करा",1,1
+D30,TREE,W08,Erandwane la jhadachi phandi tutun latkat ahe,एरंडवणे येथे झाडाची फांदी तुटून लटकत आहे,1,1
+N01,ROAD,W08,कोथरूडमध्ये रस्त्यावर मोठे खड्डे पडले आहेत,कोथरूडमध्ये गतिरोधकावर पांढरे पट्टे नाहीत,0,0
+N02,SWM,W03,बिबवेवाडीत घंटागाडी आली नाही,बिबवेवाडीत कचराकुंडी तुटली आहे,0,0
+N03,WATER,W09,वडगाव शेरीत नळाला पाणी नाही,वडगाव शेरीत नवीन नळजोडणीचा अर्ज प्रलंबित आहे,0,0
+N04,DRAIN,W06,शनिवार पेठेत मॅनहोलचे झाकण गायब आहे,शनिवार पेठेत पावसाचे पाणी चौकात साचते,0,0
+N05,ELEC,W03,बिबवेवाडीत खांबावरून तारा लोंबकळत आहेत,बिबवेवाडीत पथदिवे दिवसा सुरू असतात,0,0
+N06,HEALTH,W05,हडपसरमध्ये डासांचा त्रास आहे,हडपसरमधील सार्वजनिक शौचालय घाण आहे,0,0
+N07,TREE,W01,औंधमध्ये झाडाची फांदी तारांवर पडली आहे,औंधमधील उद्यानातील बाकडे तुटले आहेत,0,0
+N08,ENCROACH,W10,FC road var feriwalyanni footpath adavla ahe,FC road var junya gadya mahinabhar park ahet,0,0
+N09,BUILD,W08,बावधनमध्ये परवानगीशिवाय मजला बांधत आहेत,बावधनमध्ये बांधकामाची धूळ घरात येते,0,0
+N10,VET,W08,कोथरूडमध्ये कुत्र्यांनी चावा घेतला,कोथरूडमध्ये माकडांचा उपद्रव आहे,0,0
+N11,ROAD,W11,dhayari phata var motha khadda ahe,dhayari madhe footpath che dagad nighale ahet,0,0
+N12,SWM,W01,Pashan la ghantagadi aali nahi,Pashan la raadaroda rastyachya kadela takla ahe,0,0
+N13,WATER,W14,रामटेकडी में पाइपलाइन लीक है,रामटेकडी में गंदा पानी आ रहा है,0,0
+N14,DRAIN,W11,हिंगणे भागात गटार भरून वाहत आहे,हिंगणे येथे नाल्याची सफाई झाली नाही,0,0
+N15,ELEC,W09,Kharadi la streetlight band ahe,Kharadi la light pole la current yetoy,0,0
+N16,HEALTH,W15,विश्रांतवाडीत काविळीचे रुग्ण वाढले आहेत,विश्रांतवाडीत उंदरांचा त्रास वाढला आहे,0,0
+N17,TREE,W10,Senapati Bapat road वर झाड वाकलंय,Senapati Bapat road वर झाडे परवानगीशिवाय तोडली,0,0
+N18,ENCROACH,W09,चंदननगर चौकात रस्त्यावर भाजी बाजार भरतो,चंदननगरमध्ये दुकानदारांनी फुटपाथवर शेड टाकली आहे,0,0
+N19,BUILD,W06,कसबा पेठेतील जुन्या वाड्याची भिंत कोसळली आहे,कसबा पेठेत गच्चीवर बेकायदा शेड उभारली आहे,0,0
+N20,VET,W04,संगमवाडी पुलाजवळ मेलेली गाय पडून आहे,संगमवाडीत भटकी कुत्री रात्री भुंकतात,0,0
+N21,ROAD,W09,विमाननगरमध्ये पेव्हर ब्लॉक निखळले आहेत,विमाननगरमध्ये रस्ता खोदून तसाच सोडला आहे,0,0
+N22,WATER,W15,Kalas madhe nalala gadhul pani yet ahe,Kalas madhe tanker magavla pan aala nahi,0,0
+N23,SWM,W15,धानोरीत कचरा जाळला जात आहे,धानोरीत ओला सुका कचरा वेगळा उचलत नाहीत,0,0
+N24,DRAIN,W14,gutter cha zakan tutla ahe Wanwadi la,Wanwadi la drainage line futli ahe,0,0
+N25,ROAD,W01,Aundh मध्ये potholes भरले नाहीत,Aundh मध्ये divider तुटलंय,0,0
+N26,WATER,W13,धनकवडी में नल से कम पानी आता है,धनकवडी में पानी का मीटर टूट गया है,0,0
+N27,ELEC,W02,Ganesh peth madhe wire latkat ahe,Ganesh peth madhe divebatti band ahe,0,0
+N28,VET,W12,Warje la gai rastyat bastat,Warje la mela kutra padla ahe,0,0
+N29,HEALTH,W09,कल्याणी नगर में मच्छरों का आतंक है,कल्याणी नगर में खुले में खराब खाना बिक रहा है,0,0
+N30,TREE,W08,Erandwane la jhadachi phandi latkat ahe,Erandwane chya baget gavat khup vadhla ahe,0,0
