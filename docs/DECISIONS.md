@@ -82,3 +82,52 @@ again in the handover:
   `scripts/fetch_models.py --benchmark` does it on the team's laptop and writes
   `results/asr_benchmark.json`.
 * The offline real-audio test could not be run here.
+
+## D9. How C was chosen (a change made before any test-set run)
+
+The first criterion was mean 5-fold CV accuracy on the training set, with ties going to the
+smaller C. C = 1, 10 and 100 all tie at 0.999, so it picked C = 1. On a hand-made example
+(not a test item), C = 1 gave a plain pothole complaint only 0.35 top probability. The gate
+thresholds that probability at 0.50, so C = 1 would send almost everything to review.
+
+Before running anything on the test set, I switched the criterion to mean 5-fold CV
+log-loss on the training set. Log-loss is a proper scoring rule and judges the
+probabilities the gate uses. It picks C = 100, the largest value in the pre-set grid.
+Template data is close to separable, so CV log-loss keeps improving as C grows. I did not
+extend the grid. The test set played no part in this choice.
+
+## D10. What happens when the gate and duplicate detection disagree
+
+* Gate fails → SENT_TO_REVIEW. Any duplicate candidate is shown to the officer as a pending
+  decision, never merged automatically.
+* Gate passes, similarity ≥ 0.45 → MERGED into the open ticket. Its report count goes up,
+  and severity is re-assessed with that count, so R32 fires at 3 reports. The parent
+  ticket's priority becomes the more urgent of its own and the new result.
+* Gate passes, 0.30 ≤ similarity < 0.45 → SENT_TO_REVIEW with "possible duplicate, officer
+  decides".
+* Gate passes, similarity < 0.30 → AUTO_ROUTED.
+
+Reason: the gate stays authoritative. An uncertain department never causes an automatic
+merge, because the block depends on that department.
+
+## D11. A dropdown ward counts as "ward resolved" for the gate
+
+When the text names no place, or names an ambiguous one, and the citizen picked a ward
+office in the dropdown, that ward is used (method "hint") and the gate treats the ward as
+known. The citizen stated it explicitly, which a guess would not be. The trace marks it.
+The offline evaluation never uses hints.
+
+## D12. Results files contain no timestamps
+
+`results/eval.json` is byte-for-byte reproducible (`python eval/evaluate.py --check`).
+
+# Found but not changed
+
+These are defects in frozen data or logic. Fixing any of them would change the frozen
+numbers, so they are left for the team to decide on in a deliberate re-freeze.
+
+| # | Where | Reproducing input | What happens | Effect on numbers |
+|---|---|---|---|---|
+| F1 | `data/gazetteer.json`: alias `banner` for Baner | `Paud road वर banner आणि flex लावून signal झाकला गेलाय` (T127) | The English word "banner" matches Baner (W01) as well as Paud Road (W08), so the place is ruled ambiguous and the ticket goes to review. | Removing the alias would resolve T127 (ward correct 135→136/137) and could change the gate figures. |
+| F2 | Fuzzy fallback with no stopword for बाहेर | `सोसायटीच्या gate बाहेर dry waste चे bags पडून आहेत` (T031) | बाहेर ("outside") ≈ बाणेर at ratio 0.80, so the ward is wrongly resolved to W01. | Adding बाहेर to `fuzzy_stopwords` fixes it (correctly unresolved 22→23/23). |
+| F3 | Suffix list cannot undo stem changes | `हिंगण्यात ...` (T145) | हिंगणे→हिंगण्यात changes the stem, so there is no exact or fuzzy match. (कोंढव्यात, मुंढव्यात, येरवड्यात do pass fuzzy.) | A stem rule (-े/-ा → -्यात) would change ward numbers. |

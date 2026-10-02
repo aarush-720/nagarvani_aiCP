@@ -13,6 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from nagarvani import config, data  # noqa: E402
+from nagarvani.console import safe_console  # noqa: E402
 
 LATIN = re.compile(r"[A-Za-z]")
 
@@ -79,6 +80,7 @@ def to_csv(rows):
 
 
 def main():
+    safe_console()
     content = to_csv(generate())
     if "--check" in sys.argv:
         same = config.TRAIN_CSV.read_text(encoding="utf-8") == content

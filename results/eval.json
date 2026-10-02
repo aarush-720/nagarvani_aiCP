@@ -1,0 +1,1009 @@
+{
+  "_provenance": {
+    "generated_by": "eval/evaluate.py",
+    "sklearn": "1.9.1",
+    "classifier_C": 100.0,
+    "classifier_selection": "min mean 5-fold CV log-loss on train",
+    "train_sha256": "54598ddbda786f40cc77542db7b23f9881c570504a40119b2444c07cfca4e2da",
+    "test_sha256": "21d7cd5cd866d7806737c2d6aed7c129b9ee172b67405c4670bcb73e0c44aa5e",
+    "pairs_sha256": "8afc1434cf617f1dc931951ea36c78387404568600d387a77c32b902bf1787c8",
+    "rules_sha256": "35ee98eb28a1f3fcd76d9c374916c0496dc8b576625752c32206b0b89d451af7",
+    "gazetteer_sha256": "e3c564aa92d97c18aa636d0f1c520bb0ba7f33f6a3e0dd04046a1ceae01040d3",
+    "thresholds": {
+      "gate_min_confidence": 0.5,
+      "fuzzy_min_ratio": 0.8,
+      "dup_merge": 0.45,
+      "dup_review": 0.3
+    }
+  },
+  "department": {
+    "n_test": 160,
+    "accuracy": {
+      "count": 151,
+      "total": 160,
+      "rate": 0.9437
+    },
+    "macro_f1": 0.9444,
+    "top3_accuracy": {
+      "count": 157,
+      "total": 160,
+      "rate": 0.9812
+    },
+    "accuracy_by_language": {
+      "hi": {
+        "count": 19,
+        "total": 20,
+        "rate": 0.95
+      },
+      "mix": {
+        "count": 29,
+        "total": 30,
+        "rate": 0.9667
+      },
+      "mr": {
+        "count": 74,
+        "total": 80,
+        "rate": 0.925
+      },
+      "rom": {
+        "count": 29,
+        "total": 30,
+        "rate": 0.9667
+      }
+    },
+    "f1_by_department": {
+      "ROAD": 0.9677,
+      "SWM": 0.9375,
+      "WATER": 0.9412,
+      "DRAIN": 0.9677,
+      "ELEC": 0.9697,
+      "HEALTH": 0.9091,
+      "TREE": 0.9677,
+      "ENCROACH": 0.8824,
+      "BUILD": 0.9677,
+      "VET": 0.9333
+    },
+    "confusion": {
+      "ROAD": {
+        "ROAD": 15,
+        "ENCROACH": 1
+      },
+      "SWM": {
+        "SWM": 15,
+        "ELEC": 1
+      },
+      "WATER": {
+        "WATER": 16
+      },
+      "DRAIN": {
+        "DRAIN": 15,
+        "HEALTH": 1
+      },
+      "ELEC": {
+        "ELEC": 16
+      },
+      "HEALTH": {
+        "HEALTH": 15,
+        "WATER": 1
+      },
+      "TREE": {
+        "TREE": 15,
+        "WATER": 1
+      },
+      "ENCROACH": {
+        "ENCROACH": 15,
+        "SWM": 1
+      },
+      "BUILD": {
+        "BUILD": 15,
+        "ENCROACH": 1
+      },
+      "VET": {
+        "VET": 14,
+        "ENCROACH": 1,
+        "HEALTH": 1
+      }
+    },
+    "errors": [
+      {
+        "id": "T005",
+        "text": "कात्रज चौकाजवळ पुलावरच्या रस्त्याला मोठी भेग पडली आहे, अवजड वाहने जातात",
+        "gold": "ROAD",
+        "pred": "ENCROACH",
+        "confidence": 0.4916,
+        "top3": [
+          "ENCROACH",
+          "VET",
+          "TREE"
+        ]
+      },
+      {
+        "id": "T030",
+        "text": "Balewadi high street जवळ garbage pickup रोज miss होतो",
+        "gold": "SWM",
+        "pred": "ELEC",
+        "confidence": 0.5661,
+        "top3": [
+          "ELEC",
+          "SWM",
+          "BUILD"
+        ]
+      },
+      {
+        "id": "T056",
+        "text": "मॉडेल कॉलनीत उघड्या गटारामुळे डासांचा त्रास वाढला आहे",
+        "gold": "DRAIN",
+        "pred": "HEALTH",
+        "confidence": 0.5932,
+        "top3": [
+          "HEALTH",
+          "VET",
+          "DRAIN"
+        ]
+      },
+      {
+        "id": "T088",
+        "text": "बालाजीनगरमधील बंद पडलेल्या टायर दुकानात पाणी साचून अळ्या झाल्या आहेत",
+        "gold": "HEALTH",
+        "pred": "WATER",
+        "confidence": 0.8574,
+        "top3": [
+          "WATER",
+          "HEALTH",
+          "ELEC"
+        ]
+      },
+      {
+        "id": "T106",
+        "text": "बगीचे में पानी नहीं डाला जाता, सारे पौधे सूख गए हैं",
+        "gold": "TREE",
+        "pred": "WATER",
+        "confidence": 0.8607,
+        "top3": [
+          "WATER",
+          "TREE",
+          "HEALTH"
+        ]
+      },
+      {
+        "id": "T118",
+        "text": "शाळेच्या गेटसमोर हातगाडीवाले उभे राहतात, मुलांना रस्ता ओलांडता येत नाही",
+        "gold": "ENCROACH",
+        "pred": "SWM",
+        "confidence": 0.5169,
+        "top3": [
+          "SWM",
+          "ENCROACH",
+          "ROAD"
+        ]
+      },
+      {
+        "id": "T141",
+        "text": "Model colony madhe bungalow cha extra bandhkam footpath var aala ahe",
+        "gold": "BUILD",
+        "pred": "ENCROACH",
+        "confidence": 0.3835,
+        "top3": [
+          "ENCROACH",
+          "BUILD",
+          "ROAD"
+        ]
+      },
+      {
+        "id": "T147",
+        "text": "संगमवाडी पुलाजवळ मेलेली गाय दोन दिवसांपासून पडून आहे",
+        "gold": "VET",
+        "pred": "ENCROACH",
+        "confidence": 0.4316,
+        "top3": [
+          "ENCROACH",
+          "DRAIN",
+          "ELEC"
+        ]
+      },
+      {
+        "id": "T152",
+        "text": "सदाशिव पेठेत उघड्यावर कोंबड्यांची कत्तल करून घाण टाकली जाते",
+        "gold": "VET",
+        "pred": "HEALTH",
+        "confidence": 0.6867,
+        "top3": [
+          "HEALTH",
+          "SWM",
+          "ENCROACH"
+        ]
+      }
+    ],
+    "cv_accuracy_on_train": 0.999,
+    "cv_by_C": {
+      "0.1": {
+        "accuracy": 0.9865,
+        "log_loss": 1.6044616111433565
+      },
+      "1.0": {
+        "accuracy": 0.999,
+        "log_loss": 0.45918991077341875
+      },
+      "10.0": {
+        "accuracy": 0.999,
+        "log_loss": 0.09320799610906447
+      },
+      "100.0": {
+        "accuracy": 0.999,
+        "log_loss": 0.023439176643978342
+      }
+    }
+  },
+  "baselines": {
+    "keyword": {
+      "accuracy": {
+        "count": 115,
+        "total": 160,
+        "rate": 0.7188
+      },
+      "macro_f1": 0.7329
+    },
+    "char_only_logreg": {
+      "C": 100.0,
+      "accuracy": {
+        "count": 150,
+        "total": 160,
+        "rate": 0.9375
+      },
+      "macro_f1": 0.9378,
+      "note": "reported for comparison only; the adopted model was fixed before this ran"
+    }
+  },
+  "ward": {
+    "items_with_known_ward": 137,
+    "correct": {
+      "count": 135,
+      "total": 137,
+      "rate": 0.9854
+    },
+    "wrong": {
+      "count": 0,
+      "total": 137,
+      "rate": 0.0
+    },
+    "unresolved": {
+      "count": 2,
+      "total": 137,
+      "rate": 0.0146
+    },
+    "items_without_resolvable_ward": 23,
+    "correctly_left_unresolved": {
+      "count": 22,
+      "total": 23,
+      "rate": 0.9565
+    },
+    "wrongly_resolved": {
+      "count": 1,
+      "total": 23,
+      "rate": 0.0435
+    },
+    "resolution_rate_all": {
+      "count": 136,
+      "total": 160,
+      "rate": 0.85
+    },
+    "method_counts": {
+      "exact": 123,
+      "unresolved": 24,
+      "fuzzy": 13
+    },
+    "outcomes_by_location_case": {
+      "ambiguous": {
+        "correctly_unresolved": 4
+      },
+      "exact": {
+        "correct": 123,
+        "unresolved": 1
+      },
+      "inflected": {
+        "correct": 3,
+        "unresolved": 1
+      },
+      "misspelt": {
+        "correct": 9
+      },
+      "none": {
+        "correctly_unresolved": 12,
+        "wrongly_resolved": 1
+      },
+      "unknown": {
+        "correctly_unresolved": 6
+      }
+    }
+  },
+  "gate": {
+    "auto_routed": {
+      "count": 122,
+      "total": 160,
+      "rate": 0.7625
+    },
+    "sent_to_review": {
+      "count": 38,
+      "total": 160,
+      "rate": 0.2375
+    },
+    "auto_routed_correct_department_and_ward": {
+      "count": 118,
+      "total": 122,
+      "rate": 0.9672
+    },
+    "auto_routed_wrong_department": {
+      "count": 4,
+      "total": 122,
+      "rate": 0.0328
+    },
+    "auto_routed_wrong_ward": {
+      "count": 0,
+      "total": 122,
+      "rate": 0.0
+    },
+    "department_errors_caught_by_gate": {
+      "count": 5,
+      "total": 9,
+      "rate": 0.5556
+    },
+    "review_reasons": {
+      "confidence_below_threshold": 15,
+      "ward_unresolved": 24,
+      "both": 1
+    }
+  },
+  "severity": {
+    "band_accuracy_predicted_department": {
+      "count": 135,
+      "total": 160,
+      "rate": 0.8438
+    },
+    "band_accuracy_gold_department": {
+      "count": 135,
+      "total": 160,
+      "rate": 0.8438
+    },
+    "p1_recall": {
+      "count": 29,
+      "total": 30,
+      "rate": 0.9667
+    },
+    "p1_precision": {
+      "count": 29,
+      "total": 32,
+      "rate": 0.9062
+    },
+    "within_one_band": {
+      "count": 156,
+      "total": 160,
+      "rate": 0.975
+    },
+    "confusion_gold_to_predicted": {
+      "P1": {
+        "P1": 29,
+        "P3": 1
+      },
+      "P2": {
+        "P2": 28,
+        "P3": 7,
+        "P1": 1
+      },
+      "P3": {
+        "P3": 70,
+        "P2": 4,
+        "P1": 2
+      },
+      "P4": {
+        "P3": 9,
+        "P4": 8,
+        "P2": 1
+      }
+    },
+    "learned_logreg_baseline": {
+      "C": 100.0,
+      "accuracy": {
+        "count": 118,
+        "total": 160,
+        "rate": 0.7375
+      },
+      "note": "trained on template severity labels in data/train.csv"
+    },
+    "rule_fire_counts": {
+      "R00": 160,
+      "R01": 3,
+      "R02": 5,
+      "R03": 3,
+      "R04": 7,
+      "R05": 4,
+      "R06": 1,
+      "R07": 3,
+      "R08": 1,
+      "R09": 3,
+      "R10": 3,
+      "R11": 4,
+      "R20": 5,
+      "R21": 5,
+      "R22": 3,
+      "R23": 10,
+      "R24": 3,
+      "R25": 4,
+      "R26": 3,
+      "R27": 4,
+      "R30": 4,
+      "R40": 8
+    },
+    "in_sample_warning": "rules and labels were written by the same author; agreement is in-sample"
+  },
+  "duplicates": {
+    "true_duplicate_pairs": {
+      "merge": 18,
+      "review": 6,
+      "new": 6
+    },
+    "true_duplicates_same_script": {
+      "merge": 18,
+      "review": 6,
+      "new": 0
+    },
+    "true_duplicates_cross_script": {
+      "merge": 0,
+      "review": 0,
+      "new": 6
+    },
+    "non_duplicate_pairs": {
+      "merge": 0,
+      "review": 6,
+      "new": 24
+    },
+    "merge_precision": {
+      "count": 18,
+      "total": 18,
+      "rate": 1.0
+    },
+    "merge_recall": {
+      "count": 18,
+      "total": 30,
+      "rate": 0.6
+    },
+    "wrong_merges": 0,
+    "pairs": [
+      {
+        "pair_id": "D01",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.7724,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D02",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.7354,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D03",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6151,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D04",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6643,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D05",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6063,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D06",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.4445,
+        "decision": "review"
+      },
+      {
+        "pair_id": "D07",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6611,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D08",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.7343,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D09",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.3564,
+        "decision": "review"
+      },
+      {
+        "pair_id": "D10",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6301,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D11",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.571,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D12",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6808,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D13",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.8374,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D14",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.4765,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D15",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6707,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D16",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.4281,
+        "decision": "review"
+      },
+      {
+        "pair_id": "D17",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.3593,
+        "decision": "review"
+      },
+      {
+        "pair_id": "D18",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.697,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D19",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.4861,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D20",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.4033,
+        "decision": "review"
+      },
+      {
+        "pair_id": "D21",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.5879,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D22",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6754,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D23",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.3943,
+        "decision": "review"
+      },
+      {
+        "pair_id": "D24",
+        "is_duplicate": 1,
+        "cross_script": 0,
+        "score": 0.6278,
+        "decision": "merge"
+      },
+      {
+        "pair_id": "D25",
+        "is_duplicate": 1,
+        "cross_script": 1,
+        "score": 0.2569,
+        "decision": "new"
+      },
+      {
+        "pair_id": "D26",
+        "is_duplicate": 1,
+        "cross_script": 1,
+        "score": 0.1692,
+        "decision": "new"
+      },
+      {
+        "pair_id": "D27",
+        "is_duplicate": 1,
+        "cross_script": 1,
+        "score": 0.0,
+        "decision": "new"
+      },
+      {
+        "pair_id": "D28",
+        "is_duplicate": 1,
+        "cross_script": 1,
+        "score": 0.0,
+        "decision": "new"
+      },
+      {
+        "pair_id": "D29",
+        "is_duplicate": 1,
+        "cross_script": 1,
+        "score": 0.2863,
+        "decision": "new"
+      },
+      {
+        "pair_id": "D30",
+        "is_duplicate": 1,
+        "cross_script": 1,
+        "score": 0.0,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N01",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.1712,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N02",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.2069,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N03",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.1299,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N04",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.0785,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N05",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.0626,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N06",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.1781,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N07",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.1014,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N08",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.2273,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N09",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.1508,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N10",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.0803,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N11",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.2151,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N12",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.1782,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N13",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.2842,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N14",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.0232,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N15",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.3359,
+        "decision": "review"
+      },
+      {
+        "pair_id": "N16",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.2222,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N17",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.3318,
+        "decision": "review"
+      },
+      {
+        "pair_id": "N18",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.077,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N19",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.1888,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N20",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.0319,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N21",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.0922,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N22",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.4435,
+        "decision": "review"
+      },
+      {
+        "pair_id": "N23",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.2776,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N24",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.286,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N25",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.2354,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N26",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.4218,
+        "decision": "review"
+      },
+      {
+        "pair_id": "N27",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.4389,
+        "decision": "review"
+      },
+      {
+        "pair_id": "N28",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.1676,
+        "decision": "new"
+      },
+      {
+        "pair_id": "N29",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.3262,
+        "decision": "review"
+      },
+      {
+        "pair_id": "N30",
+        "is_duplicate": 0,
+        "cross_script": 0,
+        "score": 0.209,
+        "decision": "new"
+      }
+    ],
+    "note": "pairs are pre-blocked (same ward office and department); location words are masked before comparison"
+  },
+  "simulated_noise": {
+    "LABEL": "SIMULATION: random character substitutions/deletions/insertions, not speech recognition output",
+    "character_error_probability": 0.1,
+    "seed": 7,
+    "department_accuracy": {
+      "count": 126,
+      "total": 160,
+      "rate": 0.7875
+    },
+    "department_macro_f1": 0.7866,
+    "ward_accuracy_exact_only": {
+      "count": 43,
+      "total": 137,
+      "rate": 0.3139
+    },
+    "ward_accuracy_with_fuzzy": {
+      "count": 117,
+      "total": 137,
+      "rate": 0.854
+    },
+    "clean_ward_accuracy_exact_only": {
+      "count": 123,
+      "total": 137,
+      "rate": 0.8978
+    }
+  },
+  "external_midsem": {
+    "source": "data/external/midsem_seed_AB.csv (team's midsem seed set; AI-drafted, human-checked; different style)",
+    "department_accuracy_coarse": {
+      "count": 370,
+      "total": 435,
+      "rate": 0.8506
+    },
+    "department_accuracy_by_midsem_label": {
+      "roads": {
+        "count": 49,
+        "total": 61,
+        "rate": 0.8033
+      },
+      "solid_waste": {
+        "count": 49,
+        "total": 55,
+        "rate": 0.8909
+      },
+      "water_supply": {
+        "count": 47,
+        "total": 53,
+        "rate": 0.8868
+      },
+      "drainage": {
+        "count": 47,
+        "total": 55,
+        "rate": 0.8545
+      },
+      "street_lights": {
+        "count": 47,
+        "total": 51,
+        "rate": 0.9216
+      },
+      "trees_garden": {
+        "count": 43,
+        "total": 52,
+        "rate": 0.8269
+      },
+      "encroachment": {
+        "count": 46,
+        "total": 53,
+        "rate": 0.8679
+      },
+      "health_mosquito": {
+        "count": 42,
+        "total": 55,
+        "rate": 0.7636
+      }
+    },
+    "label_mapping": {
+      "roads": [
+        "ROAD"
+      ],
+      "solid_waste": [
+        "SWM"
+      ],
+      "water_supply": [
+        "WATER"
+      ],
+      "drainage": [
+        "DRAIN"
+      ],
+      "street_lights": [
+        "ELEC"
+      ],
+      "trees_garden": [
+        "TREE"
+      ],
+      "encroachment": [
+        "BUILD",
+        "ENCROACH"
+      ],
+      "health_mosquito": [
+        "HEALTH",
+        "VET"
+      ]
+    },
+    "severity_band_agreement": {
+      "count": 151,
+      "total": 260,
+      "rate": 0.5808
+    },
+    "severity_p1_recall": {
+      "count": 17,
+      "total": 25,
+      "rate": 0.68
+    },
+    "severity_note": "labels written by the team, rules written in this build: out-of-sample for authorship"
+  }
+}
