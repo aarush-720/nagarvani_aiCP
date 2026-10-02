@@ -1,0 +1,461 @@
+text,department,source,severity_label
+"आमच्या गल्लीत रस्त्यावर मोठा खड्डा पडला आहे, गाड्या अडकत आहेत.",roads,A,
+"सिंहगड रोडवर शाळेसमोर खूप खड्डे आहेत, मुलं पडत आहेत.",roads,A,
+"रस्त्याचे काम अर्धवट सोडले आहे, दोन महिने झाले.",roads,A,
+"फुटपाथ तुटलेला आहे, चालायला जागा नाही.",roads,A,
+पावसामुळे रस्ता पूर्ण खचला आहे.,roads,A,
+डांबरीकरण केल्यानंतर लगेच रस्ता उखडला.,roads,A,
+स्पीड ब्रेकर खूप उंच आहे आणि त्यावर पांढरे पट्टे नाहीत.,roads,A,
+"चौकात रस्त्याच्या मधोमध खोल खड्डा आहे, रात्री दिसत नाही.",roads,A,
+रस्ता खोदून ठेवला आहे पण परत बुजवला नाही.,roads,A,
+आमच्या सोसायटीसमोरचा रस्ता पूर्णपणे खराब झाला आहे.,roads,A,
+दुभाजक तुटला आहे आणि लोखंडी सळ्या बाहेर आल्या आहेत.,roads,A,
+पुलावर रस्त्याला भेगा पडल्या आहेत.,roads,A,
+"रस्त्यावरील पेव्हर ब्लॉक निघाले आहेत, दुचाकी घसरते.",roads,A,
+नवीन रस्ता बनवला पण एका आठवड्यात खड्डे पडले.,roads,A,
+"गल्लीतला रस्ता कच्चा आहे, पावसात चिखल होतो.",roads,A,
+"Rastyavar khup mothe khadde padle ahet, please lavkar durusti kara.",roads,A,
+Amchya galli madhla road puraa kharab zala ahe.,roads,A,
+"Main road var pothole ahe, kal ek bike wala padla.",roads,A,
+"रोडवर pothole आहे, रोज accident होत आहेत.",roads,A,
+"footpath वरचे tiles तुटले आहेत, म्हाताऱ्या लोकांना त्रास होतो.",roads,A,
+"सड़क पर बहुत बड़े गड्ढे हैं, कोई ध्यान नहीं दे रहा।",roads,A,
+हमारी गली की सड़क पूरी टूट गई है।,roads,A,
+"road ka kaam aadha chhod diya hai, bahut dhool udti hai",roads,A,
+"रस्त्याच्या कडेला खोल खड्डा खोदून ठेवला आहे, बॅरिकेड नाही.",roads,A,
+उड्डाणपुलाखालचा रस्ता उखडलेला आहे.,roads,A,
+तीन दिवसांपासून नळाला पाणी आलेले नाही.,water_supply,A,
+"पाणी खूप कमी दाबाने येत आहे, टाकी भरत नाही.",water_supply,A,
+नळाला गढूळ आणि वास येणारे पाणी येत आहे.,water_supply,A,
+"रस्त्यावर पाण्याची पाईपलाईन फुटली आहे, खूप पाणी वाया जात आहे.",water_supply,A,
+"पाणीपुरवठ्याची वेळ रोज बदलते, कोणी सांगत नाही.",water_supply,A,
+"आमच्या भागात टँकर पाठवा, पिण्यासाठी पाणी नाही.",water_supply,A,
+नवीन नळ कनेक्शनसाठी अर्ज केला पण अजून जोडणी झाली नाही.,water_supply,A,
+"पाण्याचा व्हॉल्व्ह गळत आहे, दिवसभर पाणी वाहत असते.",water_supply,A,
+पिण्याच्या पाण्यात अळ्या दिसत आहेत.,water_supply,A,
+सकाळी फक्त अर्धा तास पाणी येते.,water_supply,A,
+पाणी मीटर तुटला आहे.,water_supply,A,
+आमच्या इमारतीला आठवडाभर पाणीपुरवठा बंद आहे.,water_supply,A,
+"Nalala paani yet nahi, don divas zale.",water_supply,A,
+"Paani khup ghaan yet ahe, pinyasarkha nahi.",water_supply,A,
+"pipeline leak झाली आहे, रस्त्यावर पाणी वाहत आहे.",water_supply,A,
+"water supply बंद आहे, tanker पाठवा please.",water_supply,A,
+low pressure मुळे वरच्या मजल्यावर पाणी पोहोचत नाही.,water_supply,A,
+पानी की सप्लाई तीन दिन से बंद है।,water_supply,A,
+नल में गंदा पानी आ रहा है।,water_supply,A,
+"pani ka pressure bahut kam hai, tanki nahi bharti",water_supply,A,
+"सार्वजनिक नळ तुटला आहे, पाणी वाया जात आहे.",water_supply,A,
+"पाण्याच्या पाईपमधून हवा येते, पाणी नाही.",water_supply,A,
+"पाणी पुरवठा रात्री उशिरा होतो, आम्हाला झोपेतून उठावे लागते.",water_supply,A,
+आमच्या वस्तीत पिण्याच्या पाण्याची मोठी टंचाई आहे.,water_supply,A,
+पाण्याच्या टाकीची स्वच्छता अनेक महिन्यांपासून केली नाही.,water_supply,A,
+"ड्रेनेज तुंबले आहे, घाण पाणी रस्त्यावर येत आहे.",drainage,A,
+"गटार उघडे आहे, खूप दुर्गंधी येते.",drainage,A,
+"चेंबरचे झाकण तुटले आहे, कोणी पडू शकते.",drainage,A,
+सांडपाणी घरात शिरत आहे.,drainage,A,
+"पावसाळी पाण्याचा निचरा होत नाही, रस्त्यावर पाणी साचते.",drainage,A,
+"नाल्यात कचरा अडकला आहे, पाणी पुढे जात नाही.",drainage,A,
+"मॅनहोल उघडे आहे, रात्री खूप धोका आहे.",drainage,A,
+"ड्रेनेज लाइन फुटली आहे, सगळीकडे घाण पसरली आहे.",drainage,A,
+सोसायटीच्या बाहेर गटाराचे पाणी वाहत आहे.,drainage,A,
+नाल्याची साफसफाई पावसाळ्यापूर्वी झाली नाही.,drainage,A,
+"गटार भरून वाहत आहे, दुर्गंधी पसरली आहे.",drainage,A,
+पावसात आमच्या गल्लीत गुडघाभर पाणी साचते.,drainage,A,
+"Drainage block zala ahe, ghaan paani road var yet ahe.",drainage,A,
+"Gutter overflow hot ahe, khup vaas yeto.",drainage,A,
+"chamber चे cover गायब आहे, लहान मुलं खेळतात तिथे.",drainage,A,
+"drainage चे पाणी घरात येत आहे, लवकर या.",drainage,A,
+"नाली जाम है, गंदा पानी सड़क पर बह रहा है।",drainage,A,
+मैनहोल का ढक्कन टूटा हुआ है।,drainage,A,
+"gutter bahut badbu maar raha hai, saaf karwao",drainage,A,
+पावसाळी गटारांची जाळी बंद झाली आहे.,drainage,A,
+शौचालयाचे सांडपाणी उघड्यावर सोडले जात आहे.,drainage,A,
+"नाला भरून वाहत आहे, जवळच्या घरांना धोका आहे.",drainage,A,
+ड्रेनेजचे काम केल्यानंतर चेंबर रस्त्यापेक्षा उंच राहिले आहे.,drainage,A,
+गटाराची भिंत कोसळली आहे.,drainage,A,
+भुयारी गटार योजनेचे काम अर्धवट आहे.,drainage,A,
+चार दिवसांपासून कचरा गाडी आलेली नाही.,solid_waste,A,
+रस्त्याच्या कोपऱ्यावर कचऱ्याचा मोठा ढीग साचला आहे.,solid_waste,A,
+"कचराकुंडी भरून वाहत आहे, कुत्री कचरा पसरवतात.",solid_waste,A,
+"लोक मोकळ्या जागेत कचरा टाकतात, कोणी उचलत नाही.",solid_waste,A,
+"कचरा जाळला जात आहे, धूर घरात येतो.",solid_waste,A,
+घंटागाडी वेळेवर येत नाही.,solid_waste,A,
+बांधकामाचा राडारोडा रस्त्याच्या कडेला टाकला आहे.,solid_waste,A,
+ओला आणि सुका कचरा एकत्र उचलला जातो.,solid_waste,A,
+बाजाराजवळ सडलेल्या भाज्यांचा कचरा पडून आहे.,solid_waste,A,
+"मेलेले जनावर रस्त्यावर पडले आहे, उचलायला कोणी आले नाही.",solid_waste,A,
+Kachra gaadi don divas aali nahi.,solid_waste,A,
+"Kachryacha dheeg khup motha zala ahe, vaas yeto.",solid_waste,A,
+"garbage उचलला नाही, संपूर्ण गल्लीत वास पसरला आहे.",solid_waste,A,
+"कचरा collection रोज होत नाही, please लक्ष द्या.",solid_waste,A,
+dustbin तुटलेली आहे आणि कचरा रस्त्यावर पडतो.,solid_waste,A,
+कूड़ा चार दिन से नहीं उठाया गया।,solid_waste,A,
+"कचरे का ढेर लगा है, बहुत बदबू आ रही है।",solid_waste,A,
+"kachra gaadi nahi aa rahi hai, bahut pareshani hai",solid_waste,A,
+नदीकाठी लोक कचरा टाकत आहेत.,solid_waste,A,
+सोसायटीचा कचरा घेण्यास कर्मचारी नकार देतात.,solid_waste,A,
+"रस्ता झाडला जात नाही, सगळीकडे प्लास्टिक पडले आहे.",solid_waste,A,
+हॉटेलवाले रात्री रस्त्यावर कचरा टाकतात.,solid_waste,A,
+शाळेच्या बाजूला कचऱ्याचा ढीग आहे.,solid_waste,A,
+कचरा उचलल्यावर कुंडीभोवती घाण तशीच राहते.,solid_waste,A,
+सार्वजनिक ठिकाणी कचराकुंडी नाही.,solid_waste,A,
+आमच्या गल्लीतील पथदिवा एक आठवड्यापासून बंद आहे.,street_lights,A,
+"रस्त्यावरचे सगळे दिवे रात्री बंद असतात, खूप अंधार असतो.",street_lights,A,
+"पथदिवे दिवसाही चालू असतात, वीज वाया जाते.",street_lights,A,
+"विजेचा खांब वाकला आहे, कधीही पडू शकतो.",street_lights,A,
+"खांबावरची वायर लोंबकळत आहे, करंट लागू शकतो.",street_lights,A,
+उद्यानातील दिवे लागत नाहीत.,street_lights,A,
+पुलावरचा दिवा चालू-बंद होत राहतो.,street_lights,A,
+अंधारामुळे रात्री महिलांना चालायला भीती वाटते.,street_lights,A,
+"नवीन पथदिवे लावण्याची गरज आहे, रस्ता पूर्ण अंधारात आहे.",street_lights,A,
+"दिव्याच्या खांबाचे झाकण उघडे आहे, वायर बाहेर आहेत.",street_lights,A,
+"Street light band ahe, galli madhe purna andhar asto.",street_lights,A,
+"Divyacha khamb vakla ahe, dhoka ahe.",street_lights,A,
+"street light चालू होत नाही, चोरीच्या घटना वाढल्या आहेत.",street_lights,A,
+light pole वरची wire तुटून खाली पडली आहे.,street_lights,A,
+सिग्नलजवळचे दिवे बंद आहेत.,street_lights,A,
+स्ट्रीट लाइट एक हफ्ते से बंद है।,street_lights,A,
+"बिजली का खंभा झुक गया है, कभी भी गिर सकता है।",street_lights,A,
+"street light kharab hai, raat ko bahut andhera rehta hai",street_lights,A,
+चौकातील हायमास्ट दिवा बंद आहे.,street_lights,A,
+पथदिव्याचा बल्ब फुटला आहे.,street_lights,A,
+दिव्याच्या खांबाला पावसात करंट येतो.,street_lights,A,
+स्मशानभूमीकडे जाणाऱ्या रस्त्यावर दिवे नाहीत.,street_lights,A,
+सोसायटीसमोरचे तीन दिवे बंद आहेत.,street_lights,A,
+LED दिवे लावले पण ते खूप मंद आहेत.,street_lights,A,
+"बसथांब्याजवळ अंधार आहे, दिवा लावा.",street_lights,A,
+वादळामुळे मोठे झाड रस्त्यावर पडले आहे.,trees_garden,A,
+झाडाची फांदी विजेच्या तारांवर लोंबकळत आहे.,trees_garden,A,
+"झाड धोकादायकरीत्या वाकले आहे, कधीही पडू शकते.",trees_garden,A,
+"उद्यानातील खेळणी तुटलेली आहेत, मुलांना इजा होऊ शकते.",trees_garden,A,
+"बागेत गवत खूप वाढले आहे, साप दिसतात.",trees_garden,A,
+"झाडांची छाटणी करायची आहे, फांद्या घरात येत आहेत.",trees_garden,A,
+कोणीतरी बेकायदेशीरपणे झाडे तोडत आहे.,trees_garden,A,
+उद्यान वेळेवर उघडले जात नाही.,trees_garden,A,
+पडलेले झाड दोन दिवसांपासून तसेच पडून आहे.,trees_garden,A,
+उद्यानातील पाण्याचे कारंजे बंद आहे.,trees_garden,A,
+"Jhaad rastyavar padla ahe, traffic band ahe.",trees_garden,A,
+"Jhadachi phandi tutli ahe, gaadivar padu shakte.",trees_garden,A,
+garden मधली swings तुटली आहेत.,trees_garden,A,
+"tree trimming ची गरज आहे, फांद्या खिडकीत येतात.",trees_garden,A,
+"पेड़ सड़क पर गिर गया है, रास्ता बंद है।",trees_garden,A,
+पार्क में झूले टूटे हुए हैं।,trees_garden,A,
+"ped ki daali bahut neeche latak rahi hai, bus se takrati hai",trees_garden,A,
+उद्यानातील वॉकिंग ट्रॅक खराब झाला आहे.,trees_garden,A,
+"रस्त्याकडेच्या झाडांना पाणी घातले जात नाही, झाडे सुकत आहेत.",trees_garden,A,
+झाडाच्या मुळांमुळे भिंतीला तडे गेले आहेत.,trees_garden,A,
+"जुने वाळलेले झाड शाळेच्या आवारात आहे, धोका आहे.",trees_garden,A,
+बागेतील बाकडे तुटले आहेत.,trees_garden,A,
+उद्यानाची संरक्षक भिंत पडली आहे.,trees_garden,A,
+वृक्ष प्राधिकरणाकडे परवानगी मागितली पण उत्तर नाही.,trees_garden,A,
+झाडाची मोठी फांदी पार्क केलेल्या गाडीवर पडली.,trees_garden,A,
+"फुटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे, चालायला जागा नाही.",encroachment,A,
+शेजाऱ्याने रस्त्यावर बेकायदेशीर बांधकाम केले आहे.,encroachment,A,
+दुकानदारांनी सामान रस्त्यावर ठेवले आहे.,encroachment,A,
+मोकळ्या भूखंडावर अनधिकृत झोपड्या उभारल्या जात आहेत.,encroachment,A,
+इमारतीचे बेकायदेशीर वाढीव मजले बांधले जात आहेत.,encroachment,A,
+रस्त्यावर बेवारस गाड्या अनेक महिने उभ्या आहेत.,encroachment,A,
+होर्डिंग विनापरवाना लावले आहे.,encroachment,A,
+हॉटेलने फुटपाथवर टेबल लावले आहेत.,encroachment,A,
+सोसायटीच्या गेटसमोर हातगाडीवाले उभे राहतात.,encroachment,A,
+"रात्री उशिरापर्यंत बांधकाम चालू असते, परवानगी आहे का तपासा.",encroachment,A,
+Footpath var feriwalyanni kabja kela ahe.,encroachment,A,
+"Anadhikrut bandhkam chalu ahe, karvai kara.",encroachment,A,
+"illegal construction सुरू आहे, कोणतीही परवानगी नाही.",encroachment,A,
+road वर दुकानांचे अतिक्रमण वाढले आहे.,encroachment,A,
+फुटपाथ पर ठेले वालों ने कब्जा कर लिया है।,encroachment,A,
+"अवैध निर्माण चल रहा है, कार्रवाई करें।",encroachment,A,
+"illegal hoarding laga hai, bahut khatarnak hai",encroachment,A,
+धोकादायक जुनी इमारत कधीही कोसळू शकते.,encroachment,A,
+सार्वजनिक जागेवर मंडप परवानगीशिवाय उभारला आहे.,encroachment,A,
+शेजाऱ्याने नाल्यावर बांधकाम केले आहे.,encroachment,A,
+रस्त्याच्या कडेला भंगार साठवले आहे.,encroachment,A,
+पार्किंगच्या जागेत दुकान थाटले आहे.,encroachment,A,
+बसथांब्यावर टपरी उभारली आहे.,encroachment,A,
+इमारतीचा भाग कोसळण्याच्या स्थितीत आहे.,encroachment,A,
+विनापरवाना फ्लेक्स बॅनर सगळीकडे लावले आहेत.,encroachment,A,
+"आमच्या भागात खूप डास झाले आहेत, धूर फवारणी करा.",health_mosquito,A,
+साचलेल्या पाण्यात डासांच्या अळ्या दिसत आहेत.,health_mosquito,A,
+परिसरात डेंग्यूचे रुग्ण वाढले आहेत.,health_mosquito,A,
+"मोकाट कुत्र्यांचा त्रास वाढला आहे, मुलांना चावतात.",health_mosquito,A,
+"सार्वजनिक शौचालय खूप घाण आहे, स्वच्छता होत नाही.",health_mosquito,A,
+"उघड्यावर मांस विक्री होत आहे, खूप माशा आहेत.",health_mosquito,A,
+औषध फवारणी अनेक महिन्यांपासून झाली नाही.,health_mosquito,A,
+भटक्या कुत्र्याने मुलाला चावले.,health_mosquito,A,
+उंदरांचा खूप त्रास आहे.,health_mosquito,A,
+शौचालयात पाणी आणि दिवा नाही.,health_mosquito,A,
+"Dasancha khup tras ahe, fogging kara.",health_mosquito,A,
+"Mokat kutre khup ahet, ratri bhunktat ani chavtat.",health_mosquito,A,
+"fogging झालेली नाही, dengue चे cases वाढत आहेत.",health_mosquito,A,
+public toilet खूप dirty आहे.,health_mosquito,A,
+"मच्छर बहुत हो गए हैं, फॉगिंग करवाइए।",health_mosquito,A,
+आवारा कुत्तों का बहुत आतंक है।,health_mosquito,A,
+"dengue ke case badh rahe hain, spray karwao",health_mosquito,A,
+मोकळ्या प्लॉटमध्ये पाणी साचून डास वाढले आहेत.,health_mosquito,A,
+रस्त्यावर डुकरांचा वावर वाढला आहे.,health_mosquito,A,
+"हॉटेलच्या मागे अन्न सडत आहे, उंदीर वाढले आहेत.",health_mosquito,A,
+सार्वजनिक शौचालयाची दुरवस्था झाली आहे.,health_mosquito,A,
+पिसाळलेला कुत्रा परिसरात फिरत आहे.,health_mosquito,A,
+भटक्या जनावरांमुळे रस्त्यावर अपघात होतात.,health_mosquito,A,
+"मलेरियाचे रुग्ण आढळले आहेत, तपासणी करा.",health_mosquito,A,
+डासांमुळे लहान मुले आजारी पडत आहेत.,health_mosquito,A,
+आमच्या रस्त्यावर मोठा खड्डा पडला आहे गेल्या दोन महिन्यांपासून कोणी बघत नाही,roads,B,P3
+रस्ता पूर्ण तुटलेला आहे पावसाळ्यात पाणी साचतं आणि गाड्या अडकतात,roads,B,P3
+फुटपाथ उखडलेला आहे बाळंबा चौकाजवळ लोक रस्त्यावर चालतात,roads,B,P3
+road la khup khadde padle aahet varje malwadi road var,roads,B,P3
+रस्ता खराब आहे divider तुटलेला आहे SB road वर,roads,B,P3
+पावसाळ्यात रस्त्यावर मोठमोठे खड्डे भरतात पाणी साचतं चालता येत नाही,roads,B,P3
+bridge खाली road settle झालाय cars ला problem होतोय,roads,B,P3
+आमच्या गल्लीतला रस्ता गेल्या पाच वर्षांपासून दुरुस्त केला नाही,roads,B,P4
+sadak todli aahe aani cement udhalay sagla,roads,B,P3
+speed breaker तुटलेला आहे अपघात होतोय,roads,B,P2
+शाळेजवळ रस्त्यात मोठा खड्डा आहे मुलांना धोका आहे,roads,B,P2
+divider तोडून लोक wrong side ने येतात accident होतोय,roads,B,P2
+नवीन रस्ता केला पण एका महिन्यातच खराब झाला,roads,B,P4
+manhole cover road var missing aahe khup dangerous aahe,roads,B,P1
+tar road ची surface पूर्ण उडालीय potholes मध्ये पाणी भरतंय,roads,B,P3
+signal light बंद आहे तीन दिवसांपासून crossing वर confusion होतंय,roads,B,P2
+रस्ता इतका खराब आहे की ambulance ला यायला problem होतोय,roads,B,P2
+footpath var hawkers बसलेत pedestrians ला चालता येत नाही,roads,B,P4
+cement road तुटलेला आहे dust उडतो allergies होतात,roads,B,P3
+आमच्या colony च्या entrance चा रस्ता पूर्ण खचलाय,roads,B,P3
+rasta khup kharab aahe gaadi chalvata yet nahi bikes la accident hoto,roads,B,P2
+waterlogging होतं रस्त्यावर प्रत्येक पावसात गुडघाभर पाणी,roads,B,P3
+रस्त्यावरचा मॅनहोल उघडा आहे कोणीतरी पडणार,roads,B,P1
+road construction चं काम अर्धवट सोडून दिलंय traffic ला problem,roads,B,P3
+पूल जवळचा रस्ता खचलाय heavy vehicles मुळे,roads,B,P2
+गल्लीत streetlight नाही अंधारात खड्ड्यांमध्ये पडतो,roads,B,P3
+नाल्याजवळचा रस्ता धुवून गेलाय पावसामुळे,roads,B,P3
+raste var water pipeline phodli aani road khodla tasa sodla,roads,B,P3
+आमच्या भागात पाणी येत नाही गेल्या तीन दिवसांपासून,water_supply,B,P2
+पाण्याचा pressure खूपच कमी आहे दुसऱ्या मजल्यावर पाणीच येत नाही,water_supply,B,P3
+pipeline leak झाला आहे रोज हजारो लिटर पाणी वाया जातंय,water_supply,B,P2
+paani ghadhalela yeta aani vaas yeto dudh sarkha dista,water_supply,B,P2
+water supply चा timing बदललाय कोणालाही माहित नाही,water_supply,B,P3
+पाण्याच्या टाकीला गळती लागलीय रोड वर पाणी वाहतंय,water_supply,B,P3
+main pipeline फुटली आहे पूर्ण रस्ता पाण्याने भरलाय,water_supply,B,P2
+आमच्या area ला alternate day पाणी येतं पण schedule सांगत नाहीत,water_supply,B,P3
+बोअरवेल खराब आहे गेल्या एका आठवड्यापासून पाणी नाही,water_supply,B,P2
+pani yellowish yeta filter karun pan piता yet nahi,water_supply,B,P2
+meter खराब आहे bill जास्त येतंय पण पाणी कमी येतंय,water_supply,B,P4
+water tanker मागवला पण आलाच नाही तीन दिवस झाले,water_supply,B,P2
+पूर्ण colony ला पाणी बंद आहे लोकांना खूप त्रास होतोय,water_supply,B,P2
+जुन्या pipeline मधून गंजलेलं पाणी येतंय आरोग्याला धोका,water_supply,B,P2
+water tank overflow होतो रोज रात्री पाणी वाया जातं,water_supply,B,P3
+valve तुटलेला आहे रस्त्यावर पाणी वाहत आहे,water_supply,B,P3
+amchya building la aathavdyatun ekdach paani yeta khup tras,water_supply,B,P2
+पाण्याच्या connection साठी apply केलंय सहा महिने झाले काहीच response नाही,water_supply,B,P4
+pipeline repair चं काम केलं पण परत leak होतंय,water_supply,B,P3
+पावसाळ्यात पाणी गढूळ येतंय chlorine चा वास येतो,water_supply,B,P3
+नळाला पाणी नाही येत सकाळपासून संध्याकाळपर्यंत,water_supply,B,P3
+drinking water chi pipe sanitary line jval futli aahe contamination hoil,water_supply,B,P1
+गटार तुंबलंय पाणी रस्त्यावर वाहतंय दुर्गंधी येतेय,drainage,B,P2
+drainage line तुटली आहे सांडपाणी घरात शिरतंय,drainage,B,P1
+गटाराचं पाणी ओव्हरफ्लो होतंय रस्त्यावर आणि घरांसमोर,drainage,B,P2
+nali tumbli aahe pavasalya madhe ghari paani yet astay,drainage,B,P2
+सांडपाणी रस्त्यावर वाहत आहे मुलांना शाळेत जाता येत नाही,drainage,B,P2
+manhole cover ओव्हरफ्लो होतंय दुर्गंधी असह्य आहे,drainage,B,P2
+drainage system पूर्णच fail झालंय पावसाळ्यात flooding होतं,drainage,B,P2
+गटारीचं पाणी विहिरीत मिसळतंय health hazard आहे,drainage,B,P1
+छोट्या नाल्याला कचरा अडकलाय पाणी वाहत नाही,drainage,B,P3
+sewage line choked aahe building samor paani saachlay,drainage,B,P2
+नवीन drainage line टाकायला हवी जुनी पूर्ण खराब झालीय,drainage,B,P3
+gutter tutlela aahe footpath var sandpaani vaahte,drainage,B,P2
+पावसाळ्यात नाल्याला पूर आलाय आजूबाजूच्या घरात पाणी शिरतंय,drainage,B,P2
+drainage चं cover गायब आहे रात्री कोणी पडेल,drainage,B,P1
+septic tank overflow होतंय दुर्गंधी सगळीकडे पसरतेय,drainage,B,P2
+hospital जवळ गटार तुंबलंय patients ना त्रास होतोय,drainage,B,P2
+आमच्या गल्लीत open drain आहे मुलांना धोका आहे,drainage,B,P2
+नाल्यात प्लास्टिक अडकलंय पाणी वाहत नाही तुंबतंय,drainage,B,P3
+rain water drainage बंद आहे पूर्ण area waterlog होतो,drainage,B,P2
+गटाराच्या cleaning साठी कितीदा तक्रार केली पण कोणी येत नाही,drainage,B,P3
+sandpaani ghari shirat aahe khup divas jhale koni baghina yet nahi,drainage,B,P2
+underground drainage pipe फुटली आहे रस्ता खचतोय,drainage,B,P2
+कचरा उचलला जात नाही गेल्या एका आठवड्यापासून,solid_waste,B,P3
+कचरागाडी येतच नाही आमच्या गल्लीत रोज,solid_waste,B,P3
+रस्त्यावर कचऱ्याचा ढीग लागलाय दुर्गंधी येतेय,solid_waste,B,P3
+kachara gadi yetach nahi weekly ekda pan nahi,solid_waste,B,P3
+dustbin overflow होतंय कोणी clean करत नाही,solid_waste,B,P3
+construction debris रस्त्यावर टाकलंय कोणीही उचलत नाही,solid_waste,B,P3
+शाळेजवळ कचऱ्याचा ढीग आहे मुलांच्या आरोग्याला धोका,solid_waste,B,P2
+dead animal रस्त्यावर पडलंय कोणी उचलत नाही दुर्गंधी,solid_waste,B,P2
+garden मध्ये कचरा टाकतात लोक पण सफाई होत नाही,solid_waste,B,P3
+hospital jval kacharyacha dhig aahe health risk aahe,solid_waste,B,P2
+wet waste आणि dry waste वेगळा collection होत नाही,solid_waste,B,P4
+रात्री लोक कचरा रस्त्यावर फेकतात गल्ली अस्वच्छ आहे,solid_waste,B,P3
+कचऱ्याचा ढीग जळवतात धूर येतो श्वसनाचा त्रास होतो,solid_waste,B,P2
+community bin तुटलेलं आहे कचरा बाहेर पडतो,solid_waste,B,P3
+plastic waste जाळतात नाल्याजवळ pollution होतंय,solid_waste,B,P2
+kachara vehicle chya timing badlalya koni sangat nahi,solid_waste,B,P4
+biomedical waste रस्त्यावर टाकलंय clinic जवळ,solid_waste,B,P2
+मोकळ्या जागेवर कचरा टाकतात dumping ground बनवलंय,solid_waste,B,P3
+कचरा वेचणाऱ्यांनी कचरा विखुरलाय रस्त्यावर,solid_waste,B,P3
+e-waste collection chi vyavastha nahi society madhe,solid_waste,B,P4
+kachara gaadi roj yet nahi alternate day pan nahi weekly pan nahi,solid_waste,B,P3
+garden waste उचललं जात नाही झाडांचा कचरा पडून आहे,solid_waste,B,P3
+आमच्या गल्लीतला streetlight बंद आहे अंधार आहे रात्री,street_lights,B,P3
+तीन streetlights बंद आहेत मुख्य रस्त्यावर अंधार आहे,street_lights,B,P3
+light pole वाकलेला आहे पडेल कोणावर तरी,street_lights,B,P2
+street light cha wire tutla aahe current lagel konala tari,street_lights,B,P1
+LED light बसवलं पण एका आठवड्यातच बंद पडलं,street_lights,B,P4
+शाळेजवळचा streetlight बंद आहे मुलांना अंधारात जावं लागतं,street_lights,B,P3
+रात्री अंधारात चोऱ्या होतात streetlight लावा,street_lights,B,P3
+timer var light chalte din savla pan light bandi aste,street_lights,B,P4
+mercury light ची बदली LED ने करायला हवी,street_lights,B,P4
+high mast light बंद आहे मैदानावर अंधार आहे,street_lights,B,P3
+light pole la rust laglay padel asa vatay dangerous aahe,street_lights,B,P2
+नवीन colony मध्ये streetlight नाही लावले अजून,street_lights,B,P3
+wire tutlela aahe khamb var latkat aahe shock basil,street_lights,B,P1
+दिवसा streetlight चालू असतो वीज वाया जाते timer लावा,street_lights,B,P4
+गल्लीत एकही दिवा नाही पूर्ण अंधार आहे,street_lights,B,P3
+pole var transformer chi problem aahe area la light nahi,street_lights,B,P2
+रस्त्यावर light नाही ladies ना रात्री जाता येत नाही safety issue,street_lights,B,P3
+streetlight maintenance होत नाही वारंवार तक्रार करूनही,street_lights,B,P3
+बाग मधलं मोठं झाड पडायला आलंय कोणावर तरी पडेल,trees_garden,B,P2
+झाड रस्त्यावर पडलंय traffic block झालंय,trees_garden,B,P2
+garden ची maintenance होत नाही गवत वाढलंय कचरा पडलाय,trees_garden,B,P4
+zhadachi fandi tutun padli aahe rasta block aahe,trees_garden,B,P2
+पार्कमधली बाकं तुटलेली आहेत बसता येत नाही,trees_garden,B,P4
+मोठं झाड वाकलंय electric wire वर पडेल,trees_garden,B,P1
+garden मध्ये mosquito breeding होतंय पाणी साचलंय,trees_garden,B,P3
+community garden ला कुंपण नाही जनावरं येतात,trees_garden,B,P4
+रस्त्यावरच्या झाडांची छाटणी करा branch तुटतात वाऱ्याने,trees_garden,B,P3
+park madhe swings tutalya aahet mulanna khelata yet nahi,trees_garden,B,P4
+बागेतला fountain बंद आहे पाणी गंधाळलेलं आहे,trees_garden,B,P4
+unauthorized tree cutting होतंय बांधकामासाठी,trees_garden,B,P3
+झाड कोसळलंय गाडीवर नुकसान झालंय,trees_garden,B,P2
+garden chi boundary wall tutli aahe,trees_garden,B,P4
+पावसाळ्यात मोठमोठी झाडं पडतात trimming करा,trees_garden,B,P3
+garden मध्ये drug addicts बसतात unsafe वाटतं,trees_garden,B,P3
+फुलझाडं तोडली कोणीतरी park मध्ये,trees_garden,B,P4
+dead tree khambासारखं उभं आहे पडेल रस्त्यावर,trees_garden,B,P2
+park madhe benches tutalya replace karayla havya,trees_garden,B,P4
+मोठं झाड घरावर पडायला आलंय मुळं उघडी पडलीत,trees_garden,B,P2
+अनधिकृत बांधकाम चालू आहे रात्री काम करतात,encroachment,B,P3
+फुटपाथवर दुकानं मांडलीत चालता येत नाही,encroachment,B,P3
+illegal construction चालू आहे मंजुरी न घेता building बांधतोय,encroachment,B,P3
+footpath var hawkers basle aahet jagaच nahi milat chalayला,encroachment,B,P3
+रस्त्यावर stall लावलाय traffic ला अडथळा होतोय,encroachment,B,P3
+शेजाऱ्यांनी common passage वर बांधकाम केलंय,encroachment,B,P3
+government जागेवर अतिक्रमण झालंय fence घातलंय,encroachment,B,P3
+parking area var unauthorized दुकान बांधलंय,encroachment,B,P3
+नाल्यावर अतिक्रमण झालंय बांधकाम केलंय drainage blocked,encroachment,B,P2
+footpath encroach केलंय dividers वर hawkers बसतात,encroachment,B,P3
+building ला permission नाही extra floor बांधतोय illegally,encroachment,B,P3
+mandirachi jagaa encroach keli government plot var ghare baandhli,encroachment,B,P3
+fire exit block केलंय building मध्ये storage ठेवलंय,encroachment,B,P1
+रस्ता अरुंद झालाय दोन्ही बाजूने अतिक्रमण,encroachment,B,P3
+playground वर construction material ठेवलंय मुलांना खेळता येत नाही,encroachment,B,P3
+illegal boarding चालवतोय residential area मध्ये,encroachment,B,P3
+jhopdi bandhli aahe rasta rokun traffic problem hoto,encroachment,B,P3
+building ने footprint पेक्षा जास्त बांधलंय शेजाऱ्यांना light येत नाही,encroachment,B,P3
+commercial use residential area मध्ये करतोय noise pollution,encroachment,B,P3
+wall todun rasta block kela aahe atikraman aahe,encroachment,B,P3
+मच्छर खूप आहेत डेंग्यूचा धोका आहे,health_mosquito,B,P2
+डासांचं प्रमाण वाढलंय fogging करा area मध्ये,health_mosquito,B,P2
+उघड्यावर मांस विक्री होतेय unhygienic आहे,health_mosquito,B,P3
+machhar khup aahet dengue pasarlay area madhe fogging kara,health_mosquito,B,P2
+stale food विकतात रस्त्यावर food poisoning होतं,health_mosquito,B,P2
+डासांचं breeding होतंय construction site वर पाणी साचलंय,health_mosquito,B,P2
+सार्वजनिक शौचालय अत्यंत घाणेरडं आहे सफाई होत नाही,health_mosquito,B,P3
+water tanker चं पाणी contaminated आहे लोक आजारी पडतोय,health_mosquito,B,P1
+रस्त्यावर थुंकतात पान खाऊन सगळीकडे विड्याची पिचकारी,health_mosquito,B,P4
+rats chi problem aahe area madhe plague sarkha hoyil,health_mosquito,B,P2
+hospital जवळ garbage ठेवलंय infection पसरतंय,health_mosquito,B,P2
+public toilet बंद आहे लोक उघड्यावर जातात,health_mosquito,B,P3
+मासळी बाजारात दुर्गंधी येतेय सफाई होत नाही,health_mosquito,B,P3
+dog bite cases वाढलेत area मध्ये stray dogs खूप आहेत,health_mosquito,B,P2
+fogging schedule माहित नाही dengue cases वाढतोय area मध्ये,health_mosquito,B,P2
+nali madhe mosquito breeding hotay saachlelya paanyat,health_mosquito,B,P2
+community hall मध्ये rats आहेत function करता येत नाही,health_mosquito,B,P3
+शाळेजवळ उघड्यावर मांस कापतात मुलांना बघावं लागतं unhygienic,health_mosquito,B,P3
+stray dogs aggressive झालेत मुलांना भीती वाटते,health_mosquito,B,P2
+vihar ghar jval kachra padlay swachata karnyat yetey nahi,health_mosquito,B,P3
+औषध फवारणी करा मच्छर खूप आहेत ताप आलाय लोकांना,health_mosquito,B,P2
+उंदीर खूप आहेत दुकानात अन्नपदार्थ खराब करतात,health_mosquito,B,P3
+काहीतरी problem आहे आमच्या area मध्ये बघा जरा,other,B,P4
+complaint करायची आहे कोणाला सांगायचं माहित नाही,other,B,P4
+tax office चा response येत नाही application pending आहे,other,B,P4
+amchya area madhe problem aahe please bghaa,other,B,P4
+birth certificate मिळालं नाही apply केलंय बराच वेळ झाला,other,B,P4
+property tax चा bill चुकीचा आलाय rectify करा,other,B,P4
+सरकारी कार्यालयातले कर्मचारी नीट बोलत नाहीत,other,B,P4
+building permission साठी apply केलंय status माहित नाही,other,B,P4
+noise pollution होतंय रात्री DJ लावतात,other,B,P3
+आमच्या area मध्ये बरंच काही problem आहे रस्ता पाणी कचरा सगळं,other,B,P3
+rasta ani drainage doghi problem aahe ek saath solve karaa,other,B,P3
+पाणी नाही कचरा उचलत नाहीत रस्ते खराब सगळंच बिघडलंय,other,B,P3
+khup tras hotoy amchya area madhe sagla kharab aahe,other,B,P4
+काय सांगू इथे सगळंच problem आहे,other,B,P4
+municipality काही करत नाही complaint दिली तरी,other,B,P4
+parking chi vyavastha nahi konich baghina yet nahi,other,B,P4
+रस्त्यावर गाड्या park करतात ambulance ला जागा नाही,roads,B,P2
+पावसामुळे रस्ता वाहून गेलाय माती आलीय,roads,B,P3
+navi pipeline takli ani rasta tasa sodla khodun,water_supply,B,P3
+गटार साफ करा पावसाळ्यापूर्वी नाहीतर flooding होईल,drainage,B,P3
+कचरा गाडी सकाळी खूप लवकर येते कोणाला माहीतच नसतं,solid_waste,B,P4
+halogen light लावली पण खूपच dim आहे काहीच दिसत नाही,street_lights,B,P4
+park madhe nali vaahte mulanna khelata yet nahi,trees_garden,B,P3
+footpath var auto rickshaw park kartaat chalata yet nahi pedestrian la,encroachment,B,P3
+मलेरिया पसरतोय area मध्ये action घ्या लवकर,health_mosquito,B,P2
+amchya bhagat khup problem aahet describe karata yenaar nahi,other,B,P4
+शाळेसमोरचा रस्ता खड्ड्यांनी भरलाय मुलांना अपघाताचा धोका,roads,B,P2
+water pipeline burst झालीय main road वर traffic jam,water_supply,B,P2
+गटाराचं झाकण तुटलंय कोणी पडणार आतमध्ये,drainage,B,P1
+कचऱ्यामुळे नाला तुंबलाय पूर्ण area मध्ये पाणी भरलंय,drainage,B,P2
+garbage collection irregular आहे week मध्ये एकदाच येतात,solid_waste,B,P3
+दोन pole मधला wire तुटून लोंबतोय शॉक बसेल,street_lights,B,P1
+झाड पडलंय रस्त्यावर blocking traffic completely,trees_garden,B,P2
+building collapse होण्याची शक्यता आहे cracks आलेत भिंतीला,encroachment,B,P1
+dengue outbreak area madhe fogging tatkal karaa hospital full zhalay,health_mosquito,B,P1
+रस्ता आणि गटार दोन्ही खराब आहे पावसाळ्यात worst होतं,other,B,P3
+flyover खालचा रस्ता खराब आहे अंधार असतो रात्री,roads,B,P3
+बोअरवेल चालू आहे पण गटाराचं पाणी mix होतंय,water_supply,B,P1
+sewage treatment plant काम करत नाही smell येतो दूरपर्यंत,drainage,B,P3
+construction site वरचा debris रस्त्यावर ठेवलंय हटवा,solid_waste,B,P3
+light pole jvळ wire open aahe danger aahe,street_lights,B,P1
+मोठं झाड रस्त्याच्या मध्यावर आहे traffic ला problem,trees_garden,B,P3
+unauthorized dhaba चालवतोय residential area मध्ये,encroachment,B,P3
+cockroach chi problem aahe building madhe pest control karaa,health_mosquito,B,P3
+कचरा आणि drainage problem दोन्ही एकत्र सोडवा,other,B,P3
+amchya lane madhe rasta nahi muddy aahe puri cement kara,roads,B,P3
+fire hydrant ला पाणी नाही emergency ला problem होईल,water_supply,B,P2
+manholeचं झाकण गायब आहे रात्री कोणी पाहू शकत नाही,drainage,B,P1
+medical waste dustbin मध्ये टाकतात segregation नाही,solid_waste,B,P2
+compound wall तुटून पडलीय streetlight pole वाकलंय,street_lights,B,P2
+park maintenance budget कमी आहे सगळं खराब होतंय,trees_garden,B,P4
+godown बांधलंय residential zone मध्ये permission नसताना,encroachment,B,P3
+rat menace area madhe PCMC action ghya urgently,health_mosquito,B,P2
+एक problem सांगता दुसरं निघतं सगळंच बिघडलंय area मध्ये,other,B,P4
+हॉस्पिटलजवळ open drain आहे patients ला infection होतोय,drainage,B,P1
+शाळेजवळ कचरा जळवतात मुलांना श्वसनाचा त्रास,solid_waste,B,P2
+electrical wire sagging aahe road var touch hoil,street_lights,B,P1
+bridge chi railing tutli aahe koni padel river madhe,roads,B,P1
+public toilet madhe paani nahi sanitation problem,health_mosquito,B,P3
+building chi bhint padayla aali aahe crack aahet saglikade,encroachment,B,P1
+vacant plot var kacharyacha dhig laglay rats yetaat udeer,solid_waste,B,P3
+नवीन area मध्ये streetlight connection नाही अजून,street_lights,B,P3
+garden ला lock केलंय कोणी उघडत नाही,trees_garden,B,P4
+hawker zone बाहेर stalls लावतात traffic jam होतो,encroachment,B,P3
+dengue chi case vadhle aahet area madhe fogging lavkar karaa,health_mosquito,B,P2
+सगळं problem आहे area मध्ये रस्ते पाणी light सगळं,other,B,P3
+pothole madhe bike skid jhali accident zhalay minor,roads,B,P2
+nळ तुटलाय water supply बंद आहे colony साठी,water_supply,B,P2
+पावसाळ्यात basement मध्ये drainage चं पाणी येतं,drainage,B,P2
+रस्त्याच्या कडेला कचरा टाकतात नदीत जातो pollution,solid_waste,B,P3
+transformer blast zhalay area madhe current nahi urgent,street_lights,B,P1
+park madhla jogging track tutala aahe stones niklya,trees_garden,B,P3
+balkani todun extra room bandhlay permission nahi illegal,encroachment,B,P3
+jaundice pasarla aahe contaminated water supply mule,health_mosquito,B,P1
+मी तक्रार करतो पण काहीच होत नाही कोणी ऐकत नाही,other,B,P4
+sagla kahi problem aahe amchya bhagat rasta paani kachra light,other,B,P3
+दवाखान्याजवळ रस्ता खचलाय ambulance अडकते,roads,B,P2
+borewell cha paani band aahe tanker pathva urgently,water_supply,B,P2
+नाल्यात chemical waste सोडतात factory मधून,drainage,B,P2
+कचऱ्याचं decomposition होतंय गरम वातावरणात दुर्गंधी unbearable,solid_waste,B,P3
+तारा तुटल्यात विजेच्या खांबावरून पडायला आल्यात,street_lights,B,P1
+garden madhe snake aala aahe mulanna dhoka aahe,trees_garden,B,P2
+unauthorized parking lot banvla aahe government jaagevar,encroachment,B,P3
+water borne disease pasarla aahe colony madhe check karaa,health_mosquito,B,P2
+काय complaint करू कशाबद्दल करू सगळंच बिघडलंय,other,B,P4
+rasta todla drainage sathi parat kela nahi aata khadde aahet,other,B,P3
