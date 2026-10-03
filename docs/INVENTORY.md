@@ -75,3 +75,21 @@ The PBL-5 paper draft was also checked against `results.json`. Its other figures
 | Gazetteer of 59 localities | 59 localities, 15 ward offices, and one ambiguous name with three spellings (वडगाव / wadgaon / vadgaon). |
 | Library version unspecified | The shipped `model.pkl` was pickled with scikit-learn **1.8.0**. Results also reproduce under 1.9.1. 1.8.0 is pinned. |
 | Speech: "no ASR model has been run" | True. `nagarvani/asr.py` has an openai-whisper backend that was never run, plus the noise simulator. This build adds faster-whisper in `nagarvani/speech.py`. |
+
+## PBL-4 report check (2026-10-03)
+
+`PBL-4_NagarVani_Project_Report.docx` was checked figure by figure against `results/results.json`:
+- abstract and Chapter 1;
+- the data description in Chapter 3;
+- the stack, store, demo trace (Table 4.2) and demo figures in Chapter 4;
+- all of Chapter 5: Tables 5.1–5.4, calibration, ward, duplicates, severity, the four rule errors and the confusion matrix, noise and end-to-end;
+- the conclusions.
+
+They match, with one exception:
+
+| Where | Report says | Measured |
+|---|---|---|
+| Section 5.2, "A result against our own choice" | "both models reach 99.8% under cross-validation on the training data" | Proposed char + word model: 99.8% (`E1_cv_template`). Char-only model: **99.65%**. That one is not in `results.json`; it was recomputed with the same 5-fold split (`random_state=0`). Suggested wording: "both models reach 99.7–99.8% under cross-validation on the training data, so the training data could not separate them." |
+
+Machine-dependent statements were not treated as errors: "the full evaluation takes under a minute" took about 85 s in this environment, and the latency figures are as shipped. The report's
+"Matplotlib 3.10" describes the environment the prototype was built in. Figures do not depend on the Matplotlib version.
