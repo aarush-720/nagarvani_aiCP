@@ -1,0 +1,9 @@
+example filled: धनकवडीत मॅनहोलचे झाक
+typed path -> http://127.0.0.1:5066/ticket/1 | P1 shown: True
+transcript: हडपसर येथे रस्त्यावर खूप मोठे खड्डे पडले आहेत
+submit disabled before check: True
+submit enabled after check: True
+upload path -> http://127.0.0.1:5066/ticket/2 | edit recorded: True | audio player: 1
+after double-click -> http://127.0.0.1:5066/ticket/3
+JS errors: []
+tickets in DB: 3
