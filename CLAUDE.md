@@ -1,41 +1,47 @@
 # CLAUDE.md
 
 NagarVani: Marathi/Hindi civic-complaint triage for PMC. It is a course prototype in
-Python 3.11 with scikit-learn, Flask, SQLite and faster-whisper. Templates are
+Python 3.11 with scikit-learn 1.8.0, Flask, SQLite and faster-whisper. Templates are
 server-rendered, with plain CSS and a little vanilla JS. There is no build step and no ORM,
 and nothing runs on the network at runtime.
 
 ## Layout
 
-* `nagarvani/pipeline.py`: `triage()`, the single entry point. The evaluation and the web app both call it.
-* `nagarvani/`: classifier, location, severity (expert system), dedup, asr, store, service, app.
-* `data/`: frozen inputs. Checksums are in `data/FROZEN.sha256`.
-* `eval/evaluate.py` writes `results/eval.json` and `results/eval.md`. `eval/asr_eval.py` evaluates real audio.
-* `docs/HANDOVER.md` gives current status; `docs/DECISIONS.md` records choices and "Found but not changed".
+* `nagarvani/{normalise,classifier,location,severity,dedup,store,pipeline,asr}.py` are the
+  **original prototype logic, byte-identical and checksummed**. Never edit them.
+* `nagarvani/triage.py` holds `triage()`, the single entry point. It wraps the original
+  components. The evaluation and the web app both call it.
+* `corpus/` and `data/gazetteer.json` are frozen data. All checksums are in `data/FROZEN.sha256`.
+* `experiments/run_eval.py` produces every reported number (`results/results.json`).
+* `docs/HANDOVER.md` gives current status. `docs/DECISIONS.md` records choices and
+  "Found but not changed".
+* `archive/` holds superseded work: the midsem notebook and the 2026-10-02 rebuild. Never use it.
 
 ## Commands
 
 ```
-python -m pytest -q              # all tests; tests/test_frozen_metrics.py guards the numbers
+python -m pytest -q              # all tests; tests/test_frozen_metrics.py guards the numbers (~2 min)
 python scripts/reproduce.py      # verify every reported number
+python experiments/run_eval.py   # regenerate results/results.json and figures
 python run.py                    # start the app on 127.0.0.1:5000
 python scripts/reset_demo.py --yes
 ```
 
 ## The frozen-numbers rule
 
-The numbers in `results/eval.json` may be in the team's report. Do not edit, regenerate or
-re-tune any of the following:
+The numbers in `results/results.json` are in the submitted report and the paper. Do not edit,
+regenerate, re-split or re-tune any of the following:
 
-* data files: test set, training templates/CSV, gazetteer, rules, keywords
-* the classifier configuration
-* the thresholds in `nagarvani/config.py`
+* the corpus and the gazetteer;
+* the original modules;
+* the classifier configuration;
+* any threshold.
 
-Never tune anything against `data/test_handwritten.csv`.
+Never tune anything against `corpus/test_handwritten.tsv`.
 
 When you find a bug in frozen logic:
 
-* If the fix leaves `tests/test_frozen_metrics.py` passing, apply it.
+* If the fix leaves `tests/test_frozen_metrics.py` passing, apply it outside the frozen files.
 * If the fix would change any number, do not apply it. Log it in `docs/DECISIONS.md` under
   "Found but not changed", with a reproducing input.
 
