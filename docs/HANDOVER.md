@@ -54,7 +54,11 @@ Written for the developer. Read section 1 first.
   * **Kept from the rebuild and re-pointed at the original logic:** the web app, speech
     module, demo tooling and tests.
 * **The PBL-5 paper draft was checked.** All of its figures match `results/results.json` (list
-  in `docs/INVENTORY.md`). The 30-page PBL-4 report was not supplied, so I couldn't check it.
+  in `docs/INVENTORY.md`).
+* **The PBL-4 report was checked figure by figure.** One error was found: "both models reach
+  99.8% under cross-validation". The char-only model reaches 99.65%. The sentence now reads
+  "99.7–99.8%" in the report and in `docs/prototype/docs_build/report.js`. Details are in
+  `docs/INVENTORY.md`, "PBL-4 report check".
 
 ## 3. What was verified, and how
 
@@ -123,7 +127,8 @@ See `docs/DECISIONS.md`. In brief, F1–F6:
    tested only once this is done.
 3. **Decide on F1–F6.** Any fix is a deliberate re-freeze: update `data/FROZEN.sha256`, the
    expected values in `tests/test_frozen_metrics.py`, and the report, together.
-4. **Check the PBL-4 report** against `results/results.json`. The paper already matches.
+4. **Finish the documents.** Fill in the author names, emails and PRNs in the PBL-5 paper and
+   on the PBL-4 title page, then re-export both PDFs from Word.
 5. **Rehearse on the demo laptop:** setup, microphone in the demo browser, and a ward CSV
    opened in Excel. Then run `python scripts/reset_demo.py --yes` and follow
    `docs/DEMO_SCRIPT.md`.
