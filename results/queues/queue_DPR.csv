@@ -1,0 +1,7 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+78,2026-09-28T17:59:00,P1,2026-09-29T17:59,ELEC,0.8735,koregaon_park,DPR,78,new,AUTO_ROUTED,"बिजली का खंभा गिरने वाला है, कोरेगाव पार्क"
+30,2026-09-28T12:23:00,P2,2026-10-01T12:23,SWM,0.7487,koregaon_park,DPR,30,new,AUTO_ROUTED,"सड़क किनारे कचरा जलाया जा रहा है, कोरेगाव पार्क में"
+21,2026-09-28T11:20:00,P3,2026-10-05T11:20,SWM,0.6666,sangamwadi,DPR,21,new,AUTO_ROUTED,नदीकाठी संगमवाडी जवळ राडारोडा आणि कचरा टाकलाय
+121,2026-09-28T23:00:00,P3,2026-10-05T23:00,ENCROACH,0.6536,koregaon_park,DPR,121,new,AUTO_ROUTED,"Hotel वाल्यांनी footpath वर tables मांडलेत, Koregaon Park"
+127,2026-09-28T23:42:00,P3,2026-10-05T23:42,ENCROACH,0.8698,tadiwala_road,DPR,127,new,AUTO_ROUTED,"पदपथावर बांधकाम साहित्य टाकून ठेवलंय, ताडीवाला रोड"
+131,2026-09-29T00:10:00,P3,2026-10-06T00:10,BUILD,0.953,sangamwadi,DPR,131,new,AUTO_ROUTED,"नदीपात्रात अनधिकृत बांधकाम सुरू आहे, संगमवाडी"

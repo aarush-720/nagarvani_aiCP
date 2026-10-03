@@ -1,0 +1,5 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+10,2026-09-28T10:03:00,P2,2026-10-01T10:03,ROAD,0.6199,wanowrie,WRT,10,new,AUTO_ROUTED,वानवडी मधला road repair करून महिना झाला नाही आणि परत cracks आलेत
+44,2026-09-28T14:01:00,P2,2026-10-01T14:01,WATER,0.9772,fatimanagar,WRT,44,new,AUTO_ROUTED,"pipeline futli aahe road var, pani vahun jatay, fatima nagar"
+54,2026-09-28T15:11:00,P2,2026-10-01T15:11,SWM,0.8885,ramtekdi,WRT,54,new,AUTO_ROUTED,"गटाराचा प्रचंड वास येतो आणि डास झालेत, रामटेकडी"
+81,2026-09-28T18:20:00,P3,2026-10-05T18:20,HEALTH,0.9951,wanowrie,WRT,81,new,AUTO_ROUTED,"आमच्या परिसरात डासांचा खूप त्रास आहे, धूरफवारणी करा, वानवडी"

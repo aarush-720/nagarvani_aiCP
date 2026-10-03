@@ -1,0 +1,12 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+70,2026-09-28T17:03:00,P1,2026-09-29T17:03,ELEC,0.9282,kondhwa,KYW,70,new,AUTO_ROUTED,"विजेचा खांब वाकलाय आणि कधीही पडू शकतो, कोंढवा"
+148,2026-09-29T02:09:00,P1,2026-09-30T02:09,VET,0.9179,yewalewadi,KYW,148,new,AUTO_ROUTED,"पिसाळलेला कुत्रा फिरतोय, सगळ्यांना चावतोय, येवलेवाडी"
+19,2026-09-28T11:06:00,P2,2026-10-01T11:06,SWM,0.9451,yewalewadi,KYW,19,new,AUTO_ROUTED,"येवलेवाडीत मोकळ्या प्लॉटवर लोक रात्री कचरा टाकतात आणि जाळतात, धुरामुळे श्वास घ्यायला त्रास होतो"
+58,2026-09-28T15:39:00,P2,2026-10-01T15:39,DRAIN,0.965,pisoli,KYW,58,new,AUTO_ROUTED,"drainage tumbli aahe, ghan pani rastyavar, pisoli"
+94,2026-09-28T19:51:00,P2,2026-10-01T19:51,HEALTH,0.6501,kondhwa,KYW,94,new,AUTO_ROUTED,"सड़क पर मरा हुआ कुत्ता पड़ा है, बदबू आ रही है, कोंढवा"
+116,2026-09-28T22:25:00,P2,2026-10-01T22:25,ENCROACH,0.8975,kondhwa,KYW,116,new,AUTO_ROUTED,"सोडून दिलेली जुनी वाहनं रस्त्याकडेला महिनोन् महिने पडून आहेत, कोंढवा"
+151,2026-09-29T02:30:00,P2,2026-10-02T02:30,VET,0.9236,nibm,KYW,151,new,AUTO_ROUTED,"Stray dogs चा group bike च्या मागे धावतो, accident होऊ शकतो, NIBM"
+11,2026-09-28T10:10:00,P3,2026-10-05T10:10,ROAD,0.9621,kondhwa,KYW,11,new,AUTO_ROUTED,"kondhwa madhe rasta khup kharab zala aahe, sagle khadde bharun dya"
+20,2026-09-28T11:13:00,P3,2026-10-05T11:13,SWM,0.6929,kondhwa,KYW,20,new,AUTO_ROUTED,"घंटागाडी आमच्या भागात आठवड्यातून एकदाच येते, कोंढव्यात"
+74,2026-09-28T17:31:00,P3,2026-10-05T17:31,ELEC,0.9924,nibm,KYW,74,new,AUTO_ROUTED,"street light band aahe, galli madhe andhar, nibm road"
+79,2026-09-28T18:06:00,P4,2026-10-13T18:06,ELEC,0.9208,pisoli,KYW,79,new,AUTO_ROUTED,"नवीन पथदिवे बसवण्याची मागणी आहे, पिसोळी रोडवर एकही दिवा नाही"

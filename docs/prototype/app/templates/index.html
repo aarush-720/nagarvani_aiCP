@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% block body %}
+<div class="card"><form method="post">
+<h3>Complaint text (Marathi / Hindi / romanised / code-mixed)</h3>
+<textarea name="text">{{ r.raw_text if r else '' }}</textarea>
+<p><select name="channel"><option>whatsapp-text</option><option>web</option><option>ivr-transcript</option></select>
+<button type="submit">Triage</button></p></form></div>
+{% if r %}
+<div class="card"><h3>Ticket #{{ r.id }} — {{ 'Auto-routed' if r.route_status=='AUTO_ROUTED' else 'Held for nodal officer review' }}</h3>
+<div class="grid">
+<div>Department</div><div><b>{{ r.dept_name }}</b> ({{ r.dept }}), confidence {{ '%.2f'|format(r.dept_conf) }}</div>
+<div>Top-3 candidates</div><div>{% for d,p in r.top3 %}{{ d }} {{ '%.2f'|format(p) }}{% if not loop.last %} · {% endif %}{% endfor %}</div>
+<div>Locality → ward office</div><div>{{ r.locality or '—' }} → <b>{{ r.ward_name or 'not resolved' }}</b> ({{ r.ward_status }})</div>
+<div>Priority</div><div><span class="pill" style="background:{{ pc[r.priority] }}">{{ r.priority }}</span> &nbsp;SLA due {{ r.sla_due.replace('T',' ') }}</div>
+<div>Rules fired</div><div>{% if r.explanation %}{% for e in r.explanation %}{{ e }}<br>{% endfor %}{% else %}none (default P3){% endif %}</div>
+<div>Duplicate check</div><div>{{ r.dup_decision }} (best similarity {{ '%.2f'|format(r.dup_score) }}), cluster size {{ r.cluster_size }}</div>
+{% if r.review_reasons %}<div>Review reason</div><div>{{ r.review_reasons|join('; ') }}</div>{% endif %}
+</div></div>
+{% endif %}
+{% endblock %}

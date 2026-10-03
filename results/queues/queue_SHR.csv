@@ -1,0 +1,7 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+3,2026-09-28T09:14:00,P1,2026-09-29T09:14,ROAD,0.895,dhayari,SHR,3,new,AUTO_ROUTED,"धायरीत शाळेसमोरच्या रस्त्यावर खोल खड्डा आहे, काल एक मुलगा सायकलवरून पडला आणि जखमी झाला"
+155,2026-09-29T02:58:00,P1,2026-09-30T02:58,VET,0.9703,anandnagar,SHR,155,new,AUTO_ROUTED,"kutra chavla, 3 lokanna, anandnagar"
+42,2026-09-28T13:47:00,P2,2026-10-01T13:47,WATER,0.7825,hingne,SHR,42,new,AUTO_ROUTED,"pani yet nahi 2 divas pasun, hingne khurd"
+51,2026-09-28T14:50:00,P3,2026-10-05T14:50,DRAIN,0.6893,anandnagar,SHR,51,new,AUTO_ROUTED,"पावसाचं पाणी साचतं कारण पावसाळी गटार बंद आहे, आनंदनगर"
+53,2026-09-28T15:04:00,P3,2026-10-05T15:04,DRAIN,0.7619,vadgaon_bk,SHR,53,new,AUTO_ROUTED,"नाल्याची साफसफाई झाली नाही, पावसाळ्यात पूर येतो, वडगाव बुद्रुक"
+138,2026-09-29T00:59:00,P3,2026-10-06T00:59,BUILD,0.9803,dhayari,SHR,138,new,AUTO_ROUTED,"shejari anadhikrut bandhkam chalu aahe, parvangi nahi, dhayari"

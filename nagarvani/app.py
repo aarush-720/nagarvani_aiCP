@@ -9,8 +9,10 @@ from pathlib import Path
 
 from flask import Flask, Response, abort, flash, jsonify, redirect, render_template, request, send_file, url_for
 
-from . import asr, classifier, config, data, service
-from .store import Store, parse, utcnow
+from . import config, data, service
+from . import speech as asr
+from . import triage as triage_mod
+from .tickets import Store, parse, utcnow
 
 log = logging.getLogger("nagarvani")
 AUDIO_EXT = {"wav", "mp3", "m4a", "ogg", "oga", "opus", "webm", "mp4", "aac"}
@@ -37,7 +39,7 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
     # Loaded once at start-up.
     state = {"classifier": False, "classifier_error": None, "asr": False, "asr_error": None}
     try:
-        classifier.load()
+        triage_mod.load_all()          # classifier artefact, gazetteer, duplicate detector
         state["classifier"] = True
     except Exception as e:  # noqa: BLE001
         state["classifier_error"] = f"{type(e).__name__}: {e}"
@@ -53,7 +55,8 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
 
     depts = data.dept_names()
     wards = data.ward_names()
-    bands = {b["band"]: b for b in data.taxonomy()["severity_bands"]}
+    sla = data.sla_hours()
+    bands = {b["band"]: dict(b, sla_hours=sla[b["band"]]) for b in data.taxonomy()["bands"]}
 
     @app.context_processor
     def globals_():
@@ -228,10 +231,11 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
     # ---- about / health ------------------------------------------------------------------------
     @app.get("/about")
     def about():
-        ev = _read_json(config.RESULTS / "eval.json")
-        ae = _read_json(config.RESULTS / "asr_eval.json")
-        bench = _read_json(config.RESULTS / "asr_benchmark.json")
-        return render_template("about.html", ev=ev, ae=ae, bench=bench)
+        from . import results_view
+        R = results_view.load()
+        return render_template("about.html", s=results_view.summary(R) if R else None,
+                               ae=_read_json(config.RESULTS / "asr_eval.json"),
+                               bench=_read_json(config.RESULTS / "asr_benchmark.json"))
 
     @app.get("/health")
     def health():

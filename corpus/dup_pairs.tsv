@@ -1,0 +1,31 @@
+pair_id	a_id	b_text	b_dept	is_dup	kind
+D01	T003	धायरी शाळेजवळ रस्त्यात मोठा खड्डा, मुलं पडतायत, लवकर बुजवा	ROAD	1	paraphrase
+D02	T019	येवलेवाडीत प्लॉटवर कचरा जाळतात, धूर घरात येतो	SWM	1	paraphrase
+D03	T033	कात्रजमध्ये तीन दिवस झाले नळाला पाणी नाही	WATER	1	paraphrase
+D04	T050	मुंढव्यात चेंबर उघडं आहे, झाकण नाही	DRAIN	1	paraphrase
+D05	T066	भवानी पेठेत विजेची तार तुटून खाली पडलीय, धोका आहे	ELEC	1	paraphrase
+D06	T082	कोथरूडमधल्या आमच्या बिल्डिंगमध्ये डेंग्यूचे रुग्ण आहेत, फवारणी हवी	HEALTH	1	paraphrase
+D07	T097	पाषाणला मोठं झाड पडून रस्ता बंद झालाय	TREE	1	paraphrase
+D08	T114	हडपसरला रस्त्यावर अनधिकृत टपऱ्या, वाहतूक कोंडी	ENCROACH	1	paraphrase
+D09	T130	शनिवार पेठेतील जुन्या वाड्याची भिंत पडायला आलीय	BUILD	1	paraphrase
+D10	T146	हडपसर मध्ये कुत्रा मुलाला चावला, भटकी कुत्री खूप आहेत	VET	1	paraphrase
+D11	T008	Kharadi main road वर मोठे potholes, traffic होतंय	ROAD	1	paraphrase
+D12	T036	औंधमध्ये पाइपलाइन फुटून पाणी वाया जातंय	WATER	1	paraphrase
+D13	T049	नारायण पेठेत ड्रेनेज तुंबलंय, सांडपाणी रस्त्यावर	DRAIN	1	paraphrase
+D14	T071	Vishrantwadi मध्ये street light बंद आहे	ELEC	1	paraphrase
+D15	T148	येवलेवाडीत पिसाळलेलं कुत्रं लोकांना चावतंय	VET	1	paraphrase
+N01	T003	धायरीत आमच्या गल्लीतले पथदिवे बंद आहेत	ELEC	0	same-ward-diff-dept
+N02	T019	येवलेवाडीत भटक्या कुत्र्यांचा त्रास आहे	VET	0	same-ward-diff-dept
+N03	T033	कात्रजमध्ये स्ट्रीट लाईट बंद आहे	ELEC	0	same-ward-diff-dept
+N04	T050	मुंढव्यात रस्त्यावर अनधिकृत टपरी उभारली आहे	ENCROACH	0	same-ward-diff-dept
+N05	T066	भवानी पेठेत इमारतीच्या स्लॅबचे तुकडे पडत आहेत	BUILD	0	same-ward-diff-dept
+N06	T082	कोथरूडमध्ये झाडांची छाटणी करायची आहे	TREE	0	same-ward-diff-dept
+N07	T097	पाषाणमध्ये माकडांचा त्रास वाढलाय	VET	0	same-ward-diff-dept
+N08	T114	हडपसरमध्ये भटकी कुत्री मुलांच्या मागे लागतात	VET	0	same-ward-diff-dept
+N09	T008	Kharadi मध्ये बांधकामाच्या ठिकाणी पाणी साचून डास झालेत	HEALTH	0	same-ward-diff-dept
+N10	T036	औंधमध्ये पार्किंगच्या जागेत दुकानं बांधली आहेत	BUILD	0	same-ward-diff-dept
+N11	T001	कोथरूड मध्ये स्पीड ब्रेकर खूप उंच आहे, गाड्या आदळतात	ROAD	0	same-ward-same-dept
+N12	T033	कात्रजमध्ये मुख्य पाइपलाइन गळतेय, पाणी वाहतंय	WATER	0	same-ward-same-dept
+N13	T020	कोंढव्यात कचराकुंडी भरून वाहतेय, कोणी उचलत नाही	SWM	0	same-ward-same-dept
+N14	T145	वारजेत मोकाट गायी रस्त्यावर बसतात	VET	0	same-ward-same-dept
+N15	T077	हडपसरमध्ये विजेचा खांब वाकलाय, कधीही पडेल	ELEC	0	same-ward-same-dept

@@ -1,0 +1,13 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+107,2026-09-28T21:22:00,P1,2026-09-29T21:22,TREE,0.9531,chandannagar,NWS,107,new,AUTO_ROUTED,"zadachi fandi tutun latakli aahe, kadhihi padel, chandannagar"
+29,2026-09-28T12:16:00,P2,2026-10-01T12:16,SWM,0.7258,kharadi,NWS,29,new,AUTO_ROUTED,"खराडी में कूड़ा कई दिनों से नहीं उठाया गया, बदबू आ रही है"
+61,2026-09-28T16:00:00,P2,2026-10-01T16:00,DRAIN,0.721,chandannagar,NWS,61,new,AUTO_ROUTED,"सीवर लाइन जाम है, गंदा पानी सड़क पर बह रहा है, चंदननगर"
+135,2026-09-29T00:38:00,P2,2026-10-02T00:38,BUILD,0.9785,kharadi,NWS,135,new,AUTO_ROUTED,"Building च्या बाजूला deep excavation केलंय, संरक्षक भिंत नाही, धोका आहे, Kharadi"
+6,2026-09-28T09:35:00,P3,2026-10-05T09:35,ROAD,0.5201,viman_nagar,NWS,6,new,AUTO_ROUTED,"विमाननगर मध्ये फूटपाथचे पेव्हर ब्लॉक उखडले आहेत, चालताना पाय अडकतो"
+8,2026-09-28T09:49:00,P3,2026-10-05T09:49,ROAD,0.9115,kharadi,NWS,8,new,AUTO_ROUTED,"Kharadi मध्ये main road वर pothole खूप मोठा झालाय, traffic jam होतंय रोज"
+14,2026-09-28T10:31:00,P3,2026-10-05T10:31,ROAD,0.9458,wadgaon_sheri,NWS,14,new,AUTO_ROUTED,"वडगाव शेरी में सड़क पर बहुत बड़े गड्ढे हैं, कोई सुनवाई नहीं हो रही"
+93,2026-09-28T19:44:00,P3,2026-10-05T19:44,HEALTH,0.9726,wadgaon_sheri,NWS,93,new,AUTO_ROUTED,"मच्छरों का बहुत आतंक है, फॉगिंग करवाइए, वडगाव शेरी"
+125,2026-09-28T23:28:00,P3,2026-10-05T23:28,ENCROACH,0.5515,viman_nagar,NWS,125,new,AUTO_ROUTED,"फुटपाथ पर ठेले वालों ने कब्जा कर लिया है, विमान नगर"
+129,2026-09-28T23:56:00,P3,2026-10-05T23:56,BUILD,0.9287,wadgaon_sheri,NWS,129,new,AUTO_ROUTED,"शेजारी परवानगी न घेता तिसरा मजला बांधत आहेत, वडगाव शेरी"
+120,2026-09-28T22:53:00,P4,2026-10-13T22:53,ENCROACH,0.9774,viman_nagar,NWS,120,new,AUTO_ROUTED,"Illegal flex banners लावले आहेत chowk मध्ये, Viman Nagar"
+149,2026-09-29T02:16:00,P4,2026-10-14T02:16,VET,0.8314,kharadi,NWS,149,new,AUTO_ROUTED,"भटक्या कुत्र्यांचं निर्बीजीकरण करावं, संख्या वाढलीय, खराडी"

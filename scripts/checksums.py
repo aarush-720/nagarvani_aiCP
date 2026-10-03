@@ -1,4 +1,5 @@
-"""Write or verify SHA-256 checksums of the frozen data files (data/FROZEN.sha256).
+"""Write or verify SHA-256 checksums of the frozen files (data/FROZEN.sha256): the original
+prototype's data, logic and shipped outputs.
 
     python scripts/checksums.py --verify   # exit 1 if any frozen file changed
     python scripts/checksums.py --write    # only when the team deliberately re-freezes
@@ -12,15 +13,24 @@ from nagarvani.console import safe_console  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 FROZEN = [
-    "data/taxonomy.json",
+    # data that produced the reported numbers
+    "corpus/train_template.tsv",
+    "corpus/test_handwritten.tsv",
+    "corpus/dup_pairs.tsv",
+    "corpus/generate_train.py",
     "data/gazetteer.json",
-    "data/severity_rules.json",
-    "data/keywords.json",
-    "data/templates.json",
-    "data/train.csv",
-    "data/test_handwritten.csv",
-    "data/test_duplicate_pairs.csv",
-    "data/external/midsem_seed_AB.csv",
+    # the original prototype logic, kept byte-identical (the wrapper calls it, never edits it)
+    "nagarvani/normalise.py",
+    "nagarvani/classifier.py",
+    "nagarvani/location.py",
+    "nagarvani/severity.py",
+    "nagarvani/dedup.py",
+    "nagarvani/store.py",
+    "nagarvani/pipeline.py",
+    "nagarvani/asr.py",
+    # the prototype's own outputs, as shipped
+    "results/results_shipped.json",
+    "results/model_shipped.pkl",
 ]
 LIST = ROOT / "data" / "FROZEN.sha256"
 

@@ -17,7 +17,7 @@ UTF-8, with a header row and these columns:
 | `file` | File name inside `data/audio/` (WAV, MP3, M4A, OGG/Opus, WebM/Opus, MP4). |
 | `reference_text` | Exactly what the speaker said, in the script they intended (Devanagari for Marathi or Hindi; Latin for English words if you want them scored that way). |
 | `department` | Department code (ROAD, SWM, WATER, DRAIN, ELEC, HEALTH, TREE, ENCROACH, BUILD, VET). |
-| `locality` | Gazetteer locality id (e.g. `kothrud`) or empty if no place is named. |
+| `locality` | Gazetteer locality key from `data/gazetteer.json` (e.g. `kothrud`) or empty if no place is named. |
 | `speaker_id` | Anonymous id (S01, S02 ...). Never a name. |
 | `condition` | `quiet`, `street`, `fan`, `phone_speaker`, or another short label. |
 | `device` | e.g. `laptop_mic`, `android_whatsapp`, `iphone`. |

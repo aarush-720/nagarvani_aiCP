@@ -1,3 +1,15 @@
-# Frozen data must be byte-identical on every OS (checksums in data/FROZEN.sha256).
+# Frozen files must be byte-identical on every OS (checksums in data/FROZEN.sha256),
+# so Git must never convert their line endings.
+corpus/** -text
 data/** -text
-artefacts/** binary
+results/** -text
+nagarvani/normalise.py -text
+nagarvani/classifier.py -text
+nagarvani/location.py -text
+nagarvani/severity.py -text
+nagarvani/dedup.py -text
+nagarvani/store.py -text
+nagarvani/pipeline.py -text
+nagarvani/asr.py -text
+*.pkl binary
+*.png binary

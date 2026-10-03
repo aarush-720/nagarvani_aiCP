@@ -1,0 +1,6 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+106,2026-09-28T21:15:00,P1,2026-09-29T21:15,TREE,0.8901,warje,WKN,106,new,AUTO_ROUTED,"zad padle aahe rastyavar, gadya jau shakat nahit, warje"
+2,2026-09-28T09:07:00,P3,2026-10-05T09:07,ROAD,0.9375,karvenagar,WKN,2,new,AUTO_ROUTED,"कर्वेनगर मधल्या रस्त्यावर पावसामुळे डांबर वाहून गेलंय, सगळीकडे खड्डेच खड्डे"
+34,2026-09-28T12:51:00,P3,2026-10-05T12:51,WATER,0.9007,warje,WKN,34,new,AUTO_ROUTED,"आमच्या भागात खूप कमी दाबाने पाणी येतं, दुसऱ्या मजल्यावर पोहोचतच नाही, वारजे"
+122,2026-09-28T23:07:00,P3,2026-10-05T23:07,ENCROACH,0.7902,karvenagar,WKN,122,new,AUTO_ROUTED,"footpath var feriwale basle aahet, chalayla jaga nahi, karvenagar"
+145,2026-09-29T01:48:00,P3,2026-10-06T01:48,VET,0.9772,warje,WKN,145,new,AUTO_ROUTED,"भटक्या कुत्र्यांचा खूप त्रास आहे, रात्री मागे लागतात, वारजे"

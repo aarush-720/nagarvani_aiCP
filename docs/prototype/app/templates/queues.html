@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block body %}
+<p class="muted">{{ n }} tickets · sorted by priority, then SLA deadline · <a href="/export">export per-ward CSV</a></p>
+{% for w, rows in wards|dictsort %}
+<div class="card"><h3>{{ names[w] }} <span class="muted">({{ rows|length }})</span></h3>
+<table><tr><th>#</th><th>Pri</th><th>SLA due</th><th>Dept</th><th>Conf</th><th>Cluster</th><th>Complaint</th></tr>
+{% for t in rows %}<tr><td>{{ t.id }}</td><td><span class="pill" style="background:{{ pc[t.priority] }}">{{ t.priority }}</span></td>
+<td>{{ t.sla_due.replace('T',' ') }}</td><td>{{ t.dept }}</td><td>{{ '%.2f'|format(t.dept_conf) }}</td>
+<td>{{ t.cluster_id }}{% if t.dup_decision=='merge' %} (merged){% endif %}</td><td>{{ t.raw_text }}</td></tr>{% endfor %}
+</table></div>
+{% endfor %}
+{% endblock %}

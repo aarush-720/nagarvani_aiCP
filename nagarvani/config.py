@@ -1,36 +1,42 @@
-"""Paths, frozen thresholds and environment-driven settings.
+"""Paths and settings for the wrapper layer (web app, ASR, evaluation).
 
-The thresholds in this file are pre-specified (taken from the project brief, not tuned on
-any test data). Changing them changes every reported number; see CLAUDE.md.
+The decision thresholds themselves live in the original, frozen prototype code and are used
+from there unchanged:
+    gate tau = 0.50                 nagarvani/pipeline.py   Triage(tau=0.50)
+    fuzzy ratio = 0.80              nagarvani/location.py   WardResolver(fuzzy_threshold=0.80)
+    duplicate merge / review        nagarvani/dedup.py      DuplicateDetector(theta_high=0.45, theta_low=0.30)
+    classifier C = 10               nagarvani/classifier.py char_word_lr(C=10.0)
+The constants below mirror them for display only; tests/test_units.py checks they agree.
 """
 import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+CORPUS = ROOT / "corpus"
 DATA = ROOT / "data"
 RESULTS = ROOT / "results"
-ARTEFACTS = ROOT / "artefacts"
 MODELS = ROOT / "models"            # Whisper weights (git-ignored, fetched by scripts/fetch_models.py)
 INSTANCE = ROOT / "instance"        # SQLite database and stored uploads (git-ignored)
 
-TRAIN_CSV = DATA / "train.csv"
-TEST_CSV = DATA / "test_handwritten.csv"
-PAIRS_CSV = DATA / "test_duplicate_pairs.csv"
-EXTERNAL_CSV = DATA / "external" / "midsem_seed_AB.csv"
-CLASSIFIER_PATH = ARTEFACTS / "classifier.joblib"
+TRAIN_TSV = CORPUS / "train_template.tsv"
+TEST_TSV = CORPUS / "test_handwritten.tsv"
+PAIRS_TSV = CORPUS / "dup_pairs.tsv"
+GAZETTEER = DATA / "gazetteer.json"
+MODEL_PATH = RESULTS / "model.pkl"          # the path the original pipeline.py loads from
+RESULTS_JSON = RESULTS / "results.json"     # written by experiments/run_eval.py
 
-# ---- frozen decision thresholds -------------------------------------------------------
-GATE_MIN_CONFIDENCE = 0.50      # auto-route only if top class probability >= this ...
-                                # ... and the ward office was resolved
-FUZZY_MIN_RATIO = 0.80          # difflib ratio for the fuzzy locality fallback
-DUP_MERGE = 0.45                # cosine >= this: merge into the open ticket
-DUP_REVIEW = 0.30               # DUP_REVIEW <= cosine < DUP_MERGE: officer decides
-DUP_ESCALATE_REPORTS = 3        # R32 in data/severity_rules.json (kept there; mirrored here for docs)
-C_GRID = (0.1, 1.0, 10.0, 100.0)   # logistic-regression C candidates, chosen by CV on train only
-CV_FOLDS = 5
-RANDOM_STATE = 42
+# Mirrors of the frozen thresholds (display only).
+GATE_MIN_CONFIDENCE = 0.50
+FUZZY_MIN_RATIO = 0.80
+DUP_MERGE = 0.45
+DUP_REVIEW = 0.30
+CLASSIFIER_C = 10.0
 
-# ---- ASR (Phase 2) -----------------------------------------------------------------------
+# PYTHONHASHSEED under which experiments/run_eval.py reproduces the shipped results exactly.
+# Only one value depends on it (simulated-noise ward accuracy at 20% CER); see docs/DECISIONS.md F4.
+EVAL_HASH_SEED = "3"
+
+# ---- ASR ---------------------------------------------------------------------------------
 ASR_MODEL = os.environ.get("NAGARVANI_ASR_MODEL", "small")
 ASR_DEVICE = os.environ.get("NAGARVANI_ASR_DEVICE", "auto")      # auto | cpu | cuda
 ASR_VOCAB_PROMPT = os.environ.get("NAGARVANI_ASR_PROMPT", "0") == "1"

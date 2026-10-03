@@ -6,7 +6,7 @@ Reads data/audio/manifest.csv (file, reference_text, department, locality, speak
 condition, device). Writes results/asr_eval.json and results/asr_eval.md. With no clips it
 prints a message and writes nothing.
 
-Text normalisation before WER/CER: nagarvani.normalise.normalise (Unicode NFC, zero-width
+Text normalisation before WER/CER: nagarvani.speech.plain_text (Unicode NFC, zero-width
 characters removed, Devanagari digits to ASCII, punctuation and danda to spaces, Latin
 lower-cased, whitespace collapsed).
 """
@@ -20,14 +20,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from nagarvani import asr, config, data  # noqa: E402
+from nagarvani import config, data  # noqa: E402
+from nagarvani import speech as asr  # noqa: E402
 from nagarvani.console import safe_console  # noqa: E402
-from nagarvani.normalise import normalise  # noqa: E402
-from nagarvani.pipeline import triage  # noqa: E402
+from nagarvani.speech import plain_text  # noqa: E402
+from nagarvani.triage import triage  # noqa: E402
 
 AUDIO_DIR = config.DATA / "audio"
 MANIFEST = AUDIO_DIR / "manifest.csv"
-NORMALISATION = ("nagarvani.normalise.normalise: Unicode NFC, zero-width characters removed, Devanagari digits "
+NORMALISATION = ("nagarvani.speech.plain_text: Unicode NFC, zero-width characters removed, Devanagari digits "
                  "to ASCII, punctuation and danda replaced by spaces, Latin lower-cased, whitespace collapsed")
 
 
@@ -42,7 +43,7 @@ def edit_distance(a, b):
 
 
 def error_counts(ref, hyp):
-    r, h = normalise(ref), normalise(hyp)
+    r, h = plain_text(ref), plain_text(hyp)
     return (edit_distance(r.split(), h.split()), len(r.split()),
             edit_distance(r.replace(" ", ""), h.replace(" ", "")), len(r.replace(" ", "")))
 
@@ -118,7 +119,7 @@ def main():
     if not asr.model_available(a.model):
         print(f"Whisper model '{a.model}' is not in models/. Run: python scripts/fetch_models.py --model {a.model}")
         return 1
-    loc_ward = {loc["id"]: loc["ward"] for loc in data.gazetteer()["localities"]}
+    loc_ward = {k: v["ward"] for k, v in data.gazetteer()["localities"].items()}
     refs = [r["reference_text"] for r in rows]
     result = {"model": a.model, "n_clips": len(rows), "normalisation": NORMALISATION,
               "speakers": len({r["speaker_id"] for r in rows}),

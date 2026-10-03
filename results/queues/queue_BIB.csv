@@ -1,0 +1,3 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+18,2026-09-28T10:59:00,P3,2026-10-05T10:59,SWM,0.9599,bibwewadi,BIB,18,new,AUTO_ROUTED,"बिबवेवाडीतील कचराकुंडी भरून वाहतेय, कुत्री कचरा पसरवतात"
+73,2026-09-28T17:24:00,P3,2026-10-05T17:24,ELEC,0.6377,market_yard,BIB,73,new,AUTO_ROUTED,"आमच्या chowk मध्ये high mast lamp बंद आहे, Market Yard"

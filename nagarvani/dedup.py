@@ -1,72 +1,45 @@
-"""Duplicate detection: block on (ward office, department), mask location words, compare
-character 2-4 gram count vectors by cosine similarity.
-
-    score >= DUP_MERGE              -> merge into the open ticket
-    DUP_REVIEW <= score < DUP_MERGE -> an officer decides
-    score < DUP_REVIEW              -> new ticket
-"""
-from __future__ import annotations
-
-import math
-from collections import Counter
-from dataclasses import dataclass
-
-from . import config
-from .location import mask_locations
+"""M6 - Duplicate detection with blocking and a two-threshold decision."""
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 from .normalise import normalise
 
-
-def masked(text: str) -> str:
-    return mask_locations(normalise(text))
-
-
-def char_ngrams(s: str, lo: int = 2, hi: int = 4) -> Counter:
-    s = f" {s} "
-    return Counter(s[i:i + n] for n in range(lo, hi + 1) for i in range(len(s) - n + 1))
+# Tokens that describe *where* rather than *what*; removed before text similarity so that
+# two different problems in the same locality do not look alike.
+_LOC_STOP = None
 
 
-def cosine(a: str, b: str) -> float:
-    va, vb = char_ngrams(a), char_ngrams(b)
-    dot = sum(c * vb[g] for g, c in va.items() if g in vb)
-    na = math.sqrt(sum(c * c for c in va.values()))
-    nb = math.sqrt(sum(c * c for c in vb.values()))
-    return dot / (na * nb) if na and nb else 0.0
+class DuplicateDetector:
+    def __init__(self, resolver, theta_high=0.45, theta_low=0.30):
+        self.theta_high, self.theta_low = theta_high, theta_low
+        self.resolver = resolver
+        self.aliases = [a for a, _ in resolver.aliases]
+        self.vec = TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 4), sublinear_tf=True,
+                                   preprocessor=self._strip_loc)
 
+    def _strip_loc(self, text):
+        t = normalise(text)
+        for a in self.aliases:
+            t = t.replace(a, " ")
+        return t
 
-def decide(score: float) -> str:
-    if score >= config.DUP_MERGE:
-        return "merge"
-    if score >= config.DUP_REVIEW:
-        return "review"
-    return "new"
+    def fit(self, corpus):
+        self.vec.fit(corpus); return self
 
+    def similarity(self, a, b):
+        m = self.vec.transform([a, b])
+        return float(cosine_similarity(m[0], m[1])[0, 0])
 
-@dataclass
-class DuplicateResult:
-    decision: str                 # merge | review | new | skipped
-    ticket_id: int | None = None  # best-matching open ticket
-    score: float | None = None
-    report_count: int = 1         # reports of this issue including the new one (if merged)
-    compared: int = 0             # open tickets in the same (ward, department) block
-    reason: str = ""
-
-
-def find(text: str, candidates) -> DuplicateResult:
-    """candidates: iterable of (ticket_id, masked_text, report_count) in the same block."""
-    m = masked(text)
-    best = None
-    n = 0
-    for tid, other, reports in candidates:
-        n += 1
-        s = cosine(m, other)
-        if best is None or s > best[1]:
-            best = (tid, s, reports)
-    if best is None:
-        return DuplicateResult("new", compared=0, reason="no open ticket in the same ward office and department")
-    tid, s, reports = best
-    d = decide(s)
-    count = reports + 1 if d == "merge" else 1
-    words = {"merge": f"similarity {s:.2f} ≥ {config.DUP_MERGE}: same issue as ticket #{tid}",
-             "review": f"similarity {s:.2f} is between {config.DUP_REVIEW} and {config.DUP_MERGE}: an officer decides",
-             "new": f"best similarity {s:.2f} < {config.DUP_REVIEW}: a new issue"}
-    return DuplicateResult(d, tid, round(s, 4), count, n, words[d])
+    def decide(self, new, new_dept, new_ward, open_tickets):
+        """open_tickets: iterable of dicts with keys id, text, dept, ward.
+        Blocking: only tickets with the same ward office AND same department are compared.
+        Returns (decision, best_id, best_score) where decision in {'merge','review','new'}."""
+        best, best_id = 0.0, None
+        for t in open_tickets:
+            if t["dept"] != new_dept or not new_ward or t["ward"] != new_ward:
+                continue
+            s = self.similarity(new, t.get("text") or t["raw_text"])
+            if s > best:
+                best, best_id = s, t["id"]
+        if best >= self.theta_high: return "merge", best_id, best
+        if best >= self.theta_low: return "review", best_id, best
+        return "new", None, best

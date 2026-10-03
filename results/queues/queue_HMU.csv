@@ -1,0 +1,12 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+50,2026-09-28T14:43:00,P1,2026-09-29T14:43,DRAIN,0.797,mundhwa,HMU,50,new,AUTO_ROUTED,"चेंबरचं झाकण तुटलंय आणि उघडं आहे, कोणी पडू शकतं, मुंढवा"
+146,2026-09-29T01:55:00,P1,2026-09-30T01:55,VET,0.9685,hadapsar,HMU,146,new,AUTO_ROUTED,"कुत्र्याने माझ्या मुलाला चावा घेतला, गल्लीत दहा-बारा कुत्री आहेत, हडपसर"
+15,2026-09-28T10:38:00,P2,2026-10-01T10:38,ROAD,0.7714,magarpatta,HMU,15,new,AUTO_ROUTED,"मगरपट्टा के पास सड़क धंस गई है, कभी भी हादसा हो सकता है"
+158,2026-09-29T03:19:00,P2,2026-10-02T03:19,VET,0.9209,mundhwa,HMU,158,new,AUTO_ROUTED,"सड़क पर आवारा मवेशी घूमते हैं, हादसे का डर है, मुंढवा"
+5,2026-09-28T09:28:00,P3,2026-10-05T09:28,ROAD,0.5935,hadapsar,HMU,5,new,AUTO_ROUTED,"हडपसर गाडीतळ जवळ स्पीड ब्रेकरवर पांढरे पट्टे नाहीत, रात्री गाड्या आदळतात"
+77,2026-09-28T17:52:00,P3,2026-10-05T17:52,ELEC,0.9777,hadapsar,HMU,77,new,AUTO_ROUTED,"गली की स्ट्रीट लाइट खराब है, रात में अंधेरा रहता है, हडपसर"
+87,2026-09-28T19:02:00,P3,2026-10-05T19:02,HEALTH,0.8119,magarpatta,HMU,87,new,AUTO_ROUTED,"Mosquito fogging आमच्या area मध्ये कधीच होत नाही, Magarpatta"
+114,2026-09-28T22:11:00,P3,2026-10-05T22:11,ENCROACH,0.9035,hadapsar,HMU,114,new,AUTO_ROUTED,"रस्त्यावर बेकायदेशीर टपऱ्या उभारल्यात, वाहतूक कोंडी होते, हडपसर"
+123,2026-09-28T23:14:00,P3,2026-10-05T23:14,ENCROACH,0.8395,mundhwa,HMU,123,new,AUTO_ROUTED,"rastyavar anadhikrut tapri ubharli aahe, mundhwa"
+25,2026-09-28T11:48:00,P4,2026-10-13T11:48,SWM,0.7481,hadapsar,HMU,25,new,AUTO_ROUTED,"हडपसर मध्ये wet आणि dry waste वेगळा घेत नाहीत, सगळं mix करून नेतात"
+68,2026-09-28T16:49:00,P4,2026-10-13T16:49,ELEC,0.6438,keshavnagar,HMU,68,new,AUTO_ROUTED,"पोलवरचा दिवा लुकलुकतोय, केशवनगर"

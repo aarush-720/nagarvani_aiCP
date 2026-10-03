@@ -10,3 +10,5 @@ data/audio/*
 !data/audio/README.md
 !data/audio/manifest.example.csv
 uploads/
+results/nagarvani_demo.db
+*.db

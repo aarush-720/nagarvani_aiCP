@@ -7,7 +7,8 @@ import logging
 import os
 import sys
 
-from nagarvani import asr, config
+from nagarvani import config
+from nagarvani import speech as asr
 from nagarvani.console import safe_console
 
 
@@ -15,11 +16,11 @@ def main():
     safe_console()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     ok = True
-    if config.CLASSIFIER_PATH.exists():
-        print(f"[ok]   classifier artefact: {config.CLASSIFIER_PATH.relative_to(config.ROOT)}")
+    if config.MODEL_PATH.exists():
+        print(f"[ok]   classifier artefact: {config.MODEL_PATH.relative_to(config.ROOT)}")
     else:
         ok = False
-        print("[FAIL] classifier artefact missing. Run: python -m nagarvani.train")
+        print("[FAIL] classifier artefact missing. Run: python -m nagarvani.train  (or python experiments/run_eval.py)")
     if asr.model_available():
         print(f"[ok]   Whisper model '{config.ASR_MODEL}': {config.asr_model_dir().relative_to(config.ROOT)}")
     else:

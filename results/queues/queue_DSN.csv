@@ -1,0 +1,12 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+35,2026-09-28T12:58:00,P1,2026-09-29T12:58,WATER,0.9753,dhankawadi,DSN,35,new,AUTO_ROUTED,"नळाला गढूळ आणि वास येणारं पाणी येतंय, घरात सगळे आजारी पडलेत, धनकवडी"
+104,2026-09-28T21:01:00,P1,2026-09-29T21:01,TREE,0.7809,dhankawadi,DSN,104,new,AUTO_ROUTED,"Gulmohar चं झाड मुळासकट हललंय, school जवळ आहे, Dhankawadi"
+12,2026-09-28T10:17:00,P2,2026-10-01T10:17,ROAD,0.9561,katraj,DSN,12,new,AUTO_ROUTED,"katraj ghat road la mothha khadda aahe, accident hou shakto"
+33,2026-09-28T12:44:00,P2,2026-10-01T12:44,WATER,0.788,katraj,DSN,33,new,AUTO_ROUTED,कात्रजमध्ये तीन दिवसांपासून नळाला पाणीच आलेलं नाही
+41,2026-09-28T13:40:00,P2,2026-10-01T13:40,WATER,0.9204,balajinagar,DSN,41,new,AUTO_ROUTED,"Pipeline च्या कामानंतर पाण्यात माती येतेय, पिण्यायोग्य नाही, बालाजीनगर"
+69,2026-09-28T16:56:00,P3,2026-10-05T16:56,ELEC,0.8246,sahakarnagar,DSN,69,new,AUTO_ROUTED,"बागेतले दिवे बंद आहेत, संध्याकाळी महिलांना असुरक्षित वाटतं, सहकारनगर"
+141,2026-09-29T01:20:00,P3,2026-10-06T01:20,BUILD,0.7896,dhankawadi,DSN,141,new,AUTO_ROUTED,"बिना परमिशन के चौथी मंजिल बन रही है, धनकवडी"
+143,2026-09-29T01:34:00,P3,2026-10-06T01:34,BUILD,0.9495,katraj,DSN,143,new,AUTO_ROUTED,"हिल टॉप हिल स्लोप झोनमध्ये बांधकाम सुरू आहे, कात्रज"
+147,2026-09-29T02:02:00,P3,2026-10-06T02:02,VET,0.7983,katraj,DSN,147,new,AUTO_ROUTED,"रस्त्यावर मोकाट जनावरं बसतात, गाड्यांना अडथळा होतो, कात्रज"
+154,2026-09-29T02:51:00,P3,2026-10-06T02:51,VET,0.9527,sahakarnagar,DSN,154,new,AUTO_ROUTED,"bhatkya kutryancha tras vadhla aahe, lahan mulanna bhiti vatte, sahakarnagar"
+31,2026-09-28T12:30:00,P4,2026-10-13T12:30,SWM,0.7479,sahakarnagar,DSN,31,new,AUTO_ROUTED,"रस्त्यावर झाडलोट होत नाही, पानगळीचा पाला साचलाय, सहकारनगर"

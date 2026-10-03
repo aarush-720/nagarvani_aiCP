@@ -4,7 +4,8 @@ from types import SimpleNamespace
 
 import pytest
 
-from nagarvani import asr, config
+from nagarvani import config
+from nagarvani import speech as asr
 from tests import audio_fixtures as af
 
 
@@ -113,7 +114,7 @@ CLIPS = [p for p in AUDIO.glob("*") if p.suffix.lower() in {".wav", ".mp3", ".m4
 @pytest.mark.skipif(not asr.model_available(), reason="Whisper model not fetched")
 @pytest.mark.parametrize("clip", CLIPS, ids=lambda p: p.name)
 def test_real_clip_end_to_end(clip):
-    from nagarvani.pipeline import triage
+    from nagarvani.triage import triage
     asr.set_backend(None, None)
     try:
         r = asr.transcribe(clip, "mr")
