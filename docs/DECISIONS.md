@@ -1,162 +1,104 @@
 # Decisions
 
-Each entry records a choice the brief left open, or a deviation from it, and the reason.
+Choices the brief left open, deviations from it, and the reasons. Decisions from the
+superseded 2026-10-02 rebuild are in `archive/rebuild_2026-10-02/docs/DECISIONS.md`. Only those
+still in force are restated here.
 
-## D1. Rebuild from scratch; the brief's numbers are not targets
+## R1. Wrap the original prototype; supersede the from-scratch rebuild
 
-The repository held only the midsem notebook, and the developer confirmed it is the final
-prototype. The brief's "frozen numbers" rule assumed that code existed. It did not, so the
-rule now protects **the numbers this build produces**. They are frozen at the first
-evaluation run (Phase 1) and guarded by `tests/test_frozen_metrics.py`. I tuned nothing
-toward the brief's values (86.9%, 139/160, ...). The team's submitted report has to be
-updated to the numbers in `results/`.
+The original prototype reproduces every reported number (`docs/INVENTORY.md`). So the brief
+applies as written: its data and logic are frozen, and the new code wraps them. The rebuild's
+data, results and logic went to `archive/rebuild_2026-10-02/`. Its web app, ASR module, ticket
+store, tests and demo tooling were re-pointed at the original logic.
 
-## D2. Order of authoring, to avoid test-set leakage
+## R2. Original files stay at their original paths, byte-identical
 
-1. Taxonomy, gazetteer, test set, duplicate pairs, severity rules and keyword lexicon were
-   written first, before any model existed.
-2. Training templates were written next.
-3. A hygiene check compared every test sentence with its nearest training sentence
-   (char 2-4 gram TF-IDF cosine). Six template phrases were near-paraphrases of test
-   sentences (max cosine 0.82). I rewrote those **template** phrases, not the test
-   sentences. After the rewrite the maximum was 0.74. `tests/test_data_hygiene.py` keeps
-   it below 0.75.
-4. All data files were checksummed (`data/FROZEN.sha256`) before the classifier was trained
-   or any rule was run on the test set.
+The prototype's modules use paths relative to their own location (`../data/gazetteer.json`,
+`../corpus/`, `../results/model.pkl`). Keeping its layout means they run with **zero edits**,
+and they are checksummed alongside the data (`data/FROZEN.sha256`). The wrapper modules that
+would have clashed got new names:
+* `triage.py`: the `triage()` entry point;
+* `tickets.py`: the web app's ticket store;
+* `speech.py`: the faster-whisper backend.
 
-## D3. Who wrote the evaluation data (a limitation to state at the viva)
+## R3. `triage()` reproduces `Triage.triage` and only adds explanation
 
-The brief describes a "hand-written" test set written by the team. Here, the 160 test
-complaints, the 60 duplicate pairs, the training templates and the severity rules were all
-drafted by Claude (an AI assistant) during this build. Two consequences:
+`nagarvani/triage.py` calls the original classifier, resolver, duplicate detector and
+`severity.infer`, in the original order with the original thresholds. It adds read-only
+explanation for the trace page:
+* the alias that matched, and the fuzzy score (re-derived by the same scan);
+* the cue term behind each fired rule;
+* rules that were superseded, or the service-request rule suppressed by a hazard;
+* the dropdown ward hint, and UTC timestamps.
 
-* Test and training text share an author, so the test set is less independent than a
-  team-written one. The team should review every test row and, ideally, replace it with
-  complaints written by people who have not seen the templates.
-* The severity labels and the severity rules share an author, so severity agreement is
-  in-sample.
+`tests/test_triage_equivalence.py` checks that department, confidence, top 3, ward,
+band, fired rules, route and deadline equal the original on all 160 test complaints.
+`experiments/run_eval.py` asserts the same on every complaint of the E8 stream.
 
-To partly offset this, the evaluation also reports results on the team's own midsem seed
-set (`data/external/midsem_seed_AB.csv`, 460 rows, AI-drafted and human-checked by the team,
-different style). See D6.
+## R4. Three marked changes to `experiments/run_eval.py`
 
-## D4. Thresholds are taken from the brief, not tuned
+1. **Hash-seed pin.** The script re-runs itself under `PYTHONHASHSEED=3` (see F4).
+2. **Output folder.** `NAGARVANI_RESULTS_DIR` lets the tests write to a temporary folder.
+3. **E8 through `triage()`.** The end-to-end stream goes through `triage()` with a live ticket
+   store, and the original `Triage` runs alongside with every decision asserted equal.
 
-Gate confidence 0.50, fuzzy ratio 0.80, duplicate merge 0.45, duplicate review 0.30, and R32
-at 3 reports are copied from the brief. They are pre-specified values, not fitted to data.
-The logistic-regression C is chosen by 5-fold CV on the training set only, from
-{0.1, 1, 10, 100}.
+With these changes the full `results.json` still equals the shipped one.
 
-## D5. Severity design
+## R5. scikit-learn pinned to 1.8.0
 
-* Bands P1-P4. The SLA hours (24/72/168/360) are the team's midsem proposal, labelled as
-  proposed values everywhere.
-* Forward chaining with salience. The most urgent proposal wins (safety first). The
-  department default (R00) applies only when nothing else fires. P3/P4 complaints are raised
-  one band when vulnerable people or places are mentioned (R30). R32 escalates one band at
-  3 or more reports of the same issue.
-* Rule IDs are grouped (R0x life safety, R2x urgency, R30/R32 modifiers, R40 low priority).
-  They do not run consecutively, and the rule count (24, over 30 cue groups) is whatever the knowledge base
-  needed. It was not made to match the brief's "19 rules over 23 cue groups".
+The shipped `model.pkl` was pickled with 1.8.0, so that's the version the code was written
+against. Results reproduce under both 1.8.0 and 1.9.1, with float differences of 1e-16 or
+smaller. The rebuilt model predicts identically to the shipped one, with probabilities within
+1e-15.
 
-## D6. External set: label mapping
+## R6. Web-app policy layered on the original decisions
 
-The midsem set has 8 departments + `other`. For external department accuracy, `other` rows
-are dropped, and a prediction counts as correct when it falls in the mapped set:
-roads→ROAD, solid_waste→SWM, water_supply→WATER, drainage→DRAIN, street_lights→ELEC,
-trees_garden→TREE, encroachment→{ENCROACH, BUILD} (midsem merged the two),
-health_mosquito→{HEALTH, VET} (midsem put stray dogs there). This is a coarse check of
-transfer to differently-written text, not a like-for-like accuracy.
+These apply only in the live app. The offline evaluation never uses them.
+* **A dropdown ward counts as "ward known" for the gate.** It is used only when the text
+  resolver fails, and the trace marks it.
+* **A merge links the report to the open ticket only when the gate passes.** A report that
+  fails the gate goes to review with the duplicate shown as a pending decision. Similarity
+  0.30–0.45 sends the report to review ("officer decides").
+* **Escalation applies to the open ticket.** When R32 fires on a merged report, the open
+  ticket's priority becomes the more urgent of the two.
+* **What the original does.** It records the merge as a cluster link and routes by the gate
+  alone. `triage()` reports that original decision as `route_original`.
 
-## D7. Dead animals belong to VET
+## R7. Speech (carried over from the rebuild)
 
-Midsem put dead-animal removal under solid waste. Here it is VET, so that all animal
-complaints go to one department. The team can change this in a re-freeze.
+* **The model could not be downloaded here**, because the sandbox network blocks
+  huggingface.co. So no ASR model has been run, and model timing and selection by
+  measurement were not done. `scripts/fetch_models.py --benchmark` does both on the demo
+  laptop. The default `small` is a placeholder.
+* **The guard thresholds are heuristics:**
+  * length 1–60 s;
+  * fewer than 10% voiced frames counts as silence;
+  * repetition rules;
+  * no-speech probability ≥ 0.80;
+  * a "transcript uncertain" flag when average log-probability is below -1.0.
 
-## D8. ASR model cannot be downloaded in the build environment
+  None of them enters the routing gate.
+* **Decoding settings:** the language is forced, beam size 5,
+  `condition_on_previous_text=False`, and the VAD filter is off because the guards run first.
+* **Separate scoring normalisation.** WER/CER use `speech.plain_text`, which is NFC with all
+  punctuation stripped. The original `normalise` keeps commas, full stops and hyphens, which
+  would count as errors.
 
-The build sandbox's network policy blocks `huggingface.co`, where faster-whisper models are
-hosted. I did not try to route around the block through mirrors. Consequences, recorded
-again in the handover:
-* Model timing and selection by measurement (Phase 2) could not be done here.
-  `scripts/fetch_models.py --benchmark` does it on the team's laptop and writes
-  `results/asr_benchmark.json`.
-* The offline real-audio test could not be run here.
+## R8. Display metadata is not frozen
 
-## D9. How C was chosen (a change made before any test-set run)
-
-The first criterion was mean 5-fold CV accuracy on the training set, with ties going to the
-smaller C. C = 1, 10 and 100 all tie at 0.999, so it picked C = 1. On a hand-made example
-(not a test item), C = 1 gave a plain pothole complaint only 0.35 top probability. The gate
-thresholds that probability at 0.50, so C = 1 would send almost everything to review.
-
-Before running anything on the test set, I switched the criterion to mean 5-fold CV
-log-loss on the training set. Log-loss is a proper scoring rule and judges the
-probabilities the gate uses. It picks C = 100, the largest value in the pre-set grid.
-Template data is close to separable, so CV log-loss keeps improving as C grows. I did not
-extend the grid. The test set played no part in this choice.
-
-## D10. What happens when the gate and duplicate detection disagree
-
-* Gate fails → SENT_TO_REVIEW. Any duplicate candidate is shown to the officer as a pending
-  decision, never merged automatically.
-* Gate passes, similarity ≥ 0.45 → MERGED into the open ticket. Its report count goes up,
-  and severity is re-assessed with that count, so R32 fires at 3 reports. The parent
-  ticket's priority becomes the more urgent of its own and the new result.
-* Gate passes, 0.30 ≤ similarity < 0.45 → SENT_TO_REVIEW with "possible duplicate, officer
-  decides".
-* Gate passes, similarity < 0.30 → AUTO_ROUTED.
-
-Reason: the gate stays authoritative. An uncertain department never causes an automatic
-merge, because the block depends on that department.
-
-## D11. A dropdown ward counts as "ward resolved" for the gate
-
-When the text names no place, or names an ambiguous one, and the citizen picked a ward
-office in the dropdown, that ward is used (method "hint") and the gate treats the ward as
-known. The citizen stated it explicitly, which a guess would not be. The trace marks it.
-The offline evaluation never uses hints.
-
-## D12. Results files contain no timestamps
-
-`results/eval.json` is byte-for-byte reproducible (`python eval/evaluate.py --check`).
+`data/taxonomy.json` holds only Marathi display names and band labels. SLA hours come from
+`severity.SLA_HOURS`.
 
 # Found but not changed
 
-These are defects in frozen data or logic. Fixing any of them would change the frozen
-numbers, so they are left for the team to decide on in a deliberate re-freeze.
+Each item is a defect in frozen data or logic. Fixing it would change reported numbers, or
+could, so it's left for the team to decide in a deliberate re-freeze.
 
-| # | Where | Reproducing input | What happens | Effect on numbers |
-|---|---|---|---|---|
-| F1 | `data/gazetteer.json`: alias `banner` for Baner | `Paud road वर banner आणि flex लावून signal झाकला गेलाय` (T127) | The English word "banner" matches Baner (W01) as well as Paud Road (W08), so the place is ruled ambiguous and the ticket goes to review. | Removing the alias would resolve T127 (ward correct 135→136/137) and could change the gate figures. |
-| F2 | Fuzzy fallback with no stopword for बाहेर | `सोसायटीच्या gate बाहेर dry waste चे bags पडून आहेत` (T031) | बाहेर ("outside") ≈ बाणेर at ratio 0.80, so the ward is wrongly resolved to W01. | Adding बाहेर to `fuzzy_stopwords` fixes it (correctly unresolved 22→23/23). |
-| F3 | Suffix list cannot undo stem changes | `हिंगण्यात ...` (T145) | हिंगणे→हिंगण्यात changes the stem, so there is no exact or fuzzy match. (कोंढव्यात, मुंढव्यात, येरवड्यात do pass fuzzy.) | A stem rule (-े/-ा → -्यात) would change ward numbers. |
-
-## D13. The default ASR model ("small") was not chosen by measurement
-
-The brief asks to time candidate models on this machine and to pick the largest one that
-transcribes a 15-second clip in about 20 s. That could not be done in the build sandbox:
-the models could not be downloaded (D8), and no speech clip exists. The default `small` is
-a placeholder. It is a multilingual model of moderate size, chosen without any timing.
-The team should run `python scripts/fetch_models.py --benchmark <15 s Marathi clip>` on
-the demo laptop. That writes `results/asr_benchmark.json` with the timings and a
-recommendation. Then set `NAGARVANI_ASR_MODEL`.
-
-## D14. ASR guard thresholds are heuristics
-
-These thresholds were set by hand and have not been validated on real audio:
-* Length: 1-60 s.
-* "Mostly silence": fewer than 10% of 30 ms frames have RMS ≥ 0.01.
-* Repetition: a 2-4 word phrase three times in a row, a single word four times in a row,
-  or fewer than 30% distinct words in a transcript of 6 or more words.
-* Whisper no-speech probability ≥ 0.80.
-* "Transcript uncertain" flag: average log-probability < -1.0.
-
-None of them affects the routing gate. They are described as heuristics in the code, the
-UI and the README.
-
-## D15. Whisper decoding options
-
-Beam size 5. `condition_on_previous_text=False` to reduce repetition loops. The VAD filter
-is off: clips are short and the silence guard runs first, and the VAD would hide the
-duration and silence behaviour the guards report on. The language is always forced.
+| # | Where | Reproducing input | What happens |
+|---|---|---|---|
+| F1 | Fuzzy ward fallback (`location.py`), no stopwords | Test T080: `डीपी बॉक्सचं दार उघडं आहे आणि वायर बाहेर आलेत, मुलं जवळ खेळतात` | बाहेर ("outside") ≈ बाणेर, so the ward is wrongly resolved to Aundh-Baner. The paper reports this. It's the one false resolution, so correctly-unresolved is 23/24. |
+| F2 | `severity.py` cue OPEN | `मॅनहोलचे झाकण गायब आहे` (DRAIN) | "गायब" (missing) isn't in OPEN, so R02 (open manhole, P1) does not fire and the result is P3. |
+| F3 | `severity.py` cue OPEN | `मॅनहोलचे झाकण नवीन बसवले, आता काही समस्या नाही` (DRAIN) | "नाही" ("not") is in OPEN, so a resolved cover still fires R02 and gives P1. |
+| F4 | `location.py`: `sorted(set(pairs), key=lambda p: -len(p[0]))` | `PYTHONHASHSEED=0` vs `2` on the E7 noise loop | Aliases of equal length are ordered by per-process string hashing, so fuzzy tie-breaks can differ between runs. Only one stored value moves: simulated-noise ward accuracy at 20% CER (0.7853 vs 0.7868). No figure in the brief or paper does. Mitigated by pinning the seed in `run_eval.py`. The fix would be `key=lambda p: (-len(p[0]), p)`. |
+| F5 | `severity.py` cue OUTAGE | `चार दिवसांपासून नळाला पाणी आलेले नाही` (WATER) | The cue lists the colloquial "आलेलं नाही" but not the standard spelling "आलेले नाही", so R12 (outage ≥ 2 days → P2) does not fire. |
+| F6 | Classifier calibration (behaviour, not a bug) | `कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या` | A vague complaint gets HEALTH at 0.61 and is auto-routed. |

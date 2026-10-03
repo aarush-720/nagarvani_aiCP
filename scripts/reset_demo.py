@@ -3,7 +3,7 @@
     python scripts/reset_demo.py            # asks for confirmation
     python scripts/reset_demo.py --yes
 
-Seed complaints are drawn from the training templates (data/train.csv), never from the
+Seed complaints are drawn from the training corpus (corpus/train_template.tsv), never from the
 test set, and run through the real pipeline with back-dated timestamps (spread over the
 last 10 days), so some are genuinely overdue. Seeds avoid the (ward, department) blocks
 used by docs/DEMO_SCRIPT.md, so they cannot interfere with the live duplicate demo.
@@ -18,8 +18,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from nagarvani import config, data, service  # noqa: E402
 from nagarvani.console import safe_console  # noqa: E402
 from nagarvani.examples import EXAMPLES  # noqa: E402
-from nagarvani.pipeline import triage  # noqa: E402
-from nagarvani.store import Store, iso, utcnow  # noqa: E402
+from nagarvani.triage import triage  # noqa: E402
+from nagarvani.tickets import Store, iso, utcnow  # noqa: E402
 
 N_SEED = 21          # with a known place
 N_NO_PLACE = 4       # no place named: these land in the review queue
@@ -38,19 +38,21 @@ def demo_blocks():
 def seed(store):
     avoid = demo_blocks()
     rng = random.Random(SEED)
-    rows = [r for r in data.load_train() if r["ward"] and (r["ward"], r["department"]) not in avoid]
+    loc2ward = {k: v["ward"] for k, v in data.gazetteer()["localities"].items()}
+    train = data.load_train()
+    rows = [dict(r, ward=loc2ward[r["loc"]]) for r in train
+            if r["loc"] != "NONE" and (loc2ward[r["loc"]], r["dept"]) not in avoid]
     rng.shuffle(rows)
     chosen, used_blocks, used_wards = [], set(), {}
     for r in rows:                       # spread over wards and departments, one per block
-        if (r["ward"], r["department"]) in used_blocks or used_wards.get(r["ward"], 0) >= 2:
+        if (r["ward"], r["dept"]) in used_blocks or used_wards.get(r["ward"], 0) >= 2:
             continue
         chosen.append(r)
-        used_blocks.add((r["ward"], r["department"]))
+        used_blocks.add((r["ward"], r["dept"]))
         used_wards[r["ward"]] = used_wards.get(r["ward"], 0) + 1
         if len(chosen) == N_SEED:
             break
-    chosen += rng.sample(
-        [r for r in data.load_train() if not r["ward"]], N_NO_PLACE)
+    chosen += rng.sample([r for r in train if r["loc"] == "NONE"], N_NO_PLACE)
     rng.shuffle(chosen)
     now = utcnow()
     for i, r in enumerate(chosen):

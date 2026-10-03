@@ -4,7 +4,7 @@ import pytest
 
 from nagarvani import service
 from nagarvani.examples import EXAMPLES
-from nagarvani.store import Store
+from nagarvani.tickets import Store
 from scripts import reset_demo
 
 EX = {e["key"]: e["text"] for e in EXAMPLES}
@@ -36,7 +36,7 @@ def test_demo_behaviours(seeded):
     for key in ("clean_marathi", "romanised", "code_mixed"):
         assert run(s, key)["status"] == "auto_routed", key
     t = run(s, "life_safety")
-    assert t["priority"] == "P1" and "R01" in t["trace_json"]
+    assert t["priority"] == "P1" and '"rule": "R02"' in t["trace_json"]
     t = run(s, "fuzzy")
     assert json.loads(t["trace_json"])["ward"]["method"] == "fuzzy" and t["status"] == "auto_routed"
     t = run(s, "unknown_place")
@@ -48,4 +48,4 @@ def test_demo_behaviours(seeded):
     parent = s.get(a["id"])
     assert parent["report_count"] == 3 and parent["priority"] == "P2" and "R32" in parent["escalation"]
     t = run(s, "failure")
-    assert t["department"] == "WATER" and t["status"] == "auto_routed"      # gold is HEALTH: an uncaught error
+    assert t["department"] == "SWM" and t["status"] == "auto_routed"        # gold is DRAIN (T054): an uncaught error

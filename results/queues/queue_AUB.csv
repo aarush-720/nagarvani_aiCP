@@ -1,0 +1,12 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+55,2026-09-28T15:18:00,P1,2026-09-29T15:18,DRAIN,0.9707,balewadi,AUB,55,new,AUTO_ROUTED,"Drainage line chock-up झाली आहे, toilet चं पाणी घरात मागे येतंय, Balewadi"
+97,2026-09-28T20:12:00,P1,2026-09-29T20:12,TREE,0.6999,pashan,AUB,97,new,AUTO_ROUTED,"वादळात मोठं झाड रस्त्यावर पडलंय, वाहतूक बंद आहे, पाषाण"
+4,2026-09-28T09:21:00,P2,2026-10-01T09:21,ROAD,0.7864,baner,AUB,4,new,AUTO_ROUTED,"बाणेर रोडवर नवीन केलेला रस्ता पुन्हा खोदून ठेवलाय आणि तसाच सोडलाय, दोन आठवडे झाले"
+36,2026-09-28T13:05:00,P2,2026-10-01T13:05,WATER,0.9267,aundh,AUB,36,new,AUTO_ROUTED,"रस्त्याखालची पाइपलाइन फुटली आहे, हजारो लिटर पाणी वाया जातंय, औंध"
+103,2026-09-28T20:54:00,P2,2026-10-01T20:54,TREE,0.9749,aundh,AUB,103,new,AUTO_ROUTED,"Tree fall झालंय parking मध्ये, गाड्यांचं नुकसान झालंय, Aundh"
+23,2026-09-28T11:34:00,P3,2026-10-05T11:34,SWM,0.8568,baner,AUB,23,new,AUTO_ROUTED,Baner मध्ये garbage collection van दोन दिवसांपासून आली नाही
+43,2026-09-28T13:54:00,P3,2026-10-05T13:54,WATER,0.9899,pashan,AUB,43,new,AUTO_ROUTED,"nalala pani khup kami pressure ne yete, pashan"
+101,2026-09-28T20:40:00,P3,2026-10-05T20:40,TREE,0.838,baner,AUB,101,new,AUTO_ROUTED,"कोणीतरी रात्री झाडं तोडली, बेकायदेशीर वृक्षतोड, बाणेर"
+132,2026-09-29T00:17:00,P3,2026-10-06T00:17,BUILD,0.8026,balewadi,AUB,132,new,AUTO_ROUTED,"बांधकामाचा राडारोडा रस्त्यावर टाकतात आणि रात्रीपर्यंत काम चालतं, बालेवाडी"
+136,2026-09-29T00:45:00,P3,2026-10-06T00:45,BUILD,0.9201,aundh,AUB,136,new,AUTO_ROUTED,"Parking च्या जागेत shops बांधली आहेत, illegal construction, Aundh"
+160,2026-09-29T03:33:00,P3,2026-10-06T03:33,VET,0.7592,pashan,AUB,160,new,AUTO_ROUTED,"माकडांचा उपद्रव झालाय, घरात घुसतात, पाषाण"

@@ -1,38 +1,42 @@
-"""Leakage and shape checks on the frozen data (see docs/DECISIONS.md D2)."""
+"""Shape checks on the frozen data: what the report says the data is."""
 from collections import Counter
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-
 from nagarvani import data
-from nagarvani.normalise import normalise
+from nagarvani.classifier import DEPARTMENTS
+from nagarvani.severity import CUES, RULES
 
 
-def test_no_test_sentence_near_copies_training():
-    tr = [normalise(r["text"]) for r in data.load_train()]
-    te = [normalise(r["text"]) for r in data.load_test()]
-    v = TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 4)).fit(tr)
-    assert cosine_similarity(v.transform(te), v.transform(tr)).max() < 0.75
-
-
-def test_test_set_shape():
-    rows = data.load_test()
-    assert len(rows) == 160
-    assert set(Counter(r["department"] for r in rows).values()) == {16}
-    assert Counter(r["language"] for r in rows) == {"mr": 80, "hi": 20, "rom": 30, "mix": 30}
-    wards = set(data.ward_names()) | {"UNRESOLVED"}
-    assert all(r["ward"] in wards and r["severity"] in {"P1", "P2", "P3", "P4"} for r in rows)
-
-
-def test_train_set_shape():
+def test_train_corpus():
     rows = data.load_train()
     assert len(rows) == 2000
-    assert Counter(r["language"] for r in rows) == {"mr": 907, "hi": 336, "rom": 388, "mix": 369}
+    assert Counter(r["lang"] for r in rows) == {"mr": 907, "hi": 336, "mr-rom": 388, "mix": 369}
+    assert {r["dept"] for r in rows} == set(DEPARTMENTS)
 
 
-def test_gazetteer_wards_exist():
-    wards = set(data.ward_names())
+def test_test_set():
+    rows = data.load_test()
+    assert len(rows) == 160
+    assert set(Counter(r["dept"] for r in rows).values()) == {16}
+    assert Counter(r["lang"] for r in rows) == {"mr": 80, "hi": 20, "mr-rom": 30, "mix": 30}
+    assert {r["sev"] for r in rows} <= {"P1", "P2", "P3", "P4"}
+    locs = set(data.gazetteer()["localities"]) | {"NONE"}
+    assert all(r["loc"] in locs for r in rows)
+
+
+def test_no_test_text_in_training():
+    train = {r["text"] for r in data.load_train()}
+    assert not any(r["text"] in train for r in data.load_test())
+
+
+def test_duplicate_pairs():
+    pairs = data.load_pairs()
+    assert len(pairs) == 30
+    test_ids = {r["id"] for r in data.load_test()}
+    assert all(p["a_id"] in test_ids for p in pairs)
+
+
+def test_gazetteer_and_rules():
     g = data.gazetteer()
-    assert len(wards) == 15
-    assert all(loc["ward"] in wards for loc in g["localities"])
-    assert all(set(a["wards"]) <= wards for a in g["ambiguous"])
+    assert len(g["ward_offices"]) == 15 and len(g["localities"]) == 59
+    assert all(v["ward"] in g["ward_offices"] for v in g["localities"].values())
+    assert len(RULES) == 19 and len(CUES) == 23

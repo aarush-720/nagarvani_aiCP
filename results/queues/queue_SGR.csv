@@ -1,0 +1,8 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+150,2026-09-29T02:23:00,P1,2026-09-30T02:23,VET,0.8271,deccan,SGR,150,new,AUTO_ROUTED,"जखमी कुत्रं रस्त्यावर पडलंय, उपचाराची गरज आहे, डेक्कन"
+157,2026-09-29T03:12:00,P1,2026-09-30T03:12,VET,0.9768,shivajinagar,SGR,157,new,AUTO_ROUTED,"आवारा कुत्तों ने बच्चे पर हमला किया, शिवाजीनगर"
+60,2026-09-28T15:53:00,P2,2026-10-01T15:53,WATER,0.7045,model_colony,SGR,60,new,AUTO_ROUTED,"gatarache ghan pani nalyat na jata rastyavar yete, model colony"
+85,2026-09-28T18:48:00,P3,2026-10-05T18:48,HEALTH,0.6595,shivajinagar,SGR,85,new,AUTO_ROUTED,"हॉटेलचं खरकटं उघड्यावर टाकतात, उंदीर झालेत, शिवाजीनगर"
+102,2026-09-28T20:47:00,P3,2026-10-05T20:47,TREE,0.8963,deccan,SGR,102,new,AUTO_ROUTED,"पडलेल्या फांद्या आठवडाभर उचलल्या नाहीत, फूटपाथ बंद आहे, डेक्कन"
+119,2026-09-28T22:46:00,P3,2026-10-05T22:46,ENCROACH,0.5451,fc_road,SGR,119,new,AUTO_ROUTED,"Footpath वर hawkers बसतात, pedestrians ला जागाच नाही, FC Road"
+67,2026-09-28T16:42:00,P4,2026-10-13T16:42,ELEC,0.8077,deccan,SGR,67,new,AUTO_ROUTED,"स्ट्रीट लाईट दिवसाही चालूच असतात, वीज वाया जाते, डेक्कन"

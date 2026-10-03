@@ -1,0 +1,8 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+52,2026-09-28T14:57:00,P1,2026-09-29T14:57,DRAIN,0.9395,guruwar_peth,BHP,52,new,AUTO_ROUTED,"सांडपाणी थेट घरात शिरतंय, गुरुवार पेठ"
+66,2026-09-28T16:35:00,P1,2026-09-29T16:35,ELEC,0.9414,bhavani_peth,BHP,66,new,AUTO_ROUTED,"विजेची तार तुटून रस्त्यावर लोंबकळतेय, करंट असू शकतो, भवानी पेठ"
+91,2026-09-28T19:30:00,P1,2026-09-29T19:30,HEALTH,0.7095,kashewadi,BHP,91,new,AUTO_ROUTED,"malaria che rugn vadhle aahet vasti madhe, kashewadi"
+110,2026-09-28T21:43:00,P1,2026-09-29T21:43,TREE,0.8601,nana_peth,BHP,110,new,AUTO_ROUTED,"पेड़ की डाल खतरनाक तरीके से लटक रही है, कभी भी गिर सकती है, नाना पेठ"
+133,2026-09-29T00:24:00,P1,2026-09-30T00:24,BUILD,0.9842,bhavani_peth,BHP,133,new,AUTO_ROUTED,"इमारतीच्या स्लॅबचे तुकडे पडत आहेत, लोक खाली राहतात, भवानी पेठ"
+139,2026-09-29T01:06:00,P1,2026-09-30T01:06,BUILD,0.9375,guruwar_peth,BHP,139,new,AUTO_ROUTED,"juni imarat dhokadayak aahe, ek bhint padli aahe, guruwar peth"
+134,2026-09-29T00:31:00,P3,2026-10-06T00:31,ENCROACH,0.7709,nana_peth,BHP,134,new,AUTO_ROUTED,"गच्चीवर अनधिकृत मोबाईल टॉवर बसवलाय, नाना पेठ"

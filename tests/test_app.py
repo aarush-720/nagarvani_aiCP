@@ -9,9 +9,10 @@ from types import SimpleNamespace
 
 import pytest
 
-from nagarvani import asr, pipeline, service
+from nagarvani import config, service
+from nagarvani import speech as asr
 from nagarvani.app import create_app
-from nagarvani.store import iso, utcnow
+from nagarvani.tickets import iso, utcnow
 from tests import audio_fixtures as af
 
 POTHOLE = "हडपसर येथे रस्त्यावर खूप मोठे खड्डे पडले आहेत"
@@ -76,10 +77,11 @@ def test_health_reports_components(client):
 
 
 def test_about_numbers_come_from_results(client):
-    ev = json.loads((pipeline.config.RESULTS / "eval.json").read_text(encoding="utf-8"))
+    R = json.loads((config.RESULTS / "results.json").read_text(encoding="utf-8"))
     html = client.get("/about").get_data(as_text=True)
-    acc = ev["department"]["accuracy"]
-    assert f"{100 * acc['rate']:.1f}% ({acc['count']}/{acc['total']})" in html
+    acc = R["E1_dept"]["Char + word TF-IDF + LogReg (proposed)"]["acc"]
+    n = R["data"]["n_test"]
+    assert f"{100 * acc:.1f}% ({round(acc * n)}/{n})" in html
     assert "Real-audio evaluation has not been run" in html          # no results/asr_eval.json
     assert "Simulation, not ASR" in html
 
@@ -94,11 +96,11 @@ def test_typed_complaint_to_trace(client, app):
     r = submit(client, "कोथरूडमध्ये रस्त्यावर मोठा खड्डा आहे", "k1")
     assert r.status_code == 302
     html = client.get(r.headers["Location"]).get_data(as_text=True)
-    for must in ("Department", "Location", "Severity", "Duplicates", "Routing gate", "तक्रार क्रमांक", "R00",
+    for must in ("Department", "Location", "Severity", "Duplicates", "Routing gate", "तक्रार क्रमांक", "default band",
                  "proposed values, not official PMC"):
         assert must in html
     t = store(app).get(tid_from(r))
-    assert t["status"] in ("auto_routed", "review") and t["ward"] == "W08" and t["created_utc"].endswith("+00:00")
+    assert t["status"] in ("auto_routed", "review") and t["ward"] == "KOB" and t["created_utc"].endswith("+00:00")
     assert "IST" in html
 
 
@@ -114,9 +116,9 @@ def test_empty_text_is_not_a_ticket(client, app):
 
 
 def test_ward_hint_used_when_text_has_no_place(client, app):
-    r = submit(client, "रस्त्यावर खूप मोठे खड्डे पडले आहेत", "k3", ward_hint="W05")
+    r = submit(client, "रस्त्यावर खूप मोठे खड्डे पडले आहेत", "k3", ward_hint="HMU")
     t = store(app).get(tid_from(r))
-    assert t["ward"] == "W05" and json.loads(t["trace_json"])["ward"]["method"] == "hint"
+    assert t["ward"] == "HMU" and json.loads(t["trace_json"])["ward"]["method"] == "hint"
 
 
 def test_unknown_place_goes_to_review(client, app):
@@ -200,7 +202,7 @@ def test_asr_crash_keeps_audio_as_review_ticket(client, app, tmp_path):
 
 def test_asr_model_missing_keeps_audio(client, app, tmp_path, monkeypatch):
     asr.set_backend(None, None)
-    monkeypatch.setattr(pipeline.config, "MODELS", tmp_path / "nomodels")
+    monkeypatch.setattr(config, "MODELS", tmp_path / "nomodels")
     j = upload(client, af.write(tmp_path / "m.wav", af.tone(3)), "m.wav").get_json()
     assert j["code"] == "asr_failed" and store(app).get(j["ticket_id"])["status"] == "review"
 
@@ -230,17 +232,17 @@ def test_triple_duplicate_merges_and_escalates(client, app):
 def test_queue_sort_filter_overdue(client, app):
     s = store(app)
     old = utcnow() - timedelta(days=30)
-    a = s.create(now=old, channel="seed", text="जुनी तक्रार", status="review", department="ROAD", ward="W08",
+    a = s.create(now=old, channel="seed", text="जुनी तक्रार", status="review", department="ROAD", ward="KOB",
                  priority="P3", deadline_utc=iso(old + timedelta(hours=168)))
-    b = s.create(channel="seed", text="तातडीची", status="auto_routed", department="DRAIN", ward="W08",
+    b = s.create(channel="seed", text="तातडीची", status="auto_routed", department="DRAIN", ward="KOB",
                  priority="P1", deadline_utc=iso(utcnow() + timedelta(hours=24)))
-    c = s.create(channel="seed", text="दुसरा वॉर्ड", status="auto_routed", department="ROAD", ward="W01",
+    c = s.create(channel="seed", text="दुसरा वॉर्ड", status="auto_routed", department="ROAD", ward="AUB",
                  priority="P2", deadline_utc=iso(utcnow() + timedelta(hours=72)))
     rows = service.queue(s)
     assert [r["id"] for r in rows] == [b, c, a] and rows[-1]["overdue"]
-    assert [r["id"] for r in service.queue(s, ward="W08")] == [b, a]
+    assert [r["id"] for r in service.queue(s, ward="KOB")] == [b, a]
     assert [r["id"] for r in service.queue(s, department="ROAD", status="review")] == [a]
-    html = client.get("/queue?ward=W08").get_data(as_text=True)
+    html = client.get("/queue?ward=KOB").get_data(as_text=True)
     assert "OVERDUE" in html and "दुसरा वॉर्ड" not in html
 
 
@@ -249,11 +251,11 @@ def test_corrections_logged_and_exported(client, app):
     tid = tid_from(submit(client, "रस्त्यावर खूप मोठे खड्डे पडले आहेत", "c1"))     # review: no ward
     client.post(f"/ticket/{tid}/action", data={"action": "confirm"})               # refused: no ward yet
     assert s.get(tid)["status"] == "review"
-    client.post(f"/ticket/{tid}/action", data={"action": "correct", "department": "ROAD", "ward": "W12",
+    client.post(f"/ticket/{tid}/action", data={"action": "correct", "department": "ROAD", "ward": "WKN",
                                                "priority": "P2", "note": "officer knows the street"})
     client.post(f"/ticket/{tid}/action", data={"action": "confirm"})
     t = s.get(tid)
-    assert (t["ward"], t["priority"], t["status"], t["confirmed"]) == ("W12", "P2", "routed", 1)
+    assert (t["ward"], t["priority"], t["status"], t["confirmed"]) == ("WKN", "P2", "routed", 1)
     lines = client.get("/corrections.jsonl").get_data(as_text=True).strip().splitlines()
     fields = [json.loads(x)["field"] for x in lines]
     assert "ward" in fields and "priority" in fields and "confirm" in fields
@@ -264,13 +266,13 @@ def test_corrections_logged_and_exported(client, app):
 def test_pending_duplicate_decision(client, app):
     s = store(app)
     a = tid_from(submit(client, POTHOLE, "p1"))
-    b = s.create(channel="seed", text="हडपसर येथे रस्ता खराब", status="review", department="ROAD", ward="W05",
-                 priority="P3", dup_candidate_id=a, dup_score=0.38, dup_pending=1, masked_text="x")
+    b = s.create(channel="seed", text="हडपसर येथे रस्ता खराब", status="review", department="ROAD", ward="HMU",
+                 priority="P3", dup_candidate_id=a, dup_score=0.38, dup_pending=1)
     assert "Possible duplicate" in client.get(f"/ticket/{b}").get_data(as_text=True)
     client.post(f"/ticket/{b}/action", data={"action": "dup_merge"})
     assert s.get(b)["status"] == "merged" and s.get(a)["report_count"] == 2
-    c = s.create(channel="seed", text="हडपसर येथे फुटपाथ", status="review", department="ROAD", ward="W05",
-                 priority="P3", dup_candidate_id=a, dup_score=0.33, dup_pending=1, masked_text="y")
+    c = s.create(channel="seed", text="हडपसर येथे फुटपाथ", status="review", department="ROAD", ward="HMU",
+                 priority="P3", dup_candidate_id=a, dup_score=0.33, dup_pending=1)
     client.post(f"/ticket/{c}/action", data={"action": "dup_keep"})
     assert s.get(c)["dup_pending"] == 0 and s.get(c)["status"] == "review"
     assert {"duplicate"} <= {r["field"] for r in s.corrections()}
@@ -279,9 +281,9 @@ def test_pending_duplicate_decision(client, app):
 # ---- CSV export --------------------------------------------------------------------------------
 def test_ward_csv_has_bom_and_devanagari(client):
     submit(client, "कोथरूडमध्ये रस्त्यावर मोठा खड्डा आहे", "csv1")
-    r = client.get("/export/W08.csv")
+    r = client.get("/export/KOB.csv")
     assert r.status_code == 200 and r.data.startswith(b"\xef\xbb\xbf")
     assert "text/csv" in r.headers["Content-Type"] and "charset=utf-8" in r.headers["Content-Type"]
     rows = list(csv.reader(io.StringIO(r.data.decode("utf-8-sig"))))
     assert rows[0][0] == "ticket" and "कोथरूड" in rows[1][9]
-    assert client.get("/export/W99.csv").status_code == 404
+    assert client.get("/export/XXX.csv").status_code == 404

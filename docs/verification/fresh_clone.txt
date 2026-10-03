@@ -1,24 +1,24 @@
-# Fresh-clone test, 2026-10-02T07:29:39Z
+# Fresh-clone test, 2026-10-03T05:08:20Z
 ++ git clone -q --branch claude/nagarvani-final-mvp-y345l5 https://github.com/aarush-720/nagarvani_aiCP /tmp/claude-0/-home-user-nagarvani-aiCP/c83c8895-8a97-5d2e-becd-f70ecf33e416/scratchpad/fresh
 ++ cd /tmp/claude-0/-home-user-nagarvani-aiCP/c83c8895-8a97-5d2e-becd-f70ecf33e416/scratchpad/fresh
 ++ git log --oneline -1
-4d5d277 Phase 4: demo tooling - run.py, reset_demo, demo script from real outputs, reproduce
+362175d Docs: inventory, decisions, README, CLAUDE.md, demo script for the wrapped prototype
 ++ python3.11 -m venv .venv
+++ grep -v notice
 ++ .venv/bin/pip install -q -r requirements.txt
 
-[notice] A new release of pip is available: 24.0 -> 26.2.1
-[notice] To update, run: python3.11 -m pip install --upgrade pip
-++ tail -3
+++ tail -4
 ++ .venv/bin/python scripts/checksums.py --verify
-ok      data/test_handwritten.csv
-ok      data/test_duplicate_pairs.csv
-ok      data/external/midsem_seed_AB.csv
-++ tail -2
+ok      nagarvani/pipeline.py
+ok      nagarvani/asr.py
+ok      results/results_shipped.json
+ok      results/model_shipped.pkl
 ++ .venv/bin/python scripts/fetch_models.py
+++ tail -2
 DOWNLOAD FAILED for 'small': ProxyError: 403 Forbidden
 The model is hosted on huggingface.co. Check the internet connection (or proxy/firewall) and run this script again. The app still runs without it; only the audio path is disabled.
 ++ tail -2
 ++ .venv/bin/python -m pytest -q tests
-...............................................                          [100%]
-118 passed, 1 skipped in 93.27s (0:01:33)
+...............................                                          [100%]
+246 passed, 1 skipped in 97.74s (0:01:37)
 ++ set +x

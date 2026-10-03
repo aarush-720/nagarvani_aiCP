@@ -1,0 +1,1106 @@
+{
+ "data": {
+  "n_train": 2000,
+  "n_test": 160,
+  "train_lang": {
+   "mr": 907,
+   "mix": 369,
+   "hi": 336,
+   "mr-rom": 388
+  },
+  "test_lang": {
+   "mr": 80,
+   "mix": 30,
+   "mr-rom": 30,
+   "hi": 20
+  },
+  "train_sev": {
+   "P1": 660,
+   "P3": 716,
+   "P2": 470,
+   "P4": 154
+  },
+  "test_sev": {
+   "P3": 72,
+   "P1": 36,
+   "P2": 36,
+   "P4": 16
+  },
+  "test_loc_none": 24
+ },
+ "E1_dept": {
+  "Keyword lexicon (no ML)": {
+   "acc": 0.81875,
+   "macro_f1": 0.8212510092454313,
+   "top3": 0.89375,
+   "by_lang": {
+    "mr": 0.8,
+    "hi": 0.85,
+    "mr-rom": 0.8666666666666667,
+    "mix": 0.8
+   },
+   "fit_seconds": 2.2369999896909576e-05
+  },
+  "Word TF-IDF + Naive Bayes": {
+   "acc": 0.8125,
+   "macro_f1": 0.8145066960153168,
+   "top3": 0.925,
+   "by_lang": {
+    "mr": 0.775,
+    "hi": 0.95,
+    "mr-rom": 0.7666666666666667,
+    "mix": 0.8666666666666667
+   },
+   "fit_seconds": 0.05333731199993963
+  },
+  "Word TF-IDF + LogReg": {
+   "acc": 0.81875,
+   "macro_f1": 0.8199316153467825,
+   "top3": 0.93125,
+   "by_lang": {
+    "mr": 0.7875,
+    "hi": 0.95,
+    "mr-rom": 0.7666666666666667,
+    "mix": 0.8666666666666667
+   },
+   "fit_seconds": 0.7153240089999144
+  },
+  "Char n-gram TF-IDF + LogReg": {
+   "acc": 0.8875,
+   "macro_f1": 0.8877855024100854,
+   "top3": 0.98125,
+   "by_lang": {
+    "mr": 0.8625,
+    "hi": 0.95,
+    "mr-rom": 0.8333333333333334,
+    "mix": 0.9666666666666667
+   },
+   "fit_seconds": 1.4886456940000699
+  },
+  "Char + word TF-IDF + LogReg (proposed)": {
+   "acc": 0.86875,
+   "macro_f1": 0.8697694903626332,
+   "top3": 0.95625,
+   "by_lang": {
+    "mr": 0.8375,
+    "hi": 0.95,
+    "mr-rom": 0.8333333333333334,
+    "mix": 0.9333333333333333
+   },
+   "fit_seconds": 0.8993212420000418
+  }
+ },
+ "E1_cv_template": {
+  "acc": 0.998,
+  "macro_f1": 0.997998709319354
+ },
+ "E1_C_search": {
+  "0.3": 0.9869644657078117,
+  "1": 0.9959948745884887,
+  "3": 0.9974987061943343,
+  "10": 0.997998709319354,
+  "30": 0.997998709319354
+ },
+ "E2_per_class": {
+  "BUILD": {
+   "p": 0.9333333333333333,
+   "r": 0.875,
+   "f1": 0.9032258064516129,
+   "n": 16
+  },
+  "DRAIN": {
+   "p": 0.8125,
+   "r": 0.8125,
+   "f1": 0.8125,
+   "n": 16
+  },
+  "ELEC": {
+   "p": 0.9375,
+   "r": 0.9375,
+   "f1": 0.9375,
+   "n": 16
+  },
+  "ENCROACH": {
+   "p": 0.7647058823529411,
+   "r": 0.8125,
+   "f1": 0.7878787878787878,
+   "n": 16
+  },
+  "HEALTH": {
+   "p": 1.0,
+   "r": 0.8125,
+   "f1": 0.896551724137931,
+   "n": 16
+  },
+  "ROAD": {
+   "p": 0.75,
+   "r": 0.9375,
+   "f1": 0.8333333333333334,
+   "n": 16
+  },
+  "SWM": {
+   "p": 0.8666666666666667,
+   "r": 0.8125,
+   "f1": 0.8387096774193549,
+   "n": 16
+  },
+  "TREE": {
+   "p": 1.0,
+   "r": 0.8125,
+   "f1": 0.896551724137931,
+   "n": 16
+  },
+  "VET": {
+   "p": 0.8823529411764706,
+   "r": 0.9375,
+   "f1": 0.9090909090909091,
+   "n": 16
+  },
+  "WATER": {
+   "p": 0.8333333333333334,
+   "r": 0.9375,
+   "f1": 0.8823529411764706,
+   "n": 16
+  }
+ },
+ "E2_confusions": [
+  {
+   "id": "T013",
+   "gold": "ROAD",
+   "pred": "WATER",
+   "text": "nana peth madhil galli madhe road cha level khali gela aahe, pani sachte",
+   "conf": 0.263
+  },
+  {
+   "id": "T022",
+   "gold": "SWM",
+   "pred": "ROAD",
+   "text": "भाजी मंडईजवळ मार्केट यार्ड मध्ये सडलेला भाजीपाला पडून आहे, माश्या झाल्यात",
+   "conf": 0.214
+  },
+  {
+   "id": "T028",
+   "gold": "SWM",
+   "pred": "DRAIN",
+   "text": "public toilet chi safai hot nahi, kasba peth",
+   "conf": 0.384
+  },
+  {
+   "id": "T032",
+   "gold": "SWM",
+   "pred": "ENCROACH",
+   "text": "गणपती विसर्जनानंतर घाटावर निर्माल्य आणि प्लास्टिक पडून आहे",
+   "conf": 0.426
+  },
+  {
+   "id": "T047",
+   "gold": "WATER",
+   "pred": "ROAD",
+   "text": "सार्वजनिक नळ तुटला आहे, केशवनगर",
+   "conf": 0.4
+  },
+  {
+   "id": "T054",
+   "gold": "DRAIN",
+   "pred": "SWM",
+   "text": "गटाराचा प्रचंड वास येतो आणि डास झालेत, रामटेकडी",
+   "conf": 0.888
+  },
+  {
+   "id": "T056",
+   "gold": "DRAIN",
+   "pred": "SWM",
+   "text": "Manhole overflow होतोय school च्या gate समोर, Salunke Vihar",
+   "conf": 0.487
+  },
+  {
+   "id": "T060",
+   "gold": "DRAIN",
+   "pred": "WATER",
+   "text": "gatarache ghan pani nalyat na jata rastyavar yete, model colony",
+   "conf": 0.704
+  },
+  {
+   "id": "T076",
+   "gold": "ELEC",
+   "pred": "ROAD",
+   "text": "divyacha khamb gancha lagun kharab zala, gultekdi",
+   "conf": 0.444
+  },
+  {
+   "id": "T082",
+   "gold": "HEALTH",
+   "pred": "BUILD",
+   "text": "इमारतीत तीन जणांना डेंग्यू झालाय, औषध फवारणी तातडीने करा, कोथरूड",
+   "conf": 0.33
+  },
+  {
+   "id": "T083",
+   "gold": "HEALTH",
+   "pred": "VET",
+   "text": "रस्त्यावर मेलेलं कुत्रं पडलंय दोन दिवसांपासून, वास येतोय, धानोरी",
+   "conf": 0.349
+  },
+  {
+   "id": "T084",
+   "gold": "HEALTH",
+   "pred": "DRAIN",
+   "text": "बांधकामाच्या ठिकाणी पाणी साचलंय, डासांची पैदास होतेय, खराडी",
+   "conf": 0.385
+  },
+  {
+   "id": "T098",
+   "gold": "TREE",
+   "pred": "ELEC",
+   "text": "झाडाची मोठी फांदी विजेच्या तारांवर लोंबकळतेय, कधीही पडेल, एरंडवणे",
+   "conf": 0.445
+  },
+  {
+   "id": "T099",
+   "gold": "TREE",
+   "pred": "ENCROACH",
+   "text": "सोसायटीतलं जुनं झाड वाकलंय, घरावर कधीही पडू शकतं, हिंगणे",
+   "conf": 0.437
+  },
+  {
+   "id": "T111",
+   "gold": "TREE",
+   "pred": "WATER",
+   "text": "नवीन लावलेली रोपं पाण्याअभावी वाळली, उद्यान विभागाने लक्ष द्यावं",
+   "conf": 0.758
+  },
+  {
+   "id": "T113",
+   "gold": "ENCROACH",
+   "pred": "ROAD",
+   "text": "फूटपाथवर फेरीवाल्यांनी पूर्ण कब्जा केलाय, चालायला जागा नाही, लक्ष्मी रोड",
+   "conf": 0.408
+  },
+  {
+   "id": "T126",
+   "gold": "ENCROACH",
+   "pred": "ROAD",
+   "text": "सड़क पर अवैध होर्डिंग लगा है, हवा में कभी भी गिर सकता है, खराडी",
+   "conf": 0.389
+  },
+  {
+   "id": "T128",
+   "gold": "ENCROACH",
+   "pred": "VET",
+   "text": "रस्त्यावरच गाड्या दुरुस्त करणारे गॅरेज चालवतात, सगळं ऑइल रस्त्यावर",
+   "conf": 0.339
+  },
+  {
+   "id": "T134",
+   "gold": "BUILD",
+   "pred": "ENCROACH",
+   "text": "गच्चीवर अनधिकृत मोबाईल टॉवर बसवलाय, नाना पेठ",
+   "conf": 0.771
+  },
+  {
+   "id": "T140",
+   "gold": "BUILD",
+   "pred": "ENCROACH",
+   "text": "terrace var illegal shed bandhla aahe, pune station",
+   "conf": 0.443
+  },
+  {
+   "id": "T152",
+   "gold": "VET",
+   "pred": "DRAIN",
+   "text": "गायी आणि म्हशी रस्त्यावर सोडतात, traffic block होतं, Wanowrie",
+   "conf": 0.279
+  }
+ ],
+ "E3_calibration": {
+  "ece": 0.11057970935781777,
+  "mean_conf": 0.7665527552593769,
+  "mean_conf_correct": 0.8137101659610816,
+  "mean_conf_wrong": 0.4544156082338076
+ },
+ "E3_abstention_curve": [
+  {
+   "tau": 0.0,
+   "coverage": 1.0,
+   "acc_auto": 0.86875,
+   "misroute_rate_auto": 0.13124999999999998
+  },
+  {
+   "tau": 0.05,
+   "coverage": 1.0,
+   "acc_auto": 0.86875,
+   "misroute_rate_auto": 0.13124999999999998
+  },
+  {
+   "tau": 0.1,
+   "coverage": 1.0,
+   "acc_auto": 0.86875,
+   "misroute_rate_auto": 0.13124999999999998
+  },
+  {
+   "tau": 0.15,
+   "coverage": 1.0,
+   "acc_auto": 0.86875,
+   "misroute_rate_auto": 0.13124999999999998
+  },
+  {
+   "tau": 0.2,
+   "coverage": 1.0,
+   "acc_auto": 0.86875,
+   "misroute_rate_auto": 0.13124999999999998
+  },
+  {
+   "tau": 0.25,
+   "coverage": 0.99375,
+   "acc_auto": 0.8742138364779874,
+   "misroute_rate_auto": 0.12578616352201255
+  },
+  {
+   "tau": 0.3,
+   "coverage": 0.975,
+   "acc_auto": 0.8846153846153846,
+   "misroute_rate_auto": 0.11538461538461542
+  },
+  {
+   "tau": 0.35,
+   "coverage": 0.95,
+   "acc_auto": 0.9013157894736842,
+   "misroute_rate_auto": 0.09868421052631582
+  },
+  {
+   "tau": 0.4,
+   "coverage": 0.9125,
+   "acc_auto": 0.9246575342465754,
+   "misroute_rate_auto": 0.07534246575342463
+  },
+  {
+   "tau": 0.45,
+   "coverage": 0.85,
+   "acc_auto": 0.9632352941176471,
+   "misroute_rate_auto": 0.03676470588235292
+  },
+  {
+   "tau": 0.5,
+   "coverage": 0.8125,
+   "acc_auto": 0.9692307692307692,
+   "misroute_rate_auto": 0.03076923076923077
+  },
+  {
+   "tau": 0.55,
+   "coverage": 0.79375,
+   "acc_auto": 0.968503937007874,
+   "misroute_rate_auto": 0.03149606299212604
+  },
+  {
+   "tau": 0.6,
+   "coverage": 0.78125,
+   "acc_auto": 0.968,
+   "misroute_rate_auto": 0.03200000000000003
+  },
+  {
+   "tau": 0.65,
+   "coverage": 0.7625,
+   "acc_auto": 0.9672131147540983,
+   "misroute_rate_auto": 0.032786885245901676
+  },
+  {
+   "tau": 0.7,
+   "coverage": 0.71875,
+   "acc_auto": 0.9652173913043478,
+   "misroute_rate_auto": 0.034782608695652195
+  },
+  {
+   "tau": 0.75,
+   "coverage": 0.64375,
+   "acc_auto": 0.970873786407767,
+   "misroute_rate_auto": 0.029126213592232997
+  },
+  {
+   "tau": 0.8,
+   "coverage": 0.5375,
+   "acc_auto": 0.9883720930232558,
+   "misroute_rate_auto": 0.011627906976744207
+  },
+  {
+   "tau": 0.85,
+   "coverage": 0.475,
+   "acc_auto": 0.9868421052631579,
+   "misroute_rate_auto": 0.013157894736842146
+  },
+  {
+   "tau": 0.9,
+   "coverage": 0.3875,
+   "acc_auto": 1.0,
+   "misroute_rate_auto": 0.0
+  },
+  {
+   "tau": 0.95,
+   "coverage": 0.21875,
+   "acc_auto": 1.0,
+   "misroute_rate_auto": 0.0
+  }
+ ],
+ "E4_ward_exact_only": {
+  "correct": 136,
+  "correctly_unresolved": 24
+ },
+ "E4_ward": {
+  "counts": {
+   "correct": 136,
+   "correctly_unresolved": 23,
+   "false_resolution": 1
+  },
+  "n_with_locality": 136,
+  "n_without": 24,
+  "acc_with_locality": 1.0,
+  "overall_acc": 0.99375,
+  "errors": [
+   {
+    "id": "T080",
+    "kind": "false_resolution",
+    "text": "डीपी बॉक्सचं दार उघडं आहे आणि वायर बाहेर आलेत, मुलं जवळ खेळतात",
+    "got": {
+     "locality": "baner",
+     "ward": "AUB",
+     "ward_name": "Aundh-Baner",
+     "status": "resolved",
+     "candidates": [
+      "baner"
+     ],
+     "fuzzy": true
+    }
+   }
+  ]
+ },
+ "E5_severity": {
+  "rules_gold_dept": {
+   "acc": 0.975,
+   "within1": 1.0,
+   "mae": 0.025,
+   "macro_f1": 0.9729920984892262,
+   "p1_recall": 1.0,
+   "p1_precision": 0.972972972972973,
+   "under_triage": 0.0,
+   "over_triage": 0.025
+  },
+  "rules_pred_dept": {
+   "acc": 0.95625,
+   "within1": 0.99375,
+   "mae": 0.05,
+   "macro_f1": 0.9559641781813522,
+   "p1_recall": 0.9444444444444444,
+   "p1_precision": 0.9714285714285714,
+   "under_triage": 0.0125,
+   "over_triage": 0.03125
+  },
+  "rules_no_escalation": {
+   "acc": 0.94375,
+   "within1": 1.0,
+   "mae": 0.05625,
+   "macro_f1": 0.9401634748102139,
+   "p1_recall": 0.9722222222222222,
+   "p1_precision": 0.9722222222222222,
+   "under_triage": 0.0375,
+   "over_triage": 0.01875
+  },
+  "learned_logreg": {
+   "acc": 0.76875,
+   "within1": 0.9625,
+   "mae": 0.26875,
+   "macro_f1": 0.7711029711029711,
+   "p1_recall": 0.8055555555555556,
+   "p1_precision": 0.8529411764705882,
+   "under_triage": 0.0875,
+   "over_triage": 0.14375
+  },
+  "majority_P3": {
+   "acc": 0.45,
+   "within1": 0.775,
+   "mae": 0.775,
+   "macro_f1": 0.15517241379310345,
+   "p1_recall": 0.0,
+   "p1_precision": NaN,
+   "under_triage": 0.45,
+   "over_triage": 0.1
+  },
+  "rules_on_template_set_gold_dept": {
+   "acc": 0.9275,
+   "within1": 0.993,
+   "mae": 0.0795,
+   "macro_f1": 0.9130390969077965,
+   "p1_recall": 0.9303030303030303,
+   "p1_precision": 0.9887278582930756,
+   "under_triage": 0.0415,
+   "over_triage": 0.031
+  }
+ },
+ "E5_confusion_rules": [
+  [
+   36,
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   35,
+   0,
+   0
+  ],
+  [
+   0,
+   2,
+   70,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   15
+  ]
+ ],
+ "E5_errors": [
+  {
+   "id": "T010",
+   "gold": "P3",
+   "pred": "P2",
+   "text": "वानवडी मधला road repair करून महिना झाला नाही आणि परत cracks आलेत",
+   "fired": [
+    "R31"
+   ]
+  },
+  {
+   "id": "T048",
+   "gold": "P3",
+   "pred": "P2",
+   "text": "उन्हाळ्यात आमच्या वस्तीत आठवडाभर पाणी नव्हतं, आता पण एक दिवसाआड येतं",
+   "fired": [
+    "R12"
+   ]
+  },
+  {
+   "id": "T140",
+   "gold": "P4",
+   "pred": "P3",
+   "text": "terrace var illegal shed bandhla aahe, pune station",
+   "fired": []
+  },
+  {
+   "id": "T150",
+   "gold": "P2",
+   "pred": "P1",
+   "text": "जखमी कुत्रं रस्त्यावर पडलंय, उपचाराची गरज आहे, डेक्कन",
+   "fired": [
+    "R01"
+   ]
+  }
+ ],
+ "E5_rule_fire_counts": {
+  "R01": 8,
+  "R02": 3,
+  "R03": 4,
+  "R04": 12,
+  "R05": 6,
+  "R06": 5,
+  "R07": 2,
+  "R08": 1,
+  "R10": 9,
+  "R11": 21,
+  "R12": 3,
+  "R13": 3,
+  "R14": 2,
+  "R15": 5,
+  "R16": 1,
+  "R20": 16,
+  "R30": 4,
+  "R31": 5
+ },
+ "E6_dedup": {
+  "pairs": [
+   {
+    "pair": "D01",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.323,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D02",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.372,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D03",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.673,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D04",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.564,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D05",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.502,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D06",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.37,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "D07",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.426,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D08",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.609,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D09",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.68,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D10",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.507,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D11",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.717,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D12",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.671,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D13",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.823,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D14",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.773,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "D15",
+    "kind": "paraphrase",
+    "gold": 1,
+    "sim": 0.513,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "N01",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.078,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N02",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.183,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N03",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.099,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N04",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.034,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N05",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.031,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N06",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.065,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N07",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.045,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N08",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.027,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N09",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.085,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N10",
+    "kind": "same-ward-diff-dept",
+    "gold": 0,
+    "sim": 0.08,
+    "blocked_in": false,
+    "same_dept_pred": false,
+    "same_ward": true
+   },
+   {
+    "pair": "N11",
+    "kind": "same-ward-same-dept",
+    "gold": 0,
+    "sim": 0.133,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "N12",
+    "kind": "same-ward-same-dept",
+    "gold": 0,
+    "sim": 0.157,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "N13",
+    "kind": "same-ward-same-dept",
+    "gold": 0,
+    "sim": 0.06,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "N14",
+    "kind": "same-ward-same-dept",
+    "gold": 0,
+    "sim": 0.056,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   },
+   {
+    "pair": "N15",
+    "kind": "same-ward-same-dept",
+    "gold": 0,
+    "sim": 0.024,
+    "blocked_in": true,
+    "same_dept_pred": true,
+    "same_ward": true
+   }
+  ],
+  "merge_block": {
+   "th": 0.45,
+   "tp": 11,
+   "fp": 0,
+   "fn": 4,
+   "tn": 15,
+   "precision": 1.0,
+   "recall": 0.7333333333333333,
+   "f1": 0.846153846153846
+  },
+  "merge_noblock": {
+   "th": 0.45,
+   "tp": 11,
+   "fp": 0,
+   "fn": 4,
+   "tn": 15,
+   "precision": 1.0,
+   "recall": 0.7333333333333333,
+   "f1": 0.846153846153846
+  },
+  "review_block": {
+   "th": 0.3,
+   "tp": 14,
+   "fp": 0,
+   "fn": 1,
+   "tn": 15,
+   "precision": 1.0,
+   "recall": 0.9333333333333333,
+   "f1": 0.9655172413793104
+  },
+  "sweep": [
+   {
+    "th": 0.2,
+    "tp": 14,
+    "fp": 0,
+    "fn": 1,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "f1": 0.9655172413793104
+   },
+   {
+    "th": 0.25,
+    "tp": 14,
+    "fp": 0,
+    "fn": 1,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "f1": 0.9655172413793104
+   },
+   {
+    "th": 0.3,
+    "tp": 14,
+    "fp": 0,
+    "fn": 1,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "f1": 0.9655172413793104
+   },
+   {
+    "th": 0.35,
+    "tp": 13,
+    "fp": 0,
+    "fn": 2,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.8666666666666667,
+    "f1": 0.9285714285714286
+   },
+   {
+    "th": 0.4,
+    "tp": 12,
+    "fp": 0,
+    "fn": 3,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1": 0.888888888888889
+   },
+   {
+    "th": 0.45,
+    "tp": 11,
+    "fp": 0,
+    "fn": 4,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.7333333333333333,
+    "f1": 0.846153846153846
+   },
+   {
+    "th": 0.5,
+    "tp": 11,
+    "fp": 0,
+    "fn": 4,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.7333333333333333,
+    "f1": 0.846153846153846
+   },
+   {
+    "th": 0.55,
+    "tp": 8,
+    "fp": 0,
+    "fn": 7,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.5333333333333333,
+    "f1": 0.6956521739130436
+   },
+   {
+    "th": 0.6,
+    "tp": 7,
+    "fp": 0,
+    "fn": 8,
+    "tn": 15,
+    "precision": 1.0,
+    "recall": 0.4666666666666667,
+    "f1": 0.6363636363636364
+   }
+  ]
+ },
+ "E7_asr_noise": [
+  {
+   "cer": 0.0,
+   "dept_macro_f1": 0.8697694903626332,
+   "dept_macro_f1_sd": 0.0,
+   "dept_acc": 0.86875,
+   "ward_acc": 1.0,
+   "ward_acc_exact": 1.0,
+   "sev_acc": 0.95625
+  },
+  {
+   "cer": 0.05,
+   "dept_macro_f1": 0.8467504845518832,
+   "dept_macro_f1_sd": 0.015951109753215155,
+   "dept_acc": 0.8462500000000001,
+   "ward_acc": 0.975,
+   "ward_acc_exact": 0.7,
+   "sev_acc": 0.8450000000000001
+  },
+  {
+   "cer": 0.1,
+   "dept_macro_f1": 0.8112411718586063,
+   "dept_macro_f1_sd": 0.014695310411112597,
+   "dept_acc": 0.81125,
+   "ward_acc": 0.9264705882352942,
+   "ward_acc_exact": 0.49411764705882355,
+   "sev_acc": 0.7775
+  },
+  {
+   "cer": 0.15,
+   "dept_macro_f1": 0.7837814192274154,
+   "dept_macro_f1_sd": 0.014505821840317557,
+   "dept_acc": 0.7837500000000001,
+   "ward_acc": 0.8426470588235293,
+   "ward_acc_exact": 0.3308823529411765,
+   "sev_acc": 0.67125
+  },
+  {
+   "cer": 0.2,
+   "dept_macro_f1": 0.7550750150075789,
+   "dept_macro_f1_sd": 0.030759248004995344,
+   "dept_acc": 0.75625,
+   "ward_acc": 0.7852941176470589,
+   "ward_acc_exact": 0.2485294117647059,
+   "sev_acc": 0.61125
+  },
+  {
+   "cer": 0.3,
+   "dept_macro_f1": 0.6874609761891891,
+   "dept_macro_f1_sd": 0.04115312751715463,
+   "dept_acc": 0.6875,
+   "ward_acc": 0.5441176470588236,
+   "ward_acc_exact": 0.11764705882352941,
+   "sev_acc": 0.55375
+  }
+ ],
+ "E8_end_to_end": {
+  "counts": {
+   "auto_correct": 109,
+   "deferred": 48,
+   "deferred_would_have_been_right": 29,
+   "deferred_would_have_been_wrong": 19,
+   "auto_wrong_dept": 3
+  },
+  "n": 160,
+  "auto_rate": 0.7,
+  "auto_precision": 0.9732142857142857,
+  "latency_ms_mean": 6.195594018751649,
+  "latency_ms_p95": 18.451939999999915,
+  "queue_files": [
+   "queue_KOB.csv",
+   "queue_WKN.csv",
+   "queue_SHR.csv",
+   "queue_AUB.csv",
+   "queue_HMU.csv",
+   "queue_NWS.csv",
+   "queue_nodal_review.csv",
+   "queue_KVB.csv",
+   "queue_WRT.csv",
+   "queue_KYW.csv",
+   "queue_DSN.csv",
+   "queue_BIB.csv",
+   "queue_DPR.csv",
+   "queue_YKD.csv",
+   "queue_BHP.csv",
+   "queue_SGR.csv"
+  ]
+ },
+ "E8_stream_dups": {
+  "new": 160
+ }
+}

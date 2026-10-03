@@ -11,34 +11,37 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from nagarvani import config, data, service  # noqa: E402
 from nagarvani.console import safe_console  # noqa: E402
 from nagarvani.examples import EXAMPLES  # noqa: E402
-from nagarvani.store import Store  # noqa: E402
+from nagarvani.tickets import Store  # noqa: E402
 
 SAY = {
-    "clean_marathi": "A clear complaint, a known place, high confidence: it goes straight to the department. R21 (no water) makes it P2.",
+    "clean_marathi": "A clear complaint, a known place, high confidence: it goes straight to the department. R12 (water outage of two days or more) raises it to P2.",
     "romanised": "Romanised Marathi works because the classifier uses character n-grams and the gazetteer has Latin aliases.",
-    "code_mixed": "Marathi and English mixed in one sentence, as people actually speak.",
-    "life_safety": "The rule base, not the model, decides life safety. R01 fires on the cue words shown, and the band is forced to P1. The rule ID is on screen.",
-    "fuzzy": "हडप्सर is not in the gazetteer, but it is within the similarity threshold of हडपसर, so the fuzzy fallback resolves it and the trace shows the score.",
-    "unknown_place": "Undri is not in our gazetteer. The system does not guess a ward, so the gate sends it to a person. The citizen can also pick a ward in the optional dropdown.",
-    "low_confidence": "Building materials on the road could be Building or Encroachment. The model's top probability is under 0.50, so it defers instead of guessing.",
-    "failure": "An honest failure: the word for water dominates, and the classifier says Water Supply although this is a mosquito-breeding (Health) complaint. Its confidence is high and the place is known, so the gate does NOT catch it. The officer would correct it, and the correction is logged.",
+    "code_mixed": "Marathi and English mixed in one sentence, as people actually speak. Two hazard rules fire (nuisance and blocked drain).",
+    "life_safety": "The rule base, not the model, decides life safety. R02 (open manhole) fires on the cue words shown and sets P1; R30 (near a school) fires too, but P1 is already the top band.",
+    "fuzzy": "हडप्सर is not a gazetteer alias, but it is within the similarity threshold of हडपसर, so the fuzzy fallback resolves it and the trace shows the score.",
+    "unknown_place": "Pimple Saudagar is in Pimpri-Chinchwad, not PMC, and is not in the gazetteer. The system does not guess a ward, so the gate sends it to a nodal officer. The citizen could also pick a ward in the optional dropdown.",
+    "low_confidence": "Debris at the roadside could be Roads or Solid Waste. The top probability is under 0.50, so it defers instead of guessing, with the top three departments filled in for the officer.",
+    "failure": "An honest failure, from the model's real errors on the test set: a drain that smells and breeds mosquitoes is read as Solid Waste. Its confidence is above 0.50 and the place is known, so the gate does NOT catch it. The officer corrects it, and the correction is logged.",
 }
 
 
-REJECTED_LOW_CONFIDENCE = ["कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या", "सहकारनगरमध्ये परिस्थिती खूप वाईट आहे"]
+
+REJECTED_LOW_CONFIDENCE = ["कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या", "कर्वेनगरमध्ये बांधकामाचे साहित्य रस्त्यावर ठेवले आहे"]
+REJECTED_UNKNOWN_PLACE = ["उंड्री येथे रस्त्यावर मोठे खड्डे पडले आहेत", "लोहगाव मध्ये कचरा उचलला जात नाही"]
+REJECTED_LIFE_SAFETY = ["धनकवडीत मॅनहोलचे झाकण गायब आहे, शाळकरी मुले रोज इथून जातात"]
 
 
 def row(store, tid):
     t = store.get(tid)
     tr = json.loads(t["trace_json"])
-    rules = ", ".join(f"{f['rule']} ({f['action']})" for f in tr["severity"]["fired"])
+    rules = ", ".join(f"{f['rule']} ({f['action']})" for f in tr["severity"]["fired"]) or "none (default P3)"
     top3 = ", ".join(f"{d} {p:.2f}" for d, p in tr["top3"])
     w = tr["ward"]
     ward = f"{w['ward']} ({data.ward_names()[w['ward']]['en']}) via {w['method']}" if w["ward"] else f"not resolved ({w['reason']})"
     if w["method"] == "fuzzy":
-        ward += f", matched '{w['matched_text']}' ≈ '{w['matched_alias']}' score {w['score']}"
+        ward += f", nearest alias '{w['matched_alias']}', similarity {w['score']}"
     d = tr["duplicate"]
-    dup = d["decision"] + (f", score {d['score']:.2f} vs #{d['ticket_id']}" if d["score"] is not None else "")
+    dup = d["decision"] + (f", score {d['score']:.2f} vs #{d['ticket_id']}" if d["ticket_id"] else f" ({d['reason']})")
     return [f"* Ticket #{tid}: **{tr['gate']['decision']}**, status `{t['status']}`",
             f"* Department top 3: {top3}",
             f"* Ward: {ward}",
@@ -57,7 +60,7 @@ def main():
          "the output shown is what it produced. Run `python scripts/reset_demo.py` before the demo: the",
          "seeded tickets do not touch these inputs' duplicate blocks, but re-check item 8 after any seed change.",
          "Every input is also a one-click example on the intake page (the fallback if the microphone fails).", "",
-         f"Classifier artefact: C = {json.loads(config.CLASSIFIER_PATH.with_suffix('.json').read_text(encoding='utf-8'))['C']}.", ""]
+         f"Classifier: the original char + word TF-IDF logistic regression (C = 10), loaded from results/model.pkl.", ""]
     n = 0
     for key in ["clean_marathi", "romanised", "code_mixed", "life_safety", "fuzzy", "unknown_place", "low_confidence"]:
         n += 1
@@ -81,23 +84,29 @@ def main():
     n += 1
     e = ex["failure"]
     tid, _ = service.submit(store, text=e["text"], channel="typed")
-    test = {r["id"]: r for r in data.load_test()}["T088"]
-    L += [f"## {n}. {e['behaviour']}", "", f"Input: `{e['text']}` (test item T088; gold label {test['department']})", ""]
+    test = {r["id"]: r for r in data.load_test()}["T054"]
+    L += [f"## {n}. {e['behaviour']}", "", f"Input: `{e['text']}` (test item T054; gold label {test['dept']})", ""]
     L += row(store, tid) + ["", f"Say: {SAY['failure']}", ""]
     L += ["## Spoken versions", "",
           "Read any of the inputs aloud with the Marathi toggle on. The transcript appears for checking before submission.",
           "Whisper's transcript will differ from the typed text, so the outcome may differ. That is real, and it is",
           "why the citizen checks the transcript. If the microphone fails, use the example buttons.",
           "A WhatsApp voice note (.ogg) can be uploaded with the file button.", ""]
-    from nagarvani.pipeline import triage
-    tried = []
-    for t in REJECTED_LOW_CONFIDENCE:
-        r = triage(t)
-        tried.append(f"  * `{t}` → {r.department} {r.confidence:.2f}, {r.gate.decision}")
-    L += ["## Inputs that were tried and rejected", "",
-          "* These were candidates for item 7 (low confidence → review). Re-run just now, they give:", *tried,
-          "  Vague complaints are confidently sent to Health and auto-routed. This is a real weakness",
-          "  (see docs/HANDOVER.md), and it is why item 7 uses a complaint that is genuinely between two departments.",
+    from nagarvani.triage import triage
+    def tried(texts):
+        out = []
+        for t in texts:
+            r = triage(t)
+            out.append(f"  * `{t}` → {r.department} {r.confidence:.2f}, ward {r.ward.ward or 'none'}, "
+                       f"{r.severity['band']}, {r.gate.decision}")
+        return out
+    L += ["## Inputs that were tried and rejected (re-run just now)", "",
+          "* For item 7 (low confidence → review):", *tried(REJECTED_LOW_CONFIDENCE),
+          "  The first shows a real weakness: a vague complaint is confidently sent to Health and auto-routed.",
+          "* For item 6 (unknown locality): these places turned out to be in the gazetteer:", *tried(REJECTED_UNKNOWN_PLACE),
+          "* For item 4 (life safety): 'झाकण गायब' (cover missing) does not fire R02, because 'गायब' is not in the",
+          "  OPEN cue list, so the band is decided by other rules:", *tried(REJECTED_LIFE_SAFETY),
+          "  This is a gap in the rule lexicon (docs/DECISIONS.md, Found but not changed).",
           "* Exact-text repeats were not used for item 8: paraphrases show that matching is not literal."]
     out = config.ROOT / "docs" / "DEMO_SCRIPT.md"
     out.write_text("\n".join(L) + "\n", encoding="utf-8")

@@ -1,131 +1,71 @@
-"""The single triage entry point used by the evaluation scripts AND the web app.
-
-    triage(text, *, ward_hint=None, now=None, store=None) -> TriageResult
-
-With store=None duplicate lookup is skipped (that is how the offline evaluation runs).
-"""
-from __future__ import annotations
-
-from dataclasses import asdict, dataclass, field
-from datetime import datetime, timedelta, timezone
-
-from . import classifier, config, data, dedup, location, severity
+"""End-to-end triage pipeline (Algorithm 1 in the report)."""
+import csv, json, os, pickle
+from datetime import datetime, timedelta
 from .normalise import normalise
+from .location import WardResolver
+from .classifier import char_word_lr, DEPARTMENTS
+from .severity import infer
+from .dedup import DuplicateDetector
+from .store import TicketStore
+
+ROOT = os.path.join(os.path.dirname(__file__), "..")
+MODEL_PATH = os.path.join(ROOT, "results", "model.pkl")
 
 
-@dataclass
-class WardResult:
-    ward: str | None
-    method: str                  # exact | fuzzy | hint | unresolved
-    status: str                  # resolved | ambiguous | unknown (from the text resolver)
-    locality: str | None
-    matched_alias: str | None
-    matched_text: str | None
-    score: float | None
-    candidates: list
-    reason: str
-    hint_used: bool = False
-    hint: str | None = None
+def load_tsv(path):
+    rows = list(csv.DictReader(open(path, encoding="utf-8"), delimiter="\t"))
+    for r in rows:
+        if r["lang"] == "rom": r["lang"] = "mr-rom"
+    return rows
 
 
-@dataclass
-class GateResult:
-    decision: str        # AUTO_ROUTED | SENT_TO_REVIEW | MERGED
-    gate_passed: bool    # the frozen gate: confidence >= 0.50 and ward known
-    reason: str
+class Triage:
+    def __init__(self, db_path=":memory:", tau=0.50, model=None):
+        self.tau = tau
+        self.resolver = WardResolver()
+        train = load_tsv(os.path.join(ROOT, "corpus", "train_template.tsv"))
+        if model is None:
+            if os.path.exists(MODEL_PATH):
+                model = pickle.load(open(MODEL_PATH, "rb"))
+            else:
+                model = char_word_lr().fit([r["text"] for r in train], [r["dept"] for r in train])
+        self.model = model
+        self.dedup = DuplicateDetector(self.resolver).fit([r["text"] for r in train])
+        self.store = TicketStore(db_path)
 
+    def triage(self, text, channel="text", now=None, persist=True):
+        now = now or datetime.now()
+        norm = normalise(text)
+        proba = self.model.predict_proba([text])[0]
+        classes = list(self.model.classes_)
+        order = proba.argsort()[::-1]
+        dept, conf = classes[order[0]], float(proba[order[0]])
+        top3 = [(classes[i], round(float(proba[i]), 3)) for i in order[:3]]
+        loc = self.resolver.resolve(text)
 
-@dataclass
-class TriageResult:
-    text: str
-    normalised: str
-    top3: list
-    confidence: float
-    department: str
-    ward: WardResult
-    severity: dict
-    sla_hours: int
-    deadline_utc: str
-    duplicate: dict
-    gate: GateResult
-    created_utc: str
-    masked_text: str
-    pipeline_version: dict = field(default_factory=dict)
+        decision, dup_id, dup_score = "new", None, 0.0
+        cluster_id, csize = None, 1
+        if loc["ward"]:
+            decision, dup_id, dup_score = self.dedup.decide(
+                text, dept, loc["ward"], self.store.open_tickets(loc["ward"], dept))
+            if decision == "merge":
+                parent = next(t for t in self.store.open_tickets(loc["ward"], dept) if t["id"] == dup_id)
+                cluster_id = parent["cluster_id"]
+                csize = self.store.cluster_size(cluster_id) + 1
 
-    def to_dict(self):
-        return asdict(self)
-
-
-def _resolve_ward(text: str, ward_hint: str | None) -> WardResult:
-    loc = location.resolve(text)
-    if loc.status == "resolved":
-        reason = loc.reason
-        if ward_hint and ward_hint != loc.ward:
-            reason += f" (dropdown choice {ward_hint} ignored: the text names a place)"
-        return WardResult(loc.ward, loc.method, loc.status, loc.locality, loc.matched_alias, loc.matched_text,
-                          loc.score, loc.candidates, reason, False, ward_hint)
-    if ward_hint and ward_hint in data.ward_names():
-        why = loc.reason + "; used the ward office the citizen chose in the dropdown"
-        if loc.candidates and ward_hint not in loc.candidates:
-            why += " (note: it is not one of the candidates named in the text)"
-        return WardResult(ward_hint, "hint", loc.status, None, loc.matched_alias, loc.matched_text, loc.score,
-                          loc.candidates, why, True, ward_hint)
-    return WardResult(None, "unresolved", loc.status, None, loc.matched_alias, loc.matched_text, loc.score,
-                      loc.candidates, loc.reason, False, ward_hint)
-
-
-def triage(text: str, *, ward_hint: str | None = None, now: datetime | None = None, store=None,
-           exclude_ticket: int | None = None) -> TriageResult:
-    norm = normalise(text)
-    if not any(ch.isalpha() for ch in norm):
-        raise ValueError("no words to classify")
-    now = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
-
-    # 1. department
-    pred = classifier.predict(text)
-    dept = pred.top3[0][0]
-
-    # 2. ward office
-    ward = _resolve_ward(text, ward_hint)
-
-    # 3. duplicates (live path only)
-    if store is None:
-        dup = dedup.DuplicateResult("skipped", reason="offline run: no ticket store")
-    elif ward.ward is None:
-        dup = dedup.DuplicateResult("skipped", reason="ward office unknown, so there is no block to compare in")
-    else:
-        dup = dedup.find(text, store.open_in_block(ward.ward, dept, exclude_ticket))
-
-    # 4. gate (frozen): confidence >= 0.50 AND ward known
-    conf_ok = pred.confidence >= config.GATE_MIN_CONFIDENCE
-    gate_passed = conf_ok and ward.ward is not None
-    conds = (f"confidence {pred.confidence:.2f} {'≥' if conf_ok else '<'} {config.GATE_MIN_CONFIDENCE}; "
-             f"ward office {'known (' + ward.method + ')' if ward.ward else 'not resolved'}")
-    if not gate_passed:
-        decision, reason = "SENT_TO_REVIEW", f"Gate failed: {conds}."
-        if dup.decision in ("merge", "review"):
-            reason += f" Possible duplicate of #{dup.ticket_id} (similarity {dup.score:.2f}) left for the officer."
-    elif dup.decision == "merge":
-        decision, reason = "MERGED", f"Gate passed ({conds}); {dup.reason}."
-    elif dup.decision == "review":
-        decision, reason = "SENT_TO_REVIEW", f"Gate passed ({conds}), but {dup.reason}."
-    else:
-        decision, reason = "AUTO_ROUTED", f"Gate passed: {conds}."
-    gate = GateResult(decision, gate_passed, reason)
-
-    # 5. severity (R32 sees the report count only when this complaint is merged)
-    reports = dup.report_count if decision == "MERGED" else 1
-    sev = severity.assess(text, dept, reports)
-    hours = data.sla_hours()[sev.band]
-    deadline = now + timedelta(hours=hours)
-
-    _, meta = classifier.load()
-    return TriageResult(
-        text=text, normalised=norm, top3=pred.top3, confidence=pred.confidence, department=dept, ward=ward,
-        severity={"band": sev.band, "base_band": sev.base_band,
-                  "fired": [asdict(f) for f in sev.fired], "overridden": sev.overridden, "cues": sev.cues},
-        sla_hours=hours, deadline_utc=deadline.isoformat(timespec="seconds"),
-        duplicate=asdict(dup), gate=gate, created_utc=now.isoformat(timespec="seconds"),
-        masked_text=dedup.masked(text),
-        pipeline_version={"classifier_C": meta["C"], "train_sha256": meta["train_sha256"][:12]},
-    )
+        sev = infer(text, dept, cluster_size=csize)
+        route = "AUTO_ROUTED" if (conf >= self.tau and loc["status"] == "resolved") else "NODAL_REVIEW"
+        reasons = []
+        if conf < self.tau: reasons.append(f"department confidence {conf:.2f} < τ={self.tau}")
+        if loc["status"] != "resolved": reasons.append(f"location {loc['status']}")
+        rec = dict(created_at=now.isoformat(timespec="seconds"), channel=channel, raw_text=text,
+                   norm_text=norm, dept=dept, dept_conf=round(conf, 4), top3=json.dumps(top3),
+                   locality=loc["locality"], ward=loc["ward"], ward_status=loc["status"],
+                   priority=sev["band"],
+                   sla_due=(now + timedelta(hours=sev["sla_hours"])).isoformat(timespec="minutes"),
+                   rules_fired=",".join(sev["fired"]), cluster_id=cluster_id,
+                   dup_decision=decision, dup_score=round(dup_score, 3), route_status=route)
+        tid = self.store.insert(rec) if persist else None
+        return dict(rec, id=tid, dept_name=DEPARTMENTS[dept], ward_name=loc["ward_name"],
+                    explanation=sev["explanation"], review_reasons=reasons, cluster_size=csize,
+                    top3=top3)

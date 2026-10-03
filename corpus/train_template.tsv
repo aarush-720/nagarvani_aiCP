@@ -1,0 +1,2001 @@
+id	lang	dept	loc	sev	text
+G1846	mr	VET	wanowrie	P1	कृपया लक्ष द्या, वानवडी मध्ये, जखमी जनावर रस्त्यावर पडले आहे, तीन आठवड्यांपासून कृपया कारवाई करावी
+G1548	mr	ENCROACH	balewadi	P3	साहेब, बालेवाडी येथे, बेवारस वाहने रस्त्याकडेला पडून आहेत लवकर दुरुस्ती करा
+G1288	mix	TREE	bhavani_peth	P1	एक month झाला, tree fall झालंय road वर, Bhavani Peth area मध्ये
+G1183	mr	HEALTH	NONE	P3	कृपया लक्ष द्या, धूरफवारणी होत नाही
+G1042	mr	HEALTH	NONE	P3	तक्रार: हॉटेलमध्ये अस्वच्छता आहे लवकर दुरुस्ती करा
+G0003	mr	ROAD	NONE	P3	तक्रार: स्पीड ब्रेकर खूप उंच आहे, गाड्यांचं नुकसान होतं, पाच दिवसांपासून
+G0864	hi	ELEC	yewalewadi	P1	दो हफ्तों से, येवलेवाडी इलाके में, बिजली का खंभा झुक गया है जल्दी ठीक करवाइए
+G0507	mix	WATER	nibm	P3	Hello sir, Nibm area मध्ये, water supply बंद आहे
+G0879	hi	ELEC	vadgaon_bk	P1	कृपया ध्यान दें, वडगाव बुद्रुक इलाके में, खंभे में करंट आ रहा है कृपया कार्रवाई करें
+G1588	mr	ENCROACH	wanowrie	P2	वानवडी येथे, शाळेजवळ, पदपथावर बांधकाम साहित्य ठेवले आहे तक्रार करूनही दखल घेतली नाही
+G0910	mr	ELEC	sinhagad_road	P1	साहेब, सिंहगड रस्ता मध्ये, खांबाला करंट लागत आहे लवकर दुरुस्ती करा
+G0215	mr	SWM	vadgaon_bk	P3	कृपया लक्ष द्या, वडगाव बुद्रुक परिसरात, सार्वजनिक शौचालय अस्वच्छ आहे
+G0101	mr	ROAD	NONE	P3	नमस्कार, रस्त्यावर खूप खड्डे पडले आहेत
+G1880	rom	VET	paud_road	P3	namaskar, paud road madhe, bhatkya kutryancha tras aahe
+G0282	rom	SWM	NONE	P2	namaskar, kachryacha vaas yetoy
+G0298	mr	SWM	vadgaon_bk	P2	वडगाव बु मध्ये, घंटागाडी येत नाही, एक आठवड्यांपासून कृपया कारवाई करावी
+G0339	mr	SWM	pashan	P2	पाषाणला येथे, कचरा उचलला जात नाही, गेले तीन दिवस कृपया कारवाई करावी
+G1663	rom	BUILD	keshavnagar	P3	saheb, keshav nagar bhagat, anadhikrut bandhkam chalu aahe karvai kara please
+G0033	hi	ROAD	katraj	P1	कृपया ध्यान दें, कात्रज इलाके में, गड्ढे से कभी भी दुर्घटना हो सकती है, अस्पताल के सामने
+G1534	mix	ENCROACH	kasba_peth	P2	Please कसबा पेठ मध्ये, school जवळ, footpath वर hawkers चं encroachment आहे
+G0721	hi	DRAIN	NONE	P2	नाली जाम हो गई है
+G1319	mix	TREE	katraj	P1	Katraj area मध्ये, branch तुटून लटकतेय
+G0960	hi	ELEC	shivajinagar	P4	नमस्ते, शिवाजीनगर इलाके में, नई स्ट्रीट लाइट लगवाइए
+G0564	mr	WATER	narayan_peth	P2	तक्रार: व्हॉल्व्हमधून पाणी गळते, दोन आठवड्यांपासून, नारायण पेठ येथे लवकर दुरुस्ती करा
+G1606	mix	BUILD	karvenagar	P3	नमस्कार, Karve Nagar ला, illegal construction चालू आहे
+G1402	mix	ENCROACH	NONE	P3	Please abandoned vehicles पडून आहेत urgent आहे
+G1271	mr	TREE	NONE	P1	झाड रस्त्यावर पडले आहे, गेले चार दिवस
+G1448	rom	ENCROACH	katraj	P3	katraj bhagat, bewaras gadya padun aahet, 6 divas pasun
+G1757	rom	BUILD	pisoli	P1	please pisoli bhagat, bhint koslnar aahe, mahina zala
+G0700	mix	DRAIN	bhavani_peth	P1	Hello sir, Bhavani Peth ला, manhole open आहे, cover नाही
+G1242	mix	TREE	vishrantwadi	P1	Please विश्रांतवाडी ला, school जवळ, tree fall झालंय road वर
+G0106	mr	ROAD	shaniwar_peth	P2	शनिवार पेठ येथे, हॉस्पिटलसमोर, गेले चार दिवस, फूटपाथ तुटला आहे लवकर दुरुस्ती करा
+G1498	hi	ENCROACH	kashewadi	P2	नमस्ते, एक महीने से, लावारिस गाड़ियां पड़ी हैं, काशेवाडी में
+G1138	hi	HEALTH	mundhwa	P3	नमस्ते, मुंढवा इलाके में, फॉगिंग नहीं होती जल्दी ठीक करवाइए
+G0113	mr	ROAD	market_yard	P2	मार्केट यार्ड येथे, शाळेजवळ, फूटपाथ तुटला आहे
+G0385	hi	SWM	pisoli	P1	पिसोळी में, स्कूल के पास, कचरा जलाया जाता है, धुआं होता है
+G1010	mix	HEALTH	gultekdi	P3	Please Gultekdi मध्ये, rats चा त्रास आहे urgent आहे
+G1928	mr	VET	bhavani_peth	P2	भवानी पेठ येथे, जखमी जनावर रस्त्यावर पडले आहे, एक दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G1895	mr	VET	gultekdi	P1	कृपया लक्ष द्या, गुलटेकडी परिसरात, पिसाळलेला कुत्रा फिरत आहे
+G1715	mr	BUILD	balajinagar	P3	तक्रार: बालाजी नगर मध्ये, परवानगी न घेता बांधकाम सुरू आहे
+G0018	mr	ROAD	paud_road	P3	पौड रोड येथे, स्पीड ब्रेकर खूप उंच आहे, गाड्यांचं नुकसान होतं तक्रार करूनही दखल घेतली नाही
+G0348	mr	SWM	wadgaon_sheri	P3	नमस्कार, वडगाव शेरी मध्ये, कचरा उचलला जात नाही कृपया कारवाई करावी
+G0904	mix	ELEC	gultekdi	P1	Hello sir, गुलटेकडी ला, pole वाकलाय, कधीही पडेल, 10 days पासून please लवकर action घ्या
+G0804	mix	ELEC	market_yard	P3	Hello sir, मार्केट यार्ड मध्ये, high mast light बंद आहे, 4 days पासून please लवकर action घ्या
+G1646	rom	BUILD	dhanori	P3	please dhanori madhe, parvangi nastana majla bandhtat
+G0408	mix	WATER	shivajinagar	P1	Hello sir, शिवाजीनगर मध्ये, contaminated पाण्यामुळे सगळे sick पडलेत please लवकर action घ्या
+G0491	mix	WATER	narayan_peth	P2	नारायण पेठ area मध्ये, pipeline burst झाली आहे
+G0754	mr	DRAIN	NONE	P1	कृपया लक्ष द्या, शाळेजवळ, चेंबरचे झाकण उघडे आहे
+G1426	mix	ENCROACH	sangamwadi	P3	संगमवाडी area मध्ये, abandoned vehicles पडून आहेत urgent आहे
+G1025	hi	HEALTH	fc_road	P1	छह दिनों से, डेंगू के मरीज बढ़ गए हैं, एफसी रोड इलाके में
+G1024	mr	HEALTH	nibm	P1	कृपया लक्ष द्या, एनआयबीएम मध्ये, डेंग्यूचे रुग्ण वाढले आहेत, महिनाभरापासून
+G1583	rom	ENCROACH	kalas	P3	namaskar, kalas madhe, anadhikrut tapri aahe lavkar kara
+G1135	mr	HEALTH	NONE	P1	नमस्कार, मलेरियाचे रुग्ण आढळले आहेत लवकर दुरुस्ती करा
+G0338	rom	SWM	market_yard	P2	please market yard yethe, kachra uchalla jat nahi, 4 divas pasun
+G1265	mr	TREE	salunke_vihar	P1	कृपया लक्ष द्या, झाड रस्त्यावर पडले आहे, साळुंके विहार परिसरात, दवाखान्याजवळ कृपया कारवाई करावी
+G0340	hi	SWM	dhankawadi	P2	धनकवडी में, कचरा जलाया जाता है, धुआं होता है, एक दिनों से जल्दी ठीक करवाइए
+G0228	mix	SWM	NONE	P3	Please garbage collection होत नाही
+G0760	mr	DRAIN	NONE	P1	सांडपाणी घरात येत आहे
+G1276	hi	TREE	shivajinagar	P3	शिवाजी नगर इलाके में, अवैध पेड़ कटाई हुई है
+G1273	mr	TREE	pashan	P2	पाषाणला मध्ये, झाड पडून गाडीचे नुकसान झाले, एक दिवसांपासून
+G1529	hi	ENCROACH	NONE	P2	नमस्ते, अस्पताल के सामने, सड़क पर अवैध ठेले लगे हैं कृपया कार्रवाई करें
+G1460	mr	ENCROACH	NONE	P1	कृपया लक्ष द्या, अनधिकृत होर्डिंग कधीही पडू शकते तक्रार करूनही दखल घेतली नाही
+G1578	rom	ENCROACH	lohegaon	P2	please lohegaon bhagat, 3 aathvade zale, footpath var atikraman aahe
+G1861	mr	VET	dhankawadi	P3	साहेब, धनकवडी मध्ये, दवाखान्याजवळ, कुत्री रात्रभर भुंकतात
+G0522	mr	WATER	vadgaon_bk	P1	नमस्कार, वडगाव बु भागात, दूषित पाण्यामुळे लोक आजारी पडले
+G0756	mr	DRAIN	NONE	P2	कृपया लक्ष द्या, सांडपाणी रस्त्यावर वाहत आहे, गेले चार दिवस तक्रार करूनही दखल घेतली नाही
+G0405	mr	WATER	kondhwa	P3	नमस्कार, कोंढवा येथे, पाणीपुरवठा बंद आहे लवकर दुरुस्ती करा
+G1607	mr	BUILD	salunke_vihar	P3	तक्रार: साळुंके विहार येथे, बांधकाम परवानगीचा अर्ज प्रलंबित आहे, महिनाभरापासून
+G1894	rom	VET	sinhagad_road	P3	saheb, bhatkya kutryancha tras aahe, sinhagad road bhagat karvai kara please
+G1832	mix	VET	balajinagar	P3	बालाजीनगर ला, school जवळ, dogs ची sterilization करा please लवकर action घ्या
+G0820	hi	ELEC	pune_station	P3	नई स्ट्रीट लाइट लगवाइए, एक महीने से, पुणे स्टेशन में
+G1556	rom	ENCROACH	wanowrie	P3	saheb, wanowrie bhagat, bewaras gadya padun aahet karvai kara please
+G0602	mr	DRAIN	keshavnagar	P1	केशव नगर येथे, चेंबरचे झाकण उघडे आहे तक्रार करूनही दखल घेतली नाही
+G1752	rom	BUILD	NONE	P2	hospital samor, bandhkam cha radaroda rastyavar
+G1499	rom	ENCROACH	kashewadi	P2	please kashewadi bhagat, footpath var atikraman aahe, mahina zala
+G1003	rom	HEALTH	NONE	P2	please melela prani padla aahe
+G1108	mix	HEALTH	pisoli	P3	पिसोळी ला, mosquito problem खूप वाढलाय urgent आहे
+G0185	mr	ROAD	market_yard	P3	साहेब, मार्केट यार्ड भागात, रस्त्यावरची खडी सगळीकडे पसरली आहे
+G0544	mr	WATER	hadapsar	P1	साहेब, हडपसर येथे, दूषित पाण्यामुळे लोक आजारी पडले
+G0014	mix	ROAD	shivajinagar	P2	नमस्कार, pothole मुळे accident होऊ शकतो, Shivaji Nagar area मध्ये
+G1102	mr	HEALTH	vadgaon_bk	P1	तक्रार: गेले सहा दिवस, डेंग्यूचे रुग्ण वाढले आहेत, वडगाव बुद्रुक भागात लवकर दुरुस्ती करा
+G1896	mr	VET	viman_nagar	P2	विमाननगर परिसरात, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो
+G1087	hi	HEALTH	NONE	P2	कृपया ध्यान दें, मरा हुआ जानवर पड़ा है, बदबू आ रही है, दो दिनों से
+G0773	mr	DRAIN	balewadi	P2	साहेब, बालेवाडी परिसरात, ड्रेनेज लाइन फुटली आहे
+G0533	mr	WATER	NONE	P2	साहेब, पाणी कमी दाबाने येते, तीन आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G1919	rom	VET	vishrantwadi	P1	namaskar, vishrantwadi bhagat, kutra chavla, shalejaval lavkar kara
+G1136	mr	HEALTH	vishrantwadi	P3	विश्रांतवाडी येथे, साचलेल्या पाण्यात डासांच्या अळ्या आहेत
+G1857	mix	VET	pashan	P3	stray dogs चा खूप त्रास आहे, 1 weeks झाले, पाषाणला area मध्ये
+G1277	mr	TREE	NONE	P1	तक्रार: झाडाची फांदी तुटून लटकत आहे
+G0588	mr	WATER	NONE	P4	साहेब, नवीन नळ जोडणी हवी आहे
+G0581	mr	WATER	NONE	P2	नळाला गढूळ पाणी येते, गेले सहा दिवस तक्रार करूनही दखल घेतली नाही
+G1177	rom	HEALTH	vishrantwadi	P3	1 aathvade zale, vishrantwadi yethe, fawarni hot nahi
+G0384	mix	SWM	aundh	P1	Aundh area मध्ये, garbage burning होतं, smoke येतो, एक month झाला please लवकर action घ्या
+G1073	mr	HEALTH	warje	P2	साहेब, वारजे भागात, उघड्यावर अन्न टाकले जाते, दुर्गंधी येते कृपया कारवाई करावी
+G1230	mr	TREE	NONE	P4	तक्रार: झाडांची छाटणी करावी तक्रार करूनही दखल घेतली नाही
+G1254	rom	TREE	pisoli	P3	pisoli madhe, padlelya fandya uchlalya nahit lavkar kara
+G0411	mix	WATER	NONE	P1	नमस्कार, नळाला dirty water येतं, 2 weeks झाले urgent आहे
+G1976	mr	VET	mundhwa	P3	तक्रार: मुंढवा मध्ये, भटक्या कुत्र्यांचा त्रास आहे
+G0825	mix	ELEC	shivajinagar	P4	नमस्कार, Shivaji Nagar मध्ये, street lights दिवसा पण ON असतात
+G0178	mr	ROAD	NONE	P3	रस्त्यावर खूप खड्डे पडले आहेत, एक दिवसांपासून
+G1729	hi	BUILD	NONE	P2	अस्पताल के सामने, बिना अनुमति के निर्माण हो रहा है जल्दी ठीक करवाइए
+G1407	hi	ENCROACH	nibm	P3	सर, एनआयबीएम इलाके में, फुटपाथ पर अतिक्रमण है
+G0019	mr	ROAD	kondhwa	P3	नमस्कार, रस्त्यावरची खडी सगळीकडे पसरली आहे, कोंढव्या येथे कृपया कारवाई करावी
+G1446	rom	ENCROACH	model_colony	P3	footpath var atikraman aahe, model colony bhagat
+G1742	mix	BUILD	shaniwar_peth	P1	शनिवार पेठ मध्ये, hospital समोर, dangerous building आहे, wall पडेल, 2 weeks झाले
+G0073	mr	ROAD	nibm	P1	नमस्कार, एनआयबीएम येथे, खड्ड्यात पडून एक दुचाकीस्वार जखमी झाला कृपया कारवाई करावी
+G0156	mr	ROAD	NONE	P2	साहेब, शाळेजवळ, फूटपाथ तुटला आहे तक्रार करूनही दखल घेतली नाही
+G0932	mr	ELEC	balewadi	P1	बालेवाडी भागात, खांबाला करंट लागत आहे कृपया कारवाई करावी
+G0361	mr	SWM	katraj	P3	साहेब, कात्रज परिसरात, हॉस्पिटलसमोर, ओला आणि सुका कचरा वेगळा घेत नाहीत लवकर दुरुस्ती करा
+G0634	rom	DRAIN	pisoli	P2	namaskar, pisoli madhe, sandpani rastyavar vahat aahe
+G1802	mix	VET	NONE	P3	एक month झाला, dogs ची sterilization करा
+G0161	mr	ROAD	wadgaon_sheri	P3	वडगाव शेरी परिसरात, रस्त्यावर खूप खड्डे पडले आहेत
+G0569	mix	WATER	salunke_vihar	P2	Please साळुंके विहार area मध्ये, नळाला dirty water येतं
+G1891	mr	VET	NONE	P3	कृपया लक्ष द्या, मोकाट जनावरे रस्त्यावर फिरतात कृपया कारवाई करावी
+G0694	mix	DRAIN	kalas	P1	Please कळस ला, drainage block झालंय, 2 weeks झाले please लवकर action घ्या
+G1539	mix	ENCROACH	mundhwa	P1	Mundhwa area मध्ये, school जवळ, hoarding illegal आहे आणि पडू शकतं
+G1930	mr	VET	NONE	P3	तक्रार: डुकरांचा उपद्रव आहे तक्रार करूनही दखल घेतली नाही
+G1259	hi	TREE	bavdhan	P1	नमस्ते, बावधन इलाके में, पेड़ की डाल टूटकर लटक रही है जल्दी ठीक करवाइए
+G0748	mr	DRAIN	bibwewadi	P2	बिबवेवाडी भागात, गटार तुंबून घाण पाणी साचले आहे
+G1797	mr	BUILD	NONE	P3	कृपया लक्ष द्या, नदीपात्रात बांधकाम केले जात आहे
+G1211	mr	TREE	yewalewadi	P4	तक्रार: येवलेवाडी परिसरात, झाडामुळे पथदिवा झाकला गेला आहे, चार दिवसांपासून लवकर दुरुस्ती करा
+G0982	hi	ELEC	balajinagar	P1	बालाजीनगर इलाके में, खंभे में करंट आ रहा है
+G0051	hi	ROAD	vishrantwadi	P3	नमस्ते, सड़क पर बहुत गड्ढे हैं, विश्रांतवाडी में जल्दी ठीक करवाइए
+G1164	mr	HEALTH	sangamwadi	P3	नमस्कार, संगमवाडी परिसरात, साचलेल्या पाण्यात डासांच्या अळ्या आहेत
+G1594	mix	ENCROACH	yerawada	P1	नमस्कार, Yerwada मध्ये, school जवळ, abandoned vehicles पडून आहेत, 3 weeks झाले
+G0358	mr	SWM	mundhwa	P2	तक्रार: मुंढव्या मध्ये, कचऱ्यावर माश्या आणि डास झाले आहेत लवकर दुरुस्ती करा
+G0738	mr	DRAIN	vishrantwadi	P3	कृपया लक्ष द्या, विश्रांतवाडी येथे, पावसाळी गटार साफ केलेले नाही
+G1768	rom	BUILD	NONE	P2	please anadhikrut bandhkam chalu aahe, 2 aathvade zale lavkar kara
+G0377	mr	SWM	fc_road	P2	तक्रार: एफसी रोड येथे, कचऱ्याचा घाण वास येतो, दहा दिवसांपासून
+G0071	mr	ROAD	pisoli	P3	पिसोळी भागात, स्पीड ब्रेकर खूप उंच आहे, गाड्यांचं नुकसान होतं तक्रार करूनही दखल घेतली नाही
+G0427	mix	WATER	salunke_vihar	P3	साळुंके विहार ला, पाणी low pressure ने येतं please लवकर action घ्या
+G0882	rom	ELEC	salunke_vihar	P1	saheb, salunke vihar bhagat, vijechi taar tutli aahe lavkar kara
+G0750	mix	DRAIN	balewadi	P3	Hello sir, storm water drain clean केली नाही, Balewadi area मध्ये please लवकर action घ्या
+G1329	rom	TREE	pisoli	P1	namaskar, pisoli yethe, zad rastyavar padle aahe lavkar kara
+G1733	mr	BUILD	sadashiv_peth	P3	तक्रार: सदाशिव पेठ भागात, नदीपात्रात बांधकाम केले जात आहे, सहा दिवसांपासून
+G0437	mr	WATER	kharadi	P1	खराडी भागात, दवाखान्याजवळ, नळाला गढूळ पाणी येते
+G0650	mr	DRAIN	bavdhan	P1	साहेब, महिनाभरापासून, गटार तुंबून घाण पाणी साचले आहे, बावधन मध्ये
+G0013	mix	ROAD	pashan	P3	पाषाण ला, footpath चे paver blocks निघालेत urgent आहे
+G1355	mr	TREE	wadgaon_sheri	P1	साहेब, एक आठवड्यांपासून, झाडाची फांदी तुटून लटकत आहे, वडगाव शेरी परिसरात तक्रार करूनही दखल घेतली नाही
+G1055	mr	HEALTH	yewalewadi	P2	साहेब, येवलेवाडी परिसरात, मेलेले जनावर रस्त्यावर पडले आहे तक्रार करूनही दखल घेतली नाही
+G0175	mix	ROAD	pune_station	P2	पुणे स्टेशन area मध्ये, hospital समोर, road खोदून ठेवलाय, repair केलं नाही please लवकर action घ्या
+G0667	mr	DRAIN	sinhagad_road	P2	कृपया लक्ष द्या, सिंहगड रोड परिसरात, ड्रेनेज तुंबले आहे
+G0363	mr	SWM	hadapsar	P1	कृपया लक्ष द्या, हडपसर परिसरात, घंटागाडी येत नाही, तीन आठवड्यांपासून लवकर दुरुस्ती करा
+G1152	mr	HEALTH	mundhwa	P1	मुंढव्या परिसरात, पाच दिवसांपासून, डेंग्यूचे रुग्ण वाढले आहेत कृपया कारवाई करावी
+G1914	mix	VET	fatimanagar	P3	Please फातिमा नगर ला, stray cattle road वर बसतात, 5 days पासून
+G1035	mix	HEALTH	NONE	P2	Hello sir, dead dog पडलाय road वर please लवकर action घ्या
+G0210	mix	SWM	tadiwala_road	P3	Please ताडीवाला रोड ला, dustbin overflow होतोय please लवकर action घ्या
+G0136	hi	ROAD	koregaon_park	P3	कृपया ध्यान दें, कोरेगाव पार्क में, फुटपाथ टूटा हुआ है
+G1284	hi	TREE	balajinagar	P3	बालाजी नगर में, अवैध पेड़ कटाई हुई है
+G1698	hi	BUILD	yewalewadi	P1	नमस्ते, येवलेवाडी में, पुरानी इमारत खतरनाक हालत में है
+G0244	mr	SWM	ramtekdi	P1	तक्रार: रामटेकडी येथे, घंटागाडी येत नाही, महिनाभरापासून लवकर दुरुस्ती करा
+G1084	mr	HEALTH	magarpatta	P3	साहेब, मगरपट्टा मध्ये, साचलेल्या पाण्यात डासांच्या अळ्या आहेत कृपया कारवाई करावी
+G1107	rom	HEALTH	NONE	P3	undir khup zale aahet karvai kara please
+G0478	mr	WATER	baner	P1	साहेब, बानेर भागात, दूषित पाण्यामुळे लोक आजारी पडले तक्रार करूनही दखल घेतली नाही
+G1398	mr	TREE	fatimanagar	P1	कृपया लक्ष द्या, फातिमा नगर भागात, शाळेजवळ, झाडाची फांदी तुटून लटकत आहे, गेले दोन दिवस
+G1462	mr	ENCROACH	warje	P3	दुकानदारांनी रस्त्यावर सामान ठेवले आहे, गेले एक दिवस, वारजे परिसरात
+G1678	mr	BUILD	NONE	P1	गेले चार दिवस, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे
+G0483	mr	WATER	baner	P2	बानेर येथे, शाळेजवळ, पाणी कमी दाबाने येते, गेले सहा दिवस लवकर दुरुस्ती करा
+G1853	mr	VET	tadiwala_road	P2	दवाखान्याजवळ, ताडीवाला रोड भागात, डुकरांचा उपद्रव आहे लवकर दुरुस्ती करा
+G1256	hi	TREE	kalas	P1	पेड़ की डाल टूटकर लटक रही है, कळस इलाके में कृपया कार्रवाई करें
+G0517	rom	WATER	model_colony	P2	7 divas pasun, model colony bhagat, nalala pani yet nahi karvai kara please
+G1921	rom	VET	wanowrie	P3	please wanwadi madhe, mokat janavare rastyavar
+G1542	mr	ENCROACH	paud_road	P1	साहेब, पौड रोड येथे, अनधिकृत होर्डिंग कधीही पडू शकते लवकर दुरुस्ती करा
+G1898	rom	VET	nibm	P3	nibm yethe, bhatkya kutryancha tras aahe
+G1240	mix	TREE	sahakarnagar	P1	नमस्कार, branch तुटून लटकतेय, 7 days पासून, सहकारनगर area मध्ये
+G1637	mr	BUILD	sangamwadi	P1	कृपया लक्ष द्या, संगमवाडी भागात, स्लॅबचे तुकडे खाली पडत आहेत, गेले तीन दिवस
+G0810	mr	ELEC	paud_road	P1	पौड रोड परिसरात, शाळेजवळ, विजेची तार तुटून खाली पडली आहे, सात दिवसांपासून कृपया कारवाई करावी
+G0852	rom	ELEC	salunke_vihar	P1	please salunke vihar yethe, shalejaval, vijechi taar tutli aahe, mahina zala
+G1531	mr	ENCROACH	shivajinagar	P3	कृपया लक्ष द्या, शिवाजीनगर येथे, दुकानदारांनी रस्त्यावर सामान ठेवले आहे
+G1536	rom	ENCROACH	lohegaon	P3	saheb, lohgaon bhagat, feriwalyanni rasta adavla aahe
+G0610	mix	DRAIN	dhankawadi	P3	storm water drain clean केली नाही, Dhankawadi मध्ये
+G0791	mr	DRAIN	mundhwa	P1	मुंढवा परिसरात, दवाखान्याजवळ, ड्रेनेज तुंबले आहे
+G0508	mr	WATER	warje	P2	साहेब, वारजे मध्ये, पाण्याची टाकी साफ केली नाही, तीन आठवड्यांपासून
+G0805	mix	ELEC	nibm	P1	नमस्कार, Nibm ला, electric wire लटकतेय road वर, 5 days पासून please लवकर action घ्या
+G1505	mr	ENCROACH	NONE	P3	साहेब, पदपथावर बांधकाम साहित्य ठेवले आहे
+G0980	mix	ELEC	katraj	P1	Please Katraj area मध्ये, electric wire लटकतेय road वर urgent आहे
+G1437	mr	ENCROACH	NONE	P3	कृपया लक्ष द्या, फूटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे लवकर दुरुस्ती करा
+G1226	rom	TREE	dhayari	P1	namaskar, dhayari bhagat, hospital samor, zad rastyavar padle aahe, 2 aathvade zale
+G1375	mr	TREE	chandannagar	P3	नमस्कार, चंदन नगर येथे, पडलेल्या फांद्या उचलल्या नाहीत
+G1964	mr	VET	wadgaon_sheri	P3	नमस्कार, भटक्या कुत्र्यांचा त्रास आहे, वडगाव शेरी भागात
+G1091	hi	HEALTH	kasba_peth	P3	कसबा पेठ में, फॉगिंग नहीं होती
+G1847	rom	VET	NONE	P1	saheb, mahina zala, pisalela kutra firtoy
+G1082	hi	HEALTH	undri	P1	कृपया ध्यान दें, उंड्री इलाके में, मरा हुआ जानवर पड़ा है, बदबू आ रही है, दो हफ्तों से जल्दी ठीक करवाइए
+G0092	hi	ROAD	anandnagar	P3	नमस्ते, आनंदनगर में, सड़क पूरी टूट गई है
+G0057	mr	ROAD	katraj	P1	तक्रार: हॉस्पिटलसमोर, खड्ड्यामुळे कधीही अपघात होऊ शकतो, कात्रज भागात लवकर दुरुस्ती करा
+G0884	hi	ELEC	NONE	P3	नमस्ते, स्ट्रीट लाइट बंद है
+G0423	mix	WATER	NONE	P1	Please school जवळ, pipeline burst झाली आहे please लवकर action घ्या
+G1432	hi	ENCROACH	magarpatta	P3	कृपया ध्यान दें, मगरपट्ट्या इलाके में, लावारिस गाड़ियां पड़ी हैं
+G0008	mr	ROAD	yerawada	P1	तक्रार: येरवडा मध्ये, खड्ड्यात पडून एक दुचाकीस्वार जखमी झाला कृपया कारवाई करावी
+G0968	mix	ELEC	kashewadi	P4	Please Kashewadi ला, street lights दिवसा पण ON असतात urgent आहे
+G1451	mr	ENCROACH	warje	P3	तक्रार: वारजे येथे, फूटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे तक्रार करूनही दखल घेतली नाही
+G1839	mr	VET	warje	P4	वारजे भागात, कुत्र्यांची नसबंदी करावी कृपया कारवाई करावी
+G0622	rom	DRAIN	vadgaon_bk	P1	saheb, vadgaon budruk bhagat, chamber che jhakan ughade aahe lavkar kara
+G1103	mr	HEALTH	NONE	P1	कृपया लक्ष द्या, डेंग्यूचे रुग्ण वाढले आहेत, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G1695	mr	BUILD	shaniwar_peth	P3	तक्रार: नदीपात्रात बांधकाम केले जात आहे, शनिवार पेठ भागात लवकर दुरुस्ती करा
+G1430	mr	ENCROACH	mundhwa	P3	मुंढवा येथे, रस्त्यावर अनधिकृत टपऱ्या आहेत तक्रार करूनही दखल घेतली नाही
+G1800	mix	BUILD	NONE	P2	Please school जवळ, illegal construction चालू आहे please लवकर action घ्या
+G1248	rom	TREE	ramtekdi	P1	ramtekdi yethe, shalejaval, zad rastyavar padle aahe
+G1281	mix	TREE	NONE	P4	tree trimming करायचं आहे urgent आहे
+G0896	rom	ELEC	mundhwa	P1	please mundhwa yethe, khambala current lagto karvai kara please
+G0362	mr	SWM	NONE	P3	रस्त्याच्या कडेला कचऱ्याचा ढीग आहे लवकर दुरुस्ती करा
+G0727	mr	DRAIN	karvenagar	P2	कर्वे नगर परिसरात, ड्रेनेज लाइन फुटली आहे लवकर दुरुस्ती करा
+G1126	hi	HEALTH	keshavnagar	P1	नमस्ते, केशव नगर में, डेंगू के मरीज बढ़ गए हैं, एक महीने से
+G0069	rom	ROAD	kothrud	P3	kothrud bhagat, rastyavar khup khadde aahet lavkar kara
+G0626	mr	DRAIN	NONE	P3	नाल्याची सफाई झाली नाही
+G1866	mr	VET	mundhwa	P3	तक्रार: मुंढवा भागात, माकडांचा त्रास वाढला आहे तक्रार करूनही दखल घेतली नाही
+G0907	mr	ELEC	NONE	P3	तक्रार: शाळेजवळ, दिवे दिवसाही चालू असतात लवकर दुरुस्ती करा
+G1060	hi	HEALTH	anandnagar	P3	नमस्ते, आनंद नगर में, चूहों का आतंक है
+G1488	mix	ENCROACH	katraj	P1	hoarding illegal आहे आणि पडू शकतं, एक month झाला, कात्रज मध्ये please लवकर action घ्या
+G1306	mr	TREE	tadiwala_road	P2	साहेब, ताडीवाला रोड परिसरात, झाड पडून गाडीचे नुकसान झाले
+G1129	mix	HEALTH	kothrud	P2	नमस्कार, 4 days पासून, dead dog पडलाय road वर, कोथरुड ला please लवकर action घ्या
+G1148	rom	HEALTH	nana_peth	P3	namaskar, nana peth yethe, dasancha tras aahe
+G1763	mr	BUILD	NONE	P1	साहेब, दवाखान्याजवळ, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे कृपया कारवाई करावी
+G1101	hi	HEALTH	wadgaon_sheri	P2	सर, वडगांव शेरी में, मच्छरों का बहुत प्रकोप है, एक महीने से जल्दी ठीक करवाइए
+G0557	rom	WATER	kashewadi	P2	kashewadi yethe, pani vaya jatay leakage mule, 4 divas pasun lavkar kara
+G0597	mr	WATER	magarpatta	P2	नमस्कार, मगरपट्ट्या परिसरात, पाइपलाइन फुटली आहे, पाणी वाया जाते
+G1973	mix	VET	aundh	P1	Please औंध मध्ये, dog bite झाला, 7 days पासून
+G0371	mr	SWM	sadashiv_peth	P1	कृपया लक्ष द्या, सदाशिव पेठ येथे, दवाखान्याजवळ, कचऱ्यावर माश्या आणि डास झाले आहेत
+G0394	mix	SWM	NONE	P1	कचऱ्याचा dump तयार झालाय, एक month झाला
+G0207	rom	SWM	NONE	P3	kachryacha dhig aahe karvai kara please
+G0943	mr	ELEC	NONE	P1	कृपया लक्ष द्या, दवाखान्याजवळ, गल्लीत अंधार असतो, दिवा बंद, दोन आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G0017	rom	ROAD	salunke_vihar	P3	namaskar, salunke vihar madhe, rastyavar khup khadde aahet
+G1337	mr	TREE	hingne	P1	नमस्कार, हिंगणे येथे, झाड रस्त्यावर पडले आहे
+G1535	mr	ENCROACH	narayan_peth	P4	कृपया लक्ष द्या, नारायण पेठ येथे, अनधिकृत फलक लावले आहेत
+G0835	mr	ELEC	kondhwa	P3	तक्रार: कोंढवा येथे, गल्लीत अंधार असतो, दिवा बंद लवकर दुरुस्ती करा
+G1298	mr	TREE	wadgaon_sheri	P1	तक्रार: झाड वाकले आहे, पडण्याची भीती आहे, वडगांव शेरी मध्ये लवकर दुरुस्ती करा
+G1750	mix	BUILD	kharadi	P2	Please खराडी area मध्ये, illegal construction चालू आहे, 3 weeks झाले
+G1005	rom	HEALTH	warje	P3	namaskar, 1 aathvade zale, warje yethe, fawarni hot nahi lavkar kara
+G1201	hi	TREE	narayan_peth	P1	कृपया ध्यान दें, नारायण पेठ इलाके में, पेड़ सड़क पर गिर गया है कृपया कार्रवाई करें
+G1642	mr	BUILD	shaniwar_peth	P3	कृपया लक्ष द्या, शनिवार पेठ येथे, परवानगी न घेता बांधकाम सुरू आहे लवकर दुरुस्ती करा
+G0431	rom	WATER	balajinagar	P2	balaji nagar yethe, gadhul pani yete
+G0169	mr	ROAD	NONE	P3	कृपया लक्ष द्या, डांबरीकरण खराब झाले आहे कृपया कारवाई करावी
+G1885	mr	VET	kalas	P3	तक्रार: कळस मध्ये, मोकाट जनावरे रस्त्यावर फिरतात तक्रार करूनही दखल घेतली नाही
+G0369	mix	SWM	narayan_peth	P2	Hello sir, कचऱ्याचा खूप smell येतो, Narayan Peth मध्ये
+G1440	mr	ENCROACH	bavdhan	P2	तक्रार: बावधन भागात, पदपथावर बांधकाम साहित्य ठेवले आहे, दोन आठवड्यांपासून लवकर दुरुस्ती करा
+G0591	mr	WATER	koregaon_park	P3	साहेब, कोरेगाव पार्क येथे, पाणीपुरवठा बंद आहे लवकर दुरुस्ती करा
+G0761	hi	DRAIN	nana_peth	P2	सर, नाना पेठ में, गटर का पानी सड़क पर बह रहा है जल्दी ठीक करवाइए
+G0880	mix	ELEC	NONE	P1	pole वाकलाय, कधीही पडेल
+G1069	mr	HEALTH	ramtekdi	P2	रामटेकडी मध्ये, उघड्यावर शौच केले जाते तक्रार करूनही दखल घेतली नाही
+G0061	rom	ROAD	dhankawadi	P3	namaskar, dhankawadi madhe, khadda padla aahe road var lavkar kara
+G0808	hi	ELEC	balewadi	P1	बालेवाडी में, खंभे में करंट आ रहा है जल्दी ठीक करवाइए
+G1121	hi	HEALTH	yewalewadi	P3	नमस्ते, येवलेवाडी इलाके में, चूहों का आतंक है कृपया कार्रवाई करें
+G0456	mr	WATER	balajinagar	P2	तक्रार: बालाजीनगर भागात, पाइपलाइन फुटली आहे, पाणी वाया जाते, एक आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G0287	mix	SWM	mundhwa	P3	Hello sir, मुंढव्या area मध्ये, garbage van येत नाही
+G0232	mix	SWM	market_yard	P3	Hello sir, Market Yard area मध्ये, कचऱ्याचा dump तयार झालाय, 2 days पासून urgent आहे
+G1787	hi	BUILD	wanowrie	P3	वानवडी में, बिना अनुमति के निर्माण हो रहा है कृपया कार्रवाई करें
+G0763	mr	DRAIN	balajinagar	P2	नमस्कार, बालाजीनगर येथे, सांडपाणी रस्त्यावर वाहत आहे लवकर दुरुस्ती करा
+G0128	mr	ROAD	NONE	P3	तक्रार: रस्त्याच्या मधोमध मोठा खड्डा आहे, दहा दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0312	mr	SWM	ramtekdi	P3	सार्वजनिक शौचालय अस्वच्छ आहे, रामटेकडी भागात तक्रार करूनही दखल घेतली नाही
+G0131	hi	ROAD	bavdhan	P3	कृपया ध्यान दें, बावधन इलाके में, सड़क खोदकर छोड़ दी गई है
+G0991	hi	ELEC	shaniwar_peth	P3	नमस्ते, गली में अंधेरा रहता है, लाइट खराब है, शनिवार पेठ में कृपया कार्रवाई करें
+G0328	mr	SWM	sadashiv_peth	P2	सदाशिव पेठ परिसरात, तीन दिवसांपासून, मोकळ्या जागेत लोक कचरा टाकतात तक्रार करूनही दखल घेतली नाही
+G1971	mr	VET	shivajinagar	P1	कृपया लक्ष द्या, शिवाजीनगर भागात, पिसाळलेला कुत्रा फिरत आहे
+G0538	mr	WATER	kondhwa	P3	कोंढव्या परिसरात, पाणीपुरवठा बंद आहे तक्रार करूनही दखल घेतली नाही
+G1890	mr	VET	NONE	P2	नमस्कार, डुकरांचा उपद्रव आहे, महिनाभरापासून लवकर दुरुस्ती करा
+G1558	rom	ENCROACH	dhankawadi	P3	dhankawadi madhe, bewaras gadya padun aahet
+G1404	hi	ENCROACH	yewalewadi	P3	सर, येवलेवाडी इलाके में, फुटपाथ पर अतिक्रमण है जल्दी ठीक करवाइए
+G1334	hi	TREE	bavdhan	P2	अवैध पेड़ कटाई हुई है, बावधन में, स्कूल के पास
+G0243	mr	SWM	pune_station	P1	पुणे स्टेशन भागात, कचऱ्यावर माश्या आणि डास झाले आहेत, दोन आठवड्यांपासून लवकर दुरुस्ती करा
+G0347	hi	SWM	tadiwala_road	P1	नमस्ते, ताडीवाला रोड इलाके में, कूड़े से बदबू आ रही है, एक महीने से कृपया कार्रवाई करें
+G0007	mix	ROAD	magarpatta	P3	Please मगरपट्टा area मध्ये, road वर मोठे potholes आहेत
+G1166	mr	HEALTH	hingne	P3	साचलेल्या पाण्यात डासांच्या अळ्या आहेत, हिंगणे येथे
+G0764	mr	DRAIN	sangamwadi	P3	पावसाचे पाणी रस्त्यावर साचते, गेले तीन दिवस, संगमवाडी येथे
+G1837	mr	VET	fc_road	P2	साहेब, एफसी रोड मध्ये, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो, पाच दिवसांपासून
+G0490	hi	WATER	guruwar_peth	P2	कृपया ध्यान दें, गुरुवार पेठ में, पाइपलाइन फट गई है, पानी बर्बाद हो रहा है जल्दी ठीक करवाइए
+G0583	mr	WATER	keshavnagar	P3	कृपया लक्ष द्या, केशव नगर परिसरात, पाण्याची टाकी साफ केली नाही लवकर दुरुस्ती करा
+G0981	mr	ELEC	wanowrie	P3	साहेब, वानवडी भागात, हायमास्ट दिवा बंद आहे कृपया कारवाई करावी
+G0596	mix	WATER	nana_peth	P1	Hello sir, नाना पेठ ला, hospital समोर, valve मधून leakage होतंय, एक month झाला urgent आहे
+G1269	rom	TREE	wadgaon_sheri	P1	vadgaon sheri yethe, zad rastyavar padle aahe
+G1264	rom	TREE	wadgaon_sheri	P1	saheb, vadgaon sheri yethe, hospital samor, zadachi fandi latakli aahe lavkar kara
+G1547	mix	ENCROACH	bhavani_peth	P4	Please भवानी पेठ ला, illegal banners लावलेत, 1 weeks झाले
+G1827	rom	VET	gultekdi	P3	namaskar, gultekdi yethe, bhatkya kutryancha tras aahe
+G0350	rom	SWM	kasba_peth	P3	kasba peth madhe, kachryacha dhig aahe karvai kara please
+G0463	mr	WATER	NONE	P3	साहेब, पाण्याची टाकी साफ केली नाही
+G0012	mr	ROAD	bavdhan	P2	बावधन येथे, दवाखान्याजवळ, एक आठवड्यांपासून, डांबरीकरण खराब झाले आहे तक्रार करूनही दखल घेतली नाही
+G0539	rom	WATER	wanowrie	P1	please pani vaya jatay leakage mule, wanwadi yethe, 2 aathvade zale karvai kara please
+G0305	rom	SWM	koregaon_park	P2	saheb, koregaon park bhagat, kachra jaltat, dhur hoto lavkar kara
+G0909	mix	ELEC	chandannagar	P3	Please Chandannagar area मध्ये, street light काम करत नाही please लवकर action घ्या
+G0032	rom	ROAD	model_colony	P1	please model colony yethe, khaddyat padun ek manus jakhmi zala karvai kara please
+G0742	hi	DRAIN	NONE	P2	सर, गटर का पानी सड़क पर बह रहा है कृपया कार्रवाई करें
+G0386	mix	SWM	NONE	P3	Please dustbin overflow होतोय
+G1812	mr	VET	NONE	P2	साहेब, मोकाट जनावरे रस्त्यावर फिरतात, दोन आठवड्यांपासून लवकर दुरुस्ती करा
+G1955	mix	VET	kothrud	P4	Please कोथरुड area मध्ये, dogs ची sterilization करा urgent आहे
+G1409	mr	ENCROACH	sangamwadi	P3	नमस्कार, संगमवाडी मध्ये, दुकानदारांनी रस्त्यावर सामान ठेवले आहे
+G0723	mr	DRAIN	NONE	P3	नाल्याची सफाई झाली नाही कृपया कारवाई करावी
+G1000	mr	ELEC	NONE	P4	तक्रार: दिवे दिवसाही चालू असतात
+G1782	mr	BUILD	gultekdi	P3	तक्रार: परवानगी न घेता बांधकाम सुरू आहे, गुलटेकडी भागात लवकर दुरुस्ती करा
+G1117	mr	HEALTH	kalas	P1	साहेब, कळस येथे, दवाखान्याजवळ, मलेरियाचे रुग्ण आढळले आहेत, महिनाभरापासून
+G1464	hi	ENCROACH	sadashiv_peth	P3	नमस्ते, सदाशिव पेठ में, लावारिस गाड़ियां पड़ी हैं
+G0337	mr	SWM	nana_peth	P2	नाना पेठ मध्ये, कचरा जाळला जातो, धूर होतो, सहा दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G1394	mr	TREE	pisoli	P3	नमस्कार, पिसोळी येथे, पडलेल्या फांद्या उचलल्या नाहीत
+G0283	mix	SWM	vishrantwadi	P2	Please विश्रांतवाडी मध्ये, hospital समोर, कचऱ्याचा dump तयार झालाय urgent आहे
+G0448	mr	WATER	hadapsar	P1	तक्रार: हडपसर येथे, दूषित पाण्यामुळे लोक आजारी पडले लवकर दुरुस्ती करा
+G1897	mr	VET	balewadi	P2	बालेवाडी येथे, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो, एक दिवसांपासून लवकर दुरुस्ती करा
+G0182	rom	ROAD	vadgaon_bk	P3	saheb, 1 divas pasun, wadgaon budruk madhe, rasta khodun thevla aahe
+G0319	mix	SWM	kondhwa	P1	कोंढवा मध्ये, dustbin overflow होतोय, 2 weeks झाले
+G0518	mr	WATER	model_colony	P1	साहेब, दवाखान्याजवळ, दोन आठवड्यांपासून, मॉडेल कॉलनी परिसरात, पाइपलाइन फुटली आहे, पाणी वाया जाते कृपया कारवाई करावी
+G1349	mr	TREE	NONE	P3	तक्रार: झाडामुळे पथदिवा झाकला गेला आहे, महिनाभरापासून कृपया कारवाई करावी
+G0334	mr	SWM	undri	P3	उंड्री येथे, घंटागाडी येत नाही तक्रार करूनही दखल घेतली नाही
+G0869	hi	ELEC	bhavani_peth	P4	कृपया ध्यान दें, भवानी पेठ में, नई स्ट्रीट लाइट लगवाइए
+G0419	hi	WATER	shivajinagar	P2	शिवाजी नगर में, एक हफ्तों से, गंदा पानी आ रहा है
+G0850	mix	ELEC	wanowrie	P4	नमस्कार, Wanowrie area मध्ये, street lights दिवसा पण ON असतात
+G0979	mr	ELEC	mundhwa	P1	मुंढवा परिसरात, खांबाला करंट लागत आहे, एक आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G1611	hi	BUILD	NONE	P3	कृपया ध्यान दें, अवैध मंजिल बनाई जा रही है जल्दी ठीक करवाइए
+G1458	rom	ENCROACH	sinhagad_road	P3	please sinhagad road yethe, feriwalyanni rasta adavla aahe lavkar kara
+G1799	rom	BUILD	sangamwadi	P3	saheb, sangamwadi madhe, anadhikrut bandhkam chalu aahe lavkar kara
+G0247	mr	SWM	magarpatta	P2	साहेब, मगरपट्ट्या भागात, कचऱ्याचा घाण वास येतो, दहा दिवसांपासून
+G0024	mix	ROAD	mundhwa	P1	Please Mundhwa मध्ये, school जवळ, pothole मुळे bike slip होऊन accident झाला
+G1672	mr	BUILD	karvenagar	P3	नमस्कार, कर्वे नगर भागात, नदीपात्रात बांधकाम केले जात आहे, एक आठवड्यांपासून कृपया कारवाई करावी
+G0515	mr	WATER	sahakarnagar	P3	कृपया लक्ष द्या, सहकार नगर भागात, नवीन नळ जोडणी हवी आहे, महिनाभरापासून
+G0114	mix	ROAD	kasba_peth	P1	नमस्कार, कसबा पेठ मध्ये, hospital समोर, speed breaker ला marking नाही urgent आहे
+G0847	mr	ELEC	sangamwadi	P4	कृपया लक्ष द्या, नवीन पथदिवे बसवावेत, संगमवाडी मध्ये
+G0301	hi	SWM	NONE	P2	सर, कचरा जलाया जाता है, धुआं होता है जल्दी ठीक करवाइए
+G0848	mix	ELEC	NONE	P4	street lights दिवसा पण ON असतात, 1 weeks झाले please लवकर action घ्या
+G1585	mr	ENCROACH	bhavani_peth	P2	भवानी पेठ परिसरात, शाळेजवळ, बेवारस वाहने रस्त्याकडेला पडून आहेत लवकर दुरुस्ती करा
+G1933	mr	VET	vishrantwadi	P1	तक्रार: विश्रांतवाडी परिसरात, पिसाळलेला कुत्रा फिरत आहे लवकर दुरुस्ती करा
+G1235	rom	TREE	lohegaon	P1	please lohegaon bhagat, zad rastyavar padle aahe, 1 aathvade zale
+G0709	rom	DRAIN	yewalewadi	P1	please yewalewadi yethe, chamber che jhakan ughade aahe
+G1625	rom	BUILD	nibm	P1	saheb, nibm bhagat, bhint koslnar aahe
+G1021	rom	HEALTH	baner	P1	baner yethe, melela prani padla aahe, 2 aathvade zale
+G1810	mr	VET	bavdhan	P2	कृपया लक्ष द्या, बावधन भागात, माकडांचा त्रास वाढला आहे, महिनाभरापासून
+G1071	hi	HEALTH	pune_station	P1	पुणे स्टेशन इलाके में, डेंगू के मरीज बढ़ गए हैं
+G0648	mr	DRAIN	NONE	P1	नमस्कार, दवाखान्याजवळ, मॅनहोलवर झाकण नाही कृपया कारवाई करावी
+G1630	rom	BUILD	NONE	P3	bandhkam cha radaroda rastyavar
+G0520	mr	WATER	NONE	P4	कृपया लक्ष द्या, नवीन नळ जोडणी हवी आहे कृपया कारवाई करावी
+G0219	mr	SWM	dhanori	P3	तक्रार: धानोरी भागात, एक दिवसांपासून, कचरा उचलला जात नाही तक्रार करूनही दखल घेतली नाही
+G0020	mr	ROAD	bibwewadi	P3	साहेब, रस्त्याच्या मधोमध मोठा खड्डा आहे, बिबवेवाडी भागात
+G0777	mr	DRAIN	NONE	P3	कृपया लक्ष द्या, नाल्याची सफाई झाली नाही लवकर दुरुस्ती करा
+G1525	rom	ENCROACH	aundh	P3	aundh yethe, 6 divas pasun, feriwalyanni rasta adavla aahe karvai kara please
+G1570	hi	ENCROACH	sadashiv_peth	P3	सर, सड़क पर अवैध ठेले लगे हैं, सदाशिव पेठ में जल्दी ठीक करवाइए
+G0462	rom	WATER	baner	P1	namaskar, baner yethe, gadhul pani yete, 3 aathvade zale
+G0102	hi	ROAD	narayan_peth	P2	कृपया ध्यान दें, नारायण पेठ इलाके में, सड़क खोदकर छोड़ दी गई है, तीन हफ्तों से कृपया कार्रवाई करें
+G0683	mr	DRAIN	NONE	P1	गटार तुंबून घाण पाणी साचले आहे, हॉस्पिटलसमोर
+G1986	rom	VET	tadiwala_road	P3	namaskar, tadiwala road madhe, bhatkya kutryancha tras aahe
+G1989	mr	VET	keshavnagar	P1	कृपया लक्ष द्या, केशवनगर मध्ये, शाळेजवळ, कुत्र्याने चावा घेतला कृपया कारवाई करावी
+G0962	mix	ELEC	bhavani_peth	P4	नमस्कार, Bhavani Peth area मध्ये, street lights दिवसा पण ON असतात urgent आहे
+G0659	mr	DRAIN	fc_road	P1	कृपया लक्ष द्या, एफसी रोड भागात, सांडपाणी घरात येत आहे
+G0325	rom	SWM	katraj	P1	saheb, katraj bhagat, 10 divas pasun, kachryacha vaas yetoy, hospital samor karvai kara please
+G0548	hi	WATER	kothrud	P2	सर, अस्पताल के सामने, कोथरुड में, पानी बहुत कम प्रेशर से आता है जल्दी ठीक करवाइए
+G1528	mix	ENCROACH	nana_peth	P3	Please नाना पेठ मध्ये, abandoned vehicles पडून आहेत, 1 weeks झाले please लवकर action घ्या
+G1609	rom	BUILD	katraj	P1	katraj bhagat, dhokadayak imarat aahe karvai kara please
+G1445	hi	ENCROACH	kasba_peth	P4	नमस्ते, कसबा पेठ इलाके में, अवैध बैनर लगे हैं कृपया कार्रवाई करें
+G1848	hi	VET	NONE	P2	कृपया ध्यान दें, एक महीने से, आवारा मवेशी सड़क पर घूमते हैं
+G0144	rom	ROAD	chandannagar	P2	namaskar, chandannagar yethe, khaddya mule accident hou shakto karvai kara please
+G0103	mr	ROAD	ramtekdi	P3	रामटेकडी येथे, रस्त्यावर खूप खड्डे पडले आहेत कृपया कारवाई करावी
+G0254	rom	SWM	lohegaon	P2	saheb, lohgaon madhe, hospital samor, kachryacha dhig aahe, 1 divas pasun lavkar kara
+G1975	hi	VET	dhankawadi	P1	नमस्ते, पागल कुत्ता घूम रहा है, एक महीने से, धनकवडी में
+G0893	mix	ELEC	salunke_vihar	P3	street lights दिवसा पण ON असतात, Salunke Vihar ला, 1 weeks झाले, school जवळ please लवकर action घ्या
+G1543	hi	ENCROACH	balewadi	P2	बालेवाडी में, स्कूल के पास, सड़क पर अवैध ठेले लगे हैं, एक दिनों से जल्दी ठीक करवाइए
+G0344	mr	SWM	bibwewadi	P3	बिबवेवाडी परिसरात, सार्वजनिक शौचालय अस्वच्छ आहे कृपया कारवाई करावी
+G1258	rom	TREE	narayan_peth	P3	please narayan peth madhe, padlelya fandya uchlalya nahit
+G1789	rom	BUILD	hadapsar	P2	hadapsar yethe, bandhkam cha radaroda rastyavar, 3 aathvade zale
+G0255	mr	SWM	shaniwar_peth	P1	कृपया लक्ष द्या, तीन आठवड्यांपासून, ओला आणि सुका कचरा वेगळा घेत नाहीत, शनिवार पेठ येथे कृपया कारवाई करावी
+G0616	mr	DRAIN	kondhwa	P2	नमस्कार, कोंढव्या परिसरात, गटार तुंबून घाण पाणी साचले आहे, गेले तीन दिवस
+G1991	mr	VET	nibm	P3	तक्रार: एनआयबीएम परिसरात, डुकरांचा उपद्रव आहे
+G1210	mix	TREE	wadgaon_sheri	P3	Wadgaon Sheri ला, hospital समोर, tree trimming करायचं आहे please लवकर action घ्या
+G1267	mix	TREE	dhankawadi	P3	illegal tree cutting झालंय, धनकवडी area मध्ये
+G0585	rom	WATER	market_yard	P3	please market yard yethe, pani kami pressure ne yete
+G0449	hi	WATER	NONE	P3	सर, नल में पानी नहीं आ रहा कृपया कार्रवाई करें
+G0500	rom	WATER	NONE	P1	saheb, gadhul pani yete, 2 aathvade zale
+G1169	mr	HEALTH	NONE	P2	नमस्कार, उंदरांचा उपद्रव वाढला आहे, महिनाभरापासून
+G0342	hi	SWM	balewadi	P1	बालेवाडी में, एक हफ्तों से, कूड़े का ढेर लगा है, स्कूल के पास
+G1758	mr	BUILD	kashewadi	P3	काशेवाडी परिसरात, परवानगी न घेता बांधकाम सुरू आहे
+G1516	mr	ENCROACH	NONE	P3	फूटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे कृपया कारवाई करावी
+G1650	mr	BUILD	shivajinagar	P1	तक्रार: शिवाजीनगर येथे, भिंत कोसळून लोक जखमी झाले लवकर दुरुस्ती करा
+G0781	rom	DRAIN	sahakarnagar	P1	please sahakarnagar yethe, chamber che jhakan ughade aahe
+G1363	hi	TREE	kothrud	P3	सर, कोथरुड इलाके में, अवैध पेड़ कटाई हुई है, चार दिनों से
+G1719	rom	BUILD	balewadi	P3	balewadi yethe, parvangi nastana majla bandhtat
+G0306	mr	SWM	NONE	P3	मोकळ्या जागेत लोक कचरा टाकतात तक्रार करूनही दखल घेतली नाही
+G1822	mix	VET	chandannagar	P4	Hello sir, Chandannagar area मध्ये, dogs ची sterilization करा
+G1480	hi	ENCROACH	NONE	P3	सड़क पर अवैध ठेले लगे हैं कृपया कार्रवाई करें
+G1275	mix	TREE	guruwar_peth	P3	Guruwar Peth area मध्ये, illegal tree cutting झालंय
+G0170	hi	ROAD	mundhwa	P3	मुंढव्या इलाके में, सड़क खोदकर छोड़ दी गई है जल्दी ठीक करवाइए
+G0561	mr	WATER	NONE	P3	नमस्कार, व्हॉल्व्हमधून पाणी गळते
+G1761	rom	BUILD	dhankawadi	P1	please dhankawadi madhe, bhint koslnar aahe, 3 divas pasun
+G0687	mr	DRAIN	market_yard	P1	तक्रार: मार्केट यार्ड भागात, सांडपाणी घरात येत आहे
+G1066	rom	HEALTH	yerawada	P3	yerwada madhe, undir khup zale aahet
+G1190	hi	HEALTH	yewalewadi	P3	नमस्ते, येवलेवाडी इलाके में, फॉगिंग नहीं होती
+G1296	hi	TREE	vishrantwadi	P1	विश्रांतवाडी इलाके में, पेड़ सड़क पर गिर गया है जल्दी ठीक करवाइए
+G1738	mr	BUILD	warje	P3	तक्रार: वारजे परिसरात, नदीपात्रात बांधकाम केले जात आहे
+G1978	hi	VET	baner	P3	आवारा मवेशी सड़क पर घूमते हैं, बानेर इलाके में जल्दी ठीक करवाइए
+G0994	hi	ELEC	kharadi	P1	खराडी इलाके में, बिजली का तार टूटकर लटक रहा है
+G1410	rom	ENCROACH	shaniwar_peth	P3	namaskar, shaniwar peth yethe, footpath var atikraman aahe lavkar kara
+G1613	rom	BUILD	deccan	P1	please deccan bhagat, bhint koslnar aahe
+G1353	rom	TREE	dhankawadi	P3	namaskar, dhankawadi yethe, zadachi chhatni kara, 2 aathvade zale lavkar kara
+G1660	mr	BUILD	yerawada	P1	तक्रार: गेले एक दिवस, धोकादायक इमारत आहे, येरवड्या मध्ये लवकर दुरुस्ती करा
+G0379	mr	SWM	bhavani_peth	P3	नमस्कार, भवानी पेठ भागात, मोकळ्या जागेत लोक कचरा टाकतात लवकर दुरुस्ती करा
+G1251	mr	TREE	salunke_vihar	P4	साळुंके विहार येथे, झाडामुळे पथदिवा झाकला गेला आहे, गेले सात दिवस
+G1085	mix	HEALTH	sinhagad_road	P3	Hello sir, Sinhagad Road मध्ये, rats चा त्रास आहे urgent आहे
+G1501	mr	ENCROACH	pune_station	P3	कृपया लक्ष द्या, पुणे स्टेशन भागात, बेवारस वाहने रस्त्याकडेला पडून आहेत तक्रार करूनही दखल घेतली नाही
+G0998	mix	ELEC	NONE	P1	Please hospital समोर, light pole ला shock लागतो urgent आहे
+G0139	mr	ROAD	NONE	P1	कृपया लक्ष द्या, तीन आठवड्यांपासून, खड्ड्यामुळे कधीही अपघात होऊ शकतो लवकर दुरुस्ती करा
+G1776	mr	BUILD	NONE	P3	तक्रार: बांधकाम परवानगीचा अर्ज प्रलंबित आहे, तीन आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G0401	mix	WATER	sangamwadi	P3	Sangamwadi ला, पाणी low pressure ने येतं urgent आहे
+G0783	mr	DRAIN	pune_station	P3	तक्रार: पुणे स्टेशन मध्ये, नाल्याची सफाई झाली नाही
+G0471	mr	WATER	viman_nagar	P1	विमाननगर भागात, दूषित पाण्यामुळे लोक आजारी पडले
+G1617	mr	BUILD	fatimanagar	P2	साहेब, फातिमानगर भागात, खोदकामाला संरक्षक भिंत नाही, सहा दिवसांपासून कृपया कारवाई करावी
+G0554	hi	WATER	gultekdi	P1	कृपया ध्यान दें, गुलटेकडी में, गंदे पानी से लोग बीमार हो गए, तीन हफ्तों से
+G1842	hi	VET	kasba_peth	P2	कसबा में, आवारा मवेशी सड़क पर घूमते हैं, एक महीने से
+G1215	hi	TREE	sadashiv_peth	P1	नमस्ते, सदाशिव पेठ इलाके में, पेड़ की डाल टूटकर लटक रही है जल्दी ठीक करवाइए
+G1244	mix	TREE	shivajinagar	P4	Hello sir, शिवाजी नगर area मध्ये, tree trimming करायचं आहे urgent आहे
+G1289	rom	TREE	ramtekdi	P1	saheb, 3 aathvade zale, zad rastyavar padle aahe, ramtekdi bhagat
+G0832	mr	ELEC	sangamwadi	P1	नमस्कार, संगमवाडी मध्ये, विजेचा खांब वाकला आहे, पडू शकतो तक्रार करूनही दखल घेतली नाही
+G1767	hi	BUILD	sadashiv_peth	P1	नमस्ते, दीवार गिरने से लोग घायल हुए, सदाशिव पेठ इलाके में
+G0675	mr	DRAIN	koregaon_park	P1	नमस्कार, कोरेगाव पार्क येथे, हॉस्पिटलसमोर, ड्रेनेज तुंबले आहे, पाच दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0509	mr	WATER	NONE	P2	तक्रार: पाण्याची टाकी साफ केली नाही, तीन आठवड्यांपासून
+G1814	hi	VET	kharadi	P3	नमस्ते, खराडी इलाके में, आवारा मवेशी सड़क पर घूमते हैं जल्दी ठीक करवाइए
+G0123	hi	ROAD	sinhagad_road	P2	नमस्ते, सिंहगड रोड में, स्कूल के पास, सड़क पर बहुत गड्ढे हैं कृपया कार्रवाई करें
+G1940	rom	VET	magarpatta	P3	saheb, bhatkya kutryancha tras aahe, magarpatta yethe
+G1023	mr	HEALTH	chandannagar	P1	चंदन नगर येथे, मलेरियाचे रुग्ण आढळले आहेत, महिनाभरापासून
+G1798	rom	BUILD	mundhwa	P2	mundhwa madhe, anadhikrut bandhkam chalu aahe, mahina zala
+G1509	rom	ENCROACH	undri	P3	undri bhagat, footpath var atikraman aahe karvai kara please
+G1555	mr	ENCROACH	ramtekdi	P4	रामटेकडी मध्ये, अनधिकृत फलक लावले आहेत, एक आठवड्यांपासून
+G1770	rom	BUILD	katraj	P1	katraj yethe, dhokadayak imarat aahe, 2 aathvade zale
+G1514	rom	ENCROACH	katraj	P4	katraj bhagat, anadhikrut flex lavle aahet lavkar kara
+G0637	rom	DRAIN	vadgaon_bk	P2	please wadgaon budruk madhe, sandpani rastyavar vahat aahe lavkar kara
+G1828	rom	VET	katraj	P1	please katraj yethe, pisalela kutra firtoy lavkar kara
+G0828	mix	ELEC	paud_road	P1	नमस्कार, pole वाकलाय, कधीही पडेल, school जवळ, Paud Road area मध्ये please लवकर action घ्या
+G1845	rom	VET	hadapsar	P3	please kutryanchi nasbandi kara, hadapsar bhagat, mahina zala karvai kara please
+G1496	mix	ENCROACH	yewalewadi	P2	2 weeks झाले, footpath वर hawkers चं encroachment आहे, येवलेवाडी ला
+G1737	hi	BUILD	tadiwala_road	P1	नमस्ते, ताडीवाला रोड इलाके में, दीवार गिरने से लोग घायल हुए जल्दी ठीक करवाइए
+G0104	hi	ROAD	bibwewadi	P2	बिबवेवाडी इलाके में, अस्पताल के सामने, सड़क पर बहुत गड्ढे हैं
+G1128	mr	HEALTH	NONE	P1	तक्रार: दवाखान्याजवळ, डासांचा खूप त्रास आहे, दोन आठवड्यांपासून
+G1423	hi	ENCROACH	viman_nagar	P4	विमान नगर में, अवैध बैनर लगे हैं कृपया कार्रवाई करें
+G0067	mr	ROAD	kalas	P2	कृपया लक्ष द्या, कळस परिसरात, हॉस्पिटलसमोर, डांबरीकरण खराब झाले आहे कृपया कारवाई करावी
+G1015	mix	HEALTH	balewadi	P2	Please rats चा त्रास आहे, Balewadi मध्ये, 3 weeks झाले
+G1751	mr	BUILD	dhankawadi	P1	धनकवडी परिसरात, भिंत कोसळून लोक जखमी झाले लवकर दुरुस्ती करा
+G0615	mr	DRAIN	aundh	P1	नमस्कार, औंध भागात, शाळेजवळ, सांडपाणी घरात येत आहे
+G0883	hi	ELEC	balewadi	P1	बालेवाडी में, बिजली का खंभा झुक गया है कृपया कार्रवाई करें
+G1467	hi	ENCROACH	anandnagar	P3	अवैध बैनर लगे हैं, आनंद नगर इलाके में, अस्पताल के सामने कृपया कार्रवाई करें
+G0988	mr	ELEC	katraj	P4	साहेब, कात्रज मध्ये, दिवा सतत बंद-चालू होतो लवकर दुरुस्ती करा
+G0732	mr	DRAIN	keshavnagar	P1	केशव नगर मध्ये, गटारावर झाकण नाही, कोणी पडू शकते
+G1849	mr	VET	narayan_peth	P3	साहेब, नारायण पेठ येथे, माकडांचा त्रास वाढला आहे, गेले पाच दिवस
+G0578	hi	WATER	NONE	P1	एक महीने से, पानी की सप्लाई बंद है कृपया कार्रवाई करें
+G1214	mr	TREE	bavdhan	P3	बावधन येथे, पडलेल्या फांद्या उचलल्या नाहीत तक्रार करूनही दखल घेतली नाही
+G0391	mr	SWM	NONE	P3	साहेब, घंटागाडी येत नाही
+G1565	mr	ENCROACH	chandannagar	P1	साहेब, चंदननगर मध्ये, अनधिकृत होर्डिंग कधीही पडू शकते
+G1139	mix	HEALTH	keshavnagar	P1	नमस्कार, Keshavnagar मध्ये, dengue cases वाढलेत, 1 days पासून please लवकर action घ्या
+G1173	hi	HEALTH	sinhagad_road	P2	नमस्ते, सिंहगड रस्ता में, मरा हुआ जानवर पड़ा है, बदबू आ रही है जल्दी ठीक करवाइए
+G1316	rom	TREE	karvenagar	P2	namaskar, karve nagar madhe, padlelya fandya uchlalya nahit, 3 aathvade zale lavkar kara
+G0231	hi	SWM	kondhwa	P3	कोंढवा में, कचरा गाड़ी नहीं आती जल्दी ठीक करवाइए
+G1636	mr	BUILD	narayan_peth	P4	कृपया लक्ष द्या, नारायण पेठ मध्ये, बांधकाम परवानगीचा अर्ज प्रलंबित आहे लवकर दुरुस्ती करा
+G1038	mix	HEALTH	shivajinagar	P1	Please शिवाजीनगर area मध्ये, school जवळ, dead dog पडलाय road वर, एक month झाला please लवकर action घ्या
+G1640	mr	BUILD	mundhwa	P1	स्लॅबचे तुकडे खाली पडत आहेत, मुंढवा मध्ये तक्रार करूनही दखल घेतली नाही
+G1596	mr	ENCROACH	sadashiv_peth	P1	तक्रार: सदाशिव पेठ मध्ये, अनधिकृत होर्डिंग कधीही पडू शकते, गेले पाच दिवस लवकर दुरुस्ती करा
+G1711	mr	BUILD	warje	P1	साहेब, वारजे परिसरात, स्लॅबचे तुकडे खाली पडत आहेत
+G1865	hi	VET	gultekdi	P4	कृपया ध्यान दें, गुलटेकडी में, कुत्तों की नसबंदी करवाइए, एक दिनों से
+G0299	mr	SWM	warje	P2	कृपया लक्ष द्या, वारजे येथे, कचऱ्यावर माश्या आणि डास झाले आहेत लवकर दुरुस्ती करा
+G1622	rom	BUILD	guruwar_peth	P3	please guruwar peth bhagat, anadhikrut bandhkam chalu aahe lavkar kara
+G0290	hi	SWM	bhavani_peth	P2	सर, भवानी पेठ में, कूड़े से बदबू आ रही है
+G1833	mr	VET	NONE	P2	हॉस्पिटलसमोर, डुकरांचा उपद्रव आहे
+G0406	mr	WATER	tadiwala_road	P3	नमस्कार, ताडीवाला रोड मध्ये, नळाला पाणी येत नाही तक्रार करूनही दखल घेतली नाही
+G1972	rom	VET	karvenagar	P3	karve nagar yethe, bhatkya kutryancha tras aahe
+G0151	hi	ROAD	ramtekdi	P2	रामटेकडी इलाके में, गड्ढे से कभी भी दुर्घटना हो सकती है
+G1278	mr	TREE	yewalewadi	P4	कृपया लक्ष द्या, येवलेवाडी भागात, उद्यानातील झाडांची निगा राखली जात नाही, सात दिवसांपासून कृपया कारवाई करावी
+G1962	mr	VET	fatimanagar	P3	तक्रार: कुत्री रात्रभर भुंकतात, फातिमा नगर भागात, महिनाभरापासून कृपया कारवाई करावी
+G0714	mr	DRAIN	narayan_peth	P3	साहेब, नारायण पेठ मध्ये, पावसाचे पाणी रस्त्यावर साचते कृपया कारवाई करावी
+G0333	mr	SWM	sahakarnagar	P3	तक्रार: सहकारनगर मध्ये, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे लवकर दुरुस्ती करा
+G1904	hi	VET	kasba_peth	P1	नमस्ते, कसबा इलाके में, दस दिनों से, कुत्ते ने काट लिया जल्दी ठीक करवाइए
+G1109	mix	HEALTH	tadiwala_road	P3	Please mosquito problem खूप वाढलाय, ताडीवाला रोड area मध्ये
+G1185	rom	HEALTH	paud_road	P3	paud road yethe, fawarni hot nahi karvai kara please
+G1106	mr	HEALTH	nana_peth	P3	नमस्कार, उंदरांचा उपद्रव वाढला आहे, नाना पेठ मध्ये कृपया कारवाई करावी
+G1968	mr	VET	gultekdi	P3	गेले दोन दिवस, मोकाट जनावरे रस्त्यावर फिरतात, गुलटेकडी येथे तक्रार करूनही दखल घेतली नाही
+G1309	mr	TREE	sinhagad_road	P2	सिंहगड रस्ता मध्ये, झाड पडून गाडीचे नुकसान झाले कृपया कारवाई करावी
+G0642	mr	DRAIN	fc_road	P3	साहेब, एफसी रोड येथे, पावसाळी गटार साफ केलेले नाही लवकर दुरुस्ती करा
+G0822	mr	ELEC	sadashiv_peth	P4	तक्रार: सदाशिव पेठ मध्ये, नवीन पथदिवे बसवावेत, दहा दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0670	hi	DRAIN	fatimanagar	P3	कृपया ध्यान दें, फातिमा नगर में, नाले की सफाई नहीं हुई
+G0264	mix	SWM	NONE	P1	garbage collection होत नाही, एक month झाला please लवकर action घ्या
+G1257	mr	TREE	NONE	P1	नमस्कार, झाड वाकले आहे, पडण्याची भीती आहे कृपया कारवाई करावी
+G0475	mix	WATER	sadashiv_peth	P3	Please Sadashiv Peth मध्ये, पाणी low pressure ने येतं urgent आहे
+G1785	mix	BUILD	fc_road	P2	Hello sir, Fergusson College Road area मध्ये, excavation ला safety wall नाही
+G1721	rom	BUILD	dhankawadi	P3	dhankawadi madhe, bandhkam cha radaroda rastyavar
+G0198	hi	ROAD	katraj	P3	नमस्ते, कात्रज इलाके में, स्पीड ब्रेकर बहुत ऊंचा है
+G0728	mr	DRAIN	magarpatta	P2	नमस्कार, गटार तुंबून घाण पाणी साचले आहे, मगरपट्टा परिसरात तक्रार करूनही दखल घेतली नाही
+G0245	mr	SWM	dhayari	P3	कृपया लक्ष द्या, घंटागाडी येत नाही, धायरी मध्ये कृपया कारवाई करावी
+G0845	rom	ELEC	keshavnagar	P3	please keshav nagar yethe, pathdive band aahet
+G1495	rom	ENCROACH	kashewadi	P3	kashewadi madhe, anadhikrut tapri aahe
+G1749	mr	BUILD	NONE	P1	जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे, गेले चार दिवस तक्रार करूनही दखल घेतली नाही
+G1936	mr	VET	wadgaon_sheri	P1	साहेब, वडगाव शेरी भागात, कुत्र्याने चावा घेतला लवकर दुरुस्ती करा
+G0250	mr	SWM	guruwar_peth	P3	नमस्कार, गुरुवार पेठ मध्ये, सार्वजनिक शौचालय अस्वच्छ आहे कृपया कारवाई करावी
+G0609	hi	DRAIN	NONE	P1	सर, सीवर का पानी घर में आ रहा है जल्दी ठीक करवाइए
+G0164	mr	ROAD	pashan	P2	साहेब, पाषाण मध्ये, गतिरोधकावर रंग नाही, रात्री दिसत नाही तक्रार करूनही दखल घेतली नाही
+G0022	mr	ROAD	NONE	P2	तक्रार: रस्ता खचला आहे, वाहनं अडकतात कृपया कारवाई करावी
+G0050	rom	ROAD	NONE	P2	saheb, khaddya mule accident hou shakto, 4 divas pasun karvai kara please
+G1280	hi	TREE	pashan	P1	पाषाण में, पेड़ सड़क पर गिर गया है जल्दी ठीक करवाइए
+G1743	mix	BUILD	magarpatta	P1	नमस्कार, मगरपट्ट्या ला, dangerous building आहे, wall पडेल, hospital समोर
+G1096	rom	HEALTH	undri	P1	please undri yethe, dengue che rugn vadhle, 2 divas pasun karvai kara please
+G1725	rom	BUILD	chandannagar	P2	namaskar, mahina zala, chandannagar yethe, parvangi nastana majla bandhtat
+G0793	mr	DRAIN	bhavani_peth	P1	नमस्कार, भवानी पेठ भागात, हॉस्पिटलसमोर, ड्रेनेज लाइन फुटली आहे कृपया कारवाई करावी
+G1783	hi	BUILD	baner	P3	सर, बाणेर में, बिना अनुमति के निर्माण हो रहा है
+G0200	mr	ROAD	NONE	P3	तक्रार: रस्त्यावर खूप खड्डे पडले आहेत तक्रार करूनही दखल घेतली नाही
+G1300	mr	TREE	sangamwadi	P1	संगमवाडी भागात, झाड रस्त्यावर पडले आहे कृपया कारवाई करावी
+G0811	rom	ELEC	NONE	P3	please hospital samor, navin street light lava, 7 divas pasun karvai kara please
+G0888	rom	ELEC	NONE	P3	galli madhe andhar aahe, light band lavkar kara
+G1163	rom	HEALTH	wanowrie	P2	namaskar, ughdyavar shauch kartat, 6 divas pasun, wanwadi yethe
+G1694	mr	BUILD	shivajinagar	P3	नमस्कार, शिवाजी नगर परिसरात, नदीपात्रात बांधकाम केले जात आहे
+G1541	hi	ENCROACH	deccan	P1	स्कूल के पास, डेक्कन इलाके में, लावारिस गाड़ियां पड़ी हैं, तीन हफ्तों से कृपया कार्रवाई करें
+G1131	rom	HEALTH	balewadi	P3	balewadi bhagat, dasancha tras aahe
+G0063	mr	ROAD	sinhagad_road	P3	साहेब, सिंहगड रस्ता येथे, रस्ता खोदून ठेवला आहे आणि बुजवला नाही
+G1624	rom	BUILD	paud_road	P1	please dhokadayak imarat aahe, paud road madhe lavkar kara
+G1992	rom	VET	guruwar_peth	P3	guruwar peth yethe, mokat janavare rastyavar, 4 divas pasun lavkar kara
+G0036	mr	ROAD	vadgaon_bk	P3	कृपया लक्ष द्या, वडगाव बुद्रुक भागात, रस्ता पूर्ण उखडला आहे कृपया कारवाई करावी
+G0218	mr	SWM	viman_nagar	P3	तक्रार: विमाननगर भागात, मोकळ्या जागेत लोक कचरा टाकतात कृपया कारवाई करावी
+G0540	rom	WATER	model_colony	P2	model colony bhagat, pipeline futli aahe
+G1439	mr	ENCROACH	lohegaon	P3	साहेब, बेवारस वाहने रस्त्याकडेला पडून आहेत, लोहगाव येथे, दहा दिवसांपासून
+G0225	hi	SWM	nana_peth	P2	नाना पेठ में, कचरा जलाया जाता है, धुआं होता है कृपया कार्रवाई करें
+G1034	hi	HEALTH	dhayari	P3	नमस्ते, धायरी में, मच्छरों का बहुत प्रकोप है, छह दिनों से कृपया कार्रवाई करें
+G1119	mr	HEALTH	mundhwa	P3	नमस्कार, मुंढव्या मध्ये, डासांचा खूप त्रास आहे
+G1333	mr	TREE	nibm	P1	एनआयबीएम भागात, झाड रस्त्यावर पडले आहे, महिनाभरापासून
+G0823	mr	ELEC	yewalewadi	P1	येवलेवाडी मध्ये, डीपी बॉक्स उघडा आहे लवकर दुरुस्ती करा
+G1681	mr	BUILD	yewalewadi	P1	कृपया लक्ष द्या, येवलेवाडी मध्ये, स्लॅबचे तुकडे खाली पडत आहेत कृपया कारवाई करावी
+G1218	mr	TREE	dhanori	P4	कृपया लक्ष द्या, धानोरी भागात, झाडामुळे पथदिवा झाकला गेला आहे, गेले दोन दिवस
+G0108	hi	ROAD	warje	P1	कृपया ध्यान दें, दो हफ्तों से, वारजे में, गड्ढे की वजह से एक आदमी गिरकर घायल हो गया
+G0701	hi	DRAIN	kashewadi	P1	नमस्ते, काशेवाडी इलाके में, नाली जाम हो गई है, दो हफ्तों से जल्दी ठीक करवाइए
+G1435	mr	ENCROACH	paud_road	P2	नमस्कार, रस्त्यावर अनधिकृत टपऱ्या आहेत, महिनाभरापासून, पौड रोड परिसरात
+G1373	hi	TREE	gultekdi	P4	सर, पेड़ की छंटाई करवाइए, गुलटेकडी इलाके में
+G1418	hi	ENCROACH	dhayari	P3	धायरी में, सड़क पर अवैध ठेले लगे हैं जल्दी ठीक करवाइए
+G0802	mr	ELEC	nibm	P3	एनआयबीएम मध्ये, रस्त्यावरचे दिवे लागत नाहीत
+G0281	mr	SWM	NONE	P3	कचराकुंडी भरून वाहत आहे लवकर दुरुस्ती करा
+G0527	mix	WATER	baner	P1	Hello sir, एक month झाला, contaminated पाण्यामुळे सगळे sick पडलेत, बाणेर area मध्ये urgent आहे
+G1673	mix	BUILD	nana_peth	P1	dangerous building आहे, wall पडेल, Nana Peth area मध्ये
+G0289	rom	SWM	pune_station	P2	kachra jaltat, dhur hoto, pune station yethe
+G0267	rom	SWM	anandnagar	P1	anandnagar madhe, kachra uchalla jat nahi, mahina zala lavkar kara
+G0341	mr	SWM	pune_station	P3	पुणे स्टेशन भागात, कचरा उचलला जात नाही
+G0647	hi	DRAIN	mundhwa	P3	कृपया ध्यान दें, मुंढवा इलाके में, नाले की सफाई नहीं हुई
+G0029	mix	ROAD	karvenagar	P3	कर्वेनगर area मध्ये, road खोदून ठेवलाय, repair केलं नाही please लवकर action घ्या
+G1220	mr	TREE	NONE	P3	बेकायदेशीर वृक्षतोड झाली आहे
+G1186	rom	HEALTH	balajinagar	P3	namaskar, balaji nagar bhagat, fawarni hot nahi
+G0682	rom	DRAIN	market_yard	P2	saheb, market yard madhe, sandpani rastyavar vahat aahe
+G1433	hi	ENCROACH	NONE	P3	कृपया ध्यान दें, लावारिस गाड़ियां पड़ी हैं जल्दी ठीक करवाइए
+G0745	hi	DRAIN	lohegaon	P1	लोहगाव इलाके में, सीवर का पानी घर में आ रहा है, एक महीने से कृपया कार्रवाई करें
+G1347	rom	TREE	gultekdi	P2	saheb, gultekdi madhe, shalejaval, padlelya fandya uchlalya nahit karvai kara please
+G0407	mr	WATER	deccan	P2	नमस्कार, गेले दहा दिवस, पाइपलाइन फुटली आहे, पाणी वाया जाते, डेक्कन भागात
+G0021	hi	ROAD	guruwar_peth	P3	गुरुवार पेठ इलाके में, सड़क पूरी टूट गई है कृपया कार्रवाई करें
+G0930	mix	ELEC	nibm	P3	Nibm ला, high mast light बंद आहे urgent आहे
+G0691	mr	DRAIN	kothrud	P1	कोथरुड मध्ये, मॅनहोलवर झाकण नाही, चार दिवसांपासून कृपया कारवाई करावी
+G1421	mr	ENCROACH	hadapsar	P1	कृपया लक्ष द्या, हडपसर मध्ये, अनधिकृत होर्डिंग कधीही पडू शकते
+G1855	hi	VET	NONE	P2	आवारा कुत्तों का आतंक है, स्कूल के पास जल्दी ठीक करवाइए
+G1966	mr	VET	sahakarnagar	P3	सहकारनगर मध्ये, हॉस्पिटलसमोर, कुत्री रात्रभर भुंकतात
+G0428	mr	WATER	vishrantwadi	P4	विश्रांतवाडी परिसरात, पाण्याचे बिल जास्त आले आहे
+G1130	rom	HEALTH	kalas	P3	saheb, kalas yethe, dasancha tras aahe
+G1322	mr	TREE	yerawada	P3	कृपया लक्ष द्या, येरवडा भागात, हॉस्पिटलसमोर, झाडांची छाटणी करावी, गेले दहा दिवस लवकर दुरुस्ती करा
+G1740	rom	BUILD	bibwewadi	P2	please bibwewadi bhagat, hospital samor, bandhkam cha radaroda rastyavar karvai kara please
+G1956	mr	VET	bhavani_peth	P2	भवानी पेठ मध्ये, जखमी जनावर रस्त्यावर पडले आहे कृपया कारवाई करावी
+G1037	mix	HEALTH	mundhwa	P2	Mundhwa ला, rats चा त्रास आहे, 2 weeks झाले
+G1414	mr	ENCROACH	narayan_peth	P2	तक्रार: नारायण पेठ येथे, फूटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे, महिनाभरापासून लवकर दुरुस्ती करा
+G0291	hi	SWM	lohegaon	P3	नमस्ते, लोहगाव में, कचरा नहीं उठाया जा रहा
+G0426	mix	WATER	ramtekdi	P2	रामटेकडी ला, water supply बंद आहे, 5 days पासून please लवकर action घ्या
+G1852	mr	VET	ramtekdi	P2	कृपया लक्ष द्या, रामटेकडी मध्ये, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो कृपया कारवाई करावी
+G0983	mr	ELEC	nana_peth	P4	दिवा सतत बंद-चालू होतो, नाना पेठ भागात
+G1709	rom	BUILD	dhayari	P1	namaskar, dhayari yethe, bhint koslnar aahe, 1 aathvade zale lavkar kara
+G1753	mix	BUILD	NONE	P3	construction debris road वर टाकलाय urgent आहे
+G0775	rom	DRAIN	dhayari	P1	dhayari madhe, sandpani gharat yet aahe
+G1571	rom	ENCROACH	kalas	P3	namaskar, kalas bhagat, footpath var atikraman aahe
+G0238	hi	SWM	sahakarnagar	P2	कृपया ध्यान दें, सहकारनगर में, कूड़े से बदबू आ रही है जल्दी ठीक करवाइए
+G0672	mix	DRAIN	nana_peth	P2	Please Nana Peth ला, sewage road वर overflow होतंय urgent आहे
+G0867	rom	ELEC	wadgaon_sheri	P1	namaskar, khamb vakla aahe, padu shakto, wadgaon sheri madhe lavkar kara
+G0174	mix	ROAD	bavdhan	P1	नमस्कार, hospital समोर, pothole मुळे accident होऊ शकतो, Bavdhan ला urgent आहे
+G0482	mr	WATER	NONE	P4	पाण्याचे बिल जास्त आले आहे, गेले तीन दिवस
+G0261	hi	SWM	undri	P2	सर, उंड्री में, कूड़े से बदबू आ रही है कृपया कार्रवाई करें
+G1444	hi	ENCROACH	magarpatta	P2	मगरपट्ट्या में, स्कूल के पास, सड़क पर अवैध ठेले लगे हैं
+G0774	rom	DRAIN	pisoli	P1	pisoli yethe, chamber che jhakan ughade aahe
+G0757	mix	DRAIN	aundh	P1	Aundh मध्ये, sewage घरात backflow होतंय please लवकर action घ्या
+G1086	rom	HEALTH	shivajinagar	P1	shivaji nagar madhe, dengue che rugn vadhle lavkar kara
+G1953	rom	VET	hingne	P3	please hingne yethe, bhatkya kutryancha tras aahe, 1 divas pasun
+G1365	mr	TREE	kharadi	P1	तक्रार: खराडी परिसरात, झाड वाकले आहे, पडण्याची भीती आहे
+G0967	mr	ELEC	anandnagar	P4	आनंदनगर येथे, नवीन पथदिवे बसवावेत लवकर दुरुस्ती करा
+G0315	hi	SWM	sangamwadi	P3	सर, कचरा गाड़ी नहीं आती, संगमवाडी इलाके में
+G1195	rom	HEALTH	aundh	P1	aundh yethe, dengue che rugn vadhle
+G0948	hi	ELEC	ramtekdi	P1	रामटेकडी इलाके में, स्कूल के पास, खंभे में करंट आ रहा है, तीन दिनों से जल्दी ठीक करवाइए
+G1145	hi	HEALTH	NONE	P2	कृपया ध्यान दें, मरा हुआ जानवर पड़ा है, बदबू आ रही है कृपया कार्रवाई करें
+G1581	mr	ENCROACH	NONE	P3	हातगाड्यांमुळे वाहतूक कोंडी होते
+G1503	rom	ENCROACH	bavdhan	P3	footpath var atikraman aahe, bavdhan bhagat karvai kara please
+G1202	mix	TREE	bavdhan	P1	Hello sir, Bavdhan area मध्ये, tree fall झालंय road वर, 10 days पासून
+G1176	mr	HEALTH	kalas	P3	कळस येथे, डासांचा खूप त्रास आहे तक्रार करूनही दखल घेतली नाही
+G0060	mix	ROAD	NONE	P2	pothole मुळे accident होऊ शकतो urgent आहे
+G0865	mr	ELEC	narayan_peth	P3	साहेब, नारायण पेठ मध्ये, हायमास्ट दिवा बंद आहे कृपया कारवाई करावी
+G0693	hi	DRAIN	NONE	P1	कृपया ध्यान दें, सीवर का पानी घर में आ रहा है जल्दी ठीक करवाइए
+G0553	mr	WATER	vadgaon_bk	P3	कृपया लक्ष द्या, वडगाव बु मध्ये, नळाला पाणी येत नाही
+G0919	mr	ELEC	balajinagar	P3	कृपया लक्ष द्या, बालाजी नगर मध्ये, हायमास्ट दिवा बंद आहे
+G0568	hi	WATER	gultekdi	P3	कृपया ध्यान दें, गुलटेकडी इलाके में, नल में पानी नहीं आ रहा कृपया कार्रवाई करें
+G0075	mr	ROAD	warje	P3	वारजे परिसरात, फूटपाथ तुटला आहे कृपया कारवाई करावी
+G0224	mix	SWM	balewadi	P3	Please Balewadi ला, dustbin overflow होतोय please लवकर action घ्या
+G0917	hi	ELEC	kasba_peth	P1	कृपया ध्यान दें, कसबा इलाके में, बिजली का तार टूटकर लटक रहा है कृपया कार्रवाई करें
+G0353	mr	SWM	yerawada	P4	कृपया लक्ष द्या, येरवड्या भागात, ओला आणि सुका कचरा वेगळा घेत नाहीत कृपया कारवाई करावी
+G0946	mr	ELEC	market_yard	P2	मार्केट यार्ड मध्ये, हॉस्पिटलसमोर, गल्लीत अंधार असतो, दिवा बंद
+G1415	hi	ENCROACH	narayan_peth	P3	नमस्ते, नारायण पेठ में, फुटपाथ पर अतिक्रमण है जल्दी ठीक करवाइए
+G0799	mr	DRAIN	fc_road	P2	कृपया लक्ष द्या, एफसी रोड परिसरात, गटार तुंबून घाण पाणी साचले आहे तक्रार करूनही दखल घेतली नाही
+G0477	hi	WATER	kondhwa	P2	सर, कोंढव्या इलाके में, स्कूल के पास, पानी की सप्लाई बंद है कृपया कार्रवाई करें
+G1608	hi	BUILD	tadiwala_road	P1	कृपया ध्यान दें, ताडीवाला रोड में, दीवार गिरने से लोग घायल हुए, तीन हफ्तों से
+G0645	mr	DRAIN	sadashiv_peth	P1	नमस्कार, सदाशिव पेठ भागात, हॉस्पिटलसमोर, गटार तुंबून घाण पाणी साचले आहे, एक आठवड्यांपासून
+G1157	rom	HEALTH	wanowrie	P3	please wanwadi bhagat, dasancha tras aahe
+G0875	hi	ELEC	hingne	P1	बिजली का खंभा झुक गया है, हिंगणे में
+G1685	rom	BUILD	aundh	P3	aundh yethe, anadhikrut bandhkam chalu aahe
+G1614	hi	BUILD	wadgaon_sheri	P3	नमस्ते, वडगाव शेरी में, अवैध मंजिल बनाई जा रही है जल्दी ठीक करवाइए
+G1422	rom	ENCROACH	pisoli	P3	please 1 aathvade zale, pisoli madhe, footpath var atikraman aahe
+G1332	mr	TREE	balewadi	P1	कृपया लक्ष द्या, बालेवाडी येथे, झाड वाकले आहे, पडण्याची भीती आहे
+G1155	rom	HEALTH	NONE	P1	dengue che rugn vadhle
+G0259	hi	SWM	undri	P1	स्कूल के पास, उंड्री इलाके में, कचरा जलाया जाता है, धुआं होता है जल्दी ठीक करवाइए
+G1245	mr	TREE	ramtekdi	P2	साहेब, रामटेकडी परिसरात, महिनाभरापासून, पडलेल्या फांद्या उचलल्या नाहीत लवकर दुरुस्ती करा
+G1621	mix	BUILD	shaniwar_peth	P3	Shaniwar Peth मध्ये, building permission न घेता floor बांधतायत
+G1111	mix	HEALTH	bhavani_peth	P2	Bhavani Peth area मध्ये, dead dog पडलाय road वर please लवकर action घ्या
+G0147	mix	ROAD	aundh	P3	Aundh मध्ये, road खोदून ठेवलाय, repair केलं नाही, 3 days पासून urgent आहे
+G1816	mr	VET	kashewadi	P4	साहेब, काशेवाडी येथे, कुत्री रात्रभर भुंकतात लवकर दुरुस्ती करा
+G1510	mr	ENCROACH	NONE	P2	कृपया लक्ष द्या, महिनाभरापासून, हातगाड्यांमुळे वाहतूक कोंडी होते
+G0689	rom	DRAIN	undri	P1	undri madhe, sandpani gharat yet aahe
+G1390	mix	TREE	dhankawadi	P4	Hello sir, धनकवडी मध्ये, tree trimming करायचं आहे, 1 weeks झाले please लवकर action घ्या
+G1618	mr	BUILD	sahakarnagar	P1	तक्रार: सहकारनगर परिसरात, खोदकामाला संरक्षक भिंत नाही, तीन आठवड्यांपासून लवकर दुरुस्ती करा
+G1903	rom	VET	NONE	P2	saheb, mahina zala, bhatkya kutryancha tras aahe
+G1652	mr	BUILD	hingne	P2	हिंगणे भागात, खोदकामाला संरक्षक भिंत नाही
+G0812	mr	ELEC	warje	P3	नमस्कार, वारजे परिसरात, पथदिवे बंद आहेत कृपया कारवाई करावी
+G1954	hi	VET	vadgaon_bk	P4	वडगाव बु इलाके में, कुत्तों की नसबंदी करवाइए
+G0501	mix	WATER	salunke_vihar	P2	Please Salunke Vihar area मध्ये, नळाला dirty water येतं
+G0758	rom	DRAIN	anandnagar	P2	anand nagar madhe, drainage tumbli aahe
+G1626	mr	BUILD	ramtekdi	P3	कृपया लक्ष द्या, नदीपात्रात बांधकाम केले जात आहे, रामटेकडी येथे कृपया कारवाई करावी
+G0444	mr	WATER	bavdhan	P1	साहेब, बावधन येथे, दूषित पाण्यामुळे लोक आजारी पडले, सहा दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0292	mr	SWM	kashewadi	P1	साहेब, महिनाभरापासून, शाळेजवळ, काशेवाडी येथे, रस्त्याची झाडलोट होत नाही लवकर दुरुस्ती करा
+G1081	mr	HEALTH	wanowrie	P2	कृपया लक्ष द्या, उघड्यावर शौच केले जाते, वानवडी येथे कृपया कारवाई करावी
+G1601	rom	BUILD	tadiwala_road	P3	saheb, tadiwala road yethe, parvangi nastana majla bandhtat lavkar kara
+G0866	mr	ELEC	deccan	P1	तक्रार: डेक्कन मध्ये, शाळेजवळ, डीपी बॉक्स उघडा आहे
+G0876	mr	ELEC	koregaon_park	P1	कृपया लक्ष द्या, कोरेगाव पार्क मध्ये, विजेचा खांब वाकला आहे, पडू शकतो
+G1899	mix	VET	balewadi	P2	बालेवाडी मध्ये, stray dogs चा खूप त्रास आहे, एक month झाला
+G0916	hi	ELEC	kalas	P3	कळस इलाके में, गली में अंधेरा रहता है, लाइट खराब है
+G1506	mr	ENCROACH	kharadi	P1	तक्रार: अनधिकृत होर्डिंग कधीही पडू शकते, खराडी भागात लवकर दुरुस्ती करा
+G1700	mr	BUILD	sinhagad_road	P2	नमस्कार, सिंहगड रोड परिसरात, बांधकामाचा राडारोडा रस्त्यावर टाकला आहे, तीन आठवड्यांपासून लवकर दुरुस्ती करा
+G0199	rom	ROAD	nibm	P2	saheb, nibm bhagat, khadda padla aahe road var, 2 aathvade zale
+G1856	mr	VET	NONE	P1	साहेब, पिसाळलेला कुत्रा फिरत आहे लवकर दुरुस्ती करा
+G1948	rom	VET	NONE	P1	saheb, pisalela kutra firtoy karvai kara please
+G1059	mr	HEALTH	vishrantwadi	P1	कृपया लक्ष द्या, डेंग्यूचे रुग्ण वाढले आहेत, विश्रांतवाडी मध्ये तक्रार करूनही दखल घेतली नाही
+G0277	mr	SWM	sahakarnagar	P2	कृपया लक्ष द्या, घंटागाडी येत नाही, शाळेजवळ, सहकार नगर भागात लवकर दुरुस्ती करा
+G1270	mr	TREE	pune_station	P4	नमस्कार, पुणे स्टेशन येथे, उद्यानातील झाडांची निगा राखली जात नाही
+G1713	mix	BUILD	balewadi	P2	Please बालेवाडी ला, excavation ला safety wall नाही
+G1127	mr	HEALTH	kashewadi	P3	काशेवाडी परिसरात, हॉटेलमध्ये अस्वच्छता आहे, सहा दिवसांपासून
+G0542	rom	WATER	NONE	P3	namaskar, pani kami pressure ne yete lavkar kara
+G1788	rom	BUILD	wanowrie	P1	namaskar, mahina zala, wanwadi yethe, dhokadayak imarat aahe lavkar kara
+G0293	mr	SWM	magarpatta	P4	नमस्कार, ओला आणि सुका कचरा वेगळा घेत नाहीत, मगरपट्टा परिसरात लवकर दुरुस्ती करा
+G0045	mr	ROAD	vadgaon_bk	P1	साहेब, वडगाव बुद्रुक येथे, खड्ड्यात पडून एक दुचाकीस्वार जखमी झाला लवकर दुरुस्ती करा
+G0138	mix	ROAD	nibm	P2	एनआयबीएम area मध्ये, hospital समोर, road पूर्ण खराब झालाय please लवकर action घ्या
+G1550	mix	ENCROACH	nana_peth	P1	नाना पेठ ला, hoarding illegal आहे आणि पडू शकतं please लवकर action घ्या
+G0974	rom	ELEC	NONE	P1	saheb, shalejaval, khamb vakla aahe, padu shakto karvai kara please
+G1425	mr	ENCROACH	koregaon_park	P3	कोरेगाव पार्क परिसरात, दुकानदारांनी रस्त्यावर सामान ठेवले आहे, एक दिवसांपासून
+G1466	hi	ENCROACH	salunke_vihar	P3	कृपया ध्यान दें, एक हफ्तों से, साळुंके विहार में, लावारिस गाड़ियां पड़ी हैं
+G1133	mr	HEALTH	NONE	P1	मलेरियाचे रुग्ण आढळले आहेत, सहा दिवसांपासून लवकर दुरुस्ती करा
+G1420	mr	ENCROACH	bhavani_peth	P1	भवानी पेठ भागात, अनधिकृत होर्डिंग कधीही पडू शकते
+G0229	rom	SWM	nibm	P3	kachrakundi bharun vahat aahe, nibm yethe
+G0739	mr	DRAIN	NONE	P1	तक्रार: चेंबरचे झाकण उघडे आहे
+G0606	mix	DRAIN	nibm	P2	Hello sir, Nibm मध्ये, drainage block झालंय
+G1357	mr	TREE	dhanori	P1	साहेब, धानोरी येथे, झाड वाकले आहे, पडण्याची भीती आहे तक्रार करूनही दखल घेतली नाही
+G0346	mr	SWM	keshavnagar	P3	तक्रार: केशव नगर येथे, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे
+G0359	mr	SWM	magarpatta	P2	कचऱ्याचा घाण वास येतो, मगरपट्ट्या मध्ये लवकर दुरुस्ती करा
+G1320	mr	TREE	vadgaon_bk	P4	साहेब, झाडामुळे पथदिवा झाकला गेला आहे, वडगाव बुद्रुक भागात लवकर दुरुस्ती करा
+G1068	rom	HEALTH	dhayari	P3	saheb, undir khup zale aahet, dhayari madhe
+G0100	mix	ROAD	karvenagar	P1	एक month झाला, कर्वे नगर मध्ये, pothole मुळे accident होऊ शकतो
+G1877	mix	VET	keshavnagar	P2	Hello sir, Keshavnagar area मध्ये, stray cattle road वर बसतात, 3 weeks झाले
+G1765	mr	BUILD	bhavani_peth	P1	कृपया लक्ष द्या, भिंत कोसळून लोक जखमी झाले, भवानी पेठ येथे कृपया कारवाई करावी
+G0824	rom	ELEC	NONE	P4	namaskar, navin street light lava
+G1869	mix	VET	kothrud	P1	Hello sir, Kothrud मध्ये, hospital समोर, dog bite झाला please लवकर action घ्या
+G0396	mr	SWM	yewalewadi	P2	येवलेवाडी मध्ये, कचऱ्यावर माश्या आणि डास झाले आहेत
+G0124	mr	ROAD	sangamwadi	P3	नमस्कार, संगमवाडी भागात, डांबरीकरण खराब झाले आहे
+G0129	mr	ROAD	model_colony	P3	तक्रार: मॉडेल कॉलनी परिसरात, रस्ता खोदून ठेवला आहे आणि बुजवला नाही
+G1199	mr	HEALTH	keshavnagar	P1	नमस्कार, केशव नगर येथे, मलेरियाचे रुग्ण आढळले आहेत कृपया कारवाई करावी
+G1809	mix	VET	bibwewadi	P3	Bibwewadi ला, stray dogs चा खूप त्रास आहे urgent आहे
+G0834	mr	ELEC	hadapsar	P1	नमस्कार, हडपसर परिसरात, खांबाला करंट लागत आहे तक्रार करूनही दखल घेतली नाही
+G0473	mr	WATER	undri	P4	कृपया लक्ष द्या, पाण्याची वेळ ठरलेली नाही, उंड्री परिसरात
+G0897	mr	ELEC	vadgaon_bk	P4	नवीन पथदिवे बसवावेत, वडगाव बु भागात
+G0997	mr	ELEC	wadgaon_sheri	P4	साहेब, वडगांव शेरी मध्ये, नवीन पथदिवे बसवावेत कृपया कारवाई करावी
+G1586	mr	ENCROACH	tadiwala_road	P3	ताडीवाला रोड परिसरात, पदपथावर बांधकाम साहित्य ठेवले आहे लवकर दुरुस्ती करा
+G0122	mr	ROAD	viman_nagar	P3	कृपया लक्ष द्या, विमाननगर मध्ये, डांबरीकरण खराब झाले आहे, एक आठवड्यांपासून
+G1868	mr	VET	hadapsar	P1	हडपसर मध्ये, हॉस्पिटलसमोर, भटक्या कुत्र्यांचा त्रास आहे, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G1665	rom	BUILD	dhankawadi	P1	bhint koslnar aahe, dhankawadi bhagat, 2 divas pasun karvai kara please
+G1077	mr	HEALTH	keshavnagar	P1	सहा दिवसांपासून, केशव नगर भागात, डेंग्यूचे रुग्ण वाढले आहेत
+G0372	rom	SWM	kasba_peth	P2	namaskar, kasba peth madhe, kachra jaltat, dhur hoto lavkar kara
+G0680	mr	DRAIN	deccan	P1	नमस्कार, डेक्कन मध्ये, सांडपाणी घरात येत आहे, हॉस्पिटलसमोर
+G1912	rom	VET	hingne	P4	hingne bhagat, kutryanchi nasbandi kara lavkar kara
+G0086	mr	ROAD	NONE	P2	तक्रार: खड्ड्यामुळे कधीही अपघात होऊ शकतो, चार दिवसांपासून कृपया कारवाई करावी
+G0708	mix	DRAIN	shaniwar_peth	P2	Shaniwar Peth मध्ये, storm water drain clean केली नाही, एक month झाला
+G1461	mix	ENCROACH	koregaon_park	P3	कोरेगाव पार्क मध्ये, illegal stalls लावलेत road वर please लवकर action घ्या
+G1045	rom	HEALTH	pisoli	P3	please pisoli madhe, fawarni hot nahi
+G0270	rom	SWM	salunke_vihar	P3	namaskar, kachra uchalla jat nahi, salunke vihar yethe karvai kara please
+G0818	hi	ELEC	karvenagar	P3	कर्वे नगर में, नई स्ट्रीट लाइट लगवाइए, तीन हफ्तों से कृपया कार्रवाई करें
+G0989	hi	ELEC	NONE	P3	सर, गली में अंधेरा रहता है, लाइट खराब है जल्दी ठीक करवाइए
+G0923	hi	ELEC	narayan_peth	P1	सर, नारायण पेठ में, बिजली का खंभा झुक गया है कृपया कार्रवाई करें
+G1774	mr	BUILD	sinhagad_road	P2	कृपया लक्ष द्या, सिंहगड रोड येथे, खोदकामाला संरक्षक भिंत नाही
+G0257	mr	SWM	yerawada	P3	नमस्कार, येरवड्या परिसरात, सार्वजनिक शौचालय अस्वच्छ आहे लवकर दुरुस्ती करा
+G1223	mr	TREE	deccan	P3	कृपया लक्ष द्या, डेक्कन मध्ये, बेकायदेशीर वृक्षतोड झाली आहे
+G1667	rom	BUILD	magarpatta	P1	saheb, magarpatta bhagat, dhokadayak imarat aahe, mahina zala lavkar kara
+G0098	hi	ROAD	paud_road	P1	पौड रोड में, गड्ढे की वजह से एक आदमी गिरकर घायल हो गया जल्दी ठीक करवाइए
+G0886	hi	ELEC	NONE	P3	नमस्ते, गली में अंधेरा रहता है, लाइट खराब है कृपया कार्रवाई करें
+G0459	mr	WATER	sahakarnagar	P4	साहेब, सहकार नगर परिसरात, पाण्याचे बिल जास्त आले आहे लवकर दुरुस्ती करा
+G1595	hi	ENCROACH	ramtekdi	P3	रामटेकडी इलाके में, लावारिस गाड़ियां पड़ी हैं जल्दी ठीक करवाइए
+G1907	mr	VET	pune_station	P4	कृपया लक्ष द्या, कुत्री रात्रभर भुंकतात, पुणे स्टेशन भागात लवकर दुरुस्ती करा
+G0068	rom	ROAD	vadgaon_bk	P1	saheb, vadgaon budruk madhe, khaddyat padun ek manus jakhmi zala
+G1290	mix	TREE	mundhwa	P2	Mundhwa ला, झाड पडून car चं नुकसान झालं please लवकर action घ्या
+G0964	mr	ELEC	anandnagar	P4	नमस्कार, आनंद नगर भागात, दिवे दिवसाही चालू असतात तक्रार करूनही दखल घेतली नाही
+G0842	mix	ELEC	wadgaon_sheri	P3	Hello sir, वडगाव शेरी area मध्ये, high mast light बंद आहे
+G1335	rom	TREE	yerawada	P3	yerawada bhagat, hospital samor, zadachi chhatni kara lavkar kara
+G0288	mr	SWM	model_colony	P3	मॉडेल कॉलनी येथे, कचरा उचलला जात नाही, एक दिवसांपासून
+G1741	rom	BUILD	anandnagar	P3	saheb, anandnagar bhagat, anadhikrut bandhkam chalu aahe
+G0977	mr	ELEC	undri	P1	नमस्कार, विजेचा खांब वाकला आहे, पडू शकतो, उंड्री परिसरात तक्रार करूनही दखल घेतली नाही
+G1011	rom	HEALTH	baner	P1	saheb, baner bhagat, shalejaval, melela prani padla aahe lavkar kara
+G1260	mr	TREE	sahakarnagar	P3	साहेब, सहकार नगर मध्ये, उद्यानातील झाडांची निगा राखली जात नाही, महिनाभरापासून लवकर दुरुस्ती करा
+G0830	mix	ELEC	NONE	P1	नमस्कार, pole वाकलाय, कधीही पडेल, 3 days पासून please लवकर action घ्या
+G0273	mr	SWM	viman_nagar	P3	तक्रार: मोकळ्या जागेत लोक कचरा टाकतात, विमाननगर भागात
+G0559	mr	WATER	wadgaon_sheri	P3	तक्रार: वडगाव शेरी येथे, पाणी कमी दाबाने येते कृपया कारवाई करावी
+G0183	mr	ROAD	bavdhan	P2	नमस्कार, बावधन भागात, खड्ड्यामुळे कधीही अपघात होऊ शकतो, गेले पाच दिवस कृपया कारवाई करावी
+G0806	mix	ELEC	sadashiv_peth	P1	Please 1 weeks झाले, Sadashiv Peth मध्ये, pole वाकलाय, कधीही पडेल
+G0528	mr	WATER	hadapsar	P3	साहेब, हडपसर भागात, व्हॉल्व्हमधून पाणी गळते लवकर दुरुस्ती करा
+G0903	mr	ELEC	viman_nagar	P3	नमस्कार, विमाननगर भागात, गल्लीत अंधार असतो, दिवा बंद तक्रार करूनही दखल घेतली नाही
+G0349	mr	SWM	deccan	P2	नमस्कार, कचऱ्याचा घाण वास येतो, डेक्कन परिसरात
+G1153	mix	HEALTH	bhavani_peth	P2	Please Bhavani Peth मध्ये, dead dog पडलाय road वर please लवकर action घ्या
+G1383	mix	TREE	NONE	P1	tree fall झालंय road वर, एक month झाला
+G1790	hi	BUILD	NONE	P1	कृपया ध्यान दें, अस्पताल के सामने, पुरानी इमारत खतरनाक हालत में है, तीन हफ्तों से कृपया कार्रवाई करें
+G0944	mr	ELEC	NONE	P1	कृपया लक्ष द्या, खांबाला करंट लागत आहे, दोन दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G1209	rom	TREE	NONE	P4	zadachi chhatni kara karvai kara please
+G0455	mix	WATER	nana_peth	P3	Please Nana Peth मध्ये, water bill चुकीचं आलंय, एक month झाला please लवकर action घ्या
+G1476	mix	ENCROACH	NONE	P3	Hello sir, footpath वर hawkers चं encroachment आहे
+G0922	rom	ELEC	NONE	P2	street light band aahe, 3 aathvade zale karvai kara please
+G0790	mix	DRAIN	gultekdi	P2	नमस्कार, गुलटेकडी area मध्ये, drainage line leak होतेय please लवकर action घ्या
+G1400	hi	TREE	balajinagar	P1	नमस्ते, बालाजीनगर इलाके में, पेड़ की डाल टूटकर लटक रही है, एक महीने से
+G1784	mr	BUILD	gultekdi	P4	गुलटेकडी मध्ये, बांधकाम परवानगीचा अर्ज प्रलंबित आहे
+G1007	mix	HEALTH	dhayari	P1	नमस्कार, Dhayari area मध्ये, dengue cases वाढलेत urgent आहे
+G1836	mix	VET	balajinagar	P2	बालाजी नगर ला, stray dogs चा खूप त्रास आहे, 3 weeks झाले urgent आहे
+G0433	mr	WATER	shaniwar_peth	P4	शनिवार पेठ परिसरात, नवीन नळ जोडणी हवी आहे
+G1048	mix	HEALTH	gultekdi	P2	Gultekdi ला, dead dog पडलाय road वर
+G0712	rom	DRAIN	NONE	P1	sandpani gharat yet aahe karvai kara please
+G1477	mr	ENCROACH	karvenagar	P3	नमस्कार, कर्वे नगर परिसरात, बेवारस वाहने रस्त्याकडेला पडून आहेत
+G1175	hi	HEALTH	vadgaon_bk	P2	वडगाव बु इलाके में, तीन हफ्तों से, चूहों का आतंक है
+G1805	hi	VET	tadiwala_road	P1	कृपया ध्यान दें, ताडीवाला रोड में, कुत्ते ने काट लिया जल्दी ठीक करवाइए
+G1246	rom	TREE	pashan	P2	pashan bhagat, padlelya fandya uchlalya nahit, mahina zala
+G1026	mr	HEALTH	NONE	P2	नमस्कार, उघड्यावर शौच केले जाते
+G0177	mr	ROAD	fc_road	P3	सात दिवसांपासून, फूटपाथ तुटला आहे, एफसी रोड भागात
+G1431	mr	ENCROACH	NONE	P3	नमस्कार, दुकानदारांनी रस्त्यावर सामान ठेवले आहे
+G0567	mr	WATER	vadgaon_bk	P3	वडगाव बुद्रुक मध्ये, पाण्याची वेळ ठरलेली नाही, महिनाभरापासून
+G0549	mix	WATER	market_yard	P3	नमस्कार, पाणी low pressure ने येतं, मार्केट यार्ड area मध्ये, 2 days पासून
+G0081	mr	ROAD	kondhwa	P2	कृपया लक्ष द्या, शाळेजवळ, रस्त्यावरची खडी सगळीकडे पसरली आहे, कोंढवा परिसरात लवकर दुरुस्ती करा
+G0688	hi	DRAIN	fatimanagar	P1	सर, फातिमानगर इलाके में, मैनहोल का ढक्कन खुला है जल्दी ठीक करवाइए
+G1427	mix	ENCROACH	kasba_peth	P1	Hello sir, Kasba Peth area मध्ये, hoarding illegal आहे आणि पडू शकतं
+G1308	mix	TREE	yerawada	P2	झाड पडून car चं नुकसान झालं, Yerawada ला
+G1052	mr	HEALTH	vadgaon_bk	P2	तक्रार: वडगाव बु मध्ये, उघड्यावर अन्न टाकले जाते, दुर्गंधी येते कृपया कारवाई करावी
+G0511	rom	WATER	guruwar_peth	P2	namaskar, pani purvatha band aahe, 3 divas pasun, guruwar peth yethe
+G1960	mix	VET	guruwar_peth	P3	Please Guruwar Peth ला, एक month झाला, dogs ची sterilization करा please लवकर action घ्या
+G0140	mr	ROAD	sinhagad_road	P3	साहेब, सिंहगड रस्ता मध्ये, फूटपाथ तुटला आहे कृपया कारवाई करावी
+G0986	mr	ELEC	shaniwar_peth	P1	साहेब, शनिवार पेठ भागात, हॉस्पिटलसमोर, डीपी बॉक्स उघडा आहे लवकर दुरुस्ती करा
+G1099	mix	HEALTH	fatimanagar	P3	फातिमानगर ला, fogging होत नाही
+G1028	mr	HEALTH	baner	P2	साहेब, मेलेले जनावर रस्त्यावर पडले आहे, बाणेर येथे लवकर दुरुस्ती करा
+G1687	hi	BUILD	wadgaon_sheri	P1	सर, वडगांव शेरी में, दीवार गिरने से लोग घायल हुए जल्दी ठीक करवाइए
+G0494	mix	WATER	market_yard	P2	नमस्कार, Market Yard ला, pipeline burst झाली आहे please लवकर action घ्या
+G0767	rom	DRAIN	balewadi	P1	saheb, balewadi madhe, manhole var jhakan nahi karvai kara please
+G1696	hi	BUILD	NONE	P3	अवैध मंजिल बनाई जा रही है
+G1315	mix	TREE	fc_road	P4	Hello sir, Fergusson College Road ला, tree trimming करायचं आहे urgent आहे
+G1452	mr	ENCROACH	dhanori	P3	नमस्कार, धानोरी भागात, पदपथावर बांधकाम साहित्य ठेवले आहे
+G0380	mr	SWM	dhanori	P3	धानोरी परिसरात, कचरा उचलला जात नाही लवकर दुरुस्ती करा
+G1922	mix	VET	kondhwa	P1	कोंढवा मध्ये, dog bite झाला please लवकर action घ्या
+G1191	rom	HEALTH	karvenagar	P3	please karvenagar bhagat, dasancha tras aahe
+G1295	mr	TREE	baner	P1	बाणेर भागात, झाडाची फांदी तुटून लटकत आहे, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G1311	mr	TREE	paud_road	P2	कृपया लक्ष द्या, पौड रोड भागात, झाड पडून गाडीचे नुकसान झाले तक्रार करूनही दखल घेतली नाही
+G1658	hi	BUILD	fc_road	P1	एफसी रोड में, दीवार गिरने से लोग घायल हुए जल्दी ठीक करवाइए
+G0216	mr	SWM	undri	P3	नमस्कार, उंड्री मध्ये, मोकळ्या जागेत लोक कचरा टाकतात तक्रार करूनही दखल घेतली नाही
+G0598	rom	WATER	balewadi	P3	namaskar, balewadi yethe, pani kami pressure ne yete karvai kara please
+G0898	mr	ELEC	bavdhan	P3	तक्रार: बावधन परिसरात, हायमास्ट दिवा बंद आहे
+G1950	mr	VET	dhankawadi	P1	नमस्कार, धनकवडी भागात, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो, महिनाभरापासून कृपया कारवाई करावी
+G0038	rom	ROAD	fatimanagar	P1	please khaddyat padun ek manus jakhmi zala, fatimanagar yethe, 1 aathvade zale karvai kara please
+G0226	mr	SWM	NONE	P3	मोकळ्या जागेत लोक कचरा टाकतात
+G0217	mr	SWM	dhankawadi	P3	धनकवडी परिसरात, कचराकुंडी भरून वाहत आहे तक्रार करूनही दखल घेतली नाही
+G0856	hi	ELEC	yewalewadi	P1	नमस्ते, खंभे में करंट आ रहा है, येवलेवाडी इलाके में जल्दी ठीक करवाइए
+G0562	mr	WATER	sadashiv_peth	P3	कृपया लक्ष द्या, सदाशिव पेठ येथे, पाणी कमी दाबाने येते कृपया कारवाई करावी
+G0762	mr	DRAIN	NONE	P1	दवाखान्याजवळ, ड्रेनेज तुंबले आहे, महिनाभरापासून लवकर दुरुस्ती करा
+G1653	mr	BUILD	NONE	P1	नमस्कार, धोकादायक इमारत आहे
+G0345	mix	SWM	gultekdi	P2	गुलटेकडी ला, garbage burning होतं, smoke येतो
+G1095	mr	HEALTH	sinhagad_road	P2	सिंहगड रस्ता मध्ये, उघड्यावर शौच केले जाते कृपया कारवाई करावी
+G0434	mix	WATER	mundhwa	P1	school जवळ, contaminated पाण्यामुळे सगळे sick पडलेत, मुंढवा मध्ये
+G0961	mr	ELEC	NONE	P3	कृपया लक्ष द्या, दवाखान्याजवळ, दिवा सतत बंद-चालू होतो
+G1490	hi	ENCROACH	shaniwar_peth	P2	नमस्ते, शनिवार पेठ इलाके में, लावारिस गाड़ियां पड़ी हैं, एक महीने से
+G1294	rom	TREE	kasba_peth	P1	shalejaval, kasba peth madhe, padlelya fandya uchlalya nahit, mahina zala
+G0461	rom	WATER	nana_peth	P2	nana peth madhe, pipeline futli aahe
+G1988	mr	VET	NONE	P1	तक्रार: शाळेजवळ, मोकाट जनावरे रस्त्यावर फिरतात, महिनाभरापासून कृपया कारवाई करावी
+G0141	mr	ROAD	fatimanagar	P2	फातिमानगर भागात, रस्ता खोदून ठेवला आहे आणि बुजवला नाही, महिनाभरापासून
+G0792	mix	DRAIN	katraj	P2	Katraj मध्ये, drainage line leak होतेय please लवकर action घ्या
+G1811	mix	VET	dhayari	P1	नमस्कार, school जवळ, Dhayari ला, dog bite झाला
+G0242	rom	SWM	sinhagad_road	P3	kachra uchalla jat nahi, sinhagad road bhagat lavkar kara
+G1413	rom	ENCROACH	warje	P2	please warje bhagat, bewaras gadya padun aahet, 2 aathvade zale
+G0836	mr	ELEC	warje	P3	वारजे परिसरात, गल्लीत अंधार असतो, दिवा बंद
+G0535	mr	WATER	vishrantwadi	P1	विश्रांतवाडी येथे, दूषित पाण्यामुळे लोक आजारी पडले लवकर दुरुस्ती करा
+G0454	mr	WATER	kondhwa	P1	कृपया लक्ष द्या, कोंढवा भागात, शाळेजवळ, दूषित पाण्यामुळे लोक आजारी पडले, महिनाभरापासून
+G0107	mix	ROAD	NONE	P1	नमस्कार, pothole मुळे bike slip होऊन accident झाला, 1 weeks झाले
+G0130	hi	ROAD	nibm	P3	एनआयबीएम इलाके में, सड़क पूरी टूट गई है
+G1820	mr	VET	NONE	P1	साहेब, कुत्र्याने चावा घेतला
+G1990	hi	VET	magarpatta	P3	कृपया ध्यान दें, मगरपट्टा में, स्कूल के पास, कुत्तों की नसबंदी करवाइए, दस दिनों से
+G0984	mix	ELEC	koregaon_park	P1	कोरेगाव पार्क area मध्ये, electric wire लटकतेय road वर
+G1323	rom	TREE	kalas	P2	3 divas pasun, kalas yethe, anadhikrut vruksh tod zali, hospital samor
+G0204	mr	SWM	mundhwa	P3	नमस्कार, मुंढव्या परिसरात, सार्वजनिक शौचालय अस्वच्छ आहे
+G0992	mr	ELEC	market_yard	P3	तक्रार: मार्केट यार्ड मध्ये, गल्लीत अंधार असतो, दिवा बंद कृपया कारवाई करावी
+G1888	mr	VET	aundh	P2	साहेब, औंध येथे, माकडांचा त्रास वाढला आहे, महिनाभरापासून लवकर दुरुस्ती करा
+G1405	mr	ENCROACH	NONE	P1	नमस्कार, हॉस्पिटलसमोर, फूटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे, दोन आठवड्यांपासून लवकर दुरुस्ती करा
+G1352	mix	TREE	sinhagad_road	P4	Please Sinhagad Road area मध्ये, tree trimming करायचं आहे
+G1006	rom	HEALTH	dhayari	P2	saheb, melela prani padla aahe, dhayari bhagat
+G0905	hi	ELEC	wanowrie	P1	सर, वानवडी इलाके में, खंभे में करंट आ रहा है
+G0545	hi	WATER	paud_road	P2	दस दिनों से, पौड रोड इलाके में, पानी की सप्लाई बंद है कृपया कार्रवाई करें
+G0495	rom	WATER	NONE	P1	dushit panyamule lok aajari padle
+G0269	mr	SWM	chandannagar	P3	चंदन नगर परिसरात, घंटागाडी येत नाही तक्रार करूनही दखल घेतली नाही
+G0716	mr	DRAIN	narayan_peth	P3	नारायण पेठ परिसरात, नाल्याची सफाई झाली नाही
+G1580	mr	ENCROACH	market_yard	P3	मार्केट यार्ड मध्ये, हातगाड्यांमुळे वाहतूक कोंडी होते तक्रार करूनही दखल घेतली नाही
+G0099	mr	ROAD	NONE	P2	तक्रार: महिनाभरापासून, रस्त्यावर खूप खड्डे पडले आहेत
+G1377	mr	TREE	sahakarnagar	P1	झाड रस्त्यावर पडले आहे, महिनाभरापासून, सहकार नगर भागात लवकर दुरुस्ती करा
+G0906	mr	ELEC	shaniwar_peth	P4	शनिवार पेठ भागात, दिवा सतत बंद-चालू होतो
+G1500	rom	ENCROACH	NONE	P4	namaskar, anadhikrut flex lavle aahet
+G1013	rom	HEALTH	ramtekdi	P1	please ramtekdi yethe, dengue che rugn vadhle
+G0975	rom	ELEC	shaniwar_peth	P1	saheb, khambala current lagto, shaniwar peth madhe
+G1387	mr	TREE	salunke_vihar	P4	साळुंके विहार मध्ये, झाडांची छाटणी करावी कृपया कारवाई करावी
+G1909	mr	VET	aundh	P3	औंध मध्ये, कुत्र्यांची नसबंदी करावी, महिनाभरापासून
+G0927	mr	ELEC	mundhwa	P3	मुंढव्या येथे, गल्लीत अंधार असतो, दिवा बंद लवकर दुरुस्ती करा
+G0418	mr	WATER	guruwar_peth	P1	गुरुवार पेठ परिसरात, नळाला पाणी येत नाही, महिनाभरापासून लवकर दुरुस्ती करा
+G0025	mr	ROAD	dhankawadi	P3	साहेब, धनकवडी भागात, रस्त्यावर खूप खड्डे पडले आहेत तक्रार करूनही दखल घेतली नाही
+G0143	hi	ROAD	kothrud	P2	नमस्ते, गड्ढे से कभी भी दुर्घटना हो सकती है, कोथरूड में कृपया कार्रवाई करें
+G0148	hi	ROAD	guruwar_peth	P3	गुरुवार पेठ में, स्पीड ब्रेकर बहुत ऊंचा है जल्दी ठीक करवाइए
+G0149	mr	ROAD	salunke_vihar	P2	साळुंके विहार परिसरात, रस्ता खचला आहे, वाहनं अडकतात, पाच दिवसांपासून कृपया कारवाई करावी
+G0208	hi	SWM	vishrantwadi	P2	सर, विश्रांतवाडी इलाके में, कूड़े से बदबू आ रही है जल्दी ठीक करवाइए
+G0028	mr	ROAD	balewadi	P3	साहेब, बालेवाडी परिसरात, रस्त्याच्या मधोमध मोठा खड्डा आहे लवकर दुरुस्ती करा
+G1984	mr	VET	NONE	P1	साहेब, कुत्र्याने चावा घेतला लवकर दुरुस्ती करा
+G0737	mix	DRAIN	magarpatta	P1	Hello sir, मगरपट्टा मध्ये, drainage block झालंय, 2 weeks झाले
+G1475	rom	ENCROACH	kashewadi	P3	saheb, kashewadi bhagat, feriwalyanni rasta adavla aahe lavkar kara
+G0789	hi	DRAIN	NONE	P1	मैनहोल का ढक्कन खुला है
+G0942	mix	ELEC	NONE	P3	street light काम करत नाही please लवकर action घ्या
+G0530	hi	WATER	anandnagar	P1	आनंद नगर में, गंदे पानी से लोग बीमार हो गए, दो हफ्तों से जल्दी ठीक करवाइए
+G1677	rom	BUILD	pashan	P1	pashan yethe, shalejaval, bhint koslnar aahe lavkar kara
+G0430	mr	WATER	hingne	P4	तक्रार: हिंगणे मध्ये, नवीन नळ जोडणी हवी आहे
+G0995	rom	ELEC	katraj	P3	mahina zala, navin street light lava, katraj madhe lavkar kara
+G1538	mr	ENCROACH	NONE	P3	नमस्कार, हातगाड्यांमुळे वाहतूक कोंडी होते कृपया कारवाई करावी
+G0599	rom	WATER	pisoli	P2	pisoli madhe, pipeline futli aahe, 4 divas pasun
+G1791	rom	BUILD	yewalewadi	P2	yewalewadi madhe, hospital samor, parvangi nastana majla bandhtat
+G0499	mr	WATER	pashan	P2	पाषाण येथे, नळाला गढूळ पाणी येते कृपया कारवाई करावी
+G0256	hi	SWM	NONE	P2	कृपया ध्यान दें, कचरा जलाया जाता है, धुआं होता है
+G0940	mix	ELEC	viman_nagar	P3	Hello sir, विमान नगर ला, street light काम करत नाही
+G0952	mr	ELEC	hadapsar	P4	तक्रार: हडपसर भागात, दिवा सतत बंद-चालू होतो कृपया कारवाई करावी
+G1605	mix	BUILD	sahakarnagar	P2	Please सहकारनगर ला, illegal construction चालू आहे, एक month झाला please लवकर action घ्या
+G0233	mr	SWM	bavdhan	P2	तक्रार: बावधन मध्ये, सार्वजनिक शौचालय अस्वच्छ आहे, गेले चार दिवस
+G0894	mr	ELEC	NONE	P1	नमस्कार, डीपी बॉक्स उघडा आहे
+G1417	mr	ENCROACH	kondhwa	P1	नमस्कार, अनधिकृत होर्डिंग कधीही पडू शकते, कोंढवा येथे कृपया कारवाई करावी
+G0813	mix	ELEC	guruwar_peth	P3	Guruwar Peth area मध्ये, street light काम करत नाही, 3 days पासून urgent आहे
+G0159	mr	ROAD	bhavani_peth	P3	नमस्कार, भवानी पेठ भागात, रस्ता खोदून ठेवला आहे आणि बुजवला नाही, एक आठवड्यांपासून
+G0084	rom	ROAD	NONE	P3	khadda padla aahe road var
+G1969	hi	VET	guruwar_peth	P3	गुरुवार पेठ में, अस्पताल के सामने, कुत्तों की नसबंदी करवाइए
+G0222	mr	SWM	paud_road	P3	पौड रोड भागात, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे लवकर दुरुस्ती करा
+G0286	rom	SWM	mundhwa	P2	saheb, mundhwa bhagat, kachryacha vaas yetoy
+G0537	mix	WATER	narayan_peth	P1	Hello sir, Narayan Peth ला, pipeline burst झाली आहे, 2 weeks झाले
+G0573	mr	WATER	deccan	P3	डेक्कन मध्ये, पाणी कमी दाबाने येते
+G0969	mr	ELEC	koregaon_park	P2	नमस्कार, कोरेगाव पार्क येथे, हायमास्ट दिवा बंद आहे, तीन आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G0087	mr	ROAD	pisoli	P2	पिसोळी मध्ये, तीन आठवड्यांपासून, रस्त्याच्या मधोमध मोठा खड्डा आहे कृपया कारवाई करावी
+G0357	mr	SWM	keshavnagar	P2	तक्रार: केशवनगर परिसरात, कचरा जाळला जातो, धूर होतो
+G0705	hi	DRAIN	NONE	P2	नाली जाम हो गई है कृपया कार्रवाई करें
+G1889	hi	VET	yerawada	P1	कृपया ध्यान दें, येरवडा में, कुत्ते ने काट लिया, चार दिनों से
+G1747	hi	BUILD	shivajinagar	P1	नमस्ते, शिवाजीनगर में, दीवार गिरने से लोग घायल हुए
+G1762	hi	BUILD	chandannagar	P1	चंदन नगर में, पुरानी इमारत खतरनाक हालत में है
+G1634	mr	BUILD	undri	P1	उंड्री मध्ये, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे लवकर दुरुस्ती करा
+G1486	rom	ENCROACH	yerawada	P2	namaskar, feriwalyanni rasta adavla aahe, yerwada madhe, 2 aathvade zale
+G1598	mr	ENCROACH	hingne	P1	साहेब, अनधिकृत होर्डिंग कधीही पडू शकते, हिंगणे भागात
+G1623	mr	BUILD	sahakarnagar	P1	सहकारनगर येथे, भिंत कोसळून लोक जखमी झाले, दोन आठवड्यांपासून कृपया कारवाई करावी
+G0466	mr	WATER	sangamwadi	P3	संगमवाडी भागात, शाळेजवळ, नवीन नळ जोडणी हवी आहे, चार दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0827	rom	ELEC	koregaon_park	P3	koregaon park yethe, pathdive band aahet
+G1568	mr	ENCROACH	guruwar_peth	P4	कृपया लक्ष द्या, गुरुवार पेठ भागात, अनधिकृत फलक लावले आहेत तक्रार करूनही दखल घेतली नाही
+G1769	mr	BUILD	wadgaon_sheri	P1	साहेब, वडगांव शेरी मध्ये, स्लॅबचे तुकडे खाली पडत आहेत, एक आठवड्यांपासून कृपया कारवाई करावी
+G0481	hi	WATER	lohegaon	P3	सर, पानी बहुत कम प्रेशर से आता है, लोहगाव में
+G1840	mr	VET	hingne	P2	तक्रार: कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो, हिंगणे येथे
+G0759	rom	DRAIN	NONE	P1	sandpani rastyavar vahat aahe, 2 aathvade zale
+G0853	rom	ELEC	NONE	P1	khamb vakla aahe, padu shakto, 1 divas pasun lavkar kara
+G0785	mix	DRAIN	anandnagar	P1	Anandnagar ला, manhole open आहे, cover नाही
+G1563	mix	ENCROACH	balewadi	P3	Hello sir, बालेवाडी area मध्ये, footpath वर hawkers चं encroachment आहे
+G1366	mr	TREE	NONE	P4	नमस्कार, उद्यानातील झाडांची निगा राखली जात नाही लवकर दुरुस्ती करा
+G1518	mr	ENCROACH	magarpatta	P3	नमस्कार, मगरपट्टा परिसरात, हातगाड्यांमुळे वाहतूक कोंडी होते लवकर दुरुस्ती करा
+G0594	hi	WATER	bhavani_peth	P1	सर, स्कूल के पास, भवानी पेठ में, पाइपलाइन फट गई है, पानी बर्बाद हो रहा है कृपया कार्रवाई करें
+G1094	mr	HEALTH	yerawada	P1	तक्रार: येरवडा भागात, शाळेजवळ, डासांचा खूप त्रास आहे, तीन आठवड्यांपासून लवकर दुरुस्ती करा
+G0484	mr	WATER	yewalewadi	P4	तक्रार: येवलेवाडी परिसरात, पाण्याची वेळ ठरलेली नाही
+G0294	mr	SWM	bhavani_peth	P2	भवानी पेठ येथे, कचऱ्याचा घाण वास येतो तक्रार करूनही दखल घेतली नाही
+G1237	rom	TREE	katraj	P3	katraj yethe, padlelya fandya uchlalya nahit, 5 divas pasun
+G0679	mix	DRAIN	mundhwa	P1	नमस्कार, मुंढवा ला, school जवळ, manhole open आहे, cover नाही please लवकर action घ्या
+G1979	rom	VET	dhankawadi	P4	please kutryanchi nasbandi kara, dhankawadi yethe
+G0550	mr	WATER	shaniwar_peth	P2	शनिवार पेठ मध्ये, पाणीपुरवठा बंद आहे, दहा दिवसांपासून
+G0453	mix	WATER	NONE	P3	Hello sir, water supply बंद आहे please लवकर action घ्या
+G0649	hi	DRAIN	viman_nagar	P2	विमाननगर इलाके में, नाली जाम हो गई है
+G1806	mr	VET	koregaon_park	P2	कृपया लक्ष द्या, कोरेगाव पार्क भागात, जखमी जनावर रस्त्यावर पडले आहे
+G0843	mr	ELEC	NONE	P3	हायमास्ट दिवा बंद आहे लवकर दुरुस्ती करा
+G0947	rom	ELEC	deccan	P1	deccan bhagat, vijechi taar tutli aahe
+G0873	mr	ELEC	mundhwa	P2	नमस्कार, मुंढवा परिसरात, दवाखान्याजवळ, रस्त्यावरचे दिवे लागत नाहीत
+G0673	hi	DRAIN	guruwar_peth	P2	गुरुवार पेठ इलाके में, गटर का पानी सड़क पर बह रहा है कृपया कार्रवाई करें
+G1610	mr	BUILD	vishrantwadi	P1	विश्रांतवाडी भागात, भिंत कोसळून लोक जखमी झाले लवकर दुरुस्ती करा
+G1436	mix	ENCROACH	shaniwar_peth	P3	2 weeks झाले, शनिवार पेठ ला, illegal banners लावलेत urgent आहे
+G1526	mr	ENCROACH	koregaon_park	P3	अनधिकृत फलक लावले आहेत, कोरेगाव पार्क येथे, दवाखान्याजवळ लवकर दुरुस्ती करा
+G0436	rom	WATER	bibwewadi	P3	pani kami pressure ne yete, bibwewadi yethe lavkar kara
+G1301	hi	TREE	tadiwala_road	P1	नमस्ते, ताडीवाला रोड इलाके में, पेड़ सड़क पर गिर गया है
+G1834	rom	VET	sinhagad_road	P4	namaskar, kutryanchi nasbandi kara, sinhagad road bhagat karvai kara please
+G0313	mr	SWM	sahakarnagar	P1	सहकार नगर भागात, कचरा उचलला जात नाही, महिनाभरापासून
+G0132	mr	ROAD	nana_peth	P1	कृपया लक्ष द्या, नाना पेठ येथे, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी
+G0440	mr	WATER	nibm	P4	एनआयबीएम मध्ये, नवीन नळ जोडणी हवी आहे लवकर दुरुस्ती करा
+G0815	mr	ELEC	salunke_vihar	P3	तक्रार: साळुंके विहार मध्ये, दवाखान्याजवळ, नवीन पथदिवे बसवावेत, गेले सहा दिवस कृपया कारवाई करावी
+G0651	rom	DRAIN	sinhagad_road	P1	saheb, chamber che jhakan ughade aahe, sinhagad road madhe
+G1905	rom	VET	NONE	P1	please kutra chavla
+G1851	rom	VET	mundhwa	P2	saheb, mundhwa madhe, mokat janavare rastyavar, mahina zala karvai kara please
+G1485	mr	ENCROACH	pashan	P3	साहेब, पाषाण भागात, रस्त्यावर अनधिकृत टपऱ्या आहेत
+G0931	mix	ELEC	kharadi	P1	Please Kharadi area मध्ये, light pole ला shock लागतो
+G0901	mr	ELEC	NONE	P3	तक्रार: तीन आठवड्यांपासून, नवीन पथदिवे बसवावेत कृपया कारवाई करावी
+G0653	mr	DRAIN	viman_nagar	P2	कृपया लक्ष द्या, विमान नगर परिसरात, ड्रेनेज लाइन फुटली आहे
+G0166	rom	ROAD	undri	P2	please undri bhagat, footpath tutla aahe, mahina zala lavkar kara
+G0258	rom	SWM	karvenagar	P2	please karvenagar bhagat, kachryacha vaas yetoy karvai kara please
+G0972	rom	ELEC	NONE	P1	vijechi taar tutli aahe
+G1704	mr	BUILD	kondhwa	P1	कोंढवा येथे, भिंत कोसळून लोक जखमी झाले लवकर दुरुस्ती करा
+G1291	mr	TREE	salunke_vihar	P1	कृपया लक्ष द्या, साळुंके विहार परिसरात, हॉस्पिटलसमोर, झाड रस्त्यावर पडले आहे
+G0364	mix	SWM	pune_station	P3	नमस्कार, Pune Station मध्ये, garbage collection होत नाही please लवकर action घ्या
+G1361	mr	TREE	NONE	P2	कृपया लक्ष द्या, झाड पडून गाडीचे नुकसान झाले, चार दिवसांपासून कृपया कारवाई करावी
+G0382	mr	SWM	fatimanagar	P2	फातिमा नगर येथे, कचऱ्यावर माश्या आणि डास झाले आहेत लवकर दुरुस्ती करा
+G0266	mr	SWM	NONE	P2	कचरा उचलला जात नाही, गेले दहा दिवस
+G1643	mr	BUILD	koregaon_park	P4	कृपया लक्ष द्या, कोरेगाव पार्क येथे, बांधकाम परवानगीचा अर्ज प्रलंबित आहे कृपया कारवाई करावी
+G1732	mr	BUILD	wadgaon_sheri	P2	नमस्कार, वडगांव शेरी भागात, शाळेजवळ, नदीपात्रात बांधकाम केले जात आहे लवकर दुरुस्ती करा
+G1675	mr	BUILD	mundhwa	P3	साहेब, मुंढवा भागात, अनधिकृत मजला बांधला जात आहे
+G1901	mr	VET	aundh	P1	साहेब, औंध मध्ये, पिसाळलेला कुत्रा फिरत आहे
+G1552	mix	ENCROACH	katraj	P1	कात्रज मध्ये, hoarding illegal आहे आणि पडू शकतं
+G1125	mr	HEALTH	sahakarnagar	P3	साहेब, सहकारनगर येथे, उंदरांचा उपद्रव वाढला आहे
+G1236	hi	TREE	dhayari	P4	धायरी में, पेड़ की छंटाई करवाइए
+G1728	mix	BUILD	hingne	P3	हिंगणे area मध्ये, construction debris road वर टाकलाय please लवकर action घ्या
+G0529	mix	WATER	bhavani_peth	P3	भवानी पेठ ला, पाणी low pressure ने येतं
+G1263	mr	TREE	nibm	P1	नमस्कार, एनआयबीएम मध्ये, झाडाची फांदी तुटून लटकत आहे, एक आठवड्यांपासून लवकर दुरुस्ती करा
+G0584	mr	WATER	chandannagar	P3	नमस्कार, व्हॉल्व्हमधून पाणी गळते, चंदननगर मध्ये तक्रार करूनही दखल घेतली नाही
+G1878	rom	VET	hadapsar	P1	namaskar, kutra chavla, mahina zala, hadapsar bhagat
+G0090	rom	ROAD	dhankawadi	P2	dhankawadi madhe, shalejaval, rasta khodun thevla aahe karvai kara please
+G1428	mr	ENCROACH	wadgaon_sheri	P3	कृपया लक्ष द्या, वडगाव शेरी येथे, बेवारस वाहने रस्त्याकडेला पडून आहेत, एक आठवड्यांपासून
+G1283	mr	TREE	vishrantwadi	P4	विश्रांतवाडी भागात, झाडांची छाटणी करावी कृपया कारवाई करावी
+G1701	mr	BUILD	bibwewadi	P1	नमस्कार, बिबवेवाडी येथे, धोकादायक इमारत आहे
+G1759	rom	BUILD	viman_nagar	P1	saheb, vimannagar bhagat, bhint koslnar aahe
+G0703	mr	DRAIN	yewalewadi	P1	नमस्कार, येवलेवाडी भागात, गटार तुंबून घाण पाणी साचले आहे, तीन आठवड्यांपासून
+G0172	mr	ROAD	salunke_vihar	P3	रस्त्याच्या मधोमध मोठा खड्डा आहे, साळुंके विहार भागात
+G0042	mix	ROAD	balewadi	P3	नमस्कार, बालेवाडी मध्ये, road पूर्ण खराब झालाय please लवकर action घ्या
+G0669	mix	DRAIN	salunke_vihar	P2	साळुंके विहार ला, sewage road वर overflow होतंय please लवकर action घ्या
+G1591	mr	ENCROACH	undri	P3	उंड्री भागात, रस्त्यावर अनधिकृत टपऱ्या आहेत, दहा दिवसांपासून
+G1795	mr	BUILD	sangamwadi	P1	तक्रार: संगमवाडी परिसरात, भिंत कोसळून लोक जखमी झाले
+G0213	hi	SWM	NONE	P3	नमस्ते, कूड़ेदान भरकर बह रहा है कृपया कार्रवाई करें
+G0717	hi	DRAIN	sahakarnagar	P1	सर, सहकारनगर इलाके में, मैनहोल का ढक्कन खुला है
+G1239	rom	TREE	NONE	P1	saheb, zadachi fandi latakli aahe karvai kara please
+G0450	mr	WATER	dhankawadi	P3	साहेब, पाणी कमी दाबाने येते, धनकवडी परिसरात
+G1469	mix	ENCROACH	NONE	P1	Please hoarding illegal आहे आणि पडू शकतं
+G1019	hi	HEALTH	NONE	P3	मच्छरों का बहुत प्रकोप है
+G1874	rom	VET	yewalewadi	P1	please yewalewadi yethe, kutra chavla
+G0692	rom	DRAIN	narayan_peth	P3	saheb, narayan peth yethe, nalyachi safai zali nahi, 6 divas pasun
+G0938	mr	ELEC	dhayari	P1	नमस्कार, धायरी परिसरात, गेले दहा दिवस, डीपी बॉक्स उघडा आहे कृपया कारवाई करावी
+G1929	mr	VET	deccan	P1	डेक्कन मध्ये, पिसाळलेला कुत्रा फिरत आहे
+G0726	mr	DRAIN	balajinagar	P1	साहेब, बालाजी नगर मध्ये, मॅनहोलवर झाकण नाही
+G0676	mr	DRAIN	NONE	P1	सांडपाणी घरात येत आहे तक्रार करूनही दखल घेतली नाही
+G1137	mix	HEALTH	NONE	P3	Hello sir, mosquito problem खूप वाढलाय
+G0387	mix	SWM	bhavani_peth	P2	भवानी पेठ मध्ये, कचऱ्याचा खूप smell येतो urgent आहे
+G0179	mr	ROAD	karvenagar	P1	साहेब, दोन आठवड्यांपासून, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी, कर्वे नगर परिसरात कृपया कारवाई करावी
+G1817	hi	VET	yerawada	P4	येरवड्या में, कुत्तों की नसबंदी करवाइए जल्दी ठीक करवाइए
+G1569	mix	ENCROACH	nibm	P1	Nibm मध्ये, hoarding illegal आहे आणि पडू शकतं urgent आहे
+G0469	mix	WATER	NONE	P3	Please पाणी low pressure ने येतं
+G1403	hi	ENCROACH	market_yard	P3	सर, मार्केट यार्ड इलाके में, लावारिस गाड़ियां पड़ी हैं
+G1714	mix	BUILD	keshavnagar	P1	Keshav Nagar ला, hospital समोर, construction debris road वर टाकलाय, एक month झाला
+G0601	mr	DRAIN	shivajinagar	P1	शिवाजी नगर मध्ये, हॉस्पिटलसमोर, चेंबरचे झाकण उघडे आहे कृपया कारवाई करावी
+G1807	mr	VET	shivajinagar	P3	शिवाजीनगर परिसरात, मोकाट जनावरे रस्त्यावर फिरतात कृपया कारवाई करावी
+G0265	mr	SWM	koregaon_park	P2	नमस्कार, कोरेगाव पार्क परिसरात, दवाखान्याजवळ, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे तक्रार करूनही दखल घेतली नाही
+G1892	hi	VET	karvenagar	P1	कर्वे नगर इलाके में, पागल कुत्ता घूम रहा है
+G0375	mix	SWM	fatimanagar	P3	नमस्कार, फातिमा नगर मध्ये, garbage collection होत नाही please लवकर action घ्या
+G0671	rom	DRAIN	keshavnagar	P1	please keshav nagar yethe, chamber che jhakan ughade aahe, 3 aathvade zale
+G1693	mix	BUILD	dhayari	P2	धायरी ला, construction debris road वर टाकलाय, school जवळ urgent आहे
+G0458	hi	WATER	fc_road	P2	सर, एफसी रोड में, पानी की सप्लाई बंद है, एक हफ्तों से
+G0664	rom	DRAIN	anandnagar	P1	saheb, anand nagar yethe, manhole var jhakan nahi, 6 divas pasun karvai kara please
+G1916	hi	VET	dhayari	P3	नमस्ते, धायरी में, स्कूल के पास, कुत्तों की नसबंदी करवाइए कृपया कार्रवाई करें
+G0049	mix	ROAD	aundh	P3	नमस्कार, औंध मध्ये, road पूर्ण खराब झालाय
+G0316	mix	SWM	NONE	P3	dustbin overflow होतोय please लवकर action घ्या
+G0524	mr	WATER	NONE	P1	तक्रार: शाळेजवळ, सहा दिवसांपासून, पाणीपुरवठा बंद आहे तक्रार करूनही दखल घेतली नाही
+G0996	mr	ELEC	sinhagad_road	P4	सिंहगड रोड भागात, दिवा सतत बंद-चालू होतो तक्रार करूनही दखल घेतली नाही
+G1310	mix	TREE	vadgaon_bk	P4	नमस्कार, वडगाव बु ला, tree trimming करायचं आहे
+G1884	mr	VET	deccan	P3	नमस्कार, डेक्कन मध्ये, शाळेजवळ, कुत्री रात्रभर भुंकतात कृपया कारवाई करावी
+G0656	mr	DRAIN	sinhagad_road	P1	सिंहगड रोड येथे, दवाखान्याजवळ, चेंबरचे झाकण उघडे आहे कृपया कारवाई करावी
+G0120	hi	ROAD	kashewadi	P3	सर, काशेवाडी इलाके में, सड़क खोदकर छोड़ दी गई है
+G1841	rom	VET	NONE	P1	kutra chavla lavkar kara
+G0393	mix	SWM	sinhagad_road	P3	Sinhagad Road मध्ये, garbage collection होत नाही
+G1313	mr	TREE	katraj	P1	साहेब, कात्रज येथे, शाळेजवळ, झाडाची फांदी तुटून लटकत आहे
+G0603	mr	DRAIN	tadiwala_road	P2	साहेब, गटार तुंबून घाण पाणी साचले आहे, ताडीवाला रोड येथे कृपया कारवाई करावी
+G1140	mix	HEALTH	balewadi	P3	Balewadi area मध्ये, mosquito problem खूप वाढलाय, 2 days पासून please लवकर action घ्या
+G0268	rom	SWM	hingne	P1	hingne madhe, shalejaval, kachryacha vaas yetoy
+G0945	mr	ELEC	paud_road	P3	साहेब, पौड रोड येथे, रस्त्यावरचे दिवे लागत नाहीत, गेले सहा दिवस तक्रार करूनही दखल घेतली नाही
+G1474	rom	ENCROACH	tadiwala_road	P3	namaskar, tadiwala road bhagat, anadhikrut tapri aahe lavkar kara
+G0314	mr	SWM	NONE	P3	तक्रार: मोकळ्या जागेत लोक कचरा टाकतात कृपया कारवाई करावी
+G1392	mr	TREE	NONE	P1	तक्रार: झाड वाकले आहे, पडण्याची भीती आहे
+G0077	mr	ROAD	warje	P3	नमस्कार, वारजे मध्ये, डांबरीकरण खराब झाले आहे कृपया कारवाई करावी
+G0593	mr	WATER	vadgaon_bk	P2	साहेब, वडगाव बु भागात, पाणी कमी दाबाने येते, महिनाभरापासून
+G0476	mix	WATER	chandannagar	P1	Hello sir, Chandannagar ला, hospital समोर, pipeline burst झाली आहे
+G1995	mix	VET	karvenagar	P3	Karve Nagar area मध्ये, hospital समोर, dogs ची sterilization करा please लवकर action घ्या
+G0157	mix	ROAD	model_colony	P3	Model Colony मध्ये, road वर मोठे potholes आहेत urgent आहे
+G1603	mr	BUILD	NONE	P3	अनधिकृत मजला बांधला जात आहे लवकर दुरुस्ती करा
+G0768	mix	DRAIN	NONE	P1	नमस्कार, sewage घरात backflow होतंय, एक month झाला urgent आहे
+G0402	mix	WATER	koregaon_park	P3	कोरेगाव पार्क area मध्ये, valve मधून leakage होतंय, 2 days पासून please लवकर action घ्या
+G1040	rom	HEALTH	nibm	P3	namaskar, nibm yethe, undir khup zale aahet lavkar kara
+G1666	mix	BUILD	kothrud	P1	Please Kothrud ला, dangerous building आहे, wall पडेल
+G0486	mix	WATER	NONE	P3	valve मधून leakage होतंय urgent आहे
+G0604	rom	DRAIN	NONE	P1	saheb, chamber che jhakan ughade aahe lavkar kara
+G1981	rom	VET	NONE	P1	saheb, pisalela kutra firtoy
+G1920	mr	VET	NONE	P3	माकडांचा त्रास वाढला आहे, एक दिवसांपासून
+G0733	mr	DRAIN	narayan_peth	P2	नारायण पेठ येथे, पावसाचे पाणी रस्त्यावर साचते, दोन आठवड्यांपासून कृपया कारवाई करावी
+G1850	mix	VET	bibwewadi	P3	Bibwewadi मध्ये, stray dogs चा खूप त्रास आहे please लवकर action घ्या
+G1092	mr	HEALTH	undri	P3	नमस्कार, गेले सात दिवस, उंड्री परिसरात, धूरफवारणी होत नाही
+G0743	rom	DRAIN	NONE	P1	sandpani gharat yet aahe, mahina zala lavkar kara
+G0356	rom	SWM	guruwar_peth	P3	saheb, guruwar peth bhagat, kachrakundi bharun vahat aahe
+G0934	mr	ELEC	NONE	P1	विजेची तार तुटून खाली पडली आहे
+G1722	mr	BUILD	balewadi	P3	कृपया लक्ष द्या, बालेवाडी भागात, परवानगी न घेता बांधकाम सुरू आहे
+G0173	mr	ROAD	bibwewadi	P1	बिबवेवाडी येथे, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी लवकर दुरुस्ती करा
+G0627	mix	DRAIN	karvenagar	P2	Please कर्वे नगर area मध्ये, sewage road वर overflow होतंय please लवकर action घ्या
+G0223	mr	SWM	baner	P4	साहेब, बाणेर येथे, ओला आणि सुका कचरा वेगळा घेत नाहीत
+G1443	mr	ENCROACH	koregaon_park	P3	कृपया लक्ष द्या, कोरेगाव पार्क भागात, रस्त्यावर अनधिकृत टपऱ्या आहेत कृपया कारवाई करावी
+G0665	rom	DRAIN	market_yard	P2	namaskar, market yard madhe, sandpani rastyavar vahat aahe, 5 divas pasun
+G0253	mix	SWM	bavdhan	P2	बावधन मध्ये, garbage burning होतं, smoke येतो
+G0422	rom	WATER	gultekdi	P2	please gultekdi yethe, gadhul pani yete, 1 aathvade zale
+G1983	mr	VET	ramtekdi	P3	रामटेकडी भागात, कुत्र्यांची नसबंदी करावी, महिनाभरापासून कृपया कारवाई करावी
+G0044	rom	ROAD	karvenagar	P2	karvenagar bhagat, khaddya mule accident hou shakto, 3 divas pasun karvai kara please
+G1411	mr	ENCROACH	NONE	P3	कृपया लक्ष द्या, दुकानदारांनी रस्त्यावर सामान ठेवले आहे लवकर दुरुस्ती करा
+G0677	mix	DRAIN	balewadi	P2	Balewadi मध्ये, drainage line leak होतेय
+G0631	mr	DRAIN	NONE	P3	तक्रार: नाल्याची सफाई झाली नाही, तीन दिवसांपासून
+G1659	rom	BUILD	NONE	P1	please dhokadayak imarat aahe, 3 aathvade zale
+G0608	mix	DRAIN	balajinagar	P3	नमस्कार, बालाजीनगर ला, storm water drain clean केली नाही
+G1340	rom	TREE	kashewadi	P4	namaskar, zadachi chhatni kara, 3 divas pasun, kashewadi yethe karvai kara please
+G0094	mix	ROAD	paud_road	P3	Please पौड रोड ला, road खोदून ठेवलाय, repair केलं नाही
+G1867	hi	VET	yerawada	P3	कृपया ध्यान दें, येरवडा इलाके में, आवारा मवेशी सड़क पर घूमते हैं
+G1328	mr	TREE	kothrud	P4	नमस्कार, कोथरूड भागात, झाडामुळे पथदिवा झाकला गेला आहे लवकर दुरुस्ती करा
+G1996	rom	VET	NONE	P1	namaskar, shalejaval, pisalela kutra firtoy karvai kara please
+G0624	rom	DRAIN	kashewadi	P2	kashewadi bhagat, nalyachi safai zali nahi, 3 aathvade zale karvai kara please
+G1001	mr	HEALTH	NONE	P2	नमस्कार, उघड्यावर अन्न टाकले जाते, दुर्गंधी येते, तीन दिवसांपासून लवकर दुरुस्ती करा
+G0976	mr	ELEC	sinhagad_road	P1	साहेब, सिंहगड रोड येथे, हॉस्पिटलसमोर, पथदिवे बंद आहेत, दोन आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G1961	mr	VET	katraj	P2	नमस्कार, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो, कात्रज मध्ये, सहा दिवसांपासून लवकर दुरुस्ती करा
+G0715	mix	DRAIN	nibm	P2	एनआयबीएम मध्ये, sewage road वर overflow होतंय, 3 days पासून
+G0105	mr	ROAD	lohegaon	P2	लोहगाव मध्ये, गतिरोधकावर रंग नाही, रात्री दिसत नाही
+G0352	mix	SWM	NONE	P3	dustbin overflow होतोय
+G1546	hi	ENCROACH	paud_road	P3	कृपया ध्यान दें, पौड रोड में, फुटपाथ पर अतिक्रमण है कृपया कार्रवाई करें
+G1813	rom	VET	guruwar_peth	P3	mokat janavare rastyavar, guruwar peth madhe lavkar kara
+G1629	hi	BUILD	undri	P1	कृपया ध्यान दें, पुरानी इमारत खतरनाक हालत में है, उंड्री में कृपया कार्रवाई करें
+G1172	mix	HEALTH	NONE	P3	नमस्कार, मच्छरांच्या larvae साचलेल्या पाण्यात आहेत
+G0070	rom	ROAD	fc_road	P3	fc road madhe, footpath tutla aahe
+G0513	mr	WATER	nibm	P4	एनआयबीएम परिसरात, पाण्याचे बिल जास्त आले आहे, दहा दिवसांपासून
+G1748	mr	BUILD	shaniwar_peth	P1	कृपया लक्ष द्या, शनिवार पेठ परिसरात, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे, गेले दहा दिवस लवकर दुरुस्ती करा
+G0187	hi	ROAD	NONE	P3	सड़क पर बहुत गड्ढे हैं
+G0613	rom	DRAIN	NONE	P1	please hospital samor, gatar tumbla aahe, 1 aathvade zale
+G0926	rom	ELEC	lohegaon	P1	lohegaon yethe, khambala current lagto, 1 aathvade zale
+G0318	mix	SWM	pisoli	P2	पिसोळी area मध्ये, garbage burning होतं, smoke येतो, 10 days पासून
+G1104	mr	HEALTH	vishrantwadi	P1	विश्रांतवाडी भागात, मलेरियाचे रुग्ण आढळले आहेत
+G1537	mix	ENCROACH	nibm	P3	एनआयबीएम area मध्ये, footpath वर hawkers चं encroachment आहे
+G0137	mix	ROAD	pisoli	P3	पिसोळी area मध्ये, road पूर्ण खराब झालाय urgent आहे
+G1412	hi	ENCROACH	hadapsar	P2	हडपसर में, फुटपाथ पर अतिक्रमण है, एक महीने से
+G0855	mr	ELEC	sadashiv_peth	P3	साहेब, सदाशिव पेठ मध्ये, हायमास्ट दिवा बंद आहे लवकर दुरुस्ती करा
+G0632	hi	DRAIN	NONE	P2	कृपया ध्यान दें, गटर का पानी सड़क पर बह रहा है जल्दी ठीक करवाइए
+G0160	hi	ROAD	kashewadi	P3	सर, काशेवाडी इलाके में, सड़क खोदकर छोड़ दी गई है, सात दिनों से कृपया कार्रवाई करें
+G1764	mr	BUILD	wanowrie	P4	साहेब, वानवडी भागात, बांधकाम परवानगीचा अर्ज प्रलंबित आहे कृपया कारवाई करावी
+G1205	rom	TREE	kondhwa	P1	saheb, kondhwa yethe, shalejaval, zad rastyavar padle aahe
+G1468	mr	ENCROACH	nibm	P2	तक्रार: हॉस्पिटलसमोर, पदपथावर बांधकाम साहित्य ठेवले आहे, एनआयबीएम येथे तक्रार करूनही दखल घेतली नाही
+G0381	mr	SWM	nana_peth	P3	साहेब, नाना पेठ परिसरात, घंटागाडी येत नाही
+G0899	rom	ELEC	hingne	P3	please pathdive band aahet, hingne bhagat
+G0165	mr	ROAD	magarpatta	P1	मगरपट्ट्या परिसरात, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी, सहा दिवसांपासून कृपया कारवाई करावी
+G0425	mr	WATER	warje	P2	तक्रार: वारजे परिसरात, हॉस्पिटलसमोर, पाणीपुरवठा बंद आहे तक्रार करूनही दखल घेतली नाही
+G1886	rom	VET	undri	P3	saheb, undri yethe, bhatkya kutryancha tras aahe karvai kara please
+G0097	mr	ROAD	mundhwa	P2	मुंढवा परिसरात, दवाखान्याजवळ, डांबरीकरण खराब झाले आहे
+G0566	mr	WATER	NONE	P2	नळाला गढूळ पाणी येते, पाच दिवसांपासून लवकर दुरुस्ती करा
+G0417	mr	WATER	NONE	P4	नमस्कार, पाण्याची वेळ ठरलेली नाही
+G1706	mr	BUILD	salunke_vihar	P3	कृपया लक्ष द्या, साळुंके विहार भागात, परवानगी न घेता बांधकाम सुरू आहे तक्रार करूनही दखल घेतली नाही
+G1793	hi	BUILD	pune_station	P1	नमस्ते, पुणे स्टेशन इलाके में, दीवार गिरने से लोग घायल हुए
+G0194	mr	ROAD	anandnagar	P2	तक्रार: गतिरोधकावर रंग नाही, रात्री दिसत नाही, आनंदनगर परिसरात
+G1744	mr	BUILD	wanowrie	P1	वानवडी मध्ये, शाळेजवळ, नदीपात्रात बांधकाम केले जात आहे, महिनाभरापासून कृपया कारवाई करावी
+G0275	mix	SWM	NONE	P3	garbage van येत नाही please लवकर action घ्या
+G1406	mr	ENCROACH	pisoli	P1	नमस्कार, पिसोळी मध्ये, अनधिकृत होर्डिंग कधीही पडू शकते लवकर दुरुस्ती करा
+G1664	hi	BUILD	dhayari	P2	धायरी इलाके में, अस्पताल के सामने, अवैध मंजिल बनाई जा रही है कृपया कार्रवाई करें
+G0795	mix	DRAIN	shaniwar_peth	P1	नमस्कार, sewage घरात backflow होतंय, शनिवार पेठ ला
+G1887	rom	VET	NONE	P1	please kutra chavla, shalejaval
+G0464	hi	WATER	yewalewadi	P1	येवलेवाडी इलाके में, गंदे पानी से लोग बीमार हो गए कृपया कार्रवाई करें
+G0868	rom	ELEC	kondhwa	P3	kondhwa yethe, navin street light lava, mahina zala lavkar kara
+G0053	mix	ROAD	salunke_vihar	P2	नमस्कार, साळुंके विहार area मध्ये, pothole मुळे accident होऊ शकतो
+G0885	rom	ELEC	NONE	P2	saheb, hospital samor, galli madhe andhar aahe, light band karvai kara please
+G1098	rom	HEALTH	chandannagar	P1	please chandannagar madhe, dengue che rugn vadhle, 3 aathvade zale, shalejaval karvai kara please
+G1632	mr	BUILD	dhayari	P1	साहेब, धायरी मध्ये, स्लॅबचे तुकडे खाली पडत आहेत
+G1287	mr	TREE	NONE	P1	झाड वाकले आहे, पडण्याची भीती आहे
+G0220	rom	SWM	yewalewadi	P3	kachra gadi yet nahi, yewalewadi madhe
+G1238	mr	TREE	mundhwa	P1	साहेब, मुंढव्या परिसरात, झाड वाकले आहे, पडण्याची भीती आहे, महिनाभरापासून
+G1844	rom	VET	NONE	P3	hospital samor, kutryanchi nasbandi kara
+G1494	hi	ENCROACH	dhanori	P3	धानोरी इलाके में, अस्पताल के सामने, अवैध बैनर लगे हैं जल्दी ठीक करवाइए
+G1154	mr	HEALTH	salunke_vihar	P3	नमस्कार, साळुंके विहार परिसरात, हॉटेलमध्ये अस्वच्छता आहे लवकर दुरुस्ती करा
+G0574	mr	WATER	sahakarnagar	P4	तक्रार: सहकारनगर भागात, नवीन नळ जोडणी हवी आहे कृपया कारवाई करावी
+G1965	mix	VET	balewadi	P3	नमस्कार, stray dogs चा खूप त्रास आहे, Balewadi area मध्ये urgent आहे
+G1639	hi	BUILD	NONE	P1	सर, दीवार गिरने से लोग घायल हुए
+G1076	hi	HEALTH	pashan	P3	सर, पाषाणला में, मच्छरों का बहुत प्रकोप है
+G1590	hi	ENCROACH	NONE	P2	कृपया ध्यान दें, तीन हफ्तों से, लावारिस गाड़ियां पड़ी हैं
+G1655	mix	BUILD	wadgaon_sheri	P1	Vadgaon Sheri area मध्ये, dangerous building आहे, wall पडेल, 1 weeks झाले urgent आहे
+G1266	mr	TREE	gultekdi	P2	गुलटेकडी येथे, पडलेल्या फांद्या उचलल्या नाहीत, महिनाभरापासून
+G1282	mix	TREE	nibm	P1	Nibm area मध्ये, branch तुटून लटकतेय please लवकर action घ्या
+G0206	mr	SWM	pune_station	P3	तक्रार: पुणे स्टेशन येथे, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे
+G0330	hi	SWM	dhankawadi	P2	सर, धनकवडी में, कूड़े का ढेर लगा है, सात दिनों से
+G1371	mix	TREE	koregaon_park	P3	Hello sir, illegal tree cutting झालंय, Koregaon Park area मध्ये please लवकर action घ्या
+G1946	rom	VET	NONE	P2	namaskar, mokat janavare rastyavar, hospital samor karvai kara please
+G0571	mr	WATER	viman_nagar	P1	तक्रार: विमाननगर येथे, नळाला गढूळ पाणी येते, दोन आठवड्यांपासून
+G0030	rom	ROAD	NONE	P1	shalejaval, khaddyat padun ek manus jakhmi zala karvai kara please
+G0674	mr	DRAIN	kashewadi	P1	तक्रार: काशेवाडी परिसरात, चेंबरचे झाकण उघडे आहे तक्रार करूनही दखल घेतली नाही
+G0720	mr	DRAIN	kharadi	P3	साहेब, खराडी मध्ये, पावसाचे पाणी रस्त्यावर साचते कृपया कारवाई करावी
+G1241	mr	TREE	NONE	P3	पडलेल्या फांद्या उचलल्या नाहीत, चार दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G1530	hi	ENCROACH	yerawada	P3	येरवडा इलाके में, लावारिस गाड़ियां पड़ी हैं कृपया कार्रवाई करें
+G1039	hi	HEALTH	NONE	P2	फॉगिंग नहीं होती, एक महीने से कृपया कार्रवाई करें
+G0746	rom	DRAIN	chandannagar	P1	chandan nagar madhe, chamber che jhakan ughade aahe
+G0154	mr	ROAD	nibm	P1	कृपया लक्ष द्या, एनआयबीएम मध्ये, खड्ड्यात पडून एक दुचाकीस्वार जखमी झाला, महिनाभरापासून लवकर दुरुस्ती करा
+G0695	mix	DRAIN	balewadi	P1	Please drainage block झालंय, Balewadi area मध्ये, hospital समोर urgent आहे
+G1225	mix	TREE	wanowrie	P2	वानवडी ला, झाड पडून car चं नुकसान झालं urgent आहे
+G1196	mix	HEALTH	ramtekdi	P2	Ramtekdi मध्ये, dead dog पडलाय road वर urgent आहे
+G1088	hi	HEALTH	deccan	P1	कृपया ध्यान दें, डेक्कन इलाके में, डेंगू के मरीज बढ़ गए हैं
+G1923	mr	VET	anandnagar	P3	साहेब, हॉस्पिटलसमोर, कुत्री रात्रभर भुंकतात, आनंदनगर मध्ये तक्रार करूनही दखल घेतली नाही
+G1303	mix	TREE	magarpatta	P1	Hello sir, Magarpatta मध्ये, झाड पडून car चं नुकसान झालं, एक month झाला please लवकर action घ्या
+G0619	mr	DRAIN	bhavani_peth	P2	साहेब, भवानी पेठ परिसरात, नाल्याची सफाई झाली नाही, हॉस्पिटलसमोर तक्रार करूनही दखल घेतली नाही
+G1182	rom	HEALTH	market_yard	P3	market yard yethe, undir khup zale aahet, 2 divas pasun
+G0958	rom	ELEC	vishrantwadi	P1	6 divas pasun, vishrantwadi bhagat, khamb vakla aahe, padu shakto
+G0698	mr	DRAIN	hingne	P1	कृपया लक्ष द्या, हिंगणे मध्ये, हॉस्पिटलसमोर, गटार तुंबून घाण पाणी साचले आहे कृपया कारवाई करावी
+G1043	mr	HEALTH	model_colony	P3	नमस्कार, मॉडेल कॉलनी येथे, धूरफवारणी होत नाही तक्रार करूनही दखल घेतली नाही
+G1575	hi	ENCROACH	chandannagar	P2	कृपया ध्यान दें, चंदननगर इलाके में, स्कूल के पास, फुटपाथ पर अतिक्रमण है कृपया कार्रवाई करें
+G0662	mr	DRAIN	lohegaon	P3	कृपया लक्ष द्या, लोहगाव येथे, नाल्याची सफाई झाली नाही
+G1628	mr	BUILD	NONE	P1	भिंत कोसळून लोक जखमी झाले कृपया कारवाई करावी
+G1161	mix	HEALTH	balajinagar	P1	बालाजी नगर मध्ये, hospital समोर, rats चा त्रास आहे, 3 weeks झाले
+G0607	mix	DRAIN	hingne	P1	Hingne area मध्ये, sewage घरात backflow होतंय, एक month झाला please लवकर action घ्या
+G1553	mix	ENCROACH	NONE	P3	illegal stalls लावलेत road वर
+G0118	mix	ROAD	guruwar_peth	P2	Hello sir, गुरुवार पेठ ला, hospital समोर, road वर मोठे potholes आहेत please लवकर action घ्या
+G0661	mr	DRAIN	mundhwa	P3	नमस्कार, मुंढव्या परिसरात, पावसाचे पाणी रस्त्यावर साचते
+G1746	mr	BUILD	vadgaon_bk	P3	नमस्कार, वडगाव बुद्रुक येथे, अनधिकृत मजला बांधला जात आहे
+G1399	mr	TREE	pisoli	P4	पिसोळी मध्ये, उद्यानातील झाडांची निगा राखली जात नाही लवकर दुरुस्ती करा
+G0840	hi	ELEC	katraj	P2	स्कूल के पास, कात्रज में, गली में अंधेरा रहता है, लाइट खराब है कृपया कार्रवाई करें
+G1708	mix	BUILD	warje	P3	Hello sir, वारजे area मध्ये, illegal construction चालू आहे
+G0415	mr	WATER	model_colony	P4	साहेब, मॉडेल कॉलनी भागात, पाण्याचे बिल जास्त आले आहे लवकर दुरुस्ती करा
+G0438	mix	WATER	NONE	P1	Hello sir, contaminated पाण्यामुळे सगळे sick पडलेत
+G0142	hi	ROAD	vishrantwadi	P1	कृपया ध्यान दें, विश्रांतवाडी इलाके में, अस्पताल के सामने, गड्ढे से कभी भी दुर्घटना हो सकती है
+G1926	mr	VET	NONE	P2	माकडांचा त्रास वाढला आहे, महिनाभरापासून
+G1772	mix	BUILD	NONE	P3	illegal construction चालू आहे urgent आहे
+G0496	mr	WATER	wadgaon_sheri	P4	साहेब, नवीन नळ जोडणी हवी आहे, वडगाव शेरी भागात कृपया कारवाई करावी
+G1212	rom	TREE	kalas	P3	kalas yethe, padlelya fandya uchlalya nahit lavkar kara
+G0611	mr	DRAIN	sadashiv_peth	P1	साहेब, सदाशिव पेठ भागात, मॅनहोलवर झाकण नाही, चार दिवसांपासून लवकर दुरुस्ती करा
+G1158	mr	HEALTH	tadiwala_road	P2	ताडीवाला रोड भागात, दवाखान्याजवळ, हॉटेलमध्ये अस्वच्छता आहे तक्रार करूनही दखल घेतली नाही
+G0881	mix	ELEC	narayan_peth	P1	नमस्कार, Narayan Peth area मध्ये, electric wire लटकतेय road वर
+G1200	hi	HEALTH	paud_road	P1	नमस्ते, डेंगू के मरीज बढ़ गए हैं, पौड रोड इलाके में कृपया कार्रवाई करें
+G1189	hi	HEALTH	kashewadi	P2	सर, काशेवाडी में, स्कूल के पास, फॉगिंग नहीं होती, छह दिनों से
+G0724	mr	DRAIN	NONE	P2	कृपया लक्ष द्या, ड्रेनेज लाइन फुटली आहे, गेले दोन दिवस
+G1648	hi	BUILD	pashan	P1	नमस्ते, पाषाण में, पुरानी इमारत खतरनाक हालत में है
+G0467	mr	WATER	undri	P2	कृपया लक्ष द्या, उंड्री परिसरात, दवाखान्याजवळ, पाणी कमी दाबाने येते, एक आठवड्यांपासून कृपया कारवाई करावी
+G1224	mr	TREE	hadapsar	P4	हडपसर भागात, झाडामुळे पथदिवा झाकला गेला आहे कृपया कारवाई करावी
+G0697	hi	DRAIN	kalas	P2	नाली जाम हो गई है, कळस इलाके में
+G1396	rom	TREE	NONE	P3	please padlelya fandya uchlalya nahit karvai kara please
+G0079	hi	ROAD	NONE	P3	सर, स्पीड ब्रेकर बहुत ऊंचा है
+G0547	mr	WATER	NONE	P2	तक्रार: नळाला गढूळ पाणी येते तक्रार करूनही दखल घेतली नाही
+G1348	mr	TREE	baner	P3	तक्रार: बानेर भागात, पडलेल्या फांद्या उचलल्या नाहीत लवकर दुरुस्ती करा
+G1560	mr	ENCROACH	NONE	P1	अनधिकृत होर्डिंग कधीही पडू शकते, दहा दिवसांपासून
+G1533	mr	ENCROACH	sangamwadi	P1	संगमवाडी मध्ये, अनधिकृत होर्डिंग कधीही पडू शकते, दोन आठवड्यांपासून
+G1572	hi	ENCROACH	NONE	P3	सड़क पर अवैध ठेले लगे हैं
+G0186	mr	ROAD	NONE	P1	तीन आठवड्यांपासून, गतिरोधकावर रंग नाही, रात्री दिसत नाही, दवाखान्याजवळ लवकर दुरुस्ती करा
+G0755	mr	DRAIN	aundh	P3	कृपया लक्ष द्या, औंध परिसरात, नाल्याची सफाई झाली नाही तक्रार करूनही दखल घेतली नाही
+G0439	mr	WATER	kasba_peth	P1	कसबा मध्ये, शाळेजवळ, नळाला गढूळ पाणी येते, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G0833	rom	ELEC	paud_road	P1	paud road madhe, khamb vakla aahe, padu shakto
+G1616	mr	BUILD	fc_road	P4	एफसी रोड भागात, बांधकाम परवानगीचा अर्ज प्रलंबित आहे
+G0412	mr	WATER	wanowrie	P4	वानवडी येथे, गेले दोन दिवस, पाण्याची वेळ ठरलेली नाही लवकर दुरुस्ती करा
+G0280	mr	SWM	karvenagar	P3	कृपया लक्ष द्या, कर्वे नगर मध्ये, कचरा उचलला जात नाही
+G0725	rom	DRAIN	kasba_peth	P1	kasba peth bhagat, manhole var jhakan nahi
+G1911	mix	VET	ramtekdi	P1	रामटेकडी मध्ये, dog bite झाला, 3 weeks झाले
+G1549	mix	ENCROACH	market_yard	P3	Please मार्केट यार्ड ला, illegal stalls लावलेत road वर, 7 days पासून please लवकर action घ्या
+G0498	hi	WATER	kothrud	P2	कोथरूड में, गंदा पानी आ रहा है, तीन दिनों से कृपया कार्रवाई करें
+G0623	hi	DRAIN	lohegaon	P2	नमस्ते, लोहगाव इलाके में, नाली जाम हो गई है जल्दी ठीक करवाइए
+G1859	rom	VET	dhanori	P2	dhanori madhe, hospital samor, mokat janavare rastyavar
+G1381	rom	TREE	market_yard	P1	market yard madhe, zad rastyavar padle aahe, 2 aathvade zale lavkar kara
+G1873	hi	VET	NONE	P3	सर, आवारा मवेशी सड़क पर घूमते हैं
+G0176	mr	ROAD	warje	P1	साहेब, वारजे मध्ये, शाळेजवळ, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी कृपया कारवाई करावी
+G1771	mr	BUILD	kashewadi	P1	काशेवाडी परिसरात, धोकादायक इमारत आहे
+G0276	mr	SWM	nana_peth	P3	नाना पेठ परिसरात, घंटागाडी येत नाही तक्रार करूनही दखल घेतली नाही
+G1819	mr	VET	NONE	P4	तक्रार: कुत्री रात्रभर भुंकतात, एक आठवड्यांपासून
+G0874	mix	ELEC	nibm	P4	एनआयबीएम ला, street lights दिवसा पण ON असतात, 1 weeks झाले
+G1049	mr	HEALTH	sahakarnagar	P3	कृपया लक्ष द्या, सहकारनगर भागात, उंदरांचा उपद्रव वाढला आहे तक्रार करूनही दखल घेतली नाही
+G0365	mr	SWM	NONE	P1	तक्रार: रस्त्याच्या कडेला कचऱ्याचा ढीग आहे, महिनाभरापासून
+G1727	mr	BUILD	hadapsar	P3	तक्रार: हडपसर येथे, बांधकामाचा राडारोडा रस्त्यावर टाकला आहे, सहा दिवसांपासून
+G0731	rom	DRAIN	NONE	P1	chamber che jhakan ughade aahe karvai kara please
+G1690	mix	BUILD	NONE	P2	school जवळ, illegal construction चालू आहे please लवकर action घ्या
+G0080	hi	ROAD	NONE	P3	सड़क खोदकर छोड़ दी गई है कृपया कार्रवाई करें
+G0541	mr	WATER	NONE	P1	नमस्कार, पाणीपुरवठा बंद आहे, महिनाभरापासून लवकर दुरुस्ती करा
+G0887	hi	ELEC	NONE	P1	सर, खंभे में करंट आ रहा है
+G1633	mr	BUILD	koregaon_park	P3	नमस्कार, कोरेगाव पार्क भागात, परवानगी न घेता बांधकाम सुरू आहे कृपया कारवाई करावी
+G1863	mr	VET	tadiwala_road	P4	नमस्कार, ताडीवाला रोड येथे, कुत्र्यांची नसबंदी करावी
+G1949	mix	VET	nibm	P1	Nibm मध्ये, dog bite झाला
+G0526	rom	WATER	balajinagar	P3	please balajinagar yethe, pani purvatha band aahe lavkar kara
+G1141	mr	HEALTH	NONE	P1	शाळेजवळ, मलेरियाचे रुग्ण आढळले आहेत कृपया कारवाई करावी
+G1168	hi	HEALTH	hadapsar	P3	कृपया ध्यान दें, हडपसर में, मच्छरों का बहुत प्रकोप है जल्दी ठीक करवाइए
+G1272	mr	TREE	vishrantwadi	P1	कृपया लक्ष द्या, विश्रांतवाडी मध्ये, शाळेजवळ, झाड वाकले आहे, पडण्याची भीती आहे
+G1032	mix	HEALTH	tadiwala_road	P2	ताडीवाला रोड ला, dead dog पडलाय road वर urgent आहे
+G1641	rom	BUILD	magarpatta	P2	magarpatta yethe, parvangi nastana majla bandhtat, mahina zala
+G1359	mr	TREE	kothrud	P3	नमस्कार, कोथरुड येथे, शाळेजवळ, उद्यानातील झाडांची निगा राखली जात नाही
+G0681	mix	DRAIN	NONE	P2	नमस्कार, sewage road वर overflow होतंय
+G1078	rom	HEALTH	NONE	P2	saheb, ughdyavar shauch kartat karvai kara please
+G0736	rom	DRAIN	fc_road	P1	please fc road yethe, manhole var jhakan nahi
+G0109	mix	ROAD	bhavani_peth	P2	Hello sir, भवानी पेठ ला, speed breaker ला marking नाही urgent आहे
+G1941	mr	VET	guruwar_peth	P2	नमस्कार, गुरुवार पेठ परिसरात, जखमी जनावर रस्त्यावर पडले आहे, गेले एक दिवस तक्रार करूनही दखल घेतली नाही
+G1958	mr	VET	salunke_vihar	P1	नमस्कार, साळुंके विहार मध्ये, हॉस्पिटलसमोर, पिसाळलेला कुत्रा फिरत आहे, पाच दिवसांपासून
+G1668	hi	BUILD	warje	P1	वारजे इलाके में, दीवार गिरने से लोग घायल हुए कृपया कार्रवाई करें
+G0088	mr	ROAD	bavdhan	P3	कृपया लक्ष द्या, बावधन येथे, डांबरीकरण खराब झाले आहे तक्रार करूनही दखल घेतली नाही
+G0936	mix	ELEC	NONE	P4	नमस्कार, street lights दिवसा पण ON असतात please लवकर action घ्या
+G0630	rom	DRAIN	yerawada	P1	yerawada madhe, hospital samor, sandpani gharat yet aahe karvai kara please
+G1482	rom	ENCROACH	kasba_peth	P3	saheb, kasba peth bhagat, bewaras gadya padun aahet
+G1754	mr	BUILD	sadashiv_peth	P1	तक्रार: सदाशिव पेठ भागात, भिंत कोसळून लोक जखमी झाले, महिनाभरापासून लवकर दुरुस्ती करा
+G0249	mix	SWM	lohegaon	P3	Hello sir, 1 days पासून, लोहगाव ला, garbage van येत नाही please लवकर action घ्या
+G1980	mr	VET	lohegaon	P1	तक्रार: लोहगाव परिसरात, पिसाळलेला कुत्रा फिरत आहे तक्रार करूनही दखल घेतली नाही
+G1515	mr	ENCROACH	warje	P1	वारजे येथे, अनधिकृत होर्डिंग कधीही पडू शकते
+G1918	mr	VET	NONE	P4	कृपया लक्ष द्या, कुत्री रात्रभर भुंकतात
+G1944	hi	VET	NONE	P2	कृपया ध्यान दें, आवारा कुत्तों का आतंक है, एक महीने से जल्दी ठीक करवाइए
+G1118	mix	HEALTH	guruwar_peth	P2	Guruwar Peth ला, hospital समोर, fogging होत नाही
+G0041	mix	ROAD	NONE	P2	नमस्कार, footpath चे paver blocks निघालेत, एक month झाला please लवकर action घ्या
+G0814	mix	ELEC	kondhwa	P3	कोंढव्या area मध्ये, high mast light बंद आहे
+G0890	hi	ELEC	balajinagar	P1	बालाजीनगर में, अस्पताल के सामने, बिजली का तार टूटकर लटक रहा है, एक महीने से
+G0863	mr	ELEC	anandnagar	P1	आनंदनगर मध्ये, डीपी बॉक्स उघडा आहे, तीन आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G1520	rom	ENCROACH	magarpatta	P3	magarpatta madhe, anadhikrut tapri aahe, 1 aathvade zale karvai kara please
+G1149	mr	HEALTH	kharadi	P2	खराडी परिसरात, गेले दहा दिवस, मेलेले जनावर रस्त्यावर पडले आहे
+G1682	mr	BUILD	balajinagar	P3	बालाजी नगर येथे, परवानगी न घेता बांधकाम सुरू आहे, गेले एक दिवस कृपया कारवाई करावी
+G1184	mr	HEALTH	deccan	P1	तक्रार: डेक्कन परिसरात, शाळेजवळ, मलेरियाचे रुग्ण आढळले आहेत कृपया कारवाई करावी
+G1470	mr	ENCROACH	kashewadi	P3	फूटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे, चार दिवसांपासून, काशेवाडी भागात कृपया कारवाई करावी
+G1171	mr	HEALTH	market_yard	P3	कृपया लक्ष द्या, मार्केट यार्ड परिसरात, हॉटेलमध्ये अस्वच्छता आहे तक्रार करूनही दखल घेतली नाही
+G1627	mr	BUILD	paud_road	P1	नमस्कार, पौड रोड मध्ये, शाळेजवळ, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे, दोन आठवड्यांपासून लवकर दुरुस्ती करा
+G1376	rom	TREE	dhankawadi	P1	dhankawadi madhe, zadachi fandi latakli aahe
+G1600	mr	ENCROACH	kondhwa	P2	कोंढवा येथे, दवाखान्याजवळ, फूटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे कृपया कारवाई करावी
+G0953	mr	ELEC	NONE	P1	कृपया लक्ष द्या, विजेची तार तुटून खाली पडली आहे लवकर दुरुस्ती करा
+G1054	mr	HEALTH	kasba_peth	P2	कृपया लक्ष द्या, कसबा परिसरात, मेलेले जनावर रस्त्यावर पडले आहे, गेले एक दिवस तक्रार करूनही दखल घेतली नाही
+G0162	mix	ROAD	aundh	P3	Please road वर मोठे potholes आहेत, Aundh मध्ये, 1 weeks झाले
+G0666	mr	DRAIN	anandnagar	P3	तक्रार: आनंद नगर परिसरात, पावसाचे पाणी रस्त्यावर साचते, एक आठवड्यांपासून कृपया कारवाई करावी
+G1338	hi	TREE	vadgaon_bk	P3	कृपया ध्यान दें, वडगाव बु में, अवैध पेड़ कटाई हुई है
+G0184	rom	ROAD	fatimanagar	P3	namaskar, fatimanagar bhagat, rasta kharab zala aahe
+G0133	mr	ROAD	wadgaon_sheri	P3	रस्त्याच्या मधोमध मोठा खड्डा आहे, वडगांव शेरी येथे
+G0010	mr	ROAD	koregaon_park	P3	साहेब, कोरेगाव पार्क परिसरात, रस्त्यावरची खडी सगळीकडे पसरली आहे तक्रार करूनही दखल घेतली नाही
+G1232	rom	TREE	anandnagar	P1	anand nagar madhe, zadachi fandi latakli aahe
+G1105	mix	HEALTH	warje	P1	नमस्कार, Warje मध्ये, dengue cases वाढलेत, 3 days पासून
+G1434	mr	ENCROACH	pashan	P1	साहेब, पाषाण मध्ये, अनधिकृत होर्डिंग कधीही पडू शकते
+G0504	hi	WATER	pisoli	P3	नमस्ते, पिसोळी इलाके में, नल में पानी नहीं आ रहा कृपया कार्रवाई करें
+G1635	hi	BUILD	karvenagar	P1	कृपया ध्यान दें, कर्वे नगर इलाके में, अस्पताल के सामने, पुरानी इमारत खतरनाक हालत में है जल्दी ठीक करवाइए
+G0480	mr	WATER	dhanori	P3	धानोरी मध्ये, शाळेजवळ, पाण्याचे बिल जास्त आले आहे, गेले तीन दिवस
+G1455	mr	ENCROACH	sadashiv_peth	P3	दुकानदारांनी रस्त्यावर सामान ठेवले आहे, सदाशिव पेठ परिसरात
+G1576	mr	ENCROACH	yewalewadi	P4	कृपया लक्ष द्या, येवलेवाडी मध्ये, अनधिकृत फलक लावले आहेत तक्रार करूनही दखल घेतली नाही
+G1159	rom	HEALTH	kalas	P2	namaskar, kalas bhagat, hospital samor, fawarni hot nahi karvai kara please
+G0971	mr	ELEC	aundh	P1	तक्रार: औंध परिसरात, विजेची तार तुटून खाली पडली आहे
+G1061	hi	HEALTH	yewalewadi	P1	एक दिनों से, येवलेवाडी इलाके में, डेंगू के मरीज बढ़ गए हैं कृपया कार्रवाई करें
+G0800	hi	DRAIN	nibm	P3	कृपया ध्यान दें, एनआयबीएम में, नाले की सफाई नहीं हुई
+G0771	mr	DRAIN	NONE	P3	तक्रार: पावसाचे पाणी रस्त्यावर साचते, एक दिवसांपासून लवकर दुरुस्ती करा
+G1122	mr	HEALTH	NONE	P1	तक्रार: मलेरियाचे रुग्ण आढळले आहेत
+G0770	mr	DRAIN	fatimanagar	P2	नमस्कार, फातिमानगर येथे, सांडपाणी रस्त्यावर वाहत आहे
+G0055	mr	ROAD	bavdhan	P2	तक्रार: बावधन भागात, दवाखान्याजवळ, रस्ता पूर्ण उखडला आहे लवकर दुरुस्ती करा
+G0516	rom	WATER	NONE	P3	nalala pani yet nahi lavkar kara
+G0015	rom	ROAD	NONE	P3	namaskar, rasta kharab zala aahe, 7 divas pasun lavkar kara
+G1858	mix	VET	balajinagar	P1	नमस्कार, stray cattle road वर बसतात, hospital समोर, एक month झाला, Balaji Nagar मध्ये
+G0155	rom	ROAD	NONE	P3	namaskar, rasta khodun thevla aahe lavkar kara
+G0625	mr	DRAIN	NONE	P1	सांडपाणी घरात येत आहे कृपया कारवाई करावी
+G1364	mix	TREE	NONE	P1	branch तुटून लटकतेय, 2 weeks झाले urgent आहे
+G1178	mr	HEALTH	NONE	P1	तक्रार: डेंग्यूचे रुग्ण वाढले आहेत कृपया कारवाई करावी
+G1208	mr	TREE	undri	P1	झाड वाकले आहे, पडण्याची भीती आहे, उंड्री येथे, शाळेजवळ कृपया कारवाई करावी
+G1063	mix	HEALTH	hadapsar	P3	Hadapsar मध्ये, मच्छरांच्या larvae साचलेल्या पाण्यात आहेत please लवकर action घ्या
+G0304	mix	SWM	dhayari	P1	Please Dhayari ला, school जवळ, कचऱ्याचा खूप smell येतो please लवकर action घ्या
+G0505	mix	WATER	bhavani_peth	P2	Please पाणी low pressure ने येतं, Bhavani Peth area मध्ये, 3 weeks झाले
+G1465	mr	ENCROACH	pune_station	P3	कृपया लक्ष द्या, बेवारस वाहने रस्त्याकडेला पडून आहेत, पुणे स्टेशन परिसरात तक्रार करूनही दखल घेतली नाही
+G0859	mr	ELEC	koregaon_park	P4	कृपया लक्ष द्या, दिवा सतत बंद-चालू होतो, गेले तीन दिवस, कोरेगाव पार्क मध्ये
+G0794	rom	DRAIN	pisoli	P1	pisoli bhagat, shalejaval, drainage tumbli aahe
+G0442	mr	WATER	NONE	P2	पाइपलाइन फुटली आहे, पाणी वाया जाते
+G1997	mix	VET	NONE	P1	dog bite झाला please लवकर action घ्या
+G1317	rom	TREE	aundh	P1	please aundh yethe, zad rastyavar padle aahe karvai kara please
+G1321	mr	TREE	sinhagad_road	P1	तक्रार: सिंहगड रस्ता येथे, झाडाची फांदी तुटून लटकत आहे
+G1339	mr	TREE	yerawada	P1	कृपया लक्ष द्या, येरवड्या परिसरात, झाडाची फांदी तुटून लटकत आहे
+G0263	hi	SWM	balewadi	P2	बालेवाडी में, कूड़ेदान भरकर बह रहा है, सात दिनों से
+G0801	mix	ELEC	sadashiv_peth	P1	नमस्कार, Sadashiv Peth मध्ये, electric wire लटकतेय road वर please लवकर action घ्या
+G0710	mr	DRAIN	keshavnagar	P1	केशवनगर मध्ये, दोन आठवड्यांपासून, सांडपाणी घरात येत आहे
+G1343	mr	TREE	NONE	P1	साहेब, झाडाची फांदी तुटून लटकत आहे, तीन दिवसांपासून कृपया कारवाई करावी
+G1449	rom	ENCROACH	hingne	P3	saheb, hingne yethe, anadhikrut tapri aahe karvai kara please
+G0452	hi	WATER	narayan_peth	P2	नारायण पेठ में, पानी की सप्लाई बंद है, चार दिनों से जल्दी ठीक करवाइए
+G0027	mr	ROAD	kharadi	P3	खराडी मध्ये, डांबरीकरण खराब झाले आहे तक्रार करूनही दखल घेतली नाही
+G2000	rom	VET	balajinagar	P3	please balaji nagar bhagat, mokat janavare rastyavar karvai kara please
+G0196	mr	ROAD	koregaon_park	P2	कृपया लक्ष द्या, कोरेगाव पार्क येथे, रस्ता खोदून ठेवला आहे आणि बुजवला नाही, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G0451	rom	WATER	NONE	P2	please hospital samor, pani kami pressure ne yete lavkar kara
+G1864	mr	VET	kasba_peth	P1	साहेब, हॉस्पिटलसमोर, पिसाळलेला कुत्रा फिरत आहे, कसबा पेठ परिसरात लवकर दुरुस्ती करा
+G1567	mr	ENCROACH	model_colony	P3	नमस्कार, मॉडेल कॉलनी मध्ये, पदपथावर बांधकाम साहित्य ठेवले आहे, सात दिवसांपासून
+G1826	mr	VET	tadiwala_road	P4	तक्रार: ताडीवाला रोड येथे, कुत्र्यांची नसबंदी करावी
+G1872	rom	VET	nibm	P1	saheb, nibm yethe, kutra chavla
+G1577	mr	ENCROACH	yerawada	P3	साहेब, येरवडा येथे, फूटपाथवर फेरीवाल्यांनी अतिक्रमण केले आहे
+G0074	mr	ROAD	koregaon_park	P3	नमस्कार, कोरेगाव पार्क येथे, रस्त्यावर खूप खड्डे पडले आहेत, गेले चार दिवस लवकर दुरुस्ती करा
+G0191	hi	ROAD	market_yard	P3	मार्केट यार्ड इलाके में, सड़क पर बहुत गड्ढे हैं जल्दी ठीक करवाइए
+G0895	mr	ELEC	kalas	P4	कृपया लक्ष द्या, दिवे दिवसाही चालू असतात, कळस येथे लवकर दुरुस्ती करा
+G0817	mix	ELEC	bibwewadi	P3	नमस्कार, बिबवेवाडी मध्ये, street light काम करत नाही
+G1736	mix	BUILD	nibm	P2	नमस्कार, Nibm area मध्ये, excavation ला safety wall नाही urgent आहे
+G1450	rom	ENCROACH	NONE	P3	anadhikrut tapri aahe
+G1027	mr	HEALTH	NONE	P2	साहेब, मेलेले जनावर रस्त्यावर पडले आहे
+G1818	mix	VET	kashewadi	P2	Hello sir, Kashewadi मध्ये, stray dogs bike च्या मागे लागतात
+G1735	rom	BUILD	wadgaon_sheri	P3	saheb, vadgaon sheri yethe, bandhkam cha radaroda rastyavar
+G0004	mr	ROAD	karvenagar	P3	कृपया लक्ष द्या, कर्वे नगर मध्ये, फूटपाथ तुटला आहे, चार दिवसांपासून कृपया कारवाई करावी
+G1943	mr	VET	kharadi	P2	नमस्कार, खराडी भागात, जखमी जनावर रस्त्यावर पडले आहे कृपया कारवाई करावी
+G1881	mr	VET	market_yard	P2	मार्केट यार्ड भागात, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो तक्रार करूनही दखल घेतली नाही
+G1074	mix	HEALTH	NONE	P2	नमस्कार, school जवळ, rats चा त्रास आहे urgent आहे
+G0937	hi	ELEC	kondhwa	P1	कोंढव्या में, बिजली का तार टूटकर लटक रहा है जल्दी ठीक करवाइए
+G1374	mix	TREE	NONE	P3	नमस्कार, tree trimming करायचं आहे, hospital समोर urgent आहे
+G0321	rom	SWM	dhanori	P2	dhanori bhagat, hospital samor, ghantagadi yet nahi lavkar kara
+G0933	mr	ELEC	viman_nagar	P3	कृपया लक्ष द्या, विमान नगर भागात, रस्त्यावरचे दिवे लागत नाहीत कृपया कारवाई करावी
+G0636	mix	DRAIN	gultekdi	P1	Hello sir, Gultekdi ला, drainage block झालंय, 3 weeks झाले please लवकर action घ्या
+G1018	mr	HEALTH	kharadi	P1	खराडी मध्ये, मलेरियाचे रुग्ण आढळले आहेत लवकर दुरुस्ती करा
+G1662	mr	BUILD	vadgaon_bk	P2	कृपया लक्ष द्या, वडगाव बु मध्ये, खोदकामाला संरक्षक भिंत नाही लवकर दुरुस्ती करा
+G1932	hi	VET	pisoli	P2	सर, पिसोळी इलाके में, अस्पताल के सामने, आवारा मवेशी सड़क पर घूमते हैं जल्दी ठीक करवाइए
+G1179	mix	HEALTH	magarpatta	P2	नमस्कार, मगरपट्ट्या ला, dead dog पडलाय road वर please लवकर action घ्या
+G0577	mix	WATER	karvenagar	P2	नमस्कार, Karve Nagar area मध्ये, नळाला dirty water येतं
+G1492	mix	ENCROACH	kharadi	P3	Kharadi मध्ये, footpath वर hawkers चं encroachment आहे, 5 days पासून urgent आहे
+G1454	mr	ENCROACH	shivajinagar	P3	शिवाजी नगर मध्ये, बेवारस वाहने रस्त्याकडेला पडून आहेत, गेले एक दिवस कृपया कारवाई करावी
+G1022	mr	HEALTH	NONE	P1	उघड्यावर अन्न टाकले जाते, दुर्गंधी येते, महिनाभरापासून
+G1233	hi	TREE	vadgaon_bk	P4	वडगाव बु में, पेड़ की छंटाई करवाइए कृपया कार्रवाई करें
+G1100	mr	HEALTH	magarpatta	P3	साहेब, मगरपट्टा भागात, धूरफवारणी होत नाही
+G0819	hi	ELEC	NONE	P1	सर, बिजली का तार टूटकर लटक रहा है, एक हफ्तों से कृपया कार्रवाई करें
+G0399	hi	SWM	model_colony	P3	सर, कचरा नहीं उठाया जा रहा, मॉडेल कॉलनी इलाके में
+G0360	rom	SWM	kashewadi	P3	kashewadi bhagat, kachra gadi yet nahi lavkar kara
+G0311	mix	SWM	sahakarnagar	P1	नमस्कार, hospital समोर, सहकार नगर ला, wet dry segregation होत नाही, 3 weeks झाले
+G0706	mr	DRAIN	NONE	P1	तक्रार: दवाखान्याजवळ, गटारावर झाकण नाही, कोणी पडू शकते, तीन दिवसांपासून कृपया कारवाई करावी
+G1250	hi	TREE	koregaon_park	P1	नमस्ते, कोरेगाव पार्क इलाके में, पेड़ की डाल टूटकर लटक रही है कृपया कार्रवाई करें
+G1083	mix	HEALTH	NONE	P1	Please dengue cases वाढलेत
+G0234	mr	SWM	NONE	P2	तक्रार: कचऱ्यावर माश्या आणि डास झाले आहेत लवकर दुरुस्ती करा
+G1504	mr	ENCROACH	sadashiv_peth	P3	तक्रार: सदाशिव पेठ येथे, बेवारस वाहने रस्त्याकडेला पडून आहेत
+G0552	mr	WATER	kashewadi	P4	नमस्कार, काशेवाडी येथे, नवीन नळ जोडणी हवी आहे तक्रार करूनही दखल घेतली नाही
+G0126	rom	ROAD	sinhagad_road	P3	namaskar, rastyavar khup khadde aahet, 4 divas pasun, sinhagad road bhagat karvai kara please
+G1507	mix	ENCROACH	fatimanagar	P1	नमस्कार, hoarding illegal आहे आणि पडू शकतं, Fatimanagar ला
+G1299	rom	TREE	NONE	P3	anadhikrut vruksh tod zali
+G0655	mix	DRAIN	ramtekdi	P2	Hello sir, रामटेकडी ला, sewage road वर overflow होतंय, 7 days पासून
+G0295	mr	SWM	NONE	P1	नमस्कार, महिनाभरापासून, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे
+G0657	hi	DRAIN	NONE	P1	अस्पताल के सामने, मैनहोल का ढक्कन खुला है कृपया कार्रवाई करें
+G1318	mr	TREE	balajinagar	P1	कृपया लक्ष द्या, बालाजी नगर मध्ये, झाडाची फांदी तुटून लटकत आहे, दोन आठवड्यांपासून कृपया कारवाई करावी
+G0429	rom	WATER	kothrud	P2	namaskar, kothrud yethe, pipeline futli aahe
+G1216	mix	TREE	NONE	P1	Hello sir, school जवळ, झाड पडून car चं नुकसान झालं, 1 weeks झाले
+G0965	mr	ELEC	vishrantwadi	P1	नमस्कार, विश्रांतवाडी येथे, डीपी बॉक्स उघडा आहे कृपया कारवाई करावी
+G1192	rom	HEALTH	yewalewadi	P2	saheb, yewalewadi yethe, melela prani padla aahe lavkar kara
+G0769	mr	DRAIN	fatimanagar	P1	तक्रार: फातिमा नगर भागात, चेंबरचे झाकण उघडे आहे
+G0851	mr	ELEC	NONE	P4	साहेब, दिवे दिवसाही चालू असतात तक्रार करूनही दखल घेतली नाही
+G1181	hi	HEALTH	NONE	P2	नमस्ते, स्कूल के पास, फॉगिंग नहीं होती
+G0951	hi	ELEC	model_colony	P1	मॉडेल कॉलनी में, बिजली का खंभा झुक गया है
+G0892	mr	ELEC	sangamwadi	P3	संगमवाडी मध्ये, रस्त्यावरचे दिवे लागत नाहीत लवकर दुरुस्ती करा
+G1360	mr	TREE	NONE	P4	तक्रार: झाडांची छाटणी करावी
+G0146	mix	ROAD	guruwar_peth	P3	गुरुवार पेठ मध्ये, footpath चे paver blocks निघालेत please लवकर action घ्या
+G0468	mr	WATER	kasba_peth	P2	कसबा येथे, पाणीपुरवठा बंद आहे, एक आठवड्यांपासून
+G1041	mr	HEALTH	sahakarnagar	P3	नमस्कार, सहकार नगर मध्ये, धूरफवारणी होत नाही
+G0844	mix	ELEC	pune_station	P1	Please पुणे स्टेशन ला, electric wire लटकतेय road वर, 3 weeks झाले please लवकर action घ्या
+G0556	rom	WATER	pune_station	P3	saheb, pune station yethe, nalala pani yet nahi
+G1670	rom	BUILD	aundh	P3	namaskar, aundh yethe, bandhkam cha radaroda rastyavar lavkar kara
+G0908	rom	ELEC	kharadi	P3	saheb, kharadi yethe, pathdive band aahet lavkar kara
+G1471	mr	ENCROACH	kothrud	P3	नमस्कार, कोथरुड मध्ये, पदपथावर बांधकाम साहित्य ठेवले आहे
+G1521	mix	ENCROACH	vadgaon_bk	P2	वडगाव बु area मध्ये, hospital समोर, footpath वर hawkers चं encroachment आहे
+G0652	mix	DRAIN	bavdhan	P2	Bavdhan मध्ये, drainage block झालंय urgent आहे
+G1780	mr	BUILD	market_yard	P1	कृपया लक्ष द्या, मार्केट यार्ड परिसरात, भिंत कोसळून लोक जखमी झाले
+G1170	rom	HEALTH	NONE	P3	please undir khup zale aahet
+G1304	mr	TREE	wadgaon_sheri	P4	वडगाव शेरी येथे, उद्यानातील झाडांची निगा राखली जात नाही, गेले सहा दिवस
+G0580	hi	WATER	deccan	P2	कृपया ध्यान दें, डेक्कन में, पानी की सप्लाई बंद है, दो दिनों से
+G1463	mix	ENCROACH	kasba_peth	P3	Please illegal stalls लावलेत road वर, Kasba Peth area मध्ये urgent आहे
+G1382	rom	TREE	pune_station	P4	pune station yethe, zadachi chhatni kara, 10 divas pasun
+G1261	rom	TREE	baner	P4	zadachi chhatni kara, baner yethe
+G1372	hi	TREE	shivajinagar	P3	शिवाजीनगर में, अवैध पेड़ कटाई हुई है कृपया कार्रवाई करें
+G0470	mr	WATER	NONE	P3	कृपया लक्ष द्या, पाण्याची वेळ ठरलेली नाही, शाळेजवळ कृपया कारवाई करावी
+G0633	mix	DRAIN	balewadi	P1	Hello sir, Balewadi area मध्ये, sewage घरात backflow होतंय please लवकर action घ्या
+G0502	mr	WATER	hingne	P4	हिंगणे मध्ये, पाण्याचे बिल जास्त आले आहे लवकर दुरुस्ती करा
+G1247	mr	TREE	mundhwa	P3	नमस्कार, मुंढव्या परिसरात, शाळेजवळ, झाडांची छाटणी करावी, एक आठवड्यांपासून कृपया कारवाई करावी
+G0195	mr	ROAD	ramtekdi	P1	रामटेकडी मध्ये, हॉस्पिटलसमोर, खड्ड्यात पडून एक दुचाकीस्वार जखमी झाला
+G1188	mix	HEALTH	sahakarnagar	P2	नमस्कार, Sahakar Nagar मध्ये, dead dog पडलाय road वर
+G0621	mr	DRAIN	sahakarnagar	P3	साहेब, सहकार नगर मध्ये, पावसाचे पाणी रस्त्यावर साचते लवकर दुरुस्ती करा
+G0091	mix	ROAD	yerawada	P1	Yerawada मध्ये, pothole मुळे bike slip होऊन accident झाला please लवकर action घ्या
+G0303	hi	SWM	NONE	P3	कृपया ध्यान दें, कूड़े का ढेर लगा है जल्दी ठीक करवाइए
+G0592	mr	WATER	kasba_peth	P3	कसबा पेठ येथे, पाण्याची टाकी साफ केली नाही, गेले दहा दिवस तक्रार करूनही दखल घेतली नाही
+G1297	mix	TREE	NONE	P1	नमस्कार, hospital समोर, branch तुटून लटकतेय
+G1062	mr	HEALTH	NONE	P2	गेले सात दिवस, उघड्यावर अन्न टाकले जाते, दुर्गंधी येते तक्रार करूनही दखल घेतली नाही
+G0586	hi	WATER	shaniwar_peth	P2	कृपया ध्यान दें, शनिवार पेठ में, पाइपलाइन फट गई है, पानी बर्बाद हो रहा है
+G0435	mr	WATER	NONE	P2	दोन दिवसांपासून, नळाला गढूळ पाणी येते
+G1902	mix	VET	NONE	P2	stray dogs चा खूप त्रास आहे, एक month झाला urgent आहे
+G1699	mr	BUILD	bibwewadi	P1	कृपया लक्ष द्या, बिबवेवाडी परिसरात, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे कृपया कारवाई करावी
+G1057	hi	HEALTH	shaniwar_peth	P2	शनिवार पेठ इलाके में, मरा हुआ जानवर पड़ा है, बदबू आ रही है कृपया कार्रवाई करें
+G0388	rom	SWM	kashewadi	P2	kashewadi bhagat, kachra jaltat, dhur hoto
+G0221	rom	SWM	NONE	P3	kachryacha dhig aahe lavkar kara
+G1228	rom	TREE	NONE	P2	saheb, padlelya fandya uchlalya nahit, mahina zala
+G1342	mix	TREE	nibm	P1	Please Nibm मध्ये, branch तुटून लटकतेय urgent आहे
+G0248	hi	SWM	model_colony	P2	नमस्ते, मॉडेल कॉलनी इलाके में, कूड़े से बदबू आ रही है
+G0180	mr	ROAD	bavdhan	P2	बावधन परिसरात, रस्ता खचला आहे, वाहनं अडकतात, तीन दिवसांपासून
+G0617	mr	DRAIN	fc_road	P2	तक्रार: एफसी रोड भागात, ड्रेनेज तुंबले आहे कृपया कारवाई करावी
+G0590	mix	WATER	kondhwa	P1	नमस्कार, कोंढवा area मध्ये, contaminated पाण्यामुळे सगळे sick पडलेत urgent आहे
+G0788	mix	DRAIN	kharadi	P2	Please drainage block झालंय, खराडी area मध्ये, 6 days पासून
+G1756	mr	BUILD	pune_station	P1	कृपया लक्ष द्या, पुणे स्टेशन भागात, भिंत कोसळून लोक जखमी झाले तक्रार करूनही दखल घेतली नाही
+G1493	mix	ENCROACH	NONE	P4	Please illegal banners लावलेत urgent आहे
+G1067	mr	HEALTH	chandannagar	P1	साहेब, चंदन नगर भागात, मलेरियाचे रुग्ण आढळले आहेत कृपया कारवाई करावी
+G0368	mr	SWM	yewalewadi	P2	साहेब, येवलेवाडी मध्ये, कचऱ्याचा घाण वास येतो
+G0555	mr	WATER	vadgaon_bk	P2	नमस्कार, वडगाव बुद्रुक येथे, नळाला गढूळ पाणी येते तक्रार करूनही दखल घेतली नाही
+G1937	mix	VET	baner	P1	Please बानेर ला, hospital समोर, stray dogs bike च्या मागे लागतात please लवकर action घ्या
+G1056	rom	HEALTH	yerawada	P3	yerwada yethe, dasancha tras aahe lavkar kara
+G1314	mr	TREE	market_yard	P4	तक्रार: मार्केट यार्ड भागात, झाडामुळे पथदिवा झाकला गेला आहे तक्रार करूनही दखल घेतली नाही
+G0686	mix	DRAIN	bavdhan	P1	Hello sir, Bavdhan area मध्ये, 2 days पासून, manhole open आहे, cover नाही
+G0009	mr	ROAD	yerawada	P2	साहेब, येरवड्या मध्ये, गतिरोधकावर रंग नाही, रात्री दिसत नाही
+G1380	mix	TREE	dhanori	P4	Please Dhanori मध्ये, tree trimming करायचं आहे please लवकर action घ्या
+G0837	mr	ELEC	bavdhan	P1	नमस्कार, बावधन भागात, विजेचा खांब वाकला आहे, पडू शकतो तक्रार करूनही दखल घेतली नाही
+G0324	mr	SWM	hadapsar	P3	हडपसर परिसरात, घंटागाडी येत नाही कृपया कारवाई करावी
+G1279	rom	TREE	NONE	P1	please hospital samor, zadachi fandi latakli aahe karvai kara please
+G0383	rom	SWM	lohegaon	P3	kachryacha dhig aahe, lohgaon madhe
+G1044	mr	HEALTH	nana_peth	P2	नाना पेठ येथे, डासांचा खूप त्रास आहे, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G1165	mr	HEALTH	yewalewadi	P1	साहेब, येवलेवाडी परिसरात, दवाखान्याजवळ, डेंग्यूचे रुग्ण वाढले आहेत, दहा दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0846	mr	ELEC	baner	P1	बानेर भागात, विजेची तार तुटून खाली पडली आहे, गेले चार दिवस तक्रार करूनही दखल घेतली नाही
+G0753	mr	DRAIN	model_colony	P2	साहेब, मॉडेल कॉलनी परिसरात, सांडपाणी रस्त्यावर वाहत आहे लवकर दुरुस्ती करा
+G1879	rom	VET	vishrantwadi	P1	saheb, vishrantwadi madhe, kutra chavla
+G1579	mix	ENCROACH	paud_road	P3	Paud Road मध्ये, footpath वर hawkers चं encroachment आहे
+G1385	hi	TREE	baner	P1	बानेर इलाके में, पेड़ सड़क पर गिर गया है जल्दी ठीक करवाइए
+G0390	mr	SWM	vadgaon_bk	P2	वडगाव बुद्रुक परिसरात, मोकळ्या जागेत लोक कचरा टाकतात, दहा दिवसांपासून
+G0322	hi	SWM	aundh	P1	नमस्ते, औंध इलाके में, कूड़ेदान भरकर बह रहा है, दो हफ्तों से कृपया कार्रवाई करें
+G1523	rom	ENCROACH	hingne	P3	hingne yethe, feriwalyanni rasta adavla aahe
+G1080	hi	HEALTH	yerawada	P2	सर, मरा हुआ जानवर पड़ा है, बदबू आ रही है, येरवड्या इलाके में कृपया कार्रवाई करें
+G1358	mr	TREE	magarpatta	P1	कृपया लक्ष द्या, मगरपट्ट्या भागात, झाडाची फांदी तुटून लटकत आहे
+G0414	mr	WATER	dhayari	P3	साहेब, धायरी भागात, पाण्याची वेळ ठरलेली नाही, दोन आठवड्यांपासून
+G1051	mr	HEALTH	kharadi	P2	कृपया लक्ष द्या, खराडी परिसरात, उघड्यावर शौच केले जाते लवकर दुरुस्ती करा
+G1702	hi	BUILD	market_yard	P3	मार्केट यार्ड में, बिना अनुमति के निर्माण हो रहा है कृपया कार्रवाई करें
+G0871	mr	ELEC	fc_road	P3	एफसी रोड येथे, हॉस्पिटलसमोर, दिवा सतत बंद-चालू होतो
+G0209	mix	SWM	kalas	P1	Please Kalas area मध्ये, कचऱ्याचा खूप smell येतो, एक month झाला urgent आहे
+G1416	rom	ENCROACH	bibwewadi	P4	bibwewadi bhagat, anadhikrut flex lavle aahet
+G1508	rom	ENCROACH	viman_nagar	P2	saheb, viman nagar yethe, bewaras gadya padun aahet, mahina zala lavkar kara
+G0663	rom	DRAIN	magarpatta	P1	please sandpani gharat yet aahe, magarpatta madhe lavkar kara
+G0296	mr	SWM	NONE	P1	साहेब, हॉस्पिटलसमोर, घंटागाडी येत नाही, एक आठवड्यांपासून कृपया कारवाई करावी
+G1959	mr	VET	nibm	P2	तक्रार: एनआयबीएम भागात, जखमी जनावर रस्त्यावर पडले आहे कृपया कारवाई करावी
+G1453	hi	ENCROACH	aundh	P3	औंध इलाके में, सड़क पर अवैध ठेले लगे हैं
+G1908	mr	VET	nibm	P3	साहेब, एनआयबीएम भागात, मोकाट जनावरे रस्त्यावर फिरतात लवकर दुरुस्ती करा
+G1302	mr	TREE	gultekdi	P4	गुलटेकडी परिसरात, झाडामुळे पथदिवा झाकला गेला आहे तक्रार करूनही दखल घेतली नाही
+G1657	mix	BUILD	NONE	P2	hospital समोर, construction debris road वर टाकलाय
+G0016	rom	ROAD	ramtekdi	P3	saheb, ramtekdi yethe, rasta kharab zala aahe, 6 divas pasun
+G0252	mr	SWM	magarpatta	P3	मगरपट्ट्या मध्ये, कचरा उचलला जात नाही लवकर दुरुस्ती करा
+G1379	mr	TREE	aundh	P2	कृपया लक्ष द्या, औंध येथे, शाळेजवळ, बेकायदेशीर वृक्षतोड झाली आहे
+G0729	mr	DRAIN	kalas	P3	कृपया लक्ष द्या, कळस मध्ये, नाल्याची सफाई झाली नाही तक्रार करूनही दखल घेतली नाही
+G0534	hi	WATER	NONE	P2	गंदा पानी आ रहा है जल्दी ठीक करवाइए
+G1262	hi	TREE	mundhwa	P1	सर, मुंढवा में, पेड़ सड़क पर गिर गया है जल्दी ठीक करवाइए
+G0246	hi	SWM	dhankawadi	P1	सर, धनकवडी इलाके में, कूड़ेदान भरकर बह रहा है, दो हफ्तों से
+G1615	mix	BUILD	salunke_vihar	P1	Salunke Vihar मध्ये, dangerous building आहे, wall पडेल
+G1573	mr	ENCROACH	chandannagar	P3	चंदन नगर मध्ये, हातगाड्यांमुळे वाहतूक कोंडी होते लवकर दुरुस्ती करा
+G1231	hi	TREE	viman_nagar	P1	नमस्ते, विमाननगर में, पेड़ सड़क पर गिर गया है
+G0646	rom	DRAIN	deccan	P2	deccan yethe, sandpani rastyavar vahat aahe lavkar kara
+G0284	mr	SWM	NONE	P3	हॉस्पिटलसमोर, ओला आणि सुका कचरा वेगळा घेत नाहीत कृपया कारवाई करावी
+G0150	rom	ROAD	guruwar_peth	P3	guruwar peth bhagat, rastyavar khup khadde aahet
+G1438	mix	ENCROACH	bhavani_peth	P3	Bhavani Peth मध्ये, illegal stalls लावलेत road वर urgent आहे
+G0928	mr	ELEC	undri	P3	कृपया लक्ष द्या, गल्लीत अंधार असतो, दिवा बंद, उंड्री मध्ये
+G1804	rom	VET	nana_peth	P1	namaskar, nana peth yethe, kutra chavla, 1 aathvade zale
+G0914	mr	ELEC	NONE	P1	विजेची तार तुटून खाली पडली आहे तक्रार करूनही दखल घेतली नाही
+G1860	mr	VET	fc_road	P4	नमस्कार, एफसी रोड भागात, कुत्री रात्रभर भुंकतात
+G1064	mr	HEALTH	NONE	P1	डेंग्यूचे रुग्ण वाढले आहेत, महिनाभरापासून
+G1487	rom	ENCROACH	sangamwadi	P3	please sangamwadi yethe, feriwalyanni rasta adavla aahe karvai kara please
+G1519	hi	ENCROACH	NONE	P3	सर, सड़क पर अवैध ठेले लगे हैं कृपया कार्रवाई करें
+G1604	mr	BUILD	hingne	P1	नमस्कार, महिनाभरापासून, हॉस्पिटलसमोर, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे, हिंगणे भागात
+G0331	mr	SWM	sinhagad_road	P1	सिंहगड रोड भागात, कचऱ्याचा घाण वास येतो, महिनाभरापासून
+G1915	mr	VET	wanowrie	P4	नमस्कार, कुत्री रात्रभर भुंकतात, वानवडी भागात तक्रार करूनही दखल घेतली नाही
+G0397	hi	SWM	dhankawadi	P1	दो हफ्तों से, धनकवडी इलाके में, कचरा नहीं उठाया जा रहा कृपया कार्रवाई करें
+G0993	mix	ELEC	market_yard	P3	Market Yard area मध्ये, high mast light बंद आहे urgent आहे
+G0237	mr	SWM	kashewadi	P2	नमस्कार, काशेवाडी मध्ये, कचरा जाळला जातो, धूर होतो
+G1720	rom	BUILD	NONE	P1	saheb, bhint koslnar aahe
+G1716	mix	BUILD	sadashiv_peth	P2	Sadashiv Peth मध्ये, excavation ला safety wall नाही
+G1934	hi	VET	guruwar_peth	P1	अस्पताल के सामने, गुरुवार पेठ में, एक महीने से, कुत्ते ने काट लिया
+G0560	rom	WATER	NONE	P2	pipeline futli aahe karvai kara please
+G0460	hi	WATER	NONE	P1	कृपया ध्यान दें, गंदे पानी से लोग बीमार हो गए
+G1917	rom	VET	dhanori	P1	please kutra chavla, shalejaval, dhanori bhagat, 6 divas pasun
+G1862	rom	VET	kalas	P1	saheb, shalejaval, pisalela kutra firtoy, kalas madhe
+G0821	mr	ELEC	narayan_peth	P3	तक्रार: नारायण पेठ येथे, हॉस्पिटलसमोर, दिवे दिवसाही चालू असतात लवकर दुरुस्ती करा
+G1484	mix	ENCROACH	yerawada	P1	येरवडा मध्ये, hoarding illegal आहे आणि पडू शकतं please लवकर action घ्या
+G0600	mr	WATER	balajinagar	P2	तक्रार: बालाजीनगर भागात, पाइपलाइन फुटली आहे, पाणी वाया जाते
+G0115	mr	ROAD	NONE	P2	कृपया लक्ष द्या, डांबरीकरण खराब झाले आहे, गेले चार दिवस, दवाखान्याजवळ तक्रार करूनही दखल घेतली नाही
+G0111	rom	ROAD	bhavani_peth	P1	saheb, bhavani peth bhagat, shalejaval, khaddya mule accident hou shakto, 3 aathvade zale lavkar kara
+G0987	mr	ELEC	shaniwar_peth	P1	तक्रार: खांबाला करंट लागत आहे, शनिवार पेठ परिसरात
+G1194	mr	HEALTH	ramtekdi	P1	रामटेकडी भागात, हॉस्पिटलसमोर, मलेरियाचे रुग्ण आढळले आहेत, तीन दिवसांपासून
+G1397	mix	TREE	lohegaon	P1	Please लोहगाव ला, tree fall झालंय road वर
+G1913	mr	VET	NONE	P4	कुत्र्यांची नसबंदी करावी
+G0576	mix	WATER	NONE	P3	valve मधून leakage होतंय
+G0062	mr	ROAD	chandannagar	P1	साहेब, चंदन नगर परिसरात, खड्ड्यात पडून एक दुचाकीस्वार जखमी झाला
+G0278	rom	SWM	NONE	P3	saheb, kachrakundi bharun vahat aahe lavkar kara
+G0589	mr	WATER	nibm	P4	नमस्कार, एनआयबीएम भागात, पाण्याची वेळ ठरलेली नाही कृपया कारवाई करावी
+G1875	mr	VET	hingne	P3	कृपया लक्ष द्या, हिंगणे येथे, कुत्री रात्रभर भुंकतात, तीन आठवड्यांपासून
+G1115	mr	HEALTH	NONE	P1	तक्रार: डेंग्यूचे रुग्ण वाढले आहेत लवकर दुरुस्ती करा
+G1234	mr	TREE	fatimanagar	P2	साहेब, फातिमानगर भागात, दवाखान्याजवळ, पडलेल्या फांद्या उचलल्या नाहीत कृपया कारवाई करावी
+G1684	mr	BUILD	NONE	P3	कृपया लक्ष द्या, परवानगी न घेता बांधकाम सुरू आहे तक्रार करूनही दखल घेतली नाही
+G1193	mr	HEALTH	NONE	P2	तक्रार: हॉस्पिटलसमोर, हॉटेलमध्ये अस्वच्छता आहे कृपया कारवाई करावी
+G0658	mix	DRAIN	NONE	P2	drainage line leak होतेय, 1 weeks झाले urgent आहे
+G1987	rom	VET	nana_peth	P3	nana peth bhagat, bhatkya kutryancha tras aahe
+G0766	mr	DRAIN	yewalewadi	P1	नमस्कार, गटारावर झाकण नाही, कोणी पडू शकते, शाळेजवळ, येवलेवाडी मध्ये कृपया कारवाई करावी
+G1312	mr	TREE	anandnagar	P1	साहेब, आनंदनगर मध्ये, हॉस्पिटलसमोर, झाड रस्त्यावर पडले आहे
+G0839	rom	ELEC	karvenagar	P3	please galli madhe andhar aahe, light band, karve nagar bhagat
+G0734	mr	DRAIN	narayan_peth	P1	नारायण पेठ येथे, सांडपाणी घरात येत आहे तक्रार करूनही दखल घेतली नाही
+G0093	mix	ROAD	balewadi	P1	नमस्कार, बालेवाडी ला, pothole मुळे bike slip होऊन accident झाला
+G0841	mix	ELEC	koregaon_park	P1	नमस्कार, Koregaon Park area मध्ये, light pole ला shock लागतो
+G0465	rom	WATER	yerawada	P2	yerawada bhagat, pani vaya jatay leakage mule
+G1110	hi	HEALTH	NONE	P1	सर, अस्पताल के सामने, डेंगू के मरीज बढ़ गए हैं जल्दी ठीक करवाइए
+G0862	rom	ELEC	koregaon_park	P2	koregaon park yethe, galli madhe andhar aahe, light band, mahina zala
+G0023	rom	ROAD	deccan	P2	deccan madhe, footpath tutla aahe, mahina zala karvai kara please
+G0119	mix	ROAD	fatimanagar	P2	एक month झाला, road पूर्ण खराब झालाय, Fatimanagar मध्ये urgent आहे
+G0915	mr	ELEC	sahakarnagar	P1	सहकार नगर भागात, दवाखान्याजवळ, पथदिवे बंद आहेत, दोन आठवड्यांपासून कृपया कारवाई करावी
+G0367	hi	SWM	NONE	P2	नमस्ते, कूड़े का ढेर लगा है, सात दिनों से
+G1356	rom	TREE	gultekdi	P2	gultekdi madhe, hospital samor, anadhikrut vruksh tod zali, 7 divas pasun
+G1489	mr	ENCROACH	kasba_peth	P3	साहेब, कसबा पेठ भागात, दुकानदारांनी रस्त्यावर सामान ठेवले आहे
+G1661	rom	BUILD	karvenagar	P1	karve nagar bhagat, shalejaval, dhokadayak imarat aahe, 3 aathvade zale
+G0900	hi	ELEC	kothrud	P1	कोथरूड में, खंभे में करंट आ रहा है कृपया कार्रवाई करें
+G0317	mr	SWM	gultekdi	P3	गुलटेकडी परिसरात, कचराकुंडी भरून वाहत आहे
+G0949	mr	ELEC	vadgaon_bk	P4	साहेब, दिवे दिवसाही चालू असतात, वडगाव बुद्रुक परिसरात तक्रार करूनही दखल घेतली नाही
+G0959	mix	ELEC	narayan_peth	P1	नारायण पेठ area मध्ये, pole वाकलाय, कधीही पडेल please लवकर action घ्या
+G1775	mix	BUILD	sahakarnagar	P1	सहकारनगर मध्ये, 3 weeks झाले, excavation ला safety wall नाही
+G0966	mr	ELEC	sahakarnagar	P3	नमस्कार, सहकारनगर मध्ये, गल्लीत अंधार असतो, दिवा बंद
+G1219	mr	TREE	deccan	P2	डेक्कन भागात, झाड पडून गाडीचे नुकसान झाले, गेले दोन दिवस
+G0274	mr	SWM	fatimanagar	P2	तक्रार: फातिमानगर भागात, कचऱ्याचा घाण वास येतो लवकर दुरुस्ती करा
+G1174	mr	HEALTH	kondhwa	P3	तक्रार: कोंढवा परिसरात, धूरफवारणी होत नाही कृपया कारवाई करावी
+G0956	mix	ELEC	NONE	P1	electric wire लटकतेय road वर
+G1925	hi	VET	hadapsar	P3	कृपया ध्यान दें, हडपसर में, कुत्तों की नसबंदी करवाइए, एक महीने से कृपया कार्रवाई करें
+G1198	mix	HEALTH	magarpatta	P3	मच्छरांच्या larvae साचलेल्या पाण्यात आहेत, मगरपट्ट्या ला urgent आहे
+G1180	mr	HEALTH	fc_road	P2	एफसी रोड येथे, धूरफवारणी होत नाही, तीन आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G1871	mix	VET	aundh	P4	dogs ची sterilization करा, Aundh ला urgent आहे
+G0493	mr	WATER	nibm	P2	एनआयबीएम भागात, पाणीपुरवठा बंद आहे, हॉस्पिटलसमोर
+G1982	mr	VET	dhanori	P2	धानोरी येथे, जखमी जनावर रस्त्यावर पडले आहे
+G0488	rom	WATER	paud_road	P3	paud road bhagat, pani purvatha band aahe lavkar kara
+G1388	rom	TREE	keshavnagar	P1	please keshav nagar bhagat, zadachi fandi latakli aahe
+G0034	mr	ROAD	nana_peth	P3	साहेब, नाना पेठ मध्ये, रस्त्यावरची खडी सगळीकडे पसरली आहे, गेले पाच दिवस लवकर दुरुस्ती करा
+G0241	mr	SWM	nibm	P2	तक्रार: एनआयबीएम भागात, कचऱ्यावर माश्या आणि डास झाले आहेत कृपया कारवाई करावी
+G1710	mix	BUILD	NONE	P3	Please illegal construction चालू आहे
+G0262	rom	SWM	NONE	P3	namaskar, kachra gadi yet nahi
+G0479	mix	WATER	anandnagar	P1	Hello sir, Anandnagar area मध्ये, contaminated पाण्यामुळे सगळे sick पडलेत, एक month झाला please लवकर action घ्या
+G1004	mr	HEALTH	kalas	P3	कृपया लक्ष द्या, कळस परिसरात, हॉटेलमध्ये अस्वच्छता आहे कृपया कारवाई करावी
+G0512	rom	WATER	hadapsar	P1	namaskar, hadapsar bhagat, hospital samor, pipeline futli aahe, 4 divas pasun
+G1459	mr	ENCROACH	kasba_peth	P4	नमस्कार, कसबा पेठ मध्ये, अनधिकृत फलक लावले आहेत, गेले सात दिवस
+G1389	mix	TREE	nana_peth	P1	नमस्कार, Nana Peth area मध्ये, branch तुटून लटकतेय
+G1649	hi	BUILD	kothrud	P3	कृपया ध्यान दें, कोथरूड इलाके में, अवैध मंजिल बनाई जा रही है
+G0329	hi	SWM	bavdhan	P2	सर, कूड़े से बदबू आ रही है, बावधन इलाके में
+G1691	mr	BUILD	market_yard	P1	कृपया लक्ष द्या, मार्केट यार्ड भागात, भिंत कोसळून लोक जखमी झाले, महिनाभरापासून लवकर दुरुस्ती करा
+G0918	mr	ELEC	sahakarnagar	P2	सहकार नगर मध्ये, पथदिवे बंद आहेत, महिनाभरापासून लवकर दुरुस्ती करा
+G1065	mix	HEALTH	guruwar_peth	P3	Hello sir, Guruwar Peth area मध्ये, mosquito problem खूप वाढलाय urgent आहे
+G1778	rom	BUILD	wadgaon_sheri	P3	wadgaon sheri yethe, parvangi nastana majla bandhtat lavkar kara
+G1072	rom	HEALTH	model_colony	P3	namaskar, model colony bhagat, undir khup zale aahet lavkar kara
+G0181	mix	ROAD	koregaon_park	P2	Koregaon Park area मध्ये, speed breaker ला marking नाही
+G1870	hi	VET	dhankawadi	P3	सर, धनकवडी में, आवारा कुत्तों का आतंक है कृपया कार्रवाई करें
+G1424	hi	ENCROACH	NONE	P2	अस्पताल के सामने, लावारिस गाड़ियां पड़ी हैं, तीन दिनों से कृपया कार्रवाई करें
+G0816	mix	ELEC	lohegaon	P3	लोहगाव मध्ये, street light काम करत नाही urgent आहे
+G1830	mr	VET	sahakarnagar	P3	सहकारनगर भागात, डुकरांचा उपद्रव आहे तक्रार करूनही दखल घेतली नाही
+G1924	mr	VET	NONE	P3	भटक्या कुत्र्यांचा त्रास आहे
+G1939	mix	VET	fatimanagar	P3	फातिमानगर ला, stray cattle road वर बसतात
+G0707	rom	DRAIN	warje	P3	namaskar, warje bhagat, nalyachi safai zali nahi karvai kara please
+G1712	mr	BUILD	sahakarnagar	P1	तक्रार: सहकारनगर येथे, भिंत कोसळून लोक जखमी झाले, दहा दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0939	rom	ELEC	pisoli	P3	namaskar, pisoli madhe, galli madhe andhar aahe, light band karvai kara please
+G1755	rom	BUILD	pisoli	P1	pisoli madhe, bhint koslnar aahe lavkar kara
+G1674	mr	BUILD	baner	P2	कृपया लक्ष द्या, नदीपात्रात बांधकाम केले जात आहे, बानेर भागात, महिनाभरापासून
+G1557	hi	ENCROACH	kharadi	P3	कृपया ध्यान दें, खराडी इलाके में, स्कूल के पास, अवैध बैनर लगे हैं
+G0190	mr	ROAD	NONE	P2	खड्ड्यामुळे कधीही अपघात होऊ शकतो तक्रार करूनही दखल घेतली नाही
+G0749	mr	DRAIN	NONE	P1	कृपया लक्ष द्या, मॅनहोलवर झाकण नाही कृपया कारवाई करावी
+G0203	mr	SWM	kothrud	P2	कृपया लक्ष द्या, कोथरुड परिसरात, ओला आणि सुका कचरा वेगळा घेत नाहीत, पाच दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0056	mr	ROAD	NONE	P2	साहेब, रस्ता खचला आहे, वाहनं अडकतात, दहा दिवसांपासून लवकर दुरुस्ती करा
+G0052	mix	ROAD	kharadi	P3	Kharadi मध्ये, footpath चे paver blocks निघालेत
+G1146	mr	HEALTH	nibm	P3	नमस्कार, एनआयबीएम येथे, डासांचा खूप त्रास आहे, एक आठवड्यांपासून
+G0730	mr	DRAIN	kondhwa	P1	साहेब, कोंढव्या भागात, गटारावर झाकण नाही, कोणी पडू शकते
+G0064	rom	ROAD	warje	P1	warje bhagat, shalejaval, khaddyat padun ek manus jakhmi zala
+G1517	mr	ENCROACH	nana_peth	P4	नाना पेठ मध्ये, अनधिकृत फलक लावले आहेत लवकर दुरुस्ती करा
+G1326	mix	TREE	karvenagar	P3	tree trimming करायचं आहे, school जवळ, कर्वेनगर ला please लवकर action घ्या
+G1113	mix	HEALTH	deccan	P3	Deccan मध्ये, मच्छरांच्या larvae साचलेल्या पाण्यात आहेत
+G0413	rom	WATER	vadgaon_bk	P3	saheb, wadgaon budruk bhagat, nalala pani yet nahi
+G0472	hi	WATER	sahakarnagar	P3	सहकार नगर में, पानी बहुत कम प्रेशर से आता है जल्दी ठीक करवाइए
+G0925	mr	ELEC	market_yard	P1	तक्रार: मार्केट यार्ड मध्ये, डीपी बॉक्स उघडा आहे, दोन दिवसांपासून कृपया कारवाई करावी
+G0474	mr	WATER	gultekdi	P2	तक्रार: गुलटेकडी परिसरात, दवाखान्याजवळ, पाणीपुरवठा बंद आहे कृपया कारवाई करावी
+G0189	mr	ROAD	yewalewadi	P2	साहेब, येवलेवाडी भागात, गतिरोधकावर रंग नाही, रात्री दिसत नाही
+G0214	mr	SWM	hadapsar	P2	नमस्कार, हडपसर परिसरात, कचऱ्यावर माश्या आणि डास झाले आहेत कृपया कारवाई करावी
+G1330	mr	TREE	NONE	P1	तक्रार: झाडाची फांदी तुटून लटकत आहे कृपया कारवाई करावी
+G1481	rom	ENCROACH	hadapsar	P3	please hadapsar bhagat, bewaras gadya padun aahet karvai kara please
+G0441	rom	WATER	balajinagar	P1	please balajinagar madhe, pipeline futli aahe, mahina zala
+G0921	mr	ELEC	NONE	P4	कृपया लक्ष द्या, दिवा सतत बंद-चालू होतो लवकर दुरुस्ती करा
+G0702	mr	DRAIN	baner	P1	कृपया लक्ष द्या, बाणेर परिसरात, चेंबरचे झाकण उघडे आहे
+G0355	rom	SWM	kashewadi	P3	please ghantagadi yet nahi, kashewadi yethe karvai kara please
+G0373	hi	SWM	sinhagad_road	P2	सिंहगड रोड इलाके में, कचरा जलाया जाता है, धुआं होता है
+G1796	mix	BUILD	sangamwadi	P3	Please illegal construction चालू आहे, Sangamwadi area मध्ये please लवकर action घ्या
+G0085	hi	ROAD	market_yard	P3	सर, मार्केट यार्ड में, स्पीड ब्रेकर बहुत ऊंचा है, एक हफ्तों से जल्दी ठीक करवाइए
+G0446	hi	WATER	lohegaon	P1	कृपया ध्यान दें, गंदा पानी आ रहा है, एक हफ्तों से, लोहगाव में, अस्पताल के सामने
+G1143	mr	HEALTH	anandnagar	P2	कृपया लक्ष द्या, आनंद नगर परिसरात, मेलेले जनावर रस्त्यावर पडले आहे तक्रार करूनही दखल घेतली नाही
+G1307	hi	TREE	NONE	P1	सर, अस्पताल के सामने, पेड़ की डाल टूटकर लटक रही है, एक हफ्तों से
+G0858	mr	ELEC	kondhwa	P1	कोंढव्या मध्ये, विजेचा खांब वाकला आहे, पडू शकतो
+G0722	mix	DRAIN	katraj	P2	1 weeks झाले, drainage line leak होतेय, कात्रज ला urgent आहे
+G1815	hi	VET	NONE	P3	आवारा मवेशी सड़क पर घूमते हैं कृपया कार्रवाई करें
+G0066	mr	ROAD	viman_nagar	P2	साहेब, विमाननगर मध्ये, रस्ता खोदून ठेवला आहे आणि बुजवला नाही, महिनाभरापासून लवकर दुरुस्ती करा
+G1993	rom	VET	dhankawadi	P1	namaskar, dhankawadi yethe, kutra chavla
+G0485	mr	WATER	NONE	P3	साहेब, पाणी कमी दाबाने येते तक्रार करूनही दखल घेतली नाही
+G0587	mr	WATER	NONE	P2	तक्रार: नळाला गढूळ पाणी येते, गेले सात दिवस
+G0006	hi	ROAD	wadgaon_sheri	P3	सर, वडगाव शेरी में, फुटपाथ टूटा हुआ है, एक हफ्तों से
+G0612	mr	DRAIN	mundhwa	P2	हॉस्पिटलसमोर, नाल्याची सफाई झाली नाही, मुंढव्या भागात कृपया कारवाई करावी
+G1843	mr	VET	karvenagar	P3	कर्वे नगर येथे, डुकरांचा उपद्रव आहे कृपया कारवाई करावी
+G0854	hi	ELEC	sinhagad_road	P1	कृपया ध्यान दें, सिंहगड रस्ता इलाके में, बिजली का तार टूटकर लटक रहा है, दो हफ्तों से जल्दी ठीक करवाइए
+G1029	hi	HEALTH	kalas	P2	नमस्ते, कळस में, अस्पताल के सामने, फॉगिंग नहीं होती, सात दिनों से
+G0797	mr	DRAIN	yewalewadi	P3	तक्रार: नाल्याची सफाई झाली नाही, येवलेवाडी परिसरात
+G1781	hi	BUILD	sahakarnagar	P1	पुरानी इमारत खतरनाक हालत में है, सहकारनगर में कृपया कार्रवाई करें
+G0112	mr	ROAD	kharadi	P2	साहेब, डांबरीकरण खराब झाले आहे, खराडी मध्ये, दवाखान्याजवळ तक्रार करूनही दखल घेतली नाही
+G1679	mr	BUILD	tadiwala_road	P1	नमस्कार, ताडीवाला रोड भागात, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे
+G1341	hi	TREE	balewadi	P4	नमस्ते, बालेवाडी इलाके में, पेड़ की छंटाई करवाइए, एक हफ्तों से
+G1134	mr	HEALTH	nibm	P1	कृपया लक्ष द्या, एनआयबीएम येथे, डेंग्यूचे रुग्ण वाढले आहेत तक्रार करूनही दखल घेतली नाही
+G1368	mr	TREE	gultekdi	P2	कृपया लक्ष द्या, गुलटेकडी भागात, पडलेल्या फांद्या उचलल्या नाहीत, महिनाभरापासून लवकर दुरुस्ती करा
+G1147	mix	HEALTH	fc_road	P3	Hello sir, मच्छरांच्या larvae साचलेल्या पाण्यात आहेत, Fc Road मध्ये
+G0711	mix	DRAIN	NONE	P1	एक month झाला, drainage block झालंय
+G0999	mr	ELEC	shaniwar_peth	P2	शनिवार पेठ भागात, दवाखान्याजवळ, गल्लीत अंधार असतो, दिवा बंद, पाच दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G1305	hi	TREE	kasba_peth	P4	कसबा में, पेड़ की छंटाई करवाइए
+G1255	rom	TREE	katraj	P2	katraj bhagat, shalejaval, padlelya fandya uchlalya nahit, 2 divas pasun
+G1132	mr	HEALTH	aundh	P1	औंध मध्ये, शाळेजवळ, उघड्यावर अन्न टाकले जाते, दुर्गंधी येते तक्रार करूनही दखल घेतली नाही
+G1050	hi	HEALTH	shaniwar_peth	P3	दो दिनों से, मच्छरों का बहुत प्रकोप है, शनिवार पेठ में
+G1592	mr	ENCROACH	bavdhan	P2	बावधन भागात, हातगाड्यांमुळे वाहतूक कोंडी होते, महिनाभरापासून
+G1876	mr	VET	hadapsar	P1	तक्रार: हडपसर भागात, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो, महिनाभरापासून
+G1656	mr	BUILD	hadapsar	P1	नमस्कार, हडपसर परिसरात, धोकादायक इमारत आहे
+G1671	mix	BUILD	katraj	P1	Hello sir, Katraj area मध्ये, excavation ला safety wall नाही, एक month झाला please लवकर action घ्या
+G1723	mr	BUILD	kharadi	P2	तक्रार: खराडी परिसरात, दवाखान्याजवळ, अनधिकृत मजला बांधला जात आहे
+G1479	rom	ENCROACH	vadgaon_bk	P3	saheb, wadgaon budruk bhagat, anadhikrut tapri aahe
+G1513	mr	ENCROACH	bhavani_peth	P2	बेवारस वाहने रस्त्याकडेला पडून आहेत, हॉस्पिटलसमोर, भवानी पेठ मध्ये, गेले सहा दिवस कृपया कारवाई करावी
+G1688	mr	BUILD	kondhwa	P3	कृपया लक्ष द्या, कोंढवा भागात, अनधिकृत मजला बांधला जात आहे, गेले पाच दिवस कृपया कारवाई करावी
+G0152	mix	ROAD	baner	P1	Baner ला, pothole मुळे bike slip होऊन accident झाला, hospital समोर
+G1243	mr	TREE	kashewadi	P1	कृपया लक्ष द्या, काशेवाडी येथे, झाडाची फांदी तुटून लटकत आहे तक्रार करूनही दखल घेतली नाही
+G1012	mr	HEALTH	salunke_vihar	P2	साळुंके विहार भागात, उघड्यावर अन्न टाकले जाते, दुर्गंधी येते लवकर दुरुस्ती करा
+G1213	hi	TREE	fatimanagar	P1	नमस्ते, फातिमा नगर में, पेड़ की डाल टूटकर लटक रही है कृपया कार्रवाई करें
+G0678	rom	DRAIN	balajinagar	P1	balaji nagar madhe, sandpani gharat yet aahe karvai kara please
+G1821	rom	VET	NONE	P3	namaskar, bhatkya kutryancha tras aahe karvai kara please
+G0416	mr	WATER	chandannagar	P3	चंदननगर परिसरात, व्हॉल्व्हमधून पाणी गळते, गेले दहा दिवस लवकर दुरुस्ती करा
+G0308	mix	SWM	NONE	P2	Hello sir, hospital समोर, dustbin overflow होतोय
+G0654	mr	DRAIN	sinhagad_road	P3	कृपया लक्ष द्या, नाल्याची सफाई झाली नाही, सिंहगड रस्ता परिसरात
+G0374	mr	SWM	NONE	P3	नमस्कार, कचरा उचलला जात नाही
+G1773	mr	BUILD	fc_road	P3	नमस्कार, एफसी रोड मध्ये, अनधिकृत मजला बांधला जात आहे लवकर दुरुस्ती करा
+G1274	mr	TREE	hadapsar	P3	हडपसर परिसरात, शाळेजवळ, झाडांची छाटणी करावी कृपया कारवाई करावी
+G1717	hi	BUILD	fc_road	P2	कृपया ध्यान दें, बिना अनुमति के निर्माण हो रहा है, एफसी रोड में, अस्पताल के सामने
+G0205	mr	SWM	fatimanagar	P1	साहेब, फातिमा नगर परिसरात, हॉस्पिटलसमोर, कचऱ्याचा घाण वास येतो, गेले सहा दिवस लवकर दुरुस्ती करा
+G0796	hi	DRAIN	yewalewadi	P1	कृपया ध्यान दें, येवलेवाडी में, सीवर का पानी घर में आ रहा है कृपया कार्रवाई करें
+G0370	mix	SWM	NONE	P2	नमस्कार, कचऱ्याचा dump तयार झालाय, hospital समोर please लवकर action घ्या
+G0525	mix	WATER	NONE	P2	नळाला dirty water येतं please लवकर action घ्या
+G1631	hi	BUILD	NONE	P1	सर, पुरानी इमारत खतरनाक हालत में है
+G1686	mr	BUILD	deccan	P1	नमस्कार, डेक्कन भागात, स्लॅबचे तुकडे खाली पडत आहेत, दोन आठवड्यांपासून कृपया कारवाई करावी
+G1325	mr	TREE	wadgaon_sheri	P3	नमस्कार, पडलेल्या फांद्या उचलल्या नाहीत, वडगांव शेरी परिसरात
+G0838	hi	ELEC	yerawada	P1	येरवड्या में, स्कूल के पास, बिजली का तार टूटकर लटक रहा है
+G0829	mr	ELEC	NONE	P4	तक्रार: दिवे दिवसाही चालू असतात कृपया कारवाई करावी
+G0235	mr	SWM	shaniwar_peth	P3	तक्रार: शनिवार पेठ भागात, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे
+G1020	rom	HEALTH	dhayari	P2	namaskar, dhayari bhagat, melela prani padla aahe karvai kara please
+G0735	mr	DRAIN	aundh	P1	औंध मध्ये, गटारावर झाकण नाही, कोणी पडू शकते
+G0354	mr	SWM	shivajinagar	P1	तक्रार: शिवाजी नगर परिसरात, कचरा जाळला जातो, धूर होतो, तीन आठवड्यांपासून कृपया कारवाई करावी
+G1408	hi	ENCROACH	NONE	P3	नमस्ते, अवैध बैनर लगे हैं, एक महीने से
+G1252	mr	TREE	kothrud	P4	कोथरुड परिसरात, उद्यानातील झाडांची निगा राखली जात नाही
+G0400	mr	SWM	yerawada	P2	तक्रार: येरवडा परिसरात, कचऱ्यावर माश्या आणि डास झाले आहेत
+G0718	hi	DRAIN	salunke_vihar	P1	साळुंके विहार में, स्कूल के पास, नाली जाम हो गई है, दो हफ्तों से जल्दी ठीक करवाइए
+G0950	mr	ELEC	guruwar_peth	P1	साहेब, गुरुवार पेठ मध्ये, डीपी बॉक्स उघडा आहे, पाच दिवसांपासून
+G1249	mr	TREE	viman_nagar	P2	नमस्कार, विमाननगर परिसरात, झाड पडून गाडीचे नुकसान झाले तक्रार करूनही दखल घेतली नाही
+G0970	mr	ELEC	market_yard	P2	साहेब, हायमास्ट दिवा बंद आहे, महिनाभरापासून, मार्केट यार्ड परिसरात तक्रार करूनही दखल घेतली नाही
+G0260	mix	SWM	yerawada	P3	नमस्कार, garbage collection होत नाही, येरवडा ला
+G1391	mix	TREE	ramtekdi	P3	Hello sir, रामटेकडी area मध्ये, school जवळ, tree trimming करायचं आहे
+G0035	hi	ROAD	fatimanagar	P2	सड़क पूरी टूट गई है, स्कूल के पास, फातिमा नगर इलाके में
+G1942	mix	VET	NONE	P3	Hello sir, stray dogs चा खूप त्रास आहे please लवकर action घ्या
+G0212	mr	SWM	keshavnagar	P3	कृपया लक्ष द्या, केशवनगर मध्ये, मोकळ्या जागेत लोक कचरा टाकतात
+G0558	mr	WATER	wanowrie	P1	वानवडी परिसरात, दूषित पाण्यामुळे लोक आजारी पडले लवकर दुरुस्ती करा
+G1998	mr	VET	NONE	P1	साहेब, पिसाळलेला कुत्रा फिरत आहे तक्रार करूनही दखल घेतली नाही
+G0378	mr	SWM	dhanori	P3	धानोरी मध्ये, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे लवकर दुरुस्ती करा
+G1030	rom	HEALTH	vishrantwadi	P3	vishrantwadi bhagat, undir khup zale aahet karvai kara please
+G1351	mr	TREE	NONE	P3	दवाखान्याजवळ, झाडामुळे पथदिवा झाकला गेला आहे तक्रार करूनही दखल घेतली नाही
+G1689	mix	BUILD	magarpatta	P1	Hello sir, मगरपट्ट्या ला, dangerous building आहे, wall पडेल
+G1187	mr	HEALTH	balewadi	P3	तक्रार: बालेवाडी येथे, उंदरांचा उपद्रव वाढला आहे, गेले सहा दिवस
+G1457	mr	ENCROACH	sangamwadi	P3	साहेब, दुकानदारांनी रस्त्यावर सामान ठेवले आहे, संगमवाडी परिसरात, एक आठवड्यांपासून
+G1046	hi	HEALTH	vadgaon_bk	P2	कृपया ध्यान दें, दो हफ्तों से, वडगाव बु इलाके में, मच्छरों का बहुत प्रकोप है
+G0629	mix	DRAIN	viman_nagar	P2	Please विमान नगर area मध्ये, sewage road वर overflow होतंय
+G1114	mr	HEALTH	kasba_peth	P1	तक्रार: कसबा येथे, मलेरियाचे रुग्ण आढळले आहेत
+G0054	mr	ROAD	NONE	P1	साहेब, हॉस्पिटलसमोर, रस्ता पूर्ण उखडला आहे, महिनाभरापासून
+G1566	rom	ENCROACH	dhayari	P4	dhayari yethe, anadhikrut flex lavle aahet karvai kara please
+G0110	hi	ROAD	market_yard	P1	मार्केट यार्ड इलाके में, गड्ढे की वजह से एक आदमी गिरकर घायल हो गया, तीन दिनों से जल्दी ठीक करवाइए
+G0351	mr	SWM	NONE	P1	नमस्कार, कचऱ्याचा घाण वास येतो, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G0065	hi	ROAD	salunke_vihar	P2	कृपया ध्यान दें, साळुंके विहार इलाके में, गड्ढे से कभी भी दुर्घटना हो सकती है जल्दी ठीक करवाइए
+G0704	mix	DRAIN	NONE	P3	storm water drain clean केली नाही please लवकर action घ्या
+G1999	mix	VET	deccan	P3	नमस्कार, Deccan ला, stray cattle road वर बसतात
+G0239	mr	SWM	NONE	P3	तक्रार: कचराकुंडी भरून वाहत आहे, एक दिवसांपासून
+G0575	mr	WATER	sahakarnagar	P3	नमस्कार, पाणीपुरवठा बंद आहे, सहकार नगर परिसरात कृपया कारवाई करावी
+G1731	rom	BUILD	keshavnagar	P1	shalejaval, keshavnagar bhagat, dhokadayak imarat aahe
+G1945	rom	VET	katraj	P3	saheb, katraj yethe, bhatkya kutryancha tras aahe lavkar kara
+G1808	mr	VET	NONE	P1	तक्रार: कुत्र्याने चावा घेतला
+G1739	mr	BUILD	paud_road	P1	कृपया लक्ष द्या, पौड रोड भागात, जुन्या इमारतीची भिंत कोसळण्याच्या स्थितीत आहे लवकर दुरुस्ती करा
+G1079	mix	HEALTH	pisoli	P2	Please Pisoli area मध्ये, dead dog पडलाय road वर please लवकर action घ्या
+G1116	mr	HEALTH	kashewadi	P3	काशेवाडी परिसरात, डासांचा खूप त्रास आहे कृपया कारवाई करावी
+G0125	hi	ROAD	wadgaon_sheri	P1	वडगांव शेरी इलाके में, गड्ढे की वजह से एक आदमी गिरकर घायल हो गया, एक हफ्तों से जल्दी ठीक करवाइए
+G0002	mr	ROAD	pashan	P3	पाषाण येथे, रस्ता पूर्ण उखडला आहे
+G1197	mr	HEALTH	deccan	P2	डेक्कन परिसरात, डासांचा खूप त्रास आहे, दोन आठवड्यांपासून
+G1441	hi	ENCROACH	sinhagad_road	P4	सिंहगड रोड में, अवैध बैनर लगे हैं
+G1217	mix	TREE	guruwar_peth	P3	नमस्कार, illegal tree cutting झालंय, 1 days पासून, गुरुवार पेठ area मध्ये
+G0772	hi	DRAIN	vishrantwadi	P3	विश्रांतवाडी में, नाले की सफाई नहीं हुई, दस दिनों से
+G1354	mr	TREE	balewadi	P4	साहेब, झाडांची छाटणी करावी, बालेवाडी परिसरात तक्रार करूनही दखल घेतली नाही
+G0001	hi	ROAD	pashan	P2	सर, एक महीने से, सड़क पूरी टूट गई है, पाषाण में
+G1957	mr	VET	deccan	P3	कुत्र्यांची नसबंदी करावी, सात दिवसांपासून, हॉस्पिटलसमोर, डेक्कन परिसरात
+G1336	hi	TREE	katraj	P1	कात्रज में, स्कूल के पास, पेड़ सड़क पर गिर गया है, छह दिनों से जल्दी ठीक करवाइए
+G1599	mix	ENCROACH	katraj	P4	Katraj ला, illegal banners लावलेत please लवकर action घ्या
+G1669	mix	BUILD	nibm	P3	Nibm मध्ये, illegal construction चालू आहे
+G1395	mr	TREE	NONE	P1	साहेब, शाळेजवळ, झाड रस्त्यावर पडले आहे कृपया कारवाई करावी
+G0134	mr	ROAD	bavdhan	P2	बावधन भागात, पाच दिवसांपासून, खड्ड्यामुळे कधीही अपघात होऊ शकतो
+G1554	mr	ENCROACH	ramtekdi	P3	तक्रार: रामटेकडी येथे, पदपथावर बांधकाम साहित्य ठेवले आहे
+G1974	rom	VET	yewalewadi	P3	yewalewadi yethe, mokat janavare rastyavar
+G0595	mix	WATER	dhayari	P2	धायरी area मध्ये, valve मधून leakage होतंय, एक month झाला
+G1344	rom	TREE	anandnagar	P3	saheb, anandnagar yethe, padlelya fandya uchlalya nahit
+G1584	mr	ENCROACH	kothrud	P3	साहेब, कोथरुड भागात, दुकानदारांनी रस्त्यावर सामान ठेवले आहे
+G1823	rom	VET	dhankawadi	P3	please mokat janavare rastyavar, dhankawadi bhagat
+G0740	rom	DRAIN	NONE	P1	namaskar, sandpani gharat yet aahe, 1 aathvade zale
+G1803	rom	VET	kalas	P4	kalas yethe, kutryanchi nasbandi kara karvai kara please
+G1794	hi	BUILD	baner	P3	बानेर में, बिना अनुमति के निर्माण हो रहा है
+G0532	rom	WATER	katraj	P3	katraj bhagat, pani kami pressure ne yete, 1 aathvade zale lavkar kara
+G1734	mix	BUILD	NONE	P1	नमस्कार, dangerous building आहे, wall पडेल
+G1644	mr	BUILD	vadgaon_bk	P2	तक्रार: वडगाव बुद्रुक येथे, दवाखान्याजवळ, अनधिकृत मजला बांधला जात आहे
+G1203	mr	TREE	NONE	P4	नमस्कार, झाडांची छाटणी करावी
+G0747	mr	DRAIN	bibwewadi	P3	तक्रार: नाल्याची सफाई झाली नाही, बिबवेवाडी भागात तक्रार करूनही दखल घेतली नाही
+G0719	mix	DRAIN	anandnagar	P3	नमस्कार, Anand Nagar मध्ये, storm water drain clean केली नाही
+G1473	mix	ENCROACH	fatimanagar	P3	फातिमा नगर मध्ये, footpath वर hawkers चं encroachment आहे urgent आहे
+G1491	rom	ENCROACH	keshavnagar	P3	keshavnagar yethe, anadhikrut flex lavle aahet, 2 aathvade zale lavkar kara
+G0297	mr	SWM	kashewadi	P2	तक्रार: काशेवाडी भागात, मोकळ्या जागेत लोक कचरा टाकतात, गेले चार दिवस
+G0420	mr	WATER	tadiwala_road	P4	साहेब, ताडीवाला रोड भागात, पाण्याचे बिल जास्त आले आहे
+G0117	rom	ROAD	nibm	P3	namaskar, rastyavar khup khadde aahet, nibm madhe
+G0803	mr	ELEC	bhavani_peth	P4	दिवा सतत बंद-चालू होतो, भवानी पेठ भागात
+G1647	mr	BUILD	kondhwa	P2	साहेब, कोंढवा परिसरात, परवानगी न घेता बांधकाम सुरू आहे, महिनाभरापासून लवकर दुरुस्ती करा
+G0929	hi	ELEC	koregaon_park	P4	कृपया ध्यान दें, नई स्ट्रीट लाइट लगवाइए, कोरेगाव पार्क में कृपया कार्रवाई करें
+G0877	mix	ELEC	NONE	P3	Hello sir, school जवळ, street lights दिवसा पण ON असतात
+G0389	hi	SWM	shaniwar_peth	P2	कचरा जलाया जाता है, धुआं होता है, शनिवार पेठ में कृपया कार्रवाई करें
+G0026	rom	ROAD	NONE	P3	footpath tutla aahe, 1 divas pasun
+G0911	mr	ELEC	keshavnagar	P1	नमस्कार, केशवनगर परिसरात, शाळेजवळ, डीपी बॉक्स उघडा आहे तक्रार करूनही दखल घेतली नाही
+G1967	hi	VET	koregaon_park	P1	स्कूल के पास, कोरेगाव पार्क में, पागल कुत्ता घूम रहा है
+G1938	hi	VET	wanowrie	P3	कृपया ध्यान दें, वानवडी इलाके में, आवारा कुत्तों का आतंक है
+G0751	hi	DRAIN	kashewadi	P1	काशेवाडी में, सीवर का पानी घर में आ रहा है कृपया कार्रवाई करें
+G0713	rom	DRAIN	gultekdi	P2	gultekdi madhe, gatar tumbla aahe
+G1947	mr	VET	yerawada	P3	भटक्या कुत्र्यांचा त्रास आहे, येरवडा भागात लवकर दुरुस्ती करा
+G0392	mr	SWM	shaniwar_peth	P3	साहेब, शनिवार पेठ मध्ये, कचरा उचलला जात नाही कृपया कारवाई करावी
+G1268	mr	TREE	undri	P1	तक्रार: उंड्री येथे, झाडाची फांदी तुटून लटकत आहे
+G1544	hi	ENCROACH	NONE	P4	कृपया ध्यान दें, अवैध बैनर लगे हैं
+G0492	hi	WATER	kashewadi	P1	काशेवाडी इलाके में, नल में पानी नहीं आ रहा, एक महीने से कृपया कार्रवाई करें
+G1150	mr	HEALTH	katraj	P2	साहेब, कात्रज भागात, मेलेले जनावर रस्त्यावर पडले आहे, गेले दहा दिवस लवकर दुरुस्ती करा
+G0955	mix	ELEC	kharadi	P3	Hello sir, खराडी area मध्ये, street light काम करत नाही urgent आहे
+G1703	rom	BUILD	kalas	P1	kalas yethe, dhokadayak imarat aahe
+G1951	mr	VET	NONE	P3	साहेब, माकडांचा त्रास वाढला आहे
+G0614	mix	DRAIN	NONE	P2	drainage block झालंय
+G1378	mix	TREE	sinhagad_road	P1	सिंहगड रस्ता मध्ये, hospital समोर, झाड पडून car चं नुकसान झालं
+G1760	mr	BUILD	fc_road	P1	कृपया लक्ष द्या, भिंत कोसळून लोक जखमी झाले, दहा दिवसांपासून, एफसी रोड येथे
+G1893	mix	VET	ramtekdi	P2	नमस्कार, Ramtekdi मध्ये, hospital समोर, stray cattle road वर बसतात urgent आहे
+G0047	rom	ROAD	NONE	P3	rastyavar khup khadde aahet
+G1587	mix	ENCROACH	hadapsar	P4	हडपसर area मध्ये, illegal banners लावलेत please लवकर action घ्या
+G1370	mr	TREE	bavdhan	P4	बावधन मध्ये, झाडांची छाटणी करावी
+G0973	hi	ELEC	bhavani_peth	P1	नमस्ते, भवानी पेठ में, बिजली का तार टूटकर लटक रहा है जल्दी ठीक करवाइए
+G1047	mix	HEALTH	wadgaon_sheri	P1	Hello sir, वडगांव शेरी मध्ये, dengue cases वाढलेत please लवकर action घ्या
+G1597	rom	ENCROACH	NONE	P4	saheb, anadhikrut flex lavle aahet karvai kara please
+G0279	mr	SWM	NONE	P2	कचरा जाळला जातो, धूर होतो
+G1527	rom	ENCROACH	NONE	P4	please anadhikrut flex lavle aahet, 3 divas pasun
+G0690	mix	DRAIN	kasba_peth	P1	नमस्कार, कसबा area मध्ये, sewage घरात backflow होतंय
+G1683	hi	BUILD	kothrud	P3	नमस्ते, तीन दिनों से, अवैध मंजिल बनाई जा रही है, कोथरूड में जल्दी ठीक करवाइए
+G1142	hi	HEALTH	yerawada	P3	कृपया ध्यान दें, येरवडा इलाके में, चूहों का आतंक है जल्दी ठीक करवाइए
+G1393	hi	TREE	shivajinagar	P4	नमस्ते, शिवाजी नगर में, पेड़ की छंटाई करवाइए
+G1120	mr	HEALTH	undri	P1	साहेब, उंड्री भागात, मलेरियाचे रुग्ण आढळले आहेत, एक आठवड्यांपासून
+G1705	mr	BUILD	paud_road	P3	पौड रोड मध्ये, परवानगी न घेता बांधकाम सुरू आहे कृपया कारवाई करावी
+G0857	mr	ELEC	kothrud	P3	कोथरुड येथे, हायमास्ट दिवा बंद आहे
+G0784	rom	DRAIN	dhanori	P1	saheb, dhanori madhe, sandpani gharat yet aahe, 10 divas pasun
+G0782	mr	DRAIN	market_yard	P1	मार्केट यार्ड मध्ये, चेंबरचे झाकण उघडे आहे
+G1801	hi	VET	NONE	P4	कुत्तों की नसबंदी करवाइए कृपया कार्रवाई करें
+G1829	mix	VET	shivajinagar	P1	dog bite झाला, hospital समोर, शिवाजीनगर ला
+G1882	rom	VET	balajinagar	P4	balaji nagar madhe, kutryanchi nasbandi kara karvai kara please
+G0531	hi	WATER	tadiwala_road	P1	नमस्ते, ताडीवाला रोड इलाके में, स्कूल के पास, पाइपलाइन फट गई है, पानी बर्बाद हो रहा है, एक हफ्तों से कृपया कार्रवाई करें
+G1160	rom	HEALTH	deccan	P2	please shalejaval, dasancha tras aahe, deccan madhe lavkar kara
+G1935	mr	VET	keshavnagar	P2	केशवनगर मध्ये, हॉस्पिटलसमोर, भटक्या कुत्र्यांचा त्रास आहे तक्रार करूनही दखल घेतली नाही
+G1367	hi	TREE	balewadi	P1	सर, एक दिनों से, बालेवाडी में, पेड़ सड़क पर गिर गया है
+G0153	mr	ROAD	kothrud	P2	कृपया लक्ष द्या, कोथरुड मध्ये, गतिरोधकावर रंग नाही, रात्री दिसत नाही तक्रार करूनही दखल घेतली नाही
+G0696	mix	DRAIN	hadapsar	P1	Please हडपसर area मध्ये, manhole open आहे, cover नाही
+G0335	rom	SWM	fc_road	P3	fc road bhagat, kachra uchalla jat nahi, 2 divas pasun karvai kara please
+G0920	hi	ELEC	magarpatta	P1	सर, मगरपट्ट्या इलाके में, खंभे में करंट आ रहा है
+G1058	mr	HEALTH	mundhwa	P2	मुंढवा मध्ये, मेलेले जनावर रस्त्यावर पडले आहे
+G0043	mr	ROAD	NONE	P3	साहेब, रस्त्यावर खूप खड्डे पडले आहेत
+G0786	mix	DRAIN	dhankawadi	P1	Please Dhankawadi area मध्ये, hospital समोर, drainage line leak होतेय urgent आहे
+G0744	mr	DRAIN	kondhwa	P1	कोंढवा येथे, मॅनहोलवर झाकण नाही कृपया कारवाई करावी
+G0039	mr	ROAD	shaniwar_peth	P2	नमस्कार, शनिवार पेठ परिसरात, रस्ता खचला आहे, वाहनं अडकतात
+G1156	mr	HEALTH	sahakarnagar	P1	नमस्कार, सहकार नगर परिसरात, मलेरियाचे रुग्ण आढळले आहेत लवकर दुरुस्ती करा
+G0807	rom	ELEC	pashan	P1	please pashan madhe, vijechi taar tutli aahe, 10 divas pasun karvai kara please
+G0404	rom	WATER	shivajinagar	P2	namaskar, shivajinagar bhagat, hospital samor, nalala pani yet nahi karvai kara please
+G0236	mr	SWM	vishrantwadi	P2	तक्रार: विश्रांतवाडी परिसरात, घंटागाडी येत नाही, दवाखान्याजवळ
+G0570	mix	WATER	pisoli	P1	Please Pisoli ला, water supply बंद आहे, एक month झाला
+G1002	mr	HEALTH	tadiwala_road	P1	डेंग्यूचे रुग्ण वाढले आहेत, तीन दिवसांपासून, ताडीवाला रोड येथे लवकर दुरुस्ती करा
+G0985	hi	ELEC	NONE	P2	नमस्ते, स्कूल के पास, स्ट्रीट लाइट बंद है
+G1745	mr	BUILD	model_colony	P3	नमस्कार, मॉडेल कॉलनी परिसरात, अनधिकृत मजला बांधला जात आहे
+G0506	mr	WATER	fatimanagar	P3	फातिमानगर येथे, व्हॉल्व्हमधून पाणी गळते तक्रार करूनही दखल घेतली नाही
+G0878	mr	ELEC	kondhwa	P3	नमस्कार, रस्त्यावरचे दिवे लागत नाहीत, कोंढवा येथे कृपया कारवाई करावी
+G1447	mr	ENCROACH	sahakarnagar	P3	नमस्कार, सहकार नगर येथे, दुकानदारांनी रस्त्यावर सामान ठेवले आहे तक्रार करूनही दखल घेतली नाही
+G0741	mr	DRAIN	salunke_vihar	P2	साळुंके विहार मध्ये, सांडपाणी रस्त्यावर वाहत आहे
+G1036	rom	HEALTH	baner	P1	baner yethe, dengue che rugn vadhle
+G1285	mix	TREE	bibwewadi	P1	बिबवेवाडी ला, branch तुटून लटकतेय
+G1123	mix	HEALTH	guruwar_peth	P3	नमस्कार, Guruwar Peth area मध्ये, rats चा त्रास आहे please लवकर action घ्या
+G1900	mr	VET	nibm	P2	नमस्कार, एनआयबीएम येथे, हॉस्पिटलसमोर, डुकरांचा उपद्रव आहे
+G0320	mr	SWM	aundh	P2	तक्रार: शाळेजवळ, औंध परिसरात, कचराकुंडी भरून वाहत आहे लवकर दुरुस्ती करा
+G0005	hi	ROAD	pisoli	P2	कृपया ध्यान दें, पिसोळी इलाके में, गड्ढे से कभी भी दुर्घटना हो सकती है, दो दिनों से कृपया कार्रवाई करें
+G1824	mr	VET	ramtekdi	P2	रामटेकडी मध्ये, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो, एक दिवसांपासून
+G1766	mr	BUILD	vishrantwadi	P1	विश्रांतवाडी येथे, दवाखान्याजवळ, बांधकामाचा राडारोडा रस्त्यावर टाकला आहे, महिनाभरापासून लवकर दुरुस्ती करा
+G0116	mix	ROAD	karvenagar	P3	कर्वे नगर ला, road पूर्ण खराब झालाय urgent आहे
+G1522	mr	ENCROACH	balewadi	P3	कृपया लक्ष द्या, बालेवाडी मध्ये, पदपथावर बांधकाम साहित्य ठेवले आहे
+G1564	mr	ENCROACH	salunke_vihar	P3	नमस्कार, साळुंके विहार मध्ये, बेवारस वाहने रस्त्याकडेला पडून आहेत
+G0127	mr	ROAD	shaniwar_peth	P2	कृपया लक्ष द्या, शनिवार पेठ परिसरात, रस्ता खचला आहे, वाहनं अडकतात
+G0891	rom	ELEC	fc_road	P1	fergusson college road madhe, khambala current lagto lavkar kara
+G1053	mr	HEALTH	katraj	P2	गेले सहा दिवस, कात्रज परिसरात, उघड्यावर अन्न टाकले जाते, दुर्गंधी येते
+G1994	rom	VET	deccan	P3	please deccan madhe, bhatkya kutryancha tras aahe, 6 divas pasun
+G0957	mix	ELEC	chandannagar	P4	चंदननगर मध्ये, street lights दिवसा पण ON असतात urgent आहे
+G0668	mr	DRAIN	yewalewadi	P1	येवलेवाडी मध्ये, गटारावर झाकण नाही, कोणी पडू शकते कृपया कारवाई करावी
+G1977	hi	VET	vishrantwadi	P3	एक महीने से, कुत्तों की नसबंदी करवाइए, विश्रांतवाडी में कृपया कार्रवाई करें
+G0201	mr	SWM	fc_road	P2	एफसी रोड परिसरात, रस्त्याची झाडलोट होत नाही, पाच दिवसांपासून
+G1401	mr	ENCROACH	pune_station	P4	तक्रार: पुणे स्टेशन भागात, अनधिकृत फलक लावले आहेत
+G0963	mr	ELEC	pune_station	P3	साहेब, पुणे स्टेशन भागात, रस्त्यावरचे दिवे लागत नाहीत लवकर दुरुस्ती करा
+G0902	mr	ELEC	NONE	P1	तक्रार: विजेची तार तुटून खाली पडली आहे कृपया कारवाई करावी
+G0579	mix	WATER	keshavnagar	P4	केशव नगर ला, water bill चुकीचं आलंय, 7 days पासून urgent आहे
+G1726	hi	BUILD	NONE	P1	पुरानी इमारत खतरनाक हालत में है जल्दी ठीक करवाइए
+G1008	mix	HEALTH	hingne	P3	Hingne मध्ये, mosquito problem खूप वाढलाय please लवकर action घ्या
+G0167	mix	ROAD	NONE	P3	Please footpath चे paver blocks निघालेत
+G0809	mr	ELEC	NONE	P3	हायमास्ट दिवा बंद आहे तक्रार करूनही दखल घेतली नाही
+G1483	mix	ENCROACH	kasba_peth	P1	Hello sir, कसबा पेठ area मध्ये, hoarding illegal आहे आणि पडू शकतं urgent आहे
+G0660	rom	DRAIN	deccan	P2	deccan madhe, 1 aathvade zale, sandpani rastyavar vahat aahe karvai kara please
+G1497	rom	ENCROACH	model_colony	P4	please model colony bhagat, anadhikrut flex lavle aahet lavkar kara
+G1692	mr	BUILD	balewadi	P1	नमस्कार, बालेवाडी मध्ये, धोकादायक इमारत आहे
+G0572	mr	WATER	aundh	P4	औंध मध्ये, नवीन नळ जोडणी हवी आहे लवकर दुरुस्ती करा
+G1442	rom	ENCROACH	NONE	P3	saheb, feriwalyanni rasta adavla aahe karvai kara please
+G1419	rom	ENCROACH	lohegaon	P2	namaskar, lohgaon yethe, hospital samor, anadhikrut tapri aahe karvai kara please
+G0158	mix	ROAD	dhanori	P2	hospital समोर, Dhanori मध्ये, road पूर्ण खराब झालाय urgent आहे
+G1089	mr	HEALTH	pisoli	P3	नमस्कार, पिसोळी येथे, धूरफवारणी होत नाही लवकर दुरुस्ती करा
+G1369	mr	TREE	dhanori	P1	धानोरी परिसरात, झाड रस्त्यावर पडले आहे, दोन दिवसांपासून
+G0644	mr	DRAIN	NONE	P3	पावसाचे पाणी रस्त्यावर साचते, एक आठवड्यांपासून कृपया कारवाई करावी
+G0395	mr	SWM	hingne	P2	कचराकुंडी भरून वाहत आहे, एक आठवड्यांपासून, हिंगणे भागात तक्रार करूनही दखल घेतली नाही
+G0798	rom	DRAIN	bibwewadi	P1	namaskar, bibwewadi yethe, chamber che jhakan ughade aahe karvai kara please
+G0620	hi	DRAIN	NONE	P1	सर, अस्पताल के सामने, एक महीने से, गटर का पानी सड़क पर बह रहा है जल्दी ठीक करवाइए
+G1910	rom	VET	pashan	P4	pashan madhe, kutryanchi nasbandi kara, 10 divas pasun
+G0457	mix	WATER	sadashiv_peth	P3	सदाशिव पेठ area मध्ये, water supply बंद आहे please लवकर action घ्या
+G0193	rom	ROAD	deccan	P2	deccan bhagat, khadda padla aahe road var, 3 aathvade zale
+G0096	mr	ROAD	NONE	P2	नमस्कार, खड्ड्यामुळे कधीही अपघात होऊ शकतो कृपया कारवाई करावी
+G1162	rom	HEALTH	warje	P3	warje madhe, fawarni hot nahi
+G1292	rom	TREE	NONE	P4	namaskar, zadachi chhatni kara
+G0332	rom	SWM	NONE	P3	kachrakundi bharun vahat aahe karvai kara please
+G1386	mix	TREE	pune_station	P1	पुणे स्टेशन ला, branch तुटून लटकतेय, 1 days पासून urgent आहे
+G0202	mr	SWM	NONE	P4	कृपया लक्ष द्या, रस्त्याची झाडलोट होत नाही तक्रार करूनही दखल घेतली नाही
+G0058	mr	ROAD	gultekdi	P1	नमस्कार, गुलटेकडी भागात, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी
+G1014	mix	HEALTH	NONE	P3	Hello sir, मच्छरांच्या larvae साचलेल्या पाण्यात आहेत please लवकर action घ्या
+G0410	hi	WATER	karvenagar	P1	कर्वेनगर इलाके में, नल में पानी नहीं आ रहा, दो हफ्तों से
+G0487	rom	WATER	balajinagar	P3	please balaji nagar bhagat, nalala pani yet nahi
+G0171	mix	ROAD	pisoli	P2	नमस्कार, Pisoli area मध्ये, road वर मोठे potholes आहेत, 2 weeks झाले please लवकर action घ्या
+G1345	mix	TREE	vadgaon_bk	P1	Vadgaon Budruk मध्ये, branch तुटून लटकतेय
+G0083	mix	ROAD	shivajinagar	P1	Hello sir, Shivajinagar मध्ये, hospital समोर, speed breaker ला marking नाही urgent आहे
+G0432	hi	WATER	viman_nagar	P3	विमान नगर में, पानी बहुत कम प्रेशर से आता है जल्दी ठीक करवाइए
+G0924	hi	ELEC	lohegaon	P1	कृपया ध्यान दें, लोहगाव में, खंभे में करंट आ रहा है जल्दी ठीक करवाइए
+G1346	hi	TREE	NONE	P1	पेड़ की डाल टूटकर लटक रही है कृपया कार्रवाई करें
+G1561	mr	ENCROACH	chandannagar	P3	चंदन नगर येथे, दुकानदारांनी रस्त्यावर सामान ठेवले आहे
+G0302	rom	SWM	bhavani_peth	P3	bhavani peth yethe, kachrakundi bharun vahat aahe karvai kara please
+G0230	mr	SWM	NONE	P1	हॉस्पिटलसमोर, कचऱ्यावर माश्या आणि डास झाले आहेत
+G1206	mr	TREE	shaniwar_peth	P1	तक्रार: शनिवार पेठ भागात, झाड वाकले आहे, पडण्याची भीती आहे लवकर दुरुस्ती करा
+G0514	mix	WATER	anandnagar	P3	Anandnagar area मध्ये, पाणी low pressure ने येतं urgent आहे
+G0639	mr	DRAIN	mundhwa	P3	नमस्कार, मुंढवा परिसरात, पावसाळी गटार साफ केलेले नाही कृपया कारवाई करावी
+G0326	mr	SWM	nibm	P2	एनआयबीएम मध्ये, शाळेजवळ, रस्त्याच्या कडेला कचऱ्याचा ढीग आहे तक्रार करूनही दखल घेतली नाही
+G1324	mix	TREE	balajinagar	P1	बालाजी नगर मध्ये, एक month झाला, झाड पडून car चं नुकसान झालं please लवकर action घ्या
+G1952	rom	VET	baner	P3	baner madhe, mokat janavare rastyavar
+G1327	hi	TREE	NONE	P1	स्कूल के पास, पेड़ की डाल टूटकर लटक रही है कृपया कार्रवाई करें
+G0519	hi	WATER	shivajinagar	P3	नमस्ते, शिवाजीनगर में, नल में पानी नहीं आ रहा
+G0912	mix	ELEC	NONE	P1	school जवळ, high mast light बंद आहे, 2 weeks झाले urgent आहे
+G0523	rom	WATER	kothrud	P2	kothrud bhagat, pipeline futli aahe lavkar kara
+G0285	mix	SWM	balajinagar	P1	Please Balaji Nagar मध्ये, school जवळ, कचऱ्याचा खूप smell येतो, 6 days पासून please लवकर action घ्या
+G0641	rom	DRAIN	kashewadi	P1	kashewadi yethe, sandpani gharat yet aahe, 2 aathvade zale
+G1350	hi	TREE	NONE	P1	नमस्ते, पेड़ सड़क पर गिर गया है, एक दिनों से कृपया कार्रवाई करें
+G0536	mr	WATER	narayan_peth	P2	नारायण पेठ येथे, पाइपलाइन फुटली आहे, पाणी वाया जाते
+G0310	hi	SWM	NONE	P2	नमस्ते, कचरा गाड़ी नहीं आती, पांच दिनों से जल्दी ठीक करवाइए
+G0565	mr	WATER	lohegaon	P2	नळाला गढूळ पाणी येते, लोहगाव मध्ये
+G1293	mr	TREE	wanowrie	P2	कृपया लक्ष द्या, झाड पडून गाडीचे नुकसान झाले, वानवडी येथे लवकर दुरुस्ती करा
+G1985	rom	VET	kondhwa	P1	saheb, kondhwa bhagat, pisalela kutra firtoy karvai kara please
+G0240	mr	SWM	kashewadi	P2	कृपया लक्ष द्या, काशेवाडी मध्ये, कचऱ्याचा घाण वास येतो
+G0272	mix	SWM	bavdhan	P3	dustbin overflow होतोय, Bavdhan area मध्ये
+G0445	mr	WATER	shivajinagar	P2	साहेब, शिवाजी नगर परिसरात, पाणीपुरवठा बंद आहे, गेले दहा दिवस कृपया कारवाई करावी
+G1144	rom	HEALTH	NONE	P3	saheb, fawarni hot nahi, 4 divas pasun lavkar kara
+G0954	mr	ELEC	NONE	P3	नमस्कार, गेले पाच दिवस, पथदिवे बंद आहेत
+G0489	hi	WATER	magarpatta	P1	कृपया ध्यान दें, मगरपट्ट्या इलाके में, गंदे पानी से लोग बीमार हो गए
+G1645	hi	BUILD	NONE	P1	नमस्ते, पांच दिनों से, दीवार गिरने से लोग घायल हुए कृपया कार्रवाई करें
+G1651	hi	BUILD	pashan	P3	नमस्ते, पाषाणला इलाके में, बिना अनुमति के निर्माण हो रहा है
+G1724	mr	BUILD	kothrud	P3	कोथरूड मध्ये, नदीपात्रात बांधकाम केले जात आहे कृपया कारवाई करावी
+G1582	mr	ENCROACH	dhanori	P2	कृपया लक्ष द्या, धानोरी मध्ये, पदपथावर बांधकाम साहित्य ठेवले आहे, तीन आठवड्यांपासून लवकर दुरुस्ती करा
+G1697	rom	BUILD	bavdhan	P2	please bavdhan madhe, parvangi nastana majla bandhtat, 2 aathvade zale karvai kara please
+G1124	mr	HEALTH	NONE	P3	कृपया लक्ष द्या, डासांचा खूप त्रास आहे लवकर दुरुस्ती करा
+G0551	hi	WATER	baner	P1	गंदे पानी से लोग बीमार हो गए, बाणेर इलाके में
+G1654	rom	BUILD	NONE	P3	anadhikrut bandhkam chalu aahe
+G0765	mr	DRAIN	sinhagad_road	P1	कृपया लक्ष द्या, सिंहगड रोड मध्ये, सांडपाणी घरात येत आहे
+G1619	mix	BUILD	vishrantwadi	P1	Hello sir, Vishrantwadi मध्ये, dangerous building आहे, wall पडेल
+G1854	hi	VET	narayan_peth	P1	नमस्ते, कुत्ते ने काट लिया, नारायण पेठ में
+G0684	mix	DRAIN	dhankawadi	P1	धनकवडी मध्ये, sewage road वर overflow होतंय, school जवळ please लवकर action घ्या
+G1070	mr	HEALTH	yerawada	P2	येरवड्या भागात, उघड्यावर अन्न टाकले जाते, दुर्गंधी येते
+G1551	rom	ENCROACH	hadapsar	P3	hadapsar madhe, feriwalyanni rasta adavla aahe, 5 divas pasun
+G0037	mr	ROAD	salunke_vihar	P3	तक्रार: साळुंके विहार मध्ये, फूटपाथ तुटला आहे, गेले चार दिवस लवकर दुरुस्ती करा
+G1786	hi	BUILD	NONE	P3	सर, अवैध मंजिल बनाई जा रही है जल्दी ठीक करवाइए
+G1075	hi	HEALTH	NONE	P3	फॉगिंग नहीं होती जल्दी ठीक करवाइए
+G0048	mr	ROAD	market_yard	P3	तक्रार: मार्केट यार्ड परिसरात, रस्त्यावर खूप खड्डे पडले आहेत तक्रार करूनही दखल घेतली नाही
+G1229	hi	TREE	lohegaon	P1	सर, लोहगाव इलाके में, स्कूल के पास, पेड़ की डाल टूटकर लटक रही है जल्दी ठीक करवाइए
+G0546	mr	WATER	vishrantwadi	P1	विश्रांतवाडी परिसरात, दूषित पाण्यामुळे लोक आजारी पडले
+G0889	rom	ELEC	nana_peth	P1	nana peth yethe, khamb vakla aahe, padu shakto lavkar kara
+G1227	mr	TREE	balajinagar	P2	कृपया लक्ष द्या, बालाजी नगर येथे, झाड पडून गाडीचे नुकसान झाले
+G0040	mr	ROAD	nana_peth	P1	नाना पेठ परिसरात, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी
+G0251	mr	SWM	NONE	P3	नमस्कार, सार्वजनिक शौचालय अस्वच्छ आहे लवकर दुरुस्ती करा
+G1097	hi	HEALTH	fatimanagar	P3	नमस्ते, फातिमा नगर में, चूहों का आतंक है
+G0787	rom	DRAIN	NONE	P1	namaskar, hospital samor, sandpani gharat yet aahe, 1 divas pasun
+G0307	mix	SWM	NONE	P1	नमस्कार, dustbin overflow होतोय, 3 weeks झाले urgent आहे
+G0227	hi	SWM	nana_peth	P1	नमस्ते, नाना पेठ इलाके में, कूड़े का ढेर लगा है, एक महीने से कृपया कार्रवाई करें
+G1009	rom	HEALTH	hadapsar	P2	please hadapsar bhagat, dasancha tras aahe, 2 aathvade zale karvai kara please
+G0424	mix	WATER	bavdhan	P3	बावधन area मध्ये, valve मधून leakage होतंय
+G0778	mr	DRAIN	mundhwa	P2	मुंढव्या मध्ये, सांडपाणी रस्त्यावर वाहत आहे कृपया कारवाई करावी
+G0082	hi	ROAD	kharadi	P1	नमस्ते, खराडी इलाके में, गड्ढे की वजह से एक आदमी गिरकर घायल हो गया
+G0638	hi	DRAIN	NONE	P1	नमस्ते, स्कूल के पास, नाली जाम हो गई है कृपया कार्रवाई करें
+G1831	hi	VET	gultekdi	P1	गुलटेकडी में, पागल कुत्ता घूम रहा है, एक दिनों से जल्दी ठीक करवाइए
+G1883	hi	VET	market_yard	P1	कृपया ध्यान दें, कुत्ते ने काट लिया, मार्केट यार्ड में
+G1090	hi	HEALTH	vishrantwadi	P3	विश्रांतवाडी इलाके में, चूहों का आतंक है
+G0543	rom	WATER	gultekdi	P3	please pani purvatha band aahe, gultekdi yethe lavkar kara
+G1222	hi	TREE	shaniwar_peth	P1	नमस्ते, शनिवार पेठ में, पेड़ सड़क पर गिर गया है
+G0398	mr	SWM	wanowrie	P2	वानवडी भागात, सहा दिवसांपासून, सार्वजनिक शौचालय अस्वच्छ आहे
+G1093	mr	HEALTH	nana_peth	P2	नमस्कार, नाना पेठ परिसरात, मेलेले जनावर रस्त्यावर पडले आहे कृपया कारवाई करावी
+G0168	hi	ROAD	wadgaon_sheri	P1	कृपया ध्यान दें, वडगाव शेरी इलाके में, गड्ढे से कभी भी दुर्घटना हो सकती है, दो हफ्तों से
+G0421	hi	WATER	baner	P2	कृपया ध्यान दें, बानेर में, पाइपलाइन फट गई है, पानी बर्बाद हो रहा है कृपया कार्रवाई करें
+G1906	mr	VET	guruwar_peth	P2	तक्रार: गुरुवार पेठ येथे, कुत्री गाड्यांच्या मागे धावतात, अपघात होऊ शकतो लवकर दुरुस्ती करा
+G0776	mr	DRAIN	sadashiv_peth	P2	तक्रार: शाळेजवळ, पावसाळी गटार साफ केलेले नाही, सदाशिव पेठ येथे
+G0582	mr	WATER	NONE	P3	व्हॉल्व्हमधून पाणी गळते कृपया कारवाई करावी
+G0861	mix	ELEC	tadiwala_road	P1	Tadiwala Road ला, electric wire लटकतेय road वर
+G1963	mr	VET	sadashiv_peth	P3	कृपया लक्ष द्या, सदाशिव पेठ परिसरात, हॉस्पिटलसमोर, कुत्री रात्रभर भुंकतात कृपया कारवाई करावी
+G0503	mr	WATER	fc_road	P1	कृपया लक्ष द्या, एफसी रोड परिसरात, दूषित पाण्यामुळे लोक आजारी पडले
+G0192	mr	ROAD	bhavani_peth	P1	भवानी पेठ मध्ये, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G1718	hi	BUILD	NONE	P3	नमस्ते, बिना अनुमति के निर्माण हो रहा है
+G1167	mix	HEALTH	narayan_peth	P1	Please Narayan Peth area मध्ये, dengue cases वाढलेत, 1 days पासून please लवकर action घ्या
+G1574	rom	ENCROACH	hadapsar	P3	namaskar, hadapsar bhagat, footpath var atikraman aahe karvai kara please
+G1970	mr	VET	magarpatta	P1	तक्रार: मगरपट्टा भागात, पिसाळलेला कुत्रा फिरत आहे लवकर दुरुस्ती करा
+G1384	mr	TREE	chandannagar	P2	नमस्कार, चंदननगर भागात, झाड पडून गाडीचे नुकसान झाले
+G1612	hi	BUILD	market_yard	P3	मार्केट यार्ड इलाके में, अवैध मंजिल बनाई जा रही है
+G1777	mr	BUILD	NONE	P1	साहेब, स्लॅबचे तुकडे खाली पडत आहेत, महिनाभरापासून कृपया कारवाई करावी
+G1825	mr	VET	NONE	P3	डुकरांचा उपद्रव आहे तक्रार करूनही दखल घेतली नाही
+G0497	mr	WATER	tadiwala_road	P3	तक्रार: ताडीवाला रोड येथे, पाणीपुरवठा बंद आहे लवकर दुरुस्ती करा
+G1680	mr	BUILD	kondhwa	P3	साहेब, कोंढव्या परिसरात, बांधकामाचा राडारोडा रस्त्यावर टाकला आहे
+G0447	mr	WATER	sangamwadi	P4	कृपया लक्ष द्या, नवीन नळ जोडणी हवी आहे, संगमवाडी परिसरात, एक दिवसांपासून
+G0072	mr	ROAD	NONE	P3	साहेब, रस्त्यावर खूप खड्डे पडले आहेत कृपया कारवाई करावी
+G0563	mr	WATER	NONE	P3	तक्रार: नळाला पाणी येत नाही तक्रार करूनही दखल घेतली नाही
+G0941	mr	ELEC	NONE	P4	नवीन पथदिवे बसवावेत
+G1524	rom	ENCROACH	hadapsar	P3	please hadapsar bhagat, anadhikrut tapri aahe karvai kara please
+G1931	mr	VET	kharadi	P4	नमस्कार, खराडी परिसरात, कुत्र्यांची नसबंदी करावी तक्रार करूनही दखल घेतली नाही
+G0078	mr	ROAD	hingne	P3	हिंगणे भागात, रस्ता पूर्ण उखडला आहे कृपया कारवाई करावी
+G0409	rom	WATER	market_yard	P1	dushit panyamule lok aajari padle, market yard yethe lavkar kara
+G0366	mr	SWM	lohegaon	P3	नमस्कार, लोहगाव परिसरात, घंटागाडी येत नाही कृपया कारवाई करावी
+G1620	mr	BUILD	koregaon_park	P3	कृपया लक्ष द्या, कोरेगाव पार्क भागात, परवानगी न घेता बांधकाम सुरू आहे तक्रार करूनही दखल घेतली नाही
+G0826	mr	ELEC	dhanori	P1	धानोरी येथे, खांबाला करंट लागत आहे, चार दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0031	mr	ROAD	tadiwala_road	P3	नमस्कार, ताडीवाला रोड येथे, रस्त्याच्या मधोमध मोठा खड्डा आहे
+G0779	mr	DRAIN	NONE	P3	कृपया लक्ष द्या, पावसाचे पाणी रस्त्यावर साचते, दोन दिवसांपासून तक्रार करूनही दखल घेतली नाही
+G0089	mr	ROAD	NONE	P3	साहेब, रस्ता खोदून ठेवला आहे आणि बुजवला नाही
+G0978	mr	ELEC	NONE	P1	खांबाला करंट लागत आहे, तीन दिवसांपासून
+G0376	mix	SWM	wanowrie	P3	नमस्कार, वानवडी मध्ये, garbage van येत नाही urgent आहे
+G1589	mr	ENCROACH	balajinagar	P1	दहा दिवसांपासून, बालाजीनगर मध्ये, अनधिकृत होर्डिंग कधीही पडू शकते तक्रार करूनही दखल घेतली नाही
+G1016	mr	HEALTH	NONE	P1	तक्रार: मलेरियाचे रुग्ण आढळले आहेत, तीन आठवड्यांपासून तक्रार करूनही दखल घेतली नाही
+G1676	hi	BUILD	kothrud	P1	कोथरूड में, पुरानी इमारत खतरनाक हालत में है
+G1472	mr	ENCROACH	aundh	P1	तक्रार: अनधिकृत होर्डिंग कधीही पडू शकते, औंध येथे तक्रार करूनही दखल घेतली नाही
+G0076	mr	ROAD	wadgaon_sheri	P1	नमस्कार, वडगाव शेरी परिसरात, शाळेजवळ, रस्त्याच्या मधोमध मोठा खड्डा आहे, महिनाभरापासून
+G1779	mix	BUILD	mundhwa	P2	मुंढवा ला, excavation ला safety wall नाही
+G1838	hi	VET	bhavani_peth	P1	सर, भवानी पेठ इलाके में, पागल कुत्ता घूम रहा है, तीन हफ्तों से कृपया कार्रवाई करें
+G1331	hi	TREE	kondhwa	P2	कोंढव्या इलाके में, अवैध पेड़ कटाई हुई है, तीन हफ्तों से कृपया कार्रवाई करें
+G1286	hi	TREE	narayan_peth	P1	नारायण पेठ इलाके में, पेड़ की डाल टूटकर लटक रही है जल्दी ठीक करवाइए
+G1927	rom	VET	nana_peth	P3	please 2 divas pasun, mokat janavare rastyavar, nana peth bhagat
+G1511	mr	ENCROACH	warje	P2	वारजे मध्ये, दवाखान्याजवळ, हातगाड्यांमुळे वाहतूक कोंडी होते
+G0403	mix	WATER	keshavnagar	P2	Keshav Nagar ला, school जवळ, valve मधून leakage होतंय
+G1593	mr	ENCROACH	dhankawadi	P3	बेवारस वाहने रस्त्याकडेला पडून आहेत, धनकवडी मध्ये तक्रार करूनही दखल घेतली नाही
+G0188	mr	ROAD	sadashiv_peth	P3	सदाशिव पेठ परिसरात, रस्त्याच्या मधोमध मोठा खड्डा आहे, गेले चार दिवस
+G0323	rom	SWM	sahakarnagar	P3	namaskar, sahakar nagar madhe, kachryacha dhig aahe lavkar kara
+G0271	hi	SWM	bibwewadi	P2	सर, कचरा जलाया जाता है, धुआं होता है, बिबवेवाडी में
+G0849	mr	ELEC	NONE	P1	विजेची तार तुटून खाली पडली आहे, सात दिवसांपासून लवकर दुरुस्ती करा
+G0872	rom	ELEC	karvenagar	P2	karve nagar madhe, hospital samor, street light band aahe
+G0870	mr	ELEC	yewalewadi	P1	साहेब, येवलेवाडी भागात, विजेची तार तुटून खाली पडली आहे
+G1151	mr	HEALTH	lohegaon	P2	साहेब, लोहगाव मध्ये, उघड्यावर शौच केले जाते कृपया कारवाई करावी
+G1429	mix	ENCROACH	NONE	P3	illegal stalls लावलेत road वर, 2 days पासून
+G0699	mix	DRAIN	koregaon_park	P2	Koregaon Park area मध्ये, drainage line leak होतेय urgent आहे
+G0628	hi	DRAIN	sahakarnagar	P2	कृपया ध्यान दें, सहकारनगर इलाके में, नाली जाम हो गई है कृपया कार्रवाई करें
+G0860	mr	ELEC	NONE	P1	शाळेजवळ, खांबाला करंट लागत आहे, तीन दिवसांपासून कृपया कारवाई करावी
+G0343	rom	SWM	pune_station	P3	namaskar, kachra uchalla jat nahi, pune station madhe karvai kara please
+G0990	rom	ELEC	vishrantwadi	P3	please vishrantwadi yethe, navin street light lava, 3 aathvade zale karvai kara please
+G0300	rom	SWM	sinhagad_road	P1	sinhagad road bhagat, shalejaval, kachra uchalla jat nahi, 1 aathvade zale
+G1033	mix	HEALTH	kasba_peth	P2	Hello sir, rats चा त्रास आहे, Kasba Peth ला, school जवळ
+G1792	mr	BUILD	NONE	P1	शाळेजवळ, धोकादायक इमारत आहे तक्रार करूनही दखल घेतली नाही
+G0011	mr	ROAD	NONE	P2	तक्रार: डांबरीकरण खराब झाले आहे, महिनाभरापासून कृपया कारवाई करावी
+G0095	mr	ROAD	bibwewadi	P1	साहेब, बिबवेवाडी परिसरात, हॉस्पिटलसमोर, गतिरोधकावर रंग नाही, रात्री दिसत नाही
+G0336	mix	SWM	market_yard	P4	Please Market Yard area मध्ये, wet dry segregation होत नाही please लवकर action घ्या
+G0780	hi	DRAIN	deccan	P1	डेक्कन में, मैनहोल का ढक्कन खुला है कृपया कार्रवाई करें
+G1835	mr	VET	vadgaon_bk	P3	नमस्कार, वडगाव बु मध्ये, हॉस्पिटलसमोर, कुत्री रात्रभर भुंकतात, गेले सहा दिवस तक्रार करूनही दखल घेतली नाही
+G1545	hi	ENCROACH	lohegaon	P3	कृपया ध्यान दें, लोहगाव इलाके में, लावारिस गाड़ियां पड़ी हैं जल्दी ठीक करवाइए
+G1478	mr	ENCROACH	kondhwa	P3	नमस्कार, कोंढवा भागात, दुकानदारांनी रस्त्यावर सामान ठेवले आहे लवकर दुरुस्ती करा
+G1532	mr	ENCROACH	yewalewadi	P2	तक्रार: येवलेवाडी येथे, दुकानदारांनी रस्त्यावर सामान ठेवले आहे, महिनाभरापासून
+G0521	mr	WATER	nibm	P3	एनआयबीएम मध्ये, पाणी कमी दाबाने येते
+G1031	mix	HEALTH	katraj	P2	Please कात्रज मध्ये, hospital समोर, मच्छरांच्या larvae साचलेल्या पाण्यात आहेत
+G1512	rom	ENCROACH	undri	P4	saheb, undri yethe, anadhikrut flex lavle aahet, 10 divas pasun karvai kara please
+G1362	rom	TREE	bavdhan	P3	bavdhan madhe, anadhikrut vruksh tod zali
+G0643	mix	DRAIN	NONE	P1	नमस्कार, sewage घरात backflow होतंय please लवकर action घ्या
+G1207	mr	TREE	shivajinagar	P3	कृपया लक्ष द्या, शिवाजीनगर परिसरात, बेकायदेशीर वृक्षतोड झाली आहे, एक आठवड्यांपासून लवकर दुरुस्ती करा
+G0913	mr	ELEC	kalas	P4	कळस परिसरात, दिवे दिवसाही चालू असतात
+G0685	rom	DRAIN	kasba_peth	P2	kasba peth bhagat, sandpani rastyavar vahat aahe
+G0059	mr	ROAD	bavdhan	P3	साहेब, बावधन भागात, रस्ता खोदून ठेवला आहे आणि बुजवला नाही
+G0309	mix	SWM	yerawada	P3	येरवड्या मध्ये, dustbin overflow होतोय please लवकर action घ्या
+G1112	rom	HEALTH	balajinagar	P2	saheb, balaji nagar bhagat, undir khup zale aahet, mahina zala
+G0605	hi	DRAIN	NONE	P3	नाले की सफाई नहीं हुई कृपया कार्रवाई करें
+G1017	mr	HEALTH	vadgaon_bk	P1	तक्रार: वडगाव बु येथे, डेंग्यूचे रुग्ण वाढले आहेत, तीन दिवसांपासून कृपया कारवाई करावी
+G1221	mr	TREE	viman_nagar	P1	विमान नगर परिसरात, झाड वाकले आहे, पडण्याची भीती आहे तक्रार करूनही दखल घेतली नाही
+G0145	mix	ROAD	kasba_peth	P3	Please कसबा area मध्ये, road पूर्ण खराब झालाय urgent आहे
+G0831	mr	ELEC	fatimanagar	P3	कृपया लक्ष द्या, दोन आठवड्यांपासून, दिवे दिवसाही चालू असतात, फातिमा नगर मध्ये लवकर दुरुस्ती करा
+G0640	mr	DRAIN	dhanori	P1	नमस्कार, धानोरी परिसरात, सांडपाणी घरात येत आहे तक्रार करूनही दखल घेतली नाही
+G1502	mr	ENCROACH	shivajinagar	P3	तक्रार: शिवाजी नगर येथे, पदपथावर बांधकाम साहित्य ठेवले आहे कृपया कारवाई करावी
+G1253	rom	TREE	pune_station	P1	please pune station yethe, zadachi fandi latakli aahe, 1 aathvade zale
+G0211	hi	SWM	salunke_vihar	P2	कृपया ध्यान दें, साळुंके विहार इलाके में, अस्पताल के सामने, कचरा गाड़ी नहीं आती जल्दी ठीक करवाइए
+G1602	mr	BUILD	dhayari	P1	कृपया लक्ष द्या, धायरी भागात, भिंत कोसळून लोक जखमी झाले कृपया कारवाई करावी
+G1204	hi	TREE	NONE	P4	नमस्ते, पेड़ की छंटाई करवाइए
+G0121	mix	ROAD	kondhwa	P1	pothole मुळे bike slip होऊन accident झाला, कोंढवा ला, 2 days पासून, school जवळ
+G1707	rom	BUILD	hadapsar	P1	hadapsar yethe, bhint koslnar aahe karvai kara please
+G1638	mr	BUILD	deccan	P3	तक्रार: नदीपात्रात बांधकाम केले जात आहे, डेक्कन मध्ये कृपया कारवाई करावी
+G0046	rom	ROAD	kharadi	P3	saheb, kharadi madhe, khadda padla aahe road var
+G1562	mr	ENCROACH	magarpatta	P3	मगरपट्ट्या येथे, सात दिवसांपासून, हातगाड्यांमुळे वाहतूक कोंडी होते
+G1456	rom	ENCROACH	ramtekdi	P3	saheb, ramtekdi bhagat, bewaras gadya padun aahet karvai kara please
+G0510	mr	WATER	NONE	P3	तक्रार: नळाला पाणी येत नाही लवकर दुरुस्ती करा
+G0443	rom	WATER	kalas	P2	kalas yethe, pani vaya jatay leakage mule lavkar kara
+G0618	rom	DRAIN	deccan	P2	deccan yethe, sandpani rastyavar vahat aahe, 1 divas pasun
+G0752	rom	DRAIN	NONE	P2	please drainage tumbli aahe lavkar kara
+G0163	mr	ROAD	kalas	P1	तक्रार: कळस मध्ये, खड्ड्यामुळे अपघात झाला, एक माणूस जखमी लवकर दुरुस्ती करा
+G0135	hi	ROAD	dhanori	P2	धानोरी इलाके में, स्पीड ब्रेकर बहुत ऊंचा है, एक महीने से
+G1540	mix	ENCROACH	NONE	P3	Please illegal stalls लावलेत road वर, 10 days पासून
+G0635	mix	DRAIN	kondhwa	P2	नमस्कार, कोंढवा मध्ये, drainage line leak होतेय
+G0327	mr	SWM	lohegaon	P4	लोहगाव येथे, ओला आणि सुका कचरा वेगळा घेत नाहीत, गेले दोन दिवस
+G1559	mix	ENCROACH	balewadi	P3	नमस्कार, Balewadi ला, abandoned vehicles पडून आहेत please लवकर action घ्या
+G0935	mr	ELEC	pashan	P3	कृपया लक्ष द्या, पाषाण भागात, दिवा सतत बंद-चालू होतो, महिनाभरापासून तक्रार करूनही दखल घेतली नाही
+G0197	rom	ROAD	pashan	P3	please pashan yethe, rastyavar khup khadde aahet lavkar kara
+G1730	rom	BUILD	fatimanagar	P3	fatimanagar madhe, anadhikrut bandhkam chalu aahe

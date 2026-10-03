@@ -1,0 +1,7 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+75,2026-09-28T17:38:00,P1,2026-09-29T17:38,ELEC,0.7877,sadashiv_peth,KVB,75,new,AUTO_ROUTED,"khamba varchi wire lombkalat aahe, current cha dhoka aahe, sadashiv peth"
+130,2026-09-29T00:03:00,P1,2026-09-30T00:03,BUILD,0.7158,shaniwar_peth,KVB,130,new,AUTO_ROUTED,"जुन्या वाड्याची भिंत कोसळायला आली आहे, कधीही पडेल, शनिवार पेठ"
+9,2026-09-28T09:56:00,P2,2026-10-01T09:56,ROAD,0.8308,sadashiv_peth,KVB,9,new,AUTO_ROUTED,"सदाशिव पेठेत road खोदून ठेवलाय drainage च्या कामासाठी, पण barricading नाही, अपघात होऊ शकतो"
+49,2026-09-28T14:36:00,P2,2026-10-01T14:36,DRAIN,0.9964,narayan_peth,KVB,49,new,AUTO_ROUTED,"ड्रेनेज तुंबून सांडपाणी रस्त्यावर वाहतंय, नारायण पेठ"
+115,2026-09-28T22:18:00,P3,2026-10-05T22:18,ENCROACH,0.5005,kasba_peth,KVB,115,new,AUTO_ROUTED,"दुकानदारांनी दुकानासमोर शेड बांधून रस्ता व्यापलाय, कसबा पेठ"
+37,2026-09-28T13:12:00,P4,2026-10-13T13:12,WATER,0.9151,shaniwar_peth,KVB,37,new,AUTO_ROUTED,"पाणी येण्याची वेळ रोज बदलते, कधी पहाटे चार वाजता, शनिवार पेठ"

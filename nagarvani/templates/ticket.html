@@ -61,8 +61,8 @@
   {% set w = trace.ward %}
   <p><strong>वॉर्ड कार्यालय / Ward office:</strong> {{ ward(w.ward) if w.ward else 'ठरवता आले नाही / not resolved' }}</p>
   <p><strong>पद्धत / Method:</strong> {{ w.method }}{% if w.method == 'fuzzy' %} (similarity {{ w.score }} ≥ {{ cfg.FUZZY_MIN_RATIO }}){% endif %}
-    {% if w.matched_text %}· matched "<strong>{{ w.matched_text }}</strong>"{% endif %}
-    {% if w.matched_alias %} → gazetteer alias "{{ w.matched_alias }}"{% endif %}</p>
+    {% if w.matched_alias %}· gazetteer alias "<strong>{{ w.matched_alias }}</strong>"{% endif %}
+    {% if w.locality %}· locality <span class="mono">{{ w.locality }}</span>{% endif %}</p>
   {% if w.candidates and not w.ward %}<p>Candidate ward offices: {% for c in w.candidates %}{{ ward(c) }}{{ ', ' if not loop.last }}{% endfor %}</p>{% endif %}
   <p><strong>कारण / Reason:</strong> {{ w.reason }}</p>
   {% if w.hint %}<p class="muted">Dropdown choice: {{ ward(w.hint) }} — {{ 'used' if w.hint_used else 'not used' }}.</p>{% endif %}
@@ -70,17 +70,19 @@
 
 <!-- 4. Severity -->
 <section class="card step">
-  <h2><span class="num">4</span>तीव्रता<span class="en">Severity — forward-chaining rules (data/severity_rules.json)</span></h2>
+  <h2><span class="num">4</span>तीव्रता<span class="en">Severity — 19-rule forward-chaining expert system (nagarvani/severity.py)</span></h2>
+  <p class="muted">Starts at the default band {{ trace.severity.default_band }}; rules fire in salience order (life safety 100, hazard 50, service request 10, escalation 0).</p>
   <table>
     <tr><th>#</th><th>Rule</th><th>जुळलेले शब्द / Matched cues</th><th>Action</th></tr>
     {% for f in trace.severity.fired %}
     <tr><td>{{ loop.index }}</td><td><strong>{{ f.rule }}</strong> {{ f.name }}</td>
       <td>{% for g, term in f.cues.items() %}<span class="mono">{{ g }}</span>: "{{ term }}"{{ '; ' if not loop.last }}{% else %}—{% endfor %}</td>
       <td>{{ f.action }}</td></tr>
+    {% else %}<tr><td colspan="4">No rule fired: the default band applies.</td></tr>
     {% endfor %}
   </table>
   {% if trace.severity.overridden %}
-    <p class="muted">Overridden: {% for o in trace.severity.overridden %}{{ o.rule }} proposed {{ o.proposed }}, overridden by {{ o.by }} (most urgent wins){{ '; ' if not loop.last }}{% endfor %}</p>
+    <p class="muted">Overridden: {% for o in trace.severity.overridden %}{{ o.rule }} would give {{ o.proposed }}: {{ o.why }}{% if o.by %} ({{ o.by }}){% endif %}{{ '; ' if not loop.last }}{% endfor %}</p>
   {% endif %}
   <p><strong>अंतिम प्राधान्य / Final band:</strong> <span class="badge {{ trace.severity.band }}">{{ trace.severity.band }}</span>
     {{ BANDS[trace.severity.band].mr }} / {{ BANDS[trace.severity.band].en }}</p>
@@ -102,7 +104,7 @@
       {% if d.ticket_id %}Best match: <a href="{{ url_for('ticket', tid=d.ticket_id) }}">#{{ d.ticket_id }}</a>.{% endif %}
       {% if d.decision == 'merge' and trace.gate.decision == 'MERGED' %}This is report {{ d.report_count }} of the issue.{% endif %}</p>
   {% endif %}
-  <p class="muted mono">compared text (place names removed): {{ trace.masked_text }}</p>
+  <p class="muted mono">compared text (place names removed): {{ trace.extras.masked_text }}</p>
 </section>
 
 <!-- 6. Gate -->

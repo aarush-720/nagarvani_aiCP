@@ -1,0 +1,39 @@
+{
+  "_note": "Frozen data file (see data/FROZEN.sha256). Department codes, display names and the 15 PMC ward offices. Ward office list carried over from the midsem notebook; team to verify spellings against the PMC website.",
+  "departments": [
+    {"code": "ROAD", "mr": "पथ विभाग (रस्ते)", "en": "Roads"},
+    {"code": "SWM", "mr": "घनकचरा व्यवस्थापन", "en": "Solid Waste Management"},
+    {"code": "WATER", "mr": "पाणीपुरवठा", "en": "Water Supply"},
+    {"code": "DRAIN", "mr": "मलनिःसारण / ड्रेनेज", "en": "Drainage and Sewerage"},
+    {"code": "ELEC", "mr": "विद्युत (पथदिवे)", "en": "Electrical (Street Lights)"},
+    {"code": "HEALTH", "mr": "आरोग्य व कीटक नियंत्रण", "en": "Public Health and Pest Control"},
+    {"code": "TREE", "mr": "उद्यान व वृक्ष", "en": "Garden and Tree"},
+    {"code": "ENCROACH", "mr": "अतिक्रमण", "en": "Encroachment"},
+    {"code": "BUILD", "mr": "बांधकाम परवानगी", "en": "Building and Construction"},
+    {"code": "VET", "mr": "पशुवैद्यकीय", "en": "Veterinary (Animals)"}
+  ],
+  "wards": [
+    {"code": "W01", "en": "Aundh-Baner", "mr": "औंध-बाणेर"},
+    {"code": "W02", "en": "Bhavani Peth", "mr": "भवानी पेठ"},
+    {"code": "W03", "en": "Bibwewadi", "mr": "बिबवेवाडी"},
+    {"code": "W04", "en": "Dhole Patil Road", "mr": "ढोले पाटील रोड"},
+    {"code": "W05", "en": "Hadapsar-Mundhwa", "mr": "हडपसर-मुंढवा"},
+    {"code": "W06", "en": "Kasba-Vishrambaugwada", "mr": "कसबा-विश्रामबागवाडा"},
+    {"code": "W07", "en": "Kondhwa-Yewalewadi", "mr": "कोंढवा-येवलेवाडी"},
+    {"code": "W08", "en": "Kothrud-Bavdhan", "mr": "कोथरूड-बावधन"},
+    {"code": "W09", "en": "Nagar Road-Wadgaonsheri", "mr": "नगर रोड-वडगावशेरी"},
+    {"code": "W10", "en": "Shivajinagar-Ghole Road", "mr": "शिवाजीनगर-घोले रोड"},
+    {"code": "W11", "en": "Sinhagad Road", "mr": "सिंहगड रोड"},
+    {"code": "W12", "en": "Warje-Karvenagar", "mr": "वारजे-कर्वेनगर"},
+    {"code": "W13", "en": "Dhankawadi-Sahakarnagar", "mr": "धनकवडी-सहकारनगर"},
+    {"code": "W14", "en": "Wanowrie-Ramtekdi", "mr": "वानवडी-रामटेकडी"},
+    {"code": "W15", "en": "Yerawada-Kalas-Dhanori", "mr": "येरवडा-कळस-धानोरी"}
+  ],
+  "severity_bands": [
+    {"band": "P1", "mr": "तातडीचे", "en": "Urgent (life safety)", "sla_hours": 24},
+    {"band": "P2", "mr": "उच्च", "en": "High", "sla_hours": 72},
+    {"band": "P3", "mr": "सामान्य", "en": "Normal", "sla_hours": 168},
+    {"band": "P4", "mr": "कमी", "en": "Low", "sla_hours": 360}
+  ],
+  "_sla_note": "SLA hours are the team's proposed values (carried over from the midsem notebook), not official PMC figures."
+}

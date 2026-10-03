@@ -1,0 +1,161 @@
+id	lang	dept	loc	sev	text
+T001	mr	ROAD	kothrud	P3	आमच्या गल्लीत कोथरूडमध्ये मोठमोठे खड्डे पडले आहेत, गाडी चालवणं कठीण झालंय
+T002	mr	ROAD	karvenagar	P3	कर्वेनगर मधल्या रस्त्यावर पावसामुळे डांबर वाहून गेलंय, सगळीकडे खड्डेच खड्डे
+T003	mr	ROAD	dhayari	P1	धायरीत शाळेसमोरच्या रस्त्यावर खोल खड्डा आहे, काल एक मुलगा सायकलवरून पडला आणि जखमी झाला
+T004	mr	ROAD	baner	P2	बाणेर रोडवर नवीन केलेला रस्ता पुन्हा खोदून ठेवलाय आणि तसाच सोडलाय, दोन आठवडे झाले
+T005	mr	ROAD	hadapsar	P3	हडपसर गाडीतळ जवळ स्पीड ब्रेकरवर पांढरे पट्टे नाहीत, रात्री गाड्या आदळतात
+T006	mr	ROAD	viman_nagar	P3	विमाननगर मध्ये फूटपाथचे पेव्हर ब्लॉक उखडले आहेत, चालताना पाय अडकतो
+T007	mr	ROAD	NONE	P1	रस्त्यावरचा खड्डा पाण्याने भरलाय, दिसतच नाही, दुचाकीस्वार रोज घसरून पडतात
+T008	mix	ROAD	kharadi	P3	Kharadi मध्ये main road वर pothole खूप मोठा झालाय, traffic jam होतंय रोज
+T009	mix	ROAD	sadashiv_peth	P2	सदाशिव पेठेत road खोदून ठेवलाय drainage च्या कामासाठी, पण barricading नाही, अपघात होऊ शकतो
+T010	mix	ROAD	wanowrie	P3	वानवडी मधला road repair करून महिना झाला नाही आणि परत cracks आलेत
+T011	mr-rom	ROAD	kondhwa	P3	kondhwa madhe rasta khup kharab zala aahe, sagle khadde bharun dya
+T012	mr-rom	ROAD	katraj	P2	katraj ghat road la mothha khadda aahe, accident hou shakto
+T013	mr-rom	ROAD	nana_peth	P3	nana peth madhil galli madhe road cha level khali gela aahe, pani sachte
+T014	hi	ROAD	wadgaon_sheri	P3	वडगाव शेरी में सड़क पर बहुत बड़े गड्ढे हैं, कोई सुनवाई नहीं हो रही
+T015	hi	ROAD	magarpatta	P2	मगरपट्टा के पास सड़क धंस गई है, कभी भी हादसा हो सकता है
+T016	mr	ROAD	paud_road	P3	पौड रोडवर मेट्रोच्या कामामुळे रस्ता अरुंद झालाय आणि खड्डे पडलेत
+T017	mr	SWM	NONE	P2	आमच्या सोसायटीसमोर गेले पाच दिवस कचरा उचललेला नाही, वास येतोय
+T018	mr	SWM	bibwewadi	P3	बिबवेवाडीतील कचराकुंडी भरून वाहतेय, कुत्री कचरा पसरवतात
+T019	mr	SWM	yewalewadi	P2	येवलेवाडीत मोकळ्या प्लॉटवर लोक रात्री कचरा टाकतात आणि जाळतात, धुरामुळे श्वास घ्यायला त्रास होतो
+T020	mr	SWM	kondhwa	P3	घंटागाडी आमच्या भागात आठवड्यातून एकदाच येते, कोंढव्यात
+T021	mr	SWM	sangamwadi	P3	नदीकाठी संगमवाडी जवळ राडारोडा आणि कचरा टाकलाय
+T022	mr	SWM	market_yard	P2	भाजी मंडईजवळ मार्केट यार्ड मध्ये सडलेला भाजीपाला पडून आहे, माश्या झाल्यात
+T023	mix	SWM	baner	P3	Baner मध्ये garbage collection van दोन दिवसांपासून आली नाही
+T024	mix	SWM	NONE	P3	Society च्या gate जवळ कचऱ्याचा ढीग आहे, dustbin ठेवा please
+T025	mix	SWM	hadapsar	P4	हडपसर मध्ये wet आणि dry waste वेगळा घेत नाहीत, सगळं mix करून नेतात
+T026	mr-rom	SWM	lohegaon	P2	kachra gadi aali nahi 4 divas zale, lohegaon madhe
+T027	mr-rom	SWM	dhanori	P2	aamchya galli madhe kachryacha dhig padlay, khup vaas yeto, dhanori
+T028	mr-rom	SWM	kasba_peth	P3	public toilet chi safai hot nahi, kasba peth
+T029	hi	SWM	kharadi	P2	खराडी में कूड़ा कई दिनों से नहीं उठाया गया, बदबू आ रही है
+T030	hi	SWM	koregaon_park	P2	सड़क किनारे कचरा जलाया जा रहा है, कोरेगाव पार्क में
+T031	mr	SWM	sahakarnagar	P4	रस्त्यावर झाडलोट होत नाही, पानगळीचा पाला साचलाय, सहकारनगर
+T032	mr	SWM	NONE	P3	गणपती विसर्जनानंतर घाटावर निर्माल्य आणि प्लास्टिक पडून आहे
+T033	mr	WATER	katraj	P2	कात्रजमध्ये तीन दिवसांपासून नळाला पाणीच आलेलं नाही
+T034	mr	WATER	warje	P3	आमच्या भागात खूप कमी दाबाने पाणी येतं, दुसऱ्या मजल्यावर पोहोचतच नाही, वारजे
+T035	mr	WATER	dhankawadi	P1	नळाला गढूळ आणि वास येणारं पाणी येतंय, घरात सगळे आजारी पडलेत, धनकवडी
+T036	mr	WATER	aundh	P2	रस्त्याखालची पाइपलाइन फुटली आहे, हजारो लिटर पाणी वाया जातंय, औंध
+T037	mr	WATER	shaniwar_peth	P4	पाणी येण्याची वेळ रोज बदलते, कधी पहाटे चार वाजता, शनिवार पेठ
+T038	mr	WATER	NONE	P4	पाण्याच्या मीटरचं बिल चुकीचं आलंय, दुरुस्त करून द्या
+T039	mix	WATER	undri	P3	Undri मध्ये tanker मागवून मागवून थकलो, supply line कधी देणार
+T040	mix	WATER	NONE	P3	Valve leak होतोय आमच्या lane मध्ये, सतत पाणी वाहतंय
+T041	mix	WATER	balajinagar	P2	Pipeline च्या कामानंतर पाण्यात माती येतेय, पिण्यायोग्य नाही, बालाजीनगर
+T042	mr-rom	WATER	hingne	P2	pani yet nahi 2 divas pasun, hingne khurd
+T043	mr-rom	WATER	pashan	P3	nalala pani khup kami pressure ne yete, pashan
+T044	mr-rom	WATER	fatimanagar	P2	pipeline futli aahe road var, pani vahun jatay, fatima nagar
+T045	hi	WATER	vishrantwadi	P3	विश्रांतवाडी में पानी की सप्लाई बहुत अनियमित है
+T046	hi	WATER	yerawada	P1	नल से गंदा पानी आ रहा है, बच्चे बीमार हो गए हैं, येरवडा
+T047	mr	WATER	keshavnagar	P3	सार्वजनिक नळ तुटला आहे, केशवनगर
+T048	mr	WATER	NONE	P3	उन्हाळ्यात आमच्या वस्तीत आठवडाभर पाणी नव्हतं, आता पण एक दिवसाआड येतं
+T049	mr	DRAIN	narayan_peth	P2	ड्रेनेज तुंबून सांडपाणी रस्त्यावर वाहतंय, नारायण पेठ
+T050	mr	DRAIN	mundhwa	P1	चेंबरचं झाकण तुटलंय आणि उघडं आहे, कोणी पडू शकतं, मुंढवा
+T051	mr	DRAIN	anandnagar	P3	पावसाचं पाणी साचतं कारण पावसाळी गटार बंद आहे, आनंदनगर
+T052	mr	DRAIN	guruwar_peth	P1	सांडपाणी थेट घरात शिरतंय, गुरुवार पेठ
+T053	mr	DRAIN	vadgaon_bk	P3	नाल्याची साफसफाई झाली नाही, पावसाळ्यात पूर येतो, वडगाव बुद्रुक
+T054	mr	DRAIN	ramtekdi	P2	गटाराचा प्रचंड वास येतो आणि डास झालेत, रामटेकडी
+T055	mix	DRAIN	balewadi	P1	Drainage line chock-up झाली आहे, toilet चं पाणी घरात मागे येतंय, Balewadi
+T056	mix	DRAIN	salunke_vihar	P1	Manhole overflow होतोय school च्या gate समोर, Salunke Vihar
+T057	mix	DRAIN	NONE	P1	Storm water drain वर slab नाही, पूर्ण open आहे, रात्री कोणी पडेल
+T058	mr-rom	DRAIN	pisoli	P2	drainage tumbli aahe, ghan pani rastyavar, pisoli
+T059	mr-rom	DRAIN	tadiwala_road	P1	chamber cha zakan nahi, rastyavar ughada khadda, tadiwala road
+T060	mr-rom	DRAIN	model_colony	P2	gatarache ghan pani nalyat na jata rastyavar yete, model colony
+T061	hi	DRAIN	chandannagar	P2	सीवर लाइन जाम है, गंदा पानी सड़क पर बह रहा है, चंदननगर
+T062	hi	DRAIN	NONE	P2	नाले की सफाई नहीं हुई, बारिश में गंदा पानी घरों के सामने भर जाता है
+T063	mr	DRAIN	kalas	P3	ड्रेनेजचं काम अर्धवट सोडलंय, पाइप रस्त्यावर पडलेत, कळस
+T064	mr	DRAIN	NONE	P3	सोसायटीच्या मागे ड्रेनेज लाइन गळतेय
+T065	mr	ELEC	bavdhan	P3	आमच्या गल्लीतले पथदिवे आठ दिवसांपासून बंद आहेत, अंधारात चालणं भीतीदायक आहे, बावधन
+T066	mr	ELEC	bhavani_peth	P1	विजेची तार तुटून रस्त्यावर लोंबकळतेय, करंट असू शकतो, भवानी पेठ
+T067	mr	ELEC	deccan	P4	स्ट्रीट लाईट दिवसाही चालूच असतात, वीज वाया जाते, डेक्कन
+T068	mr	ELEC	keshavnagar	P4	पोलवरचा दिवा लुकलुकतोय, केशवनगर
+T069	mr	ELEC	sahakarnagar	P3	बागेतले दिवे बंद आहेत, संध्याकाळी महिलांना असुरक्षित वाटतं, सहकारनगर
+T070	mr	ELEC	kondhwa	P1	विजेचा खांब वाकलाय आणि कधीही पडू शकतो, कोंढवा
+T071	mix	ELEC	vishrantwadi	P2	Street light बंद आहे गेले पंधरा दिवस, Vishrantwadi
+T072	mix	ELEC	NONE	P1	Signal च्या जवळच्या light pole ला shock लागतोय, पाऊस आल्यावर
+T073	mix	ELEC	market_yard	P3	आमच्या chowk मध्ये high mast lamp बंद आहे, Market Yard
+T074	mr-rom	ELEC	nibm	P3	street light band aahe, galli madhe andhar, nibm road
+T075	mr-rom	ELEC	sadashiv_peth	P1	khamba varchi wire lombkalat aahe, current cha dhoka aahe, sadashiv peth
+T076	mr-rom	ELEC	gultekdi	P3	divyacha khamb gancha lagun kharab zala, gultekdi
+T077	hi	ELEC	hadapsar	P3	गली की स्ट्रीट लाइट खराब है, रात में अंधेरा रहता है, हडपसर
+T078	hi	ELEC	koregaon_park	P1	बिजली का खंभा गिरने वाला है, कोरेगाव पार्क
+T079	mr	ELEC	pisoli	P4	नवीन पथदिवे बसवण्याची मागणी आहे, पिसोळी रोडवर एकही दिवा नाही
+T080	mr	ELEC	NONE	P1	डीपी बॉक्सचं दार उघडं आहे आणि वायर बाहेर आलेत, मुलं जवळ खेळतात
+T081	mr	HEALTH	wanowrie	P3	आमच्या परिसरात डासांचा खूप त्रास आहे, धूरफवारणी करा, वानवडी
+T082	mr	HEALTH	kothrud	P1	इमारतीत तीन जणांना डेंग्यू झालाय, औषध फवारणी तातडीने करा, कोथरूड
+T083	mr	HEALTH	dhanori	P2	रस्त्यावर मेलेलं कुत्रं पडलंय दोन दिवसांपासून, वास येतोय, धानोरी
+T084	mr	HEALTH	kharadi	P3	बांधकामाच्या ठिकाणी पाणी साचलंय, डासांची पैदास होतेय, खराडी
+T085	mr	HEALTH	shivajinagar	P3	हॉटेलचं खरकटं उघड्यावर टाकतात, उंदीर झालेत, शिवाजीनगर
+T086	mr	HEALTH	viman_nagar	P3	मोकळ्या टायरमध्ये पाणी साचून डासांच्या अळ्या झाल्यात, विमाननगर
+T087	mix	HEALTH	magarpatta	P3	Mosquito fogging आमच्या area मध्ये कधीच होत नाही, Magarpatta
+T088	mix	HEALTH	NONE	P1	Dengue चे cases वाढलेत society मध्ये, urgent fogging पाहिजे
+T089	mix	HEALTH	NONE	P2	Dead cat पडली आहे road वर, कोणी उचलत नाही
+T090	mr-rom	HEALTH	bavdhan	P3	dasancha khup tras aahe, fawarni kara, bavdhan
+T091	mr-rom	HEALTH	kashewadi	P1	malaria che rugn vadhle aahet vasti madhe, kashewadi
+T092	mr-rom	HEALTH	ramtekdi	P2	melela dukkar padla aahe nalyajaval, vaas yetoy, ramtekdi
+T093	hi	HEALTH	wadgaon_sheri	P3	मच्छरों का बहुत आतंक है, फॉगिंग करवाइए, वडगाव शेरी
+T094	hi	HEALTH	kondhwa	P2	सड़क पर मरा हुआ कुत्ता पड़ा है, बदबू आ रही है, कोंढवा
+T095	mr	HEALTH	pune_station	P2	खाद्यपदार्थांच्या गाड्यांवर अस्वच्छता आहे, माश्या बसतात, पुणे स्टेशन
+T096	mr	HEALTH	yerawada	P2	उघड्या जागेत शौच करतात, दुर्गंधी पसरते, येरवडा
+T097	mr	TREE	pashan	P1	वादळात मोठं झाड रस्त्यावर पडलंय, वाहतूक बंद आहे, पाषाण
+T098	mr	TREE	NONE	P1	झाडाची मोठी फांदी विजेच्या तारांवर लोंबकळतेय, कधीही पडेल, एरंडवणे
+T099	mr	TREE	hingne	P1	सोसायटीतलं जुनं झाड वाकलंय, घरावर कधीही पडू शकतं, हिंगणे
+T100	mr	TREE	kothrud	P4	झाडांची छाटणी करायची आहे, फांद्या खिडकीत येतात, कोथरूड
+T101	mr	TREE	baner	P3	कोणीतरी रात्री झाडं तोडली, बेकायदेशीर वृक्षतोड, बाणेर
+T102	mr	TREE	deccan	P3	पडलेल्या फांद्या आठवडाभर उचलल्या नाहीत, फूटपाथ बंद आहे, डेक्कन
+T103	mix	TREE	aundh	P2	Tree fall झालंय parking मध्ये, गाड्यांचं नुकसान झालंय, Aundh
+T104	mix	TREE	dhankawadi	P1	Gulmohar चं झाड मुळासकट हललंय, school जवळ आहे, Dhankawadi
+T105	mix	TREE	NONE	P4	Tree trimming request आहे, street light झाकला गेलाय
+T106	mr-rom	TREE	warje	P1	zad padle aahe rastyavar, gadya jau shakat nahit, warje
+T107	mr-rom	TREE	chandannagar	P1	zadachi fandi tutun latakli aahe, kadhihi padel, chandannagar
+T108	mr-rom	TREE	bibwewadi	P4	zadanchi chhatni karayla parvangi pahije, bibwewadi
+T109	hi	TREE	lohegaon	P1	तूफान में पेड़ सड़क पर गिर गया है, रास्ता बंद है, लोहगाव
+T110	hi	TREE	nana_peth	P1	पेड़ की डाल खतरनाक तरीके से लटक रही है, कभी भी गिर सकती है, नाना पेठ
+T111	mr	TREE	NONE	P4	नवीन लावलेली रोपं पाण्याअभावी वाळली, उद्यान विभागाने लक्ष द्यावं
+T112	mr	TREE	salunke_vihar	P3	झाडाच्या मुळांमुळे कंपाऊंडच्या भिंतीला तडे गेलेत, साळुंके विहार
+T113	mr	ENCROACH	NONE	P3	फूटपाथवर फेरीवाल्यांनी पूर्ण कब्जा केलाय, चालायला जागा नाही, लक्ष्मी रोड
+T114	mr	ENCROACH	hadapsar	P3	रस्त्यावर बेकायदेशीर टपऱ्या उभारल्यात, वाहतूक कोंडी होते, हडपसर
+T115	mr	ENCROACH	kasba_peth	P3	दुकानदारांनी दुकानासमोर शेड बांधून रस्ता व्यापलाय, कसबा पेठ
+T116	mr	ENCROACH	kondhwa	P2	सोडून दिलेली जुनी वाहनं रस्त्याकडेला महिनोन् महिने पडून आहेत, कोंढवा
+T117	mr	ENCROACH	sinhagad_road	P2	फुटपाथवर हातगाड्या लावून भाजी विकतात, शाळेतल्या मुलांना रस्त्यावरून चालावं लागतं, सिंहगड रोड
+T118	mr	ENCROACH	NONE	P4	मंदिराजवळ अनधिकृत फलक आणि बॅनर लावलेत
+T119	mix	ENCROACH	fc_road	P3	Footpath वर hawkers बसतात, pedestrians ला जागाच नाही, FC Road
+T120	mix	ENCROACH	viman_nagar	P4	Illegal flex banners लावले आहेत chowk मध्ये, Viman Nagar
+T121	mix	ENCROACH	koregaon_park	P3	Hotel वाल्यांनी footpath वर tables मांडलेत, Koregaon Park
+T122	mr-rom	ENCROACH	karvenagar	P3	footpath var feriwale basle aahet, chalayla jaga nahi, karvenagar
+T123	mr-rom	ENCROACH	mundhwa	P3	rastyavar anadhikrut tapri ubharli aahe, mundhwa
+T124	mr-rom	ENCROACH	kothrud	P3	junya gadya rastyavar padun aahet, parking la jaga nahi, kothrud
+T125	hi	ENCROACH	viman_nagar	P3	फुटपाथ पर ठेले वालों ने कब्जा कर लिया है, विमान नगर
+T126	hi	ENCROACH	kharadi	P1	सड़क पर अवैध होर्डिंग लगा है, हवा में कभी भी गिर सकता है, खराडी
+T127	mr	ENCROACH	tadiwala_road	P3	पदपथावर बांधकाम साहित्य टाकून ठेवलंय, ताडीवाला रोड
+T128	mr	ENCROACH	NONE	P3	रस्त्यावरच गाड्या दुरुस्त करणारे गॅरेज चालवतात, सगळं ऑइल रस्त्यावर
+T129	mr	BUILD	wadgaon_sheri	P3	शेजारी परवानगी न घेता तिसरा मजला बांधत आहेत, वडगाव शेरी
+T130	mr	BUILD	shaniwar_peth	P1	जुन्या वाड्याची भिंत कोसळायला आली आहे, कधीही पडेल, शनिवार पेठ
+T131	mr	BUILD	sangamwadi	P3	नदीपात्रात अनधिकृत बांधकाम सुरू आहे, संगमवाडी
+T132	mr	BUILD	balewadi	P3	बांधकामाचा राडारोडा रस्त्यावर टाकतात आणि रात्रीपर्यंत काम चालतं, बालेवाडी
+T133	mr	BUILD	bhavani_peth	P1	इमारतीच्या स्लॅबचे तुकडे पडत आहेत, लोक खाली राहतात, भवानी पेठ
+T134	mr	BUILD	nana_peth	P3	गच्चीवर अनधिकृत मोबाईल टॉवर बसवलाय, नाना पेठ
+T135	mix	BUILD	kharadi	P2	Building च्या बाजूला deep excavation केलंय, संरक्षक भिंत नाही, धोका आहे, Kharadi
+T136	mix	BUILD	aundh	P3	Parking च्या जागेत shops बांधली आहेत, illegal construction, Aundh
+T137	mix	BUILD	NONE	P3	Construction site वरून cement ची धूळ उडते, सगळे खोकतात
+T138	mr-rom	BUILD	dhayari	P3	shejari anadhikrut bandhkam chalu aahe, parvangi nahi, dhayari
+T139	mr-rom	BUILD	guruwar_peth	P1	juni imarat dhokadayak aahe, ek bhint padli aahe, guruwar peth
+T140	mr-rom	BUILD	pune_station	P4	terrace var illegal shed bandhla aahe, pune station
+T141	hi	BUILD	dhankawadi	P3	बिना परमिशन के चौथी मंजिल बन रही है, धनकवडी
+T142	hi	BUILD	NONE	P1	पुरानी इमारत की दीवार गिर गई है, लोग घायल हुए हैं
+T143	mr	BUILD	katraj	P3	हिल टॉप हिल स्लोप झोनमध्ये बांधकाम सुरू आहे, कात्रज
+T144	mr	BUILD	NONE	P3	बांधकाम परवानगीसाठी अर्ज केला होता, तीन महिने झाले उत्तर नाही
+T145	mr	VET	warje	P3	भटक्या कुत्र्यांचा खूप त्रास आहे, रात्री मागे लागतात, वारजे
+T146	mr	VET	hadapsar	P1	कुत्र्याने माझ्या मुलाला चावा घेतला, गल्लीत दहा-बारा कुत्री आहेत, हडपसर
+T147	mr	VET	katraj	P3	रस्त्यावर मोकाट जनावरं बसतात, गाड्यांना अडथळा होतो, कात्रज
+T148	mr	VET	yewalewadi	P1	पिसाळलेला कुत्रा फिरतोय, सगळ्यांना चावतोय, येवलेवाडी
+T149	mr	VET	kharadi	P4	भटक्या कुत्र्यांचं निर्बीजीकरण करावं, संख्या वाढलीय, खराडी
+T150	mr	VET	deccan	P2	जखमी कुत्रं रस्त्यावर पडलंय, उपचाराची गरज आहे, डेक्कन
+T151	mix	VET	nibm	P2	Stray dogs चा group bike च्या मागे धावतो, accident होऊ शकतो, NIBM
+T152	mix	VET	wanowrie	P3	गायी आणि म्हशी रस्त्यावर सोडतात, traffic block होतं, Wanowrie
+T153	mix	VET	NONE	P4	Street dogs रात्रभर भुंकतात, झोप लागत नाही
+T154	mr-rom	VET	sahakarnagar	P3	bhatkya kutryancha tras vadhla aahe, lahan mulanna bhiti vatte, sahakarnagar
+T155	mr-rom	VET	anandnagar	P1	kutra chavla, 3 lokanna, anandnagar
+T156	mr-rom	VET	pune_station	P3	mokat gai rastyat basli aahe, pune station
+T157	hi	VET	shivajinagar	P1	आवारा कुत्तों ने बच्चे पर हमला किया, शिवाजीनगर
+T158	hi	VET	mundhwa	P2	सड़क पर आवारा मवेशी घूमते हैं, हादसे का डर है, मुंढवा
+T159	mr	VET	kalas	P3	डुकरांचा उपद्रव वाढलाय, कचरा पसरवतात, कळस
+T160	mr	VET	pashan	P3	माकडांचा उपद्रव झालाय, घरात घुसतात, पाषाण

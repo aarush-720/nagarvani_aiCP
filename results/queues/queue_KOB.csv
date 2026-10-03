@@ -1,0 +1,6 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+1,2026-09-28T09:00:00,P3,2026-10-05T09:00,ROAD,0.7965,kothrud,KOB,1,new,AUTO_ROUTED,"आमच्या गल्लीत कोथरूडमध्ये मोठमोठे खड्डे पडले आहेत, गाडी चालवणं कठीण झालंय"
+16,2026-09-28T10:45:00,P3,2026-10-05T10:45,ROAD,0.9493,paud_road,KOB,16,new,AUTO_ROUTED,पौड रोडवर मेट्रोच्या कामामुळे रस्ता अरुंद झालाय आणि खड्डे पडलेत
+65,2026-09-28T16:28:00,P3,2026-10-05T16:28,ELEC,0.9386,bavdhan,KOB,65,new,AUTO_ROUTED,"आमच्या गल्लीतले पथदिवे आठ दिवसांपासून बंद आहेत, अंधारात चालणं भीतीदायक आहे, बावधन"
+90,2026-09-28T19:23:00,P3,2026-10-05T19:23,HEALTH,0.9794,bavdhan,KOB,90,new,AUTO_ROUTED,"dasancha khup tras aahe, fawarni kara, bavdhan"
+100,2026-09-28T20:33:00,P4,2026-10-13T20:33,TREE,0.993,kothrud,KOB,100,new,AUTO_ROUTED,"झाडांची छाटणी करायची आहे, फांद्या खिडकीत येतात, कोथरूड"

@@ -1,94 +1,88 @@
-"""Department classifier: TF-IDF (char_wb 2-5 grams + word 1-2 grams) -> class-balanced
-logistic regression. C is chosen by stratified 5-fold CV on the training set only.
-"""
-from __future__ import annotations
-
-import hashlib
-import json
-from dataclasses import dataclass
-from functools import lru_cache
-
-import joblib
+"""M4a - Department classifier + baselines."""
 import numpy as np
-import sklearn
+from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import StratifiedKFold, cross_validate
-from sklearn.pipeline import FeatureUnion, Pipeline
-
-from . import config, data
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.base import BaseEstimator, ClassifierMixin
 from .normalise import normalise
 
-WORD_TOKENS = r"[0-9a-zऀ-ॿ]+"   # \w alone splits Devanagari words at vowel signs
+DEPARTMENTS = {
+    "ROAD": "Road Department",
+    "SWM": "Solid Waste Management",
+    "WATER": "Water Supply",
+    "DRAIN": "Drainage",
+    "ELEC": "Electrical (Street Lighting)",
+    "HEALTH": "Health (Vector Control & Sanitation)",
+    "TREE": "Garden / Tree Authority",
+    "ENCROACH": "Anti-Encroachment",
+    "BUILD": "Building Permission & Construction",
+    "VET": "Veterinary (Stray Animals)",
+}
 
 
-def build(C: float, char_only: bool = False) -> Pipeline:
-    char = TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 5), sublinear_tf=True)
-    if char_only:
-        features = char
-    else:
-        word = TfidfVectorizer(analyzer="word", ngram_range=(1, 2), sublinear_tf=True,
-                               token_pattern=WORD_TOKENS)
-        features = FeatureUnion([("char", char), ("word", word)])
-    clf = LogisticRegression(C=C, class_weight="balanced", max_iter=5000, random_state=config.RANDOM_STATE)
-    return Pipeline([("features", features), ("clf", clf)])
+def char_word_lr(C=10.0):
+    """Proposed model: char_wb 2-5 + word 1-2 TF-IDF, class-balanced logistic regression."""
+    feats = FeatureUnion([
+        ("char", TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 5), sublinear_tf=True,
+                                 min_df=2, preprocessor=normalise)),
+        ("word", TfidfVectorizer(analyzer="word", ngram_range=(1, 2), sublinear_tf=True,
+                                 token_pattern=r"(?u)[^\s,.\-]+", preprocessor=normalise)),
+    ])
+    return Pipeline([("feats", feats),
+                     ("clf", LogisticRegression(C=C, max_iter=4000, class_weight="balanced"))])
 
 
-def training_xy():
-    rows = data.load_train()
-    return [normalise(r["text"]) for r in rows], [r["department"] for r in rows]
+def char_lr(C=10.0):
+    return Pipeline([("tfidf", TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 5), sublinear_tf=True,
+                                               min_df=2, preprocessor=normalise)),
+                     ("clf", LogisticRegression(C=C, max_iter=4000, class_weight="balanced"))])
 
 
-def select_c(X, y, char_only=False):
-    """Choose C by mean 5-fold CV log-loss on the training set (lower is better).
-
-    Log-loss rather than accuracy because the gate thresholds the predicted probability,
-    and because CV accuracy on template data saturates (several C values tie at 0.999).
-    """
-    cv = StratifiedKFold(n_splits=config.CV_FOLDS, shuffle=True, random_state=config.RANDOM_STATE)
-    scores = {}
-    for C in config.C_GRID:
-        res = cross_validate(build(C, char_only), X, y, cv=cv, scoring=("accuracy", "neg_log_loss"))
-        scores[C] = {"accuracy": float(np.mean(res["test_accuracy"])),
-                     "log_loss": float(-np.mean(res["test_neg_log_loss"]))}
-    best = min(config.C_GRID, key=lambda c: (round(scores[c]["log_loss"], 6), c))
-    return best, scores
+def word_lr(C=10.0):
+    return Pipeline([("tfidf", TfidfVectorizer(analyzer="word", ngram_range=(1, 2), sublinear_tf=True,
+                                               token_pattern=r"(?u)[^\s,.\-]+", preprocessor=normalise)),
+                     ("clf", LogisticRegression(C=C, max_iter=4000, class_weight="balanced"))])
 
 
-def fit(char_only=False):
-    X, y = training_xy()
-    C, scores = select_c(X, y, char_only)
-    model = build(C, char_only).fit(X, y)
-    meta = {"C": C, "selection": "min mean 5-fold CV log-loss on train",
-            "cv_by_C": {str(k): v for k, v in scores.items()},
-            "cv_accuracy": scores[C]["accuracy"], "cv_log_loss": scores[C]["log_loss"],
-            "n_train": len(X), "sklearn": sklearn.__version__,
-            "train_sha256": hashlib.sha256(config.TRAIN_CSV.read_bytes()).hexdigest(),
-            "char_only": char_only}
-    return model, meta
+def word_nb():
+    return Pipeline([("tfidf", TfidfVectorizer(analyzer="word", ngram_range=(1, 1),
+                                               token_pattern=r"(?u)[^\s,.\-]+", preprocessor=normalise)),
+                     ("clf", MultinomialNB(alpha=0.1))])
 
 
-def save(model, meta, path=config.CLASSIFIER_PATH):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    joblib.dump({"model": model, "meta": meta}, path)
-    path.with_suffix(".json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+class KeywordBaseline(BaseEstimator, ClassifierMixin):
+    """Hand-built keyword lexicon; the 'no machine learning' reference point."""
+    KW = {
+        "ROAD": ["खड्ड", "गड्ढ", "khadd", "pothole", "रस्ता", "सड़क", "rasta", "road", "डांबर", "स्पीड ब्रेकर",
+                 "फूटपाथ", "footpath", "पेव्हर"],
+        "SWM": ["कचर", "कूड़", "kachr", "garbage", "घंटागाडी", "dustbin", "waste", "शौचालय", "toilet", "निर्माल्य"],
+        "WATER": ["पाणी", "पानी", "pani", "नळ", "नल", "nal", "पाइपलाइन", "pipeline", "water", "टँकर", "tanker"],
+        "DRAIN": ["ड्रेनेज", "drainage", "गटार", "gatar", "चेंबर", "chamber", "manhole", "मॅनहोल", "सांडपाणी",
+                  "sandpani", "नाल", "सीवर", "sewage"],
+        "ELEC": ["दिवा", "दिवे", "पथदिव", "light", "लाइट", "लाईट", "विज", "बिजली", "खांब", "खंभ", "khamb",
+                 "wire", "तार", "करंट", "current", "डीपी"],
+        "HEALTH": ["डास", "मच्छर", "das", "mosquito", "फवारणी", "fogging", "फॉगिंग", "डेंग्यू", "डेंगू",
+                   "dengue", "मलेरिया", "malaria", "मेलेल", "मरा", "dead", "उंदीर", "चूह"],
+        "TREE": ["झाड", "पेड़", "zad", "tree", "फांदी", "डाल", "fandi", "branch", "छाटणी", "वृक्ष"],
+        "ENCROACH": ["फेरीवाल", "feriwal", "hawker", "अतिक्रमण", "atikraman", "टपरी", "टपऱ्या", "tapri",
+                     "फलक", "बॅनर", "banner", "flex", "ठेले", "होर्डिंग", "hoarding"],
+        "BUILD": ["बांधकाम", "bandhkam", "construction", "निर्माण", "मजला", "मंजिल", "majla", "इमारत",
+                  "imarat", "building", "भिंत", "दीवार", "स्लॅब"],
+        "VET": ["कुत्र", "कुत्त", "kutr", "dog", "जनावर", "मवेशी", "गाय", "गायी", "gai", "cattle", "डुकर",
+                "माकड", "पिसाळ"],
+    }
 
+    def fit(self, X, y):
+        self.classes_ = np.array(sorted(self.KW)); return self
 
-@lru_cache(maxsize=1)
-def load(path=config.CLASSIFIER_PATH):
-    obj = joblib.load(path)
-    return obj["model"], obj["meta"]
+    def predict_proba(self, X):
+        out = []
+        for x in X:
+            t = normalise(x)
+            s = np.array([sum(t.count(k.lower()) for k in self.KW[c]) for c in self.classes_], float) + 1e-3
+            out.append(s / s.sum())
+        return np.array(out)
 
-
-@dataclass
-class Prediction:
-    top3: list          # [(dept, prob), ...] most probable first
-    confidence: float   # probability of the top department
-
-
-def predict(text: str, model=None) -> Prediction:
-    model = model or load()[0]
-    proba = model.predict_proba([normalise(text)])[0]
-    order = np.argsort(-proba, kind="stable")
-    top = [(str(model.classes_[i]), float(proba[i])) for i in order[:3]]
-    return Prediction(top, top[0][1])
+    def predict(self, X):
+        return self.classes_[self.predict_proba(X).argmax(1)]

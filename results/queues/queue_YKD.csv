@@ -1,0 +1,9 @@
+﻿id,created_at,priority,sla_due,dept,dept_conf,locality,ward,cluster_id,dup_decision,route_status,raw_text
+46,2026-09-28T14:15:00,P1,2026-09-29T14:15,WATER,0.9729,yerawada,YKD,46,new,AUTO_ROUTED,"नल से गंदा पानी आ रहा है, बच्चे बीमार हो गए हैं, येरवडा"
+109,2026-09-28T21:36:00,P1,2026-09-29T21:36,TREE,0.9559,lohegaon,YKD,109,new,AUTO_ROUTED,"तूफान में पेड़ सड़क पर गिर गया है, रास्ता बंद है, लोहगाव"
+26,2026-09-28T11:55:00,P2,2026-10-01T11:55,SWM,0.7503,lohegaon,YKD,26,new,AUTO_ROUTED,"kachra gadi aali nahi 4 divas zale, lohegaon madhe"
+27,2026-09-28T12:02:00,P2,2026-10-01T12:02,SWM,0.9164,dhanori,YKD,27,new,AUTO_ROUTED,"aamchya galli madhe kachryacha dhig padlay, khup vaas yeto, dhanori"
+71,2026-09-28T17:10:00,P2,2026-10-01T17:10,ELEC,0.9912,vishrantwadi,YKD,71,new,AUTO_ROUTED,"Street light बंद आहे गेले पंधरा दिवस, Vishrantwadi"
+96,2026-09-28T20:05:00,P2,2026-10-01T20:05,HEALTH,0.717,yerawada,YKD,96,new,AUTO_ROUTED,"उघड्या जागेत शौच करतात, दुर्गंधी पसरते, येरवडा"
+45,2026-09-28T14:08:00,P3,2026-10-05T14:08,WATER,0.9094,vishrantwadi,YKD,45,new,AUTO_ROUTED,विश्रांतवाडी में पानी की सप्लाई बहुत अनियमित है
+159,2026-09-29T03:26:00,P3,2026-10-06T03:26,VET,0.8023,kalas,YKD,159,new,AUTO_ROUTED,"डुकरांचा उपद्रव वाढलाय, कचरा पसरवतात, कळस"

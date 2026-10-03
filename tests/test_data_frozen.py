@@ -1,5 +1,5 @@
-"""Guard: frozen data files are byte-identical to the Phase 0 checksums, and train.csv is
-exactly what the generator produces from the frozen templates."""
+"""Guard: frozen data, original logic and shipped outputs are byte-identical to the recorded
+checksums, and the training corpus regenerates exactly from its generator."""
 import subprocess
 import sys
 
@@ -8,11 +8,14 @@ from tests.conftest import ROOT
 
 
 def test_checksums_unchanged():
-    rec, cur = checksums.recorded(), checksums.current()
-    assert rec == cur
+    assert checksums.recorded() == checksums.current()
 
 
-def test_train_csv_regenerates():
-    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "generate_train.py"), "--check"],
-                       capture_output=True, text=True, encoding="utf-8")
-    assert r.returncode == 0, r.stdout + r.stderr
+def test_train_corpus_regenerates(tmp_path):
+    out = tmp_path / "train.tsv"
+    code = ("import runpy, sys; sys.argv=['generate_train.py']; "
+            "m = runpy.run_path(r'%s', run_name='nagarvani_gen'); m['main'](200, out=r'%s')"
+            % (ROOT / "corpus" / "generate_train.py", out))
+    r = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, encoding="utf-8")
+    assert r.returncode == 0, r.stderr
+    assert out.read_bytes() == (ROOT / "corpus" / "train_template.tsv").read_bytes()

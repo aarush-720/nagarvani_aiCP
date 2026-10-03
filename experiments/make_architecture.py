@@ -1,0 +1,31 @@
+"""Draws results/figures/fig_architecture.png"""
+import matplotlib; matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch
+fig, ax = plt.subplots(figsize=(7.2, 4.0)); ax.set_xlim(0, 100); ax.set_ylim(0, 56); ax.axis("off")
+def box(x,y,w,h,t,fc="#e8f1f8",ec="#2a6f97",fs=6.5,ls="-"):
+    ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle="round,pad=0.3,rounding_size=1.2",fc=fc,ec=ec,lw=0.9,ls=ls))
+    ax.text(x+w/2,y+h/2,t,ha="center",va="center",fontsize=fs,linespacing=1.25)
+def arr(x1,y1,x2,y2):
+    ax.annotate("",xy=(x2,y2),xytext=(x1,y1),arrowprops=dict(arrowstyle="-|>",lw=0.8,color="#333"))
+box(1,40,15,11,"Citizen input\ntext · voice note\n(mr / hi / romanised\n/ code-mixed)",fc="#f3f3f3",ec="#777")
+box(21,45,15,7,"M2 ASR interface\n(Whisper backend;\nnot run in prototype)",fc="#fff",ec="#999",ls="--",fs=6.5)
+box(21,35,15,7,"M3 Normaliser\nNFC · digits · case\n· zero-width")
+box(41,44,19,8,"M4a Department\nclassifier\nchar+word TF-IDF + LR")
+box(41,33,19,8,"M4b Ward resolver\n59-locality gazetteer\nexact + fuzzy match")
+box(64,38,19,10,"M6 Duplicate\ndetector\nblock(ward, dept) →\nmasked cosine, θ_hi/θ_lo")
+box(64,20,19,12,"M5 Severity\nexpert system\n19 rules · forward\nchaining · P1–P4 + SLA",fc="#fdf0e6",ec="#e07a2f")
+box(41,19,19,9,"M7 Abstention gate\nconf ≥ τ AND ward\nresolved?",fc="#eef5ea",ec="#6a994e")
+box(22,20,14,8,"SQLite ticket\nstore",fc="#f3f3f3",ec="#777")
+box(1,24,15,7,"Per-ward CSV queue\n(15 ward offices)",fc="#eef5ea",ec="#6a994e")
+box(1,13,15,7,"Nodal-officer\nreview queue\n(top-3 pre-filled)",fc="#fdf0e6",ec="#e07a2f",fs=6.6)
+box(18,4,46,7,"Flask console: triage card with rule explanation · ward queues · CSV export",fc="#fff",ec="#999",fs=6.3)
+arr(16,47,21,48); arr(16,43,21,39); arr(28.5,45,28.5,42)
+arr(36,39,42,47); arr(36,38,42,37)
+arr(60,47,64,44); arr(60,37,64,41)
+arr(73.5,38,73.5,32); ax.text(74.5,34.5,"cluster size",fontsize=6)
+arr(64,24,60,23.5); arr(41,23.5,36,23.5)
+arr(22,24,16,27); ax.text(17,28.5,"auto-routed",fontsize=5.8); arr(22,23,16,17); ax.text(17,19.8,"deferred",fontsize=5.8)
+arr(40,20,40,11)
+ax.text(50,55,"NagarVani prototype — implemented data flow",ha="center",fontsize=8.5,weight="bold")
+fig.tight_layout(); fig.savefig("results/figures/fig_architecture.png",dpi=220)

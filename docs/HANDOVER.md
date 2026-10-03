@@ -1,6 +1,6 @@
 # Handover
 
-Written for the developer. Read the first section before anything else.
+Written for the developer. Read section 1 first.
 
 ## 1. What does not work, or was not verified
 
@@ -8,163 +8,122 @@ Written for the developer. Read the first section before anything else.
 
 | Item | Met? |
 |---|---|
-| `tests/test_frozen_metrics.py` passes and data checksums unchanged since Phase 0 | **Yes** (for this build's numbers; the brief's numbers could not be reproduced: item 2 below) |
-| A typed complaint and an uploaded audio file each go from intake to a ticket with a complete trace | **Partly.** Typed: yes. Uploaded audio: yes with a **mocked** ASR backend only; never with real Whisper (item 1) |
-| The app starts and the audio path works with the network disabled | **Partly.** The app starts and works offline; the real audio path was not tested (no model) |
-| Officer queue filters, sorts, corrects, logs corrections, exports a ward CSV that opens in Excel | **Yes**, except that opening in Excel was not checked by eye (the BOM is tested) |
-| Triple-duplicate escalation works in the live app | **Yes** (tests and demo script) |
-| Every input in `docs/DEMO_SCRIPT.md` was run and its real output recorded | **Yes** (typed inputs; spoken versions not run) |
-| No number in any template, README or doc is hard-coded or invented | **Yes** to the best of my checking: the UI reads `results/*.json` and `data/taxonomy.json`; the docs quote figures from `results/eval.json` or point to it; the brief's figures appear only in the comparison table, labelled as such |
-| The fresh-clone test passed | **Yes**, except for the model download, which this sandbox blocks |
-| `docs/HANDOVER.md` exists and opens with what is not working | Yes |
+| `tests/test_frozen_metrics.py` passes and data checksums unchanged since Phase 0 | **Yes.** Every reported number reproduces from the original prototype. |
+| A typed complaint and an uploaded audio file each go from intake to a ticket with a complete trace | **Partly.** Typed: yes. Uploaded audio: only with a **mocked** speech backend, never with real Whisper (problem 1). |
+| The app starts and the audio path works with the network disabled | **Partly.** The app starts and works offline. The real audio path was not tested, because no model was available. |
+| Officer queue filters, sorts, corrects, logs corrections, exports a ward CSV that opens in Excel | **Yes**, except that the CSV was not opened in Excel by eye. The byte-order mark is tested. |
+| Triple-duplicate escalation works in the live app | **Yes** (tests and `docs/DEMO_SCRIPT.md` item 8). |
+| Every input in `docs/DEMO_SCRIPT.md` was run and its real output recorded | **Yes** for the typed inputs. The spoken versions were not run. |
+| No number in any template, README or doc is hard-coded or invented | **Yes**, as far as I checked. The UI derives every figure from `results/results.json`. The docs quote figures reproduced from it. |
+| The fresh-clone test passed | **Yes**, apart from the model download, which this sandbox blocks. |
+| `docs/HANDOVER.md` exists and opens with what is not working | Yes. |
 
 ### Problems
 
-1. **No speech recognition model has been run.** The build sandbox's network policy blocks
-   `huggingface.co`, where faster-whisper models are hosted, so no Whisper weights could be
-   downloaded. As a result:
-   * the ASR code (`nagarvani/asr.py`) is tested only with a mocked backend, generated tones and
-     silence. Audio decoding of WAV, MP3, M4A, MP4, WebM/Opus and OGG/Opus is verified for
-     real through PyAV;
-   * the model was **not chosen by measurement**. The default `small` is a placeholder
-     (DECISIONS D13). Run `python scripts/fetch_models.py --benchmark <clip>` on the demo laptop;
-   * the **offline real-audio test was not done**. The offline test that was done shows the
-     app starts and works with the network disabled: typed path, all routes, and audio saved
-     as a review ticket when no model is present (`docs/verification/offline_app.txt`).
-     Real Whisper transcription with the network off is untested;
-   * `eval/asr_eval.py` has never run on real audio. There are no clips and no
-     `results/asr_eval.json`.
-2. **The numbers in your submitted report are not reproduced, and cannot be.** The repository
-   held only the midsem notebook. No code or data existed that produced the brief's section 2
-   figures. This build wrote new data and produced new numbers (table in section 4). **Update
-   the report.** The new test accuracy is higher than the reported one. Do not present that as
-   an improvement: the test set was written by the same author as the training templates
-   (next item), which very likely inflates it.
-3. **The evaluation data was written by Claude, not by the team.** That covers the 160 test
-   complaints, the 60 duplicate pairs, the training templates, the gazetteer assignments and
-   the severity rules and labels (DECISIONS D3). Test and training text share an author, and so
-   do the severity labels and rules. The external check on your own midsem set is lower on
-   departments, and much lower on severity. Before the viva, the team should review
-   `data/test_handwritten.csv`, ideally replace it with complaints the team writes itself,
-   and then re-freeze.
-4. **Vague complaints are auto-routed with false confidence.** For example,
-   "कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या" ("there's a lot of trouble in Kothrud,
-   someone please look") gets HEALTH at just over 0.50 and passes the gate. C = 100, chosen
-   by CV log-loss on near-separable template data, makes the model over-confident.
-   Calibration was not attempted, because it would need data that is not the test set.
-   (Live values are in `docs/DEMO_SCRIPT.md`, "Inputs that were tried and rejected".)
-5. **Only verified on Linux.** The Windows and macOS instructions were written, but not run on
-   those systems. The font stack covers Devanagari on all three, but it was only seen
-   rendering on Linux (with Noto). The CSV has a BOM and was checked programmatically; it was
-   not opened in Excel.
-6. **The microphone was never used.** The browser recording path (MediaRecorder) has no
-   automated test, because there is no microphone. The upload path, the transcript-check gate,
-   the example buttons and the double-submit guard were driven in headless Chromium with a
-   mocked ASR backend (`docs/verification/browser_js.txt`).
-7. **Ward-office assignments for localities and the ward spellings are unverified** against
-   PMC sources.
+1. **No speech recognition model has been run.** The build sandbox blocks `huggingface.co`, so
+   the faster-whisper code (`nagarvani/speech.py`) is tested only with a mocked backend,
+   generated tones and silence. Audio decoding of WAV, MP3, M4A, MP4, WebM/Opus and OGG/Opus
+   is verified for real. The model was not chosen by measurement: `small` is a placeholder.
+   There are no real clips, so `results/asr_eval.json` does not exist. The report and paper
+   already say voice input was not tested, and that is still true.
+2. **Known defects in the frozen rules and gazetteer** are logged, not fixed (`docs/DECISIONS.md` F1–F6):
+   * "मॅनहोलचे झाकण **गायब**" (cover missing) does not fire the open-manhole rule.
+   * "…आता काही समस्या **नाही**" (no problem now) wrongly fires it.
+   * The standard spelling "पाणी आलेले नाही" misses the outage rule.
+   * The word बाहेर ("outside") resolves to Baner.
+   * Vague complaints are auto-routed with confidence just over 0.5.
+3. **Only verified on Linux.** The Windows and macOS instructions were not run on those
+   systems. No microphone was used. The recording path (MediaRecorder) has no automated
+   test, but the upload path was driven in headless Chromium.
+4. **All data is team-constructed**, as the report already states. No real PMC complaints
+   were used.
 
-## 2. What was built
+## 2. What happened in this build
 
-* **Data (frozen):** 10 departments, 15 ward offices, and 74 localities with
-  Devanagari/romanised aliases plus ambiguous names. A 2,000-row template training set,
-  deterministic from `data/templates.json`. A 160-row test set: 16 per department; 80
-  Marathi, 20 Hindi, 30 romanised, 30 code-mixed; labelled with department, ward, location
-  case and severity. 60 duplicate pairs. A severity knowledge base of 30 cue groups and 24
-  rules. A keyword lexicon. Your midsem seed set is kept as an external check.
-* **Pipeline:** `triage()` covers normalisation, the classifier (TF-IDF char + word → LR,
-  C by CV log-loss on train), ward resolution (exact + fuzzy, never guessing), forward-chaining
-  severity with a firing trace and overrides, the SLA deadline, duplicate detection against
-  the live store, and the frozen gate. Result: a `TriageResult` dataclass.
-* **ASR:** a faster-whisper wrapper with forced language, an offline-only model directory,
-  PyAV decoding, heuristic guards, an "uncertain" flag that does not affect routing, and an
-  optional vocabulary prompt. There is a fetch/benchmark script, an ASR evaluation script and
-  a recording protocol.
-* **Web app:** intake (mic, upload, typing, check-before-submit, examples, optional ward),
-  the trace page, the officer queue (filters, sorting, overdue, confirm, correct, duplicate
-  decision, resolve, corrections JSONL), the per-ward CSV, `/about` (rendered from results
-  JSON) and `/health`. Every submission is persisted before processing. Failures become
-  review tickets. No stack traces are shown. Times are stored in UTC and displayed in IST.
-* **Demo tooling:** `run.py`, `reset_demo.py` (25 seeded tickets from training templates,
-  some overdue, some in review), `run_demo_script.py` → `docs/DEMO_SCRIPT.md` (9 behaviours,
-  real outputs), and `reproduce.py`.
+* **2026-10-02.** The repository held only the midsem notebook, so a from-scratch rebuild was
+  made. Its numbers differed from the report. It is now superseded and archived in
+  `archive/rebuild_2026-10-02/`. None of its numbers belong in the report.
+* **2026-10-03.** The original prototype (`NagarVani_prototype_code.zip`) was supplied. I ran
+  it in a clean environment, and **every reported number reproduced**. The project was
+  restructured as the brief intended:
+  * **Frozen, byte-identical and checksummed:** the original eight logic modules, the
+    corpus, the gazetteer, and the shipped results and model.
+  * **New `triage()` entry point:** it wraps the original logic and adds explanations for the
+    trace page. It is tested to make exactly the original decisions on all 160 test
+    complaints.
+  * **Kept from the rebuild and re-pointed at the original logic:** the web app, speech
+    module, demo tooling and tests.
+* **The PBL-5 paper draft was checked.** All of its figures match `results/results.json` (list
+  in `docs/INVENTORY.md`). The 30-page PBL-4 report was not supplied, so I couldn't check it.
 
 ## 3. What was verified, and how
 
 | Check | Command | Result / log |
 |---|---|---|
-| Full test suite | `python -m pytest -v tests` | 118 passed, 1 skipped (the real-audio test: no clips). `docs/verification/pytest_full.txt` |
-| Frozen metrics and data checksums | `tests/test_frozen_metrics.py`, `tests/test_data_frozen.py` | pass |
-| Every number reproduces | `python scripts/reproduce.py` | ALL STEPS PASSED (`results/eval.json` byte-identical) |
-| Rebuilt model == saved artefact | `tests/test_model_artefact.py` | identical predictions, probabilities within 1e-9 |
-| Fresh clone | clone from GitHub, new venv from `requirements.txt`, checksums, fetch models, tests | tests pass; model fetch fails with a clear message (Hugging Face blocked). `docs/verification/fresh_clone.txt` |
-| Offline run | fresh clone started under `unshare -n` (no network) | every route 200, typed complaint → ticket, audio without a model → review ticket. `docs/verification/offline_app.txt` |
-| Browser JS | headless Chromium + Playwright, mocked ASR | upload → transcript → check box → ticket; examples; double-click → one ticket; no JS errors. `docs/verification/browser_js.txt` |
-| Demo inputs | `python scripts/run_demo_script.py`; `tests/test_demo_script.py` | all 9 behaviours as described, also on top of the seed data |
+| Full test suite | `python -m pytest -v tests` | 246 passed, 1 skipped (the real-audio test: no clips). `docs/verification/pytest_full.txt` |
+| Reported numbers | `tests/test_frozen_metrics.py`, which runs `experiments/run_eval.py` | All reported values match. The full `results.json` equals the committed one and the prototype's shipped one (timing excluded; floats to 1e-12). |
+| Frozen files | `tests/test_data_frozen.py`, `python scripts/checksums.py --verify` | Checksums unchanged. The training corpus regenerates byte for byte. |
+| Wrapper == original | `tests/test_triage_equivalence.py`, plus the per-item assertions inside `run_eval.py` | Identical on all 160 complaints. |
+| Rebuilt model | `tests/test_model_artefact.py` | Identical predictions to the saved and shipped `model.pkl` (probabilities within 1e-9). |
+| Fresh clone | Clone from GitHub, new venv from `requirements.txt`, checksums, tests | Pass. Model fetch fails with a clear message (Hugging Face blocked). `docs/verification/fresh_clone.txt` |
+| Offline | Fresh clone under `unshare -n` | Every route works. A typed complaint becomes a ticket. Audio without a model becomes a review ticket. `docs/verification/offline_app.txt` |
+| Browser JavaScript | Headless Chromium + Playwright, mocked speech backend | Upload → transcript → check box → ticket; examples; double-click gives one ticket; no JS errors. `docs/verification/browser_js.txt` |
+| Demo | `python scripts/run_demo_script.py`; `tests/test_demo_script.py` | All 9 behaviours, also on top of the seed data. |
 
-## 4. Reported versus reproduced numbers
+## 4. Reported versus reproduced
 
-The brief's values are copied here **only for comparison**. No code that produced them
-existed. The right-hand column is read from `results/eval.json`.
-
-| Quantity | Value in the brief / submitted report | This build (`results/eval.json`) |
+| Quantity | Reported | Reproduced |
 |---|---|---|
-| Department accuracy | 86.9% (139/160) | 94.4% (151/160) |
-| Department macro-F1 | 0.870 | 0.944 |
-| Department top-3 accuracy | 95.6% (153/160) | 98.1% (157/160) |
-| Keyword baseline accuracy | 81.9% | 71.9% (115/160) |
-| Char-only logistic regression accuracy | 88.8% (not adopted) | 93.8% (150/160) (not adopted) |
-| CV accuracy inside the template data | 99.8% | 99.9% |
-| Auto-routed share | 70% | 76.2% (122/160) |
-| Auto-routed with correct department and ward | 97.3% | 96.7% (118/122) |
-| Department errors caught by the gate | 18 of 21 | 55.6% (5/9) |
-| Severity band accuracy (predicted department) | 95.6% | 84.4% (135/160) |
-| P1 recall | 94.4% | 96.7% (29/30) |
-| Learned severity baseline | 76.9% | 73.8% (118/160) |
-| Macro-F1 under simulated 10% character error | 0.811 | 0.787 |
-| Ward accuracy under simulated noise, exact-only | 49% | 31.4% (43/137) |
-| Ward accuracy under simulated noise, with fuzzy | 93% | 85.4% (117/137) |
-| *New:* department accuracy on the team's midsem set (coarse mapping) | — | 85.1% (370/435) |
-| *New:* severity agreement with the team's midsem labels | — | 58.1% (151/260) |
-| *New:* P1 precision | — | 90.6% (29/32) |
-| *New:* duplicate merge precision / recall (60 pairs) | — | 100.0% (18/18) / 60.0% (18/30) |
+| Department accuracy | 86.9% (139/160) | 139/160 |
+| Department macro-F1 | 0.870 | 0.870 |
+| Top-3 accuracy | 95.6% | 153/160 |
+| Keyword baseline | 81.9% | 131/160 |
+| Char-only logistic regression (not adopted) | 88.8% | 142/160 |
+| CV accuracy inside the template data | 99.8% | 99.8% |
+| Auto-routed | 70% | 112/160 |
+| Auto-routed with correct department and ward | 97.3% | 109/112 |
+| Department errors held for the nodal officer | 18 of 21 | 18 of 21 |
+| Severity band accuracy (predicted department) | 95.6% | 153/160 |
+| P1 recall | 94.4% | 34/36 |
+| Learned severity baseline | 76.9% | 123/160 |
+| Macro-F1 at simulated 10% character error | 0.811 | 0.811 |
+| Ward accuracy at 10% noise, exact only / with fuzzy | 49% / 93% | 49.4% / 92.6% |
 
 ## 5. Deviations from the brief
 
-* The project was restarted from scratch (D1). The "frozen numbers" are this build's, frozen at
-  the first evaluation run.
-* The test set, pairs, templates and rules were written by Claude, not the team (D3).
-* C is chosen by CV log-loss, not accuracy. The criterion changed before any test-set run (D9).
-* Rule count and IDs (24 rules, 30 cue groups) differ from the brief's 19 rules and 23 cue groups (D5).
-* A duplicate is only merged automatically when the gate passes (D10). A ward from the
-  dropdown counts as resolved (D11).
-* An extra external evaluation on your midsem set was added (D6). Dead animals are classed
-  as VET (D7).
-* The ASR model was not chosen by measurement, and real audio was not tested offline (D8, D13).
-* The Whisper VAD filter is off, and the guards run first (D15).
+* The brief's prototype was supplied a day late. A rebuild was made in between, then archived.
+* `experiments/run_eval.py` has three marked edits: a hash-seed pin, an output folder, and the
+  end-to-end stream run through `triage()` (DECISIONS R4).
+* The wrapper modules are named `triage.py`, `tickets.py` and `speech.py`, so the original
+  modules keep their names and paths (R2).
+* Web-app policies:
+  * a dropdown ward counts as resolved;
+  * a merge only happens when the gate passes;
+  * escalation applies to the open ticket (R6).
+* The speech model was not chosen by measurement, and real audio was not tested offline (R7).
 
 ## 6. Found but not changed
 
-These are listed in `docs/DECISIONS.md` with reproducing inputs. Fixing any of them changes
-the frozen numbers.
-
-* **F1:** the gazetteer alias `banner` (for Baner) matches the English word "banner".
-* **F2:** the fuzzy matcher reads बाहेर ("outside") as बाणेर.
-* **F3:** inflected stem changes such as हिंगणे → हिंगण्यात are not resolved.
+See `docs/DECISIONS.md`. In brief, F1–F6:
+* the बाहेर→बाणेर fuzzy match (already reported in the paper);
+* "गायब" missing from the open-cover cue;
+* "नाही" in the open-cover cue;
+* hash-order nondeterminism in alias sorting;
+* the "आलेले नाही" spelling missing from the outage cue;
+* over-confident routing of vague complaints.
 
 ## 7. What the team still has to do by hand
 
-1. On a machine with internet: `python scripts/fetch_models.py --benchmark <15 s Marathi clip>`.
-   Set `NAGARVANI_ASR_MODEL` to the recommendation. Then disconnect the network and run a
-   real clip end to end (`python run.py`, upload a WhatsApp `.ogg`).
-2. Record clips following `data/audio/README.md`, write `data/audio/manifest.csv`, and run
-   `python eval/asr_eval.py`. `/about` will then show the measured WER/CER.
-3. Review, and preferably replace, the test set and the severity labels. Decide F1–F3. Then
-   re-freeze deliberately, all at once: checksums (`python scripts/checksums.py --write`),
-   `python eval/evaluate.py`, the expected values in `tests/test_frozen_metrics.py`, and the report.
-4. Update the submitted report and paper draft to the numbers in `results/eval.md`, with the
-   authorship caveat.
-5. Verify the ward-office names and locality-to-ward assignments against PMC sources.
-6. Run the setup once on the actual demo laptop (Windows or macOS). Open a ward CSV in Excel.
-   Test the microphone in the browser you will demo with (Chrome records WebM/Opus, Safari MP4).
-7. Before the demo: `python scripts/reset_demo.py --yes`, then follow `docs/DEMO_SCRIPT.md`.
+1. **Speech.** On a machine with internet, run
+   `python scripts/fetch_models.py --benchmark <15 s Marathi clip>` and set
+   `NAGARVANI_ASR_MODEL`. Then disconnect and run a real clip end to end (`python run.py`,
+   upload a WhatsApp `.ogg`).
+2. **Real-audio evaluation.** Record clips following `data/audio/README.md` and run
+   `python eval/asr_eval.py`. `/about` then shows WER/CER. The report can say voice was
+   tested only once this is done.
+3. **Decide on F1–F6.** Any fix is a deliberate re-freeze: update `data/FROZEN.sha256`, the
+   expected values in `tests/test_frozen_metrics.py`, and the report, together.
+4. **Check the PBL-4 report** against `results/results.json`. The paper already matches.
+5. **Rehearse on the demo laptop:** setup, microphone in the demo browser, and a ward CSV
+   opened in Excel. Then run `python scripts/reset_demo.py --yes` and follow
+   `docs/DEMO_SCRIPT.md`.

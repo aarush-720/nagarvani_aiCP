@@ -11,9 +11,16 @@ import logging
 import traceback
 from datetime import datetime, timedelta, timezone
 
-from . import data, severity
-from .pipeline import triage
-from .store import Store, iso, parse, trace_dumps, utcnow
+from . import data
+from .severity import infer
+from .tickets import Store, iso, parse, trace_dumps, utcnow
+from .triage import triage
+
+BANDS = ["P1", "P2", "P3", "P4"]
+
+
+def more_urgent(a: str, b: str) -> str:
+    return a if BANDS.index(a) <= BANDS.index(b) else b
 
 log = logging.getLogger("nagarvani")
 IST = timezone(timedelta(hours=5, minutes=30), "IST")   # fixed offset: India has no DST (no tzdata needed)
@@ -71,7 +78,7 @@ def apply_result(store: Store, tid: int, r):
     dup = r.duplicate
     status = STATUS_FROM_GATE[r.gate.decision]
     fields = dict(status=status, department=r.department, confidence=round(r.confidence, 4), ward=r.ward.ward,
-                  priority=r.severity["band"], deadline_utc=r.deadline_utc, masked_text=r.masked_text,
+                  priority=r.severity["band"], deadline_utc=r.deadline_utc,
                   trace_json=trace_dumps(r.to_dict()), review_reason=r.gate.reason if status == "review" else None,
                   dup_score=dup["score"], dup_candidate_id=dup["ticket_id"] if dup["decision"] != "new" else None,
                   dup_pending=int(status == "review" and dup["decision"] in ("merge", "review")))
@@ -86,7 +93,7 @@ def apply_result(store: Store, tid: int, r):
 def merge_into(store: Store, *, child_id: int, parent_id: int, band: str, report_count: int, fired: list):
     """Attach a report to an open ticket. If R32 fired, the parent's priority escalates."""
     p = store.get(parent_id)
-    new_band = severity.more_urgent(p["priority"] or band, band)
+    new_band = more_urgent(p["priority"] or band, band)
     fields = {"report_count": report_count}
     if new_band != p["priority"]:
         hours = data.sla_hours()[new_band]
@@ -123,7 +130,7 @@ def correct(store: Store, tid: int, *, department=None, ward=None, priority=None
             raise ActionError("unknown ward office")
         changes["ward"] = ward
     if priority and priority != t["priority"]:
-        if priority not in severity.BANDS:
+        if priority not in BANDS:
             raise ActionError("unknown priority")
         changes["priority"] = priority
         changes["deadline_utc"] = iso(parse(t["created_utc"]) + timedelta(hours=data.sla_hours()[priority]))
@@ -145,11 +152,11 @@ def decide_duplicate(store: Store, tid: int, merge: bool, note=""):
         if parent["parent_id"]:
             parent = store.get(parent["parent_id"])
         count = parent["report_count"] + 1
-        sev = severity.assess(parent["text"], parent["department"], count)
+        sev = infer(parent["text"], parent["department"], cluster_size=count)
         store.add_correction(tid, "duplicate", "pending", f"merged into #{parent['id']}", t["text"], note)
         store.update(tid, status="merged", parent_id=parent["id"], dup_pending=0)
-        merge_into(store, child_id=tid, parent_id=parent["id"], band=sev.band, report_count=count,
-                   fired=sev.rule_ids)
+        merge_into(store, child_id=tid, parent_id=parent["id"], band=sev["band"], report_count=count,
+                   fired=sev["fired"])
     else:
         store.add_correction(tid, "duplicate", "pending", "kept separate", t["text"], note)
         store.update(tid, dup_pending=0)
@@ -181,7 +188,7 @@ def queue(store: Store, *, ward=None, department=None, status=None, now: datetim
     rows = store.tickets(" AND ".join(where), params)
 
     def key(r):
-        p = severity.BANDS.index(r["priority"]) if r["priority"] in severity.BANDS else 9
+        p = BANDS.index(r["priority"]) if r["priority"] in BANDS else 9
         return (p, r["deadline_utc"] or "9999")
     out = []
     for r in sorted(rows, key=key):

@@ -1,143 +1,69 @@
-"""SQLite persistence for tickets and officer corrections. Timestamps are stored in UTC (ISO 8601)."""
-from __future__ import annotations
-
-import json
-import sqlite3
-import threading
-from datetime import datetime, timezone
-from pathlib import Path
-
-from . import config
+"""M7 output - SQLite ticket store and per-ward CSV queue export."""
+import csv, os, sqlite3
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS tickets (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    created_utc TEXT NOT NULL,
-    updated_utc TEXT NOT NULL,
-    channel TEXT NOT NULL,              -- typed | upload | microphone | seed
-    language TEXT,                      -- mr | hi (ASR language toggle)
-    audio_path TEXT,
-    raw_transcript TEXT,                -- what ASR produced (NULL for typed)
-    text TEXT NOT NULL,                 -- what the citizen finally submitted
-    asr_json TEXT,
-    ward_hint TEXT,
-    status TEXT NOT NULL,               -- received | auto_routed | review | routed | merged | resolved
-    department TEXT,
-    confidence REAL,
-    ward TEXT,
-    priority TEXT,
-    deadline_utc TEXT,
-    parent_id INTEGER REFERENCES tickets(id),
-    report_count INTEGER NOT NULL DEFAULT 1,
-    dup_candidate_id INTEGER,
-    dup_score REAL,
-    dup_pending INTEGER NOT NULL DEFAULT 0,
-    transcript_uncertain INTEGER NOT NULL DEFAULT 0,
-    review_reason TEXT,
-    failure TEXT,
-    masked_text TEXT,
-    trace_json TEXT,
-    submission_key TEXT UNIQUE,
-    confirmed INTEGER NOT NULL DEFAULT 0,
-    escalation TEXT,                    -- e.g. 'R32 at report 3: P3 -> P2'
-    resolved_utc TEXT
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    created_at    TEXT NOT NULL,
+    channel       TEXT,
+    raw_text      TEXT NOT NULL,
+    norm_text     TEXT NOT NULL,
+    dept          TEXT, dept_conf REAL, top3 TEXT,
+    locality      TEXT, ward TEXT, ward_status TEXT,
+    priority      TEXT, sla_due TEXT, rules_fired TEXT,
+    cluster_id    INTEGER, dup_decision TEXT, dup_score REAL,
+    route_status  TEXT NOT NULL,            -- AUTO_ROUTED | NODAL_REVIEW
+    status        TEXT NOT NULL DEFAULT 'OPEN'
 );
-CREATE INDEX IF NOT EXISTS ix_block ON tickets(ward, department, status);
-CREATE TABLE IF NOT EXISTS corrections (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    ticket_id INTEGER NOT NULL REFERENCES tickets(id),
-    created_utc TEXT NOT NULL,
-    field TEXT NOT NULL,
-    old_value TEXT,
-    new_value TEXT,
-    text TEXT,
-    note TEXT
-);
+CREATE INDEX IF NOT EXISTS ix_ward_dept ON tickets(ward, dept, status);
 """
 
-OPEN_STATUSES = ("auto_routed", "review", "routed")
 
+class TicketStore:
+    def __init__(self, path):
+        self.path = path
+        self.db = sqlite3.connect(path, check_same_thread=False)
+        self.db.row_factory = sqlite3.Row
+        self.db.executescript(SCHEMA)
 
-def utcnow() -> datetime:
-    return datetime.now(timezone.utc)
+    def insert(self, rec: dict) -> int:
+        cols = ",".join(rec); q = ",".join("?" * len(rec))
+        cur = self.db.execute(f"INSERT INTO tickets ({cols}) VALUES ({q})", list(rec.values()))
+        tid = cur.lastrowid
+        if rec.get("cluster_id") is None:
+            self.db.execute("UPDATE tickets SET cluster_id=? WHERE id=?", (tid, tid))
+        self.db.commit()
+        return tid
 
+    def open_tickets(self, ward=None, dept=None):
+        q, a = "SELECT * FROM tickets WHERE status='OPEN'", []
+        if ward: q += " AND ward=?"; a.append(ward)
+        if dept: q += " AND dept=?"; a.append(dept)
+        return [dict(r) for r in self.db.execute(q, a)]
 
-def iso(dt: datetime | None) -> str | None:
-    return dt.astimezone(timezone.utc).isoformat(timespec="seconds") if dt else None
+    def cluster_size(self, cluster_id):
+        return self.db.execute("SELECT COUNT(*) FROM tickets WHERE cluster_id=?", (cluster_id,)).fetchone()[0]
 
+    def all(self):
+        return [dict(r) for r in self.db.execute("SELECT * FROM tickets ORDER BY id")]
 
-def parse(s: str | None) -> datetime | None:
-    return datetime.fromisoformat(s) if s else None
-
-
-class Store:
-    def __init__(self, path: Path | str | None = None):
-        self.path = str(path or (config.INSTANCE / "nagarvani.sqlite3"))
-        if self.path != ":memory:":
-            Path(self.path).parent.mkdir(parents=True, exist_ok=True)
-        self.conn = sqlite3.connect(self.path, check_same_thread=False)
-        self.conn.row_factory = sqlite3.Row
-        self.lock = threading.RLock()
-        self.conn.execute("PRAGMA foreign_keys = ON")
-        self.conn.executescript(SCHEMA)
-        self.conn.commit()
-
-    # ---- writes ------------------------------------------------------------------------
-    def create(self, **fields) -> int:
-        now = iso(fields.pop("now", None) or utcnow())
-        fields.setdefault("created_utc", now)
-        fields.setdefault("updated_utc", now)
-        fields.setdefault("status", "received")
-        cols = ", ".join(fields)
-        q = ", ".join("?" for _ in fields)
-        with self.lock:
-            cur = self.conn.execute(f"INSERT INTO tickets ({cols}) VALUES ({q})", list(fields.values()))
-            self.conn.commit()
-        return cur.lastrowid
-
-    def update(self, ticket_id: int, **fields):
-        fields["updated_utc"] = iso(utcnow())
-        sets = ", ".join(f"{k} = ?" for k in fields)
-        with self.lock:
-            self.conn.execute(f"UPDATE tickets SET {sets} WHERE id = ?", [*fields.values(), ticket_id])
-            self.conn.commit()
-
-    def add_correction(self, ticket_id, field, old, new, text, note=""):
-        with self.lock:
-            self.conn.execute("INSERT INTO corrections (ticket_id, created_utc, field, old_value, new_value, text, note)"
-                              " VALUES (?, ?, ?, ?, ?, ?, ?)", (ticket_id, iso(utcnow()), field, old, new, text, note))
-            self.conn.commit()
-
-    # ---- reads -------------------------------------------------------------------------
-    def get(self, ticket_id: int):
-        return self.conn.execute("SELECT * FROM tickets WHERE id = ?", (ticket_id,)).fetchone()
-
-    def by_submission_key(self, key: str):
-        return self.conn.execute("SELECT * FROM tickets WHERE submission_key = ?", (key,)).fetchone()
-
-    def open_in_block(self, ward: str, department: str, exclude_id: int | None = None):
-        rows = self.conn.execute(
-            f"SELECT id, masked_text, report_count FROM tickets WHERE ward = ? AND department = ? AND parent_id IS NULL"
-            f" AND status IN ({','.join('?' * len(OPEN_STATUSES))}) AND id != ? AND masked_text IS NOT NULL",
-            (ward, department, *OPEN_STATUSES, exclude_id or -1)).fetchall()
-        return [(r["id"], r["masked_text"], r["report_count"]) for r in rows]
-
-    def children(self, ticket_id: int):
-        return self.conn.execute("SELECT * FROM tickets WHERE parent_id = ? ORDER BY id", (ticket_id,)).fetchall()
-
-    def tickets(self, where: str = "1=1", params=()):
-        return self.conn.execute(f"SELECT * FROM tickets WHERE {where}", params).fetchall()
-
-    def corrections(self):
-        return self.conn.execute("SELECT * FROM corrections ORDER BY id").fetchall()
-
-    def ok(self) -> bool:
-        try:
-            self.conn.execute("SELECT 1").fetchone()
-            return True
-        except sqlite3.Error:
-            return False
-
-
-def trace_dumps(obj) -> str:
-    return json.dumps(obj, ensure_ascii=False)
+    def export_ward_queues(self, out_dir):
+        """One CSV per ward office, ordered by priority then SLA deadline. NODAL_REVIEW rows go to
+        nodal_review.csv. Returns list of files written."""
+        os.makedirs(out_dir, exist_ok=True)
+        rows = self.all()
+        cols = ["id", "created_at", "priority", "sla_due", "dept", "dept_conf", "locality", "ward",
+                "cluster_id", "dup_decision", "route_status", "raw_text"]
+        groups = {}
+        for r in rows:
+            key = r["ward"] if r["route_status"] == "AUTO_ROUTED" else "nodal_review"
+            groups.setdefault(key, []).append(r)
+        files = []
+        for key, rs in groups.items():
+            rs.sort(key=lambda r: (r["priority"], r["sla_due"]))
+            fn = os.path.join(out_dir, f"queue_{key}.csv")
+            with open(fn, "w", newline="", encoding="utf-8-sig") as f:
+                w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
+                w.writeheader(); w.writerows(rs)
+            files.append(fn)
+        return files

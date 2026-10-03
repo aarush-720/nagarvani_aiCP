@@ -6,31 +6,31 @@ the output shown is what it produced. Run `python scripts/reset_demo.py` before 
 seeded tickets do not touch these inputs' duplicate blocks, but re-check item 8 after any seed change.
 Every input is also a one-click example on the intake page (the fallback if the microphone fails).
 
-Classifier artefact: C = 100.0.
+Classifier: the original char + word TF-IDF logistic regression (C = 10), loaded from results/model.pkl.
 
 ## 1. A clean Marathi complaint that auto-routes
 
-Input: `वारजे येथे नळाला चार दिवसांपासून पाणी आलेले नाही`
+Input: `वारजे येथे तीन दिवसांपासून नळाला पाणी येत नाही`
 
 * Ticket #1: **AUTO_ROUTED**, status `auto_routed`
-* Department top 3: WATER 1.00, HEALTH 0.00, DRAIN 0.00
-* Ward: W12 (Warje-Karvenagar) via exact
-* Severity: **P2**; rules fired: R21 (propose P2), R00 (department default for WATER: P3 (not used: another rule proposed a band))
-* Duplicate check: new
-* Gate reason: Gate passed: confidence 1.00 ≥ 0.5; ward office known (exact).
+* Department top 3: WATER 0.94, SWM 0.02, DRAIN 0.02
+* Ward: WKN (Warje-Karvenagar) via exact
+* Severity: **P2**; rules fired: R12 (at least P2)
+* Duplicate check: new (no open ticket in the same ward office and department)
+* Gate reason: Gate passed: confidence 0.94 ≥ 0.5; ward office known (exact).
 
-Say: A clear complaint, a known place, high confidence: it goes straight to the department. R21 (no water) makes it P2.
+Say: A clear complaint, a known place, high confidence: it goes straight to the department. R12 (water outage of two days or more) raises it to P2.
 
 ## 2. A romanised Marathi complaint
 
 Input: `Baner madhe streetlight ek athavda band ahe, ratri khup andhar asto`
 
 * Ticket #2: **AUTO_ROUTED**, status `auto_routed`
-* Department top 3: ELEC 1.00, HEALTH 0.00, BUILD 0.00
-* Ward: W01 (Aundh-Baner) via exact
-* Severity: **P3**; rules fired: R00 (department default for ELEC: P3)
-* Duplicate check: new
-* Gate reason: Gate passed: confidence 1.00 ≥ 0.5; ward office known (exact).
+* Department top 3: ELEC 0.78, ROAD 0.05, HEALTH 0.04
+* Ward: AUB (Aundh-Baner) via exact
+* Severity: **P3**; rules fired: none (default P3)
+* Duplicate check: new (no open ticket in the same ward office and department)
+* Gate reason: Gate passed: confidence 0.78 ≥ 0.5; ward office known (exact).
 
 Say: Romanised Marathi works because the classifier uses character n-grams and the gazetteer has Latin aliases.
 
@@ -39,65 +39,65 @@ Say: Romanised Marathi works because the classifier uses character n-grams and t
 Input: `Viman Nagar मध्ये drainage overflow होतोय, रस्त्यावर घाण पाणी आलंय`
 
 * Ticket #3: **AUTO_ROUTED**, status `auto_routed`
-* Department top 3: DRAIN 0.93, SWM 0.03, WATER 0.02
-* Ward: W09 (Nagar Road-Wadgaonsheri) via exact
-* Severity: **P2**; rules fired: R23 (propose P2), R00 (department default for DRAIN: P3 (not used: another rule proposed a band))
-* Duplicate check: new
-* Gate reason: Gate passed: confidence 0.93 ≥ 0.5; ward office known (exact).
+* Department top 3: DRAIN 0.95, SWM 0.03, WATER 0.01
+* Ward: NWS (Nagar Road-Wadgaon Sheri) via exact
+* Severity: **P2**; rules fired: R11 (at least P2), R15 (at least P2)
+* Duplicate check: new (no open ticket in the same ward office and department)
+* Gate reason: Gate passed: confidence 0.95 ≥ 0.5; ward office known (exact).
 
-Say: Marathi and English mixed in one sentence, as people actually speak.
+Say: Marathi and English mixed in one sentence, as people actually speak. Two hazard rules fire (nuisance and blocked drain).
 
 ## 4. A life-safety complaint forced to P1 by a visible rule
 
-Input: `धनकवडीत मॅनहोलचे झाकण गायब आहे, शाळकरी मुले रोज इथून जातात`
+Input: `धनकवडीत मॅनहोलचे झाकण उघडे आहे, शाळकरी मुले रोज इथून जातात`
 
 * Ticket #4: **AUTO_ROUTED**, status `auto_routed`
-* Department top 3: DRAIN 0.99, WATER 0.00, VET 0.00
-* Ward: W13 (Dhankawadi-Sahakarnagar) via exact
-* Severity: **P1**; rules fired: R01 (propose P1), R00 (department default for DRAIN: P3 (not used: another rule proposed a band))
-* Duplicate check: new
-* Gate reason: Gate passed: confidence 0.99 ≥ 0.5; ward office known (exact).
+* Department top 3: DRAIN 0.95, BUILD 0.01, TREE 0.01
+* Ward: DSN (Dhankawadi-Sahakarnagar) via exact
+* Severity: **P1**; rules fired: R02 (at least P1), R30 (escalate one band)
+* Duplicate check: new (no open ticket in the same ward office and department)
+* Gate reason: Gate passed: confidence 0.95 ≥ 0.5; ward office known (exact).
 
-Say: The rule base, not the model, decides life safety. R01 fires on the cue words shown, and the band is forced to P1. The rule ID is on screen.
+Say: The rule base, not the model, decides life safety. R02 (open manhole) fires on the cue words shown and sets P1; R30 (near a school) fires too, but P1 is already the top band.
 
 ## 5. A misspelt locality rescued by the fuzzy resolver
 
 Input: `हडप्सर मध्ये कचऱ्याचा मोठा ढीग साचला आहे`
 
 * Ticket #5: **AUTO_ROUTED**, status `auto_routed`
-* Department top 3: SWM 1.00, HEALTH 0.00, DRAIN 0.00
-* Ward: W05 (Hadapsar-Mundhwa) via fuzzy, matched 'हडप्सर' ≈ 'हडपसर' score 0.909
-* Severity: **P3**; rules fired: R00 (department default for SWM: P3)
-* Duplicate check: new
-* Gate reason: Gate passed: confidence 1.00 ≥ 0.5; ward office known (fuzzy).
+* Department top 3: SWM 0.93, ROAD 0.02, HEALTH 0.01
+* Ward: HMU (Hadapsar-Mundhwa) via fuzzy, nearest alias 'हडपसर', similarity 0.909
+* Severity: **P3**; rules fired: none (default P3)
+* Duplicate check: new (no open ticket in the same ward office and department)
+* Gate reason: Gate passed: confidence 0.93 ≥ 0.5; ward office known (fuzzy).
 
-Say: हडप्सर is not in the gazetteer, but it is within the similarity threshold of हडपसर, so the fuzzy fallback resolves it and the trace shows the score.
+Say: हडप्सर is not a gazetteer alias, but it is within the similarity threshold of हडपसर, so the fuzzy fallback resolves it and the trace shows the score.
 
 ## 6. An unknown locality that goes to review
 
-Input: `उंड्री येथे रस्त्यावर मोठे खड्डे पडले आहेत`
+Input: `पिंपळे सौदागर मध्ये रस्त्यावर मोठे खड्डे पडले आहेत`
 
 * Ticket #6: **SENT_TO_REVIEW**, status `review`
-* Department top 3: ROAD 1.00, TREE 0.00, VET 0.00
+* Department top 3: ROAD 0.97, ENCROACH 0.01, HEALTH 0.01
 * Ward: not resolved (no gazetteer locality found in the text)
-* Severity: **P3**; rules fired: R00 (department default for ROAD: P3)
-* Duplicate check: skipped
-* Gate reason: Gate failed: confidence 1.00 ≥ 0.5; ward office not resolved.
+* Severity: **P3**; rules fired: none (default P3)
+* Duplicate check: skipped (ward office unknown, so there is no block to compare in)
+* Gate reason: Gate failed: confidence 0.97 ≥ 0.5; ward office not resolved (unresolved).
 
-Say: Undri is not in our gazetteer. The system does not guess a ward, so the gate sends it to a person. The citizen can also pick a ward in the optional dropdown.
+Say: Pimple Saudagar is in Pimpri-Chinchwad, not PMC, and is not in the gazetteer. The system does not guess a ward, so the gate sends it to a nodal officer. The citizen could also pick a ward in the optional dropdown.
 
 ## 7. A low-confidence complaint that goes to review
 
-Input: `कर्वेनगरमध्ये बांधकामाचे साहित्य रस्त्यावर ठेवले आहे`
+Input: `हडपसरमध्ये रस्त्याच्या कडेला मोठा ढिगारा पडला आहे`
 
 * Ticket #7: **SENT_TO_REVIEW**, status `review`
-* Department top 3: BUILD 0.41, ENCROACH 0.38, DRAIN 0.04
-* Ward: W12 (Warje-Karvenagar) via exact
-* Severity: **P3**; rules fired: R00 (department default for BUILD: P3)
-* Duplicate check: new
-* Gate reason: Gate failed: confidence 0.41 < 0.5; ward office known (exact).
+* Department top 3: ROAD 0.36, SWM 0.30, ENCROACH 0.06
+* Ward: HMU (Hadapsar-Mundhwa) via exact
+* Severity: **P3**; rules fired: none (default P3)
+* Duplicate check: new (no open ticket in the same ward office and department)
+* Gate reason: Gate failed: confidence 0.36 < 0.5; ward office known (exact).
 
-Say: Building materials on the road could be Building or Encroachment. The model's top probability is under 0.50, so it defers instead of guessing.
+Say: Debris at the roadside could be Roads or Solid Waste. The top probability is under 0.50, so it defers instead of guessing, with the top three departments filled in for the officer.
 
 ## 8. Triple duplicate with escalation
 
@@ -105,53 +105,53 @@ Submit the three reports one after another (three different wordings of the same
 
 ### Triple duplicate: report 1
 
-Input: `हडपसर गाडीतळाजवळ रस्त्यावर खूप मोठे खड्डे पडले आहेत`
+Input: `कोथरूड डेपोजवळ रस्त्यावर खूप मोठे खड्डे पडले आहेत`
 
 * Ticket #8: **AUTO_ROUTED**, status `auto_routed`
-* Department top 3: ROAD 1.00, TREE 0.00, ENCROACH 0.00
-* Ward: W05 (Hadapsar-Mundhwa) via exact
-* Severity: **P3**; rules fired: R00 (department default for ROAD: P3)
-* Duplicate check: new
-* Gate reason: Gate passed: confidence 1.00 ≥ 0.5; ward office known (exact).
+* Department top 3: ROAD 0.98, HEALTH 0.01, ENCROACH 0.00
+* Ward: KOB (Kothrud-Bavdhan) via exact
+* Severity: **P3**; rules fired: none (default P3)
+* Duplicate check: new (no open ticket in the same ward office and department)
+* Gate reason: Gate passed: confidence 0.98 ≥ 0.5; ward office known (exact).
 
 ### Triple duplicate: report 2
 
-Input: `हडपसर गाडीतळ येथे रस्त्यावर मोठे खड्डे पडले आहेत, गाड्या आदळतात`
+Input: `कोथरूड डेपो येथे रस्त्यावर मोठे खड्डे पडले आहेत, गाड्या आदळतात`
 
 * Ticket #9: **MERGED**, status `merged`
-* Department top 3: ROAD 0.98, TREE 0.01, ENCROACH 0.00
-* Ward: W05 (Hadapsar-Mundhwa) via exact
-* Severity: **P3**; rules fired: R00 (department default for ROAD: P3)
-* Duplicate check: merge, score 0.73 vs #8
-* Gate reason: Gate passed (confidence 0.98 ≥ 0.5; ward office known (exact)); similarity 0.73 ≥ 0.45: same issue as ticket #8.
+* Department top 3: ROAD 0.93, ENCROACH 0.02, HEALTH 0.01
+* Ward: KOB (Kothrud-Bavdhan) via exact
+* Severity: **P3**; rules fired: none (default P3)
+* Duplicate check: merge, score 0.71 vs #8
+* Gate reason: Gate passed (confidence 0.93 ≥ 0.5; ward office known (exact)); similarity 0.71 ≥ 0.45: same issue as ticket #8.
 
 ### Triple duplicate: report 3 (R32 escalates)
 
-Input: `हडपसरमध्ये गाडीतळाजवळच्या रस्त्यावर खूप खड्डे पडले आहेत`
+Input: `कोथरूडमध्ये डेपोजवळच्या रस्त्यावर खूप खड्डे पडले आहेत`
 
 * Ticket #10: **MERGED**, status `merged`
-* Department top 3: ROAD 0.99, TREE 0.00, ENCROACH 0.00
-* Ward: W05 (Hadapsar-Mundhwa) via exact
-* Severity: **P2**; rules fired: R00 (department default for ROAD: P3), R32 (raise P3 → P2)
-* Duplicate check: merge, score 0.84 vs #8
-* Gate reason: Gate passed (confidence 0.99 ≥ 0.5; ward office known (exact)); similarity 0.84 ≥ 0.45: same issue as ticket #8.
+* Department top 3: ROAD 0.97, HEALTH 0.02, ENCROACH 0.00
+* Ward: KOB (Kothrud-Bavdhan) via exact
+* Severity: **P2**; rules fired: R32 (escalate one band)
+* Duplicate check: merge, score 0.79 vs #8
+* Gate reason: Gate passed (confidence 0.97 ≥ 0.5; ward office known (exact)); similarity 0.79 ≥ 0.45: same issue as ticket #8.
 
 Result on the first ticket #8: 3 reports, priority **P2**, escalation note: "R32 at report 3 (ticket #10): P3 → P2".
 
 Say: the reports are merged, not duplicated in the queue. At the third report R32 fires and the open ticket moves up one band. Show the first report's ticket in the officer queue: it is marked '3 reports' and 'escalated'.
 
-## 9. A real misclassification from the test set (T088)
+## 9. A real misclassification from the test set (T054)
 
-Input: `बालाजीनगरमधील बंद पडलेल्या टायर दुकानात पाणी साचून अळ्या झाल्या आहेत` (test item T088; gold label HEALTH)
+Input: `गटाराचा प्रचंड वास येतो आणि डास झालेत, रामटेकडी` (test item T054; gold label DRAIN)
 
 * Ticket #11: **AUTO_ROUTED**, status `auto_routed`
-* Department top 3: WATER 0.86, HEALTH 0.04, ELEC 0.03
-* Ward: W13 (Dhankawadi-Sahakarnagar) via exact
-* Severity: **P3**; rules fired: R00 (department default for WATER: P3)
-* Duplicate check: new
-* Gate reason: Gate passed: confidence 0.86 ≥ 0.5; ward office known (exact).
+* Department top 3: SWM 0.89, ROAD 0.02, DRAIN 0.02
+* Ward: WRT (Wanowrie-Ramtekdi) via exact
+* Severity: **P2**; rules fired: R11 (at least P2)
+* Duplicate check: new (no open ticket in the same ward office and department)
+* Gate reason: Gate passed: confidence 0.89 ≥ 0.5; ward office known (exact).
 
-Say: An honest failure: the word for water dominates, and the classifier says Water Supply although this is a mosquito-breeding (Health) complaint. Its confidence is high and the place is known, so the gate does NOT catch it. The officer would correct it, and the correction is logged.
+Say: An honest failure, from the model's real errors on the test set: a drain that smells and breeds mosquitoes is read as Solid Waste. Its confidence is above 0.50 and the place is known, so the gate does NOT catch it. The officer corrects it, and the correction is logged.
 
 ## Spoken versions
 
@@ -160,11 +160,17 @@ Whisper's transcript will differ from the typed text, so the outcome may differ.
 why the citizen checks the transcript. If the microphone fails, use the example buttons.
 A WhatsApp voice note (.ogg) can be uploaded with the file button.
 
-## Inputs that were tried and rejected
+## Inputs that were tried and rejected (re-run just now)
 
-* These were candidates for item 7 (low confidence → review). Re-run just now, they give:
-  * `कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या` → HEALTH 0.55, AUTO_ROUTED
-  * `सहकारनगरमध्ये परिस्थिती खूप वाईट आहे` → HEALTH 0.51, AUTO_ROUTED
-  Vague complaints are confidently sent to Health and auto-routed. This is a real weakness
-  (see docs/HANDOVER.md), and it is why item 7 uses a complaint that is genuinely between two departments.
+* For item 7 (low confidence → review):
+  * `कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या` → HEALTH 0.61, ward KOB, P3, AUTO_ROUTED
+  * `कर्वेनगरमध्ये बांधकामाचे साहित्य रस्त्यावर ठेवले आहे` → ENCROACH 0.96, ward WKN, P3, AUTO_ROUTED
+  The first shows a real weakness: a vague complaint is confidently sent to Health and auto-routed.
+* For item 6 (unknown locality): these places turned out to be in the gazetteer:
+  * `उंड्री येथे रस्त्यावर मोठे खड्डे पडले आहेत` → ROAD 0.94, ward KYW, P3, AUTO_ROUTED
+  * `लोहगाव मध्ये कचरा उचलला जात नाही` → SWM 0.99, ward YKD, P3, AUTO_ROUTED
+* For item 4 (life safety): 'झाकण गायब' (cover missing) does not fire R02, because 'गायब' is not in the
+  OPEN cue list, so the band is decided by other rules:
+  * `धनकवडीत मॅनहोलचे झाकण गायब आहे, शाळकरी मुले रोज इथून जातात` → DRAIN 0.87, ward DSN, P2, AUTO_ROUTED
+  This is a gap in the rule lexicon (docs/DECISIONS.md, Found but not changed).
 * Exact-text repeats were not used for item 8: paraphrases show that matching is not literal.

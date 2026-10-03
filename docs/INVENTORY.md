@@ -1,41 +1,77 @@
 # Inventory
 
-## History of this repository
+## History
 
-| When | What was found |
+| Date | What happened |
 |---|---|
-| Start of build (2026-10-02) | Remote and local repo empty; no commits. |
-| After GitHub access fixed | `main` held one upload: `nagarvani_midsem/` (Colab notebook, viva guide, 460-row seed CSV, two figures). |
-| Clarified by the developer | That midsem notebook **is** the team's final prototype. The build restarts from scratch. |
+| 2026-10-02 | The repository was empty, then held only the midsem Colab notebook. Believing that was the final prototype, a from-scratch rebuild was made. That rebuild is now in `archive/rebuild_2026-10-02/` and is superseded. |
+| 2026-10-03 | The original prototype was supplied as `NagarVani_prototype_code.zip`, with the PBL-5 paper draft. It was verified, and the project was restructured to wrap it, as the build brief intended. |
 
-## What the midsem prototype contained (now in `archive/midsem/`)
+## What the original prototype contains, and where it now lives
 
-| File | Content |
+| Original path (zip) | Now | Status |
+|---|---|---|
+| `nagarvani/{normalise,classifier,location,severity,dedup,store,pipeline,asr}.py` | `nagarvani/` (same names) | **Frozen, byte-identical** (checksummed) |
+| `corpus/train_template.tsv`, `test_handwritten.tsv`, `dup_pairs.tsv`, `generate_train.py` | `corpus/` | **Frozen, byte-identical** |
+| `data/gazetteer.json` | `data/gazetteer.json` | **Frozen, byte-identical** |
+| `results/results.json`, `results/model.pkl` | `results/results_shipped.json`, `results/model_shipped.pkl` | Frozen, kept as shipped for comparison |
+| `experiments/run_eval.py` | `experiments/run_eval.py` | Kept; three marked `[build change]` edits (hash-seed pin, output folder, E8 through `triage()`) |
+| `experiments/make_architecture.py` | `experiments/` | Unchanged |
+| `results/figures/*.png` | `results/figures/` | Regenerated identically in content by `run_eval.py` |
+| `docs/annotation_guideline.md` | `docs/annotation_guideline.md` | Unchanged |
+| `app/` (a minimal Flask console), `experiments/demo_scenario.py`, `docs_build/`, `README.md` | `docs/prototype/` | Kept for reference. Replaced by the new web app. |
+
+## Entry points
+
+* **Evaluation:** `python experiments/run_eval.py` writes `results/results.json`, the figures, the per-ward queues and `results/model.pkl`.
+* **Classifier artefact:** `python -m nagarvani.train` rebuilds `results/model.pkl`. It is identical to the one `run_eval.py` writes.
+* **Pipeline:** `nagarvani.triage.triage()` wraps the original `pipeline.Triage.triage` logic and is used by both the evaluation and the app.
+* **Web app:** `python run.py`.
+
+## Reported vs reproduced
+
+Reproduced with `python experiments/run_eval.py`, scikit-learn 1.8.0, on 2026-10-03.
+
+| Quantity | Reported (brief, paper) | Reproduced (`results/results.json`) |
+|---|---|---|
+| Department accuracy | 86.9% (139/160) | 0.86875 = 139/160 |
+| Department macro-F1 | 0.870 | 0.8698 |
+| Top-3 accuracy | 95.6% (153/160) | 0.95625 = 153/160 |
+| Keyword baseline | 81.9% | 0.81875 |
+| Char-only logistic regression | 88.8% | 0.8875 |
+| CV accuracy inside template data | 99.8% | 0.998 |
+| Auto-routed share | 70% | 112/160 |
+| Auto-routed with correct department and ward | 97.3% | 109/112 |
+| Department errors caught by the gate | 18 of 21 | 21 errors, 3 auto-routed → 18 |
+| Severity band accuracy (predicted department) | 95.6% | 0.95625 |
+| P1 recall | 94.4% | 34/36 |
+| Learned severity baseline | 76.9% | 0.76875 |
+| Macro-F1 at simulated 10% character error | 0.811 | 0.8112 |
+| Ward accuracy at 10% noise, exact only / with fuzzy | 49% / 93% | 0.494 / 0.926 |
+
+**Every reported number reproduces.** The full `results.json` (789 values) equals the shipped
+one, with floats within 1e-12 and only the timing fields excluded. That holds both with the
+original code path and with the end-to-end stream routed through `triage()`.
+
+The PBL-5 paper draft was also checked against `results.json`. Its other figures match too:
+- Table I, including the per-variety columns
+- confidence 0.814 / 0.454 and ECE 0.111
+- 81.3% / 96.9% at τ = 0.50
+- the whole severity table
+- duplicate precision 1.00 / recall 0.73, and 14 of 15 duplicates merged or reviewed
+- 0.755 macro-F1 and 61% severity at 20% noise
+- 48 deferrals (25 low confidence + 23 location)
+- 226 cue strings
+
+## Where the brief and the code disagree
+
+| Brief says | Code does |
 |---|---|
-| `NagarVani_final.ipynb` | 22 cells. Gradio UI, openai-whisper `large-v3` on a Colab GPU, TF-IDF char 2-5 + civic-lexicon features + logistic regression (C=10), 12 life-safety rules + department default bands, abstention threshold chosen from out-of-fold CV, in-memory ticket list. No Flask, no SQLite, no location resolution, no duplicate detection. |
-| `nagarvani_seed_dataset_AB.csv` | 460 complaints: Set A 200 (8 departments x 25), Set B 260 (8 departments + `other`, with P1-P4 severity labels). AI-drafted, human-checked by the team. |
-| `NagarVani_viva_guide.md` | Midsem demo script and numbers card. |
-| `confusion_matrix.png`, `tau_curve.png` | Midsem figures. |
-
-## Where the brief's section 2 differs from what existed
-
-Every item in section 2 of the build brief was absent: there was no 10-department taxonomy,
-no 2,000-row template training set, no 160-row hand-written test set, no gazetteer, no
-19-rule expert system, no duplicate detector, no gate on ward resolution and no Flask app.
-The midsem notebook used 8 departments + `other`, 460 seed rows and a different model.
-
-**None of the numbers in the brief's section 2 table can be reproduced from anything that
-existed.** No code or data in the repository produced them. This build produces its own
-numbers (see `results/` and `docs/HANDOVER.md`); they are not expected to match.
-
-## What was reused from the midsem prototype
-
-* The 15 ward-office names (spellings as in the notebook; still to be verified against PMC).
-* The proposed SLA hours: P1 24 h, P2 72 h, P3 168 h, P4 360 h.
-* The idea of life-safety rules with exclusion words (e.g. झाडला "swept" must not trigger the tree rule).
-* The 460-row seed CSV, copied unchanged to `data/external/midsem_seed_AB.csv` and used only as an
-  **external evaluation set** (never for training or rule writing).
-
-## Entry points of the rebuilt system
-
-See `README.md` (layout and commands), `docs/HANDOVER.md` (status) and `docs/PROGRESS.md`.
+| "30 duplicate pairs" | 30 **labelled pairs**: 15 true duplicates, 10 same-ward different-department, 5 same-ward same-department. |
+| Ward resolver "suffix-tolerant" | Devanagari aliases match as plain substrings (so any suffix is tolerated, and an alias inside a longer word also matches). Latin aliases match whole words. |
+| Duplicate similarity "character 2–4 gram cosine" | TF-IDF (char_wb 2–4, sublinear) **fitted on the training corpus**, cosine, after removing gazetteer aliases. |
+| C = 10 "chosen by cross-validation" | `char_word_lr` defaults to C = 10. The CV search (`E1_C_search`, macro-F1) ties C = 10 and C = 30 at 0.99800, so the first maximum is 10. |
+| Duplicates: merge at ≥ 0.45, review 0.30–0.45, new below | `DuplicateDetector.decide` returns these decisions. In the original pipeline, a merge only joins the cluster (it raises the cluster size for R32), and routing is decided by the gate alone. |
+| Gazetteer of 59 localities | 59 localities, 15 ward offices, and one ambiguous name with three spellings (वडगाव / wadgaon / vadgaon). |
+| Library version unspecified | The shipped `model.pkl` was pickled with scikit-learn **1.8.0**. Results also reproduce under 1.9.1. 1.8.0 is pinned. |
+| Speech: "no ASR model has been run" | True. `nagarvani/asr.py` has an openai-whisper backend that was never run, plus the noise simulator. This build adds faster-whisper in `nagarvani/speech.py`. |
