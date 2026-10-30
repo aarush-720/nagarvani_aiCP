@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS tickets (
     text TEXT NOT NULL,                 -- what the citizen finally submitted
     asr_json TEXT,
     ward_hint TEXT,
-    status TEXT NOT NULL,               -- received | auto_routed | review | routed | merged | resolved
+    status TEXT NOT NULL,               -- received | auto_routed | review | routed | merged | reopened
+                                        -- | pending_confirmation | closed (| resolved: before v2.0)
     department TEXT,
     confidence REAL,
     ward TEXT,
@@ -52,9 +53,29 @@ CREATE TABLE IF NOT EXISTS corrections (
     text TEXT,
     note TEXT
 );
+CREATE TABLE IF NOT EXISTS ticket_events (     -- every status change, with who made it (v2.0, M9)
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ticket_id INTEGER NOT NULL REFERENCES tickets(id),
+    at_utc TEXT NOT NULL,
+    actor TEXT NOT NULL,                -- system | officer | citizen
+    from_status TEXT,
+    to_status TEXT NOT NULL,
+    note TEXT
+);
+CREATE INDEX IF NOT EXISTS ix_events ON ticket_events(ticket_id);
 """
 
-OPEN_STATUSES = ("auto_routed", "review", "routed")
+# Columns added in v2.0 (closure verification). Older databases gain them at start-up.
+ADDED_COLUMNS = {
+    "resolution_note": "TEXT",
+    "resolution_photo": "TEXT",
+    "pending_since_utc": "TEXT",
+    "closed_utc": "TEXT",
+    "reopen_count": "INTEGER NOT NULL DEFAULT 0",
+    "citizen_comment": "TEXT",
+}
+
+OPEN_STATUSES = ("auto_routed", "review", "routed", "reopened")
 
 
 def utcnow() -> datetime:
@@ -79,6 +100,10 @@ class Store:
         self.lock = threading.RLock()
         self.conn.execute("PRAGMA foreign_keys = ON")
         self.conn.executescript(SCHEMA)
+        have = {r["name"] for r in self.conn.execute("PRAGMA table_info(tickets)")}
+        for col, decl in ADDED_COLUMNS.items():
+            if col not in have:
+                self.conn.execute(f"ALTER TABLE tickets ADD COLUMN {col} {decl}")
         self.conn.commit()
 
     # ---- writes ------------------------------------------------------------------------
@@ -105,6 +130,13 @@ class Store:
         with self.lock:
             self.conn.execute("INSERT INTO corrections (ticket_id, created_utc, field, old_value, new_value, text, note)"
                               " VALUES (?, ?, ?, ?, ?, ?, ?)", (ticket_id, iso(utcnow()), field, old, new, text, note))
+            self.conn.commit()
+
+    def add_event(self, ticket_id, actor, from_status, to_status, note="", now=None):
+        with self.lock:
+            self.conn.execute("INSERT INTO ticket_events (ticket_id, at_utc, actor, from_status, to_status, note)"
+                              " VALUES (?, ?, ?, ?, ?, ?)",
+                              (ticket_id, iso(now or utcnow()), actor, from_status, to_status, note or None))
             self.conn.commit()
 
     # ---- reads -------------------------------------------------------------------------
@@ -134,6 +166,9 @@ class Store:
 
     def tickets(self, where: str = "1=1", params=()):
         return self.conn.execute(f"SELECT * FROM tickets WHERE {where}", params).fetchall()
+
+    def events(self, ticket_id: int):
+        return self.conn.execute("SELECT * FROM ticket_events WHERE ticket_id = ? ORDER BY id", (ticket_id,)).fetchall()
 
     def corrections(self):
         return self.conn.execute("SELECT * FROM corrections ORDER BY id").fetchall()

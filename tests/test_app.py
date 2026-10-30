@@ -259,8 +259,10 @@ def test_corrections_logged_and_exported(client, app):
     lines = client.get("/corrections.jsonl").get_data(as_text=True).strip().splitlines()
     fields = [json.loads(x)["field"] for x in lines]
     assert "ward" in fields and "priority" in fields and "confirm" in fields
-    client.post(f"/ticket/{tid}/action", data={"action": "resolve"})
-    assert s.get(tid)["status"] == "resolved"
+    client.post(f"/ticket/{tid}/action", data={"action": "resolve"})              # refused: no note
+    assert s.get(tid)["status"] == "routed"
+    client.post(f"/ticket/{tid}/action", data={"action": "resolve", "note": "खड्डे बुजवले / potholes filled"})
+    assert s.get(tid)["status"] == "pending_confirmation"                         # not closed
 
 
 def test_pending_duplicate_decision(client, app):

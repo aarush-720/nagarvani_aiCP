@@ -15,11 +15,11 @@ from datetime import timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from nagarvani import config, data, service  # noqa: E402
+from nagarvani import closure, config, data, service  # noqa: E402
 from nagarvani.console import safe_console  # noqa: E402
 from nagarvani.examples import EXAMPLES  # noqa: E402
 from nagarvani.triage import triage  # noqa: E402
-from nagarvani.tickets import Store, iso, utcnow  # noqa: E402
+from nagarvani.tickets import OPEN_STATUSES, Store, utcnow  # noqa: E402
 
 N_SEED = 21          # with a known place
 N_NO_PLACE = 4       # no place named: these land in the review queue
@@ -58,8 +58,9 @@ def seed(store):
     for i, r in enumerate(chosen):
         when = now - timedelta(hours=rng.uniform(1, 240))
         tid, _ = service.submit(store, text=r["text"], channel="seed", now=when)
-        if i % 9 == 8:
-            store.update(tid, status="resolved", resolved_utc=iso(when + timedelta(hours=12)))   # not an officer correction
+        if i % 9 == 8 and store.get(tid)["status"] in OPEN_STATUSES:     # resolved and confirmed by the citizen
+            closure.transition(store, tid, "resolve", note="काम पूर्ण / work done", now=when + timedelta(hours=12))
+            closure.transition(store, tid, "confirm_fixed", now=when + timedelta(hours=20))
     return chosen
 
 

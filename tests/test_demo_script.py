@@ -25,7 +25,7 @@ def run(store, key):
 
 def test_seed_mix(seeded):
     st = {t["status"] for t in seeded.tickets()}
-    assert {"auto_routed", "review", "resolved"} <= st
+    assert {"auto_routed", "review", "closed"} <= st
     assert any(r["overdue"] for r in service.queue(seeded))
     assert not seeded.corrections()
 

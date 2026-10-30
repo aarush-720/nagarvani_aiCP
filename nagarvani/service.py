@@ -11,9 +11,9 @@ import logging
 import traceback
 from datetime import datetime, timedelta, timezone
 
-from . import data
+from . import closure, data
 from .severity import infer
-from .tickets import Store, iso, parse, trace_dumps, utcnow
+from .tickets import OPEN_STATUSES, Store, iso, parse, trace_dumps, utcnow
 from .triage import triage
 
 BANDS = ["P1", "P2", "P3", "P4"]
@@ -25,6 +25,13 @@ def more_urgent(a: str, b: str) -> str:
 log = logging.getLogger("nagarvani")
 IST = timezone(timedelta(hours=5, minutes=30), "IST")   # fixed offset: India has no DST (no tzdata needed)
 STATUS_FROM_GATE = {"AUTO_ROUTED": "auto_routed", "SENT_TO_REVIEW": "review", "MERGED": "merged"}
+
+
+NOT_DUE = ("resolved", "merged", closure.PENDING, closure.CLOSED)   # no deadline running
+
+
+def is_overdue(t, now: datetime | None = None) -> bool:
+    return bool(t["deadline_utc"] and t["status"] not in NOT_DUE and parse(t["deadline_utc"]) < (now or utcnow()))
 
 
 def to_ist(s: str | None) -> str:
@@ -55,6 +62,7 @@ def record_failure(store: Store, tid: int, stage: str, exc: BaseException | str)
     log.error("ticket %s failed at %s: %s", tid, stage, msg)
     store.update(tid, status="review", failure=f"{stage}: {msg}",
                  review_reason=f"Automatic processing failed at the {stage} step; an officer must triage this by hand.")
+    store.add_event(tid, "system", "received", "review", f"processing failed at the {stage} step")
 
 
 def process(store: Store, tid: int, now: datetime | None = None):
@@ -85,9 +93,14 @@ def apply_result(store: Store, tid: int, r):
     if status == "merged":
         fields["parent_id"] = dup["ticket_id"]
     store.update(tid, **fields)
+    store.add_event(tid, "system", "received", status, r.gate.reason, now=_parse_utc(r.created_utc))
     if status == "merged":
         merge_into(store, child_id=tid, parent_id=dup["ticket_id"], band=r.severity["band"],
                    report_count=dup["report_count"], fired=[f["rule"] for f in r.severity["fired"]])
+
+
+def _parse_utc(s):
+    return parse(s) if s else None
 
 
 def merge_into(store: Store, *, child_id: int, parent_id: int, band: str, report_count: int, fired: list):
@@ -115,7 +128,10 @@ def confirm(store: Store, tid: int, note: str = ""):
     if not t["department"] or not t["ward"] or not t["priority"]:
         raise ActionError("Set the department, ward office and priority before confirming.")
     store.add_correction(tid, "confirm", t["status"], f"{t['department']}|{t['ward']}|{t['priority']}", t["text"], note)
-    store.update(tid, status="routed" if t["status"] == "review" else t["status"], confirmed=1)
+    new = "routed" if t["status"] == "review" else t["status"]
+    store.update(tid, status=new, confirmed=1)
+    if new != t["status"]:
+        store.add_event(tid, "officer", t["status"], new, note or "confirmed")
 
 
 def correct(store: Store, tid: int, *, department=None, ward=None, priority=None, note=""):
@@ -155,6 +171,7 @@ def decide_duplicate(store: Store, tid: int, merge: bool, note=""):
         sev = infer(parent["text"], parent["department"], cluster_size=count)
         store.add_correction(tid, "duplicate", "pending", f"merged into #{parent['id']}", t["text"], note)
         store.update(tid, status="merged", parent_id=parent["id"], dup_pending=0)
+        store.add_event(tid, "officer", t["status"], "merged", f"duplicate of #{parent['id']}")
         merge_into(store, child_id=tid, parent_id=parent["id"], band=sev["band"], report_count=count,
                    fired=sev["fired"])
     else:
@@ -162,12 +179,12 @@ def decide_duplicate(store: Store, tid: int, merge: bool, note=""):
         store.update(tid, dup_pending=0)
 
 
-def resolve(store: Store, tid: int, note=""):
-    t = store.get(tid)
-    store.add_correction(tid, "resolve", t["status"], "resolved", t["text"], note)
-    store.update(tid, status="resolved", resolved_utc=iso(utcnow()))
-    for c in store.children(tid):
-        store.update(c["id"], status="resolved", resolved_utc=iso(utcnow()))
+def resolve(store: Store, tid: int, note="", photo: str | None = None):
+    """Officer marks the work done. The ticket waits for the citizen; it does not close (closure.py)."""
+    try:
+        closure.transition(store, tid, "resolve", note=note, photo=photo)
+    except closure.ClosureError as e:
+        raise ActionError(str(e)) from e
 
 
 # ---- queue ------------------------------------------------------------------------------------
@@ -184,7 +201,8 @@ def queue(store: Store, *, ward=None, department=None, status=None, now: datetim
         where.append("status = ?")
         params.append(status)
     elif not status:
-        where.append("status IN ('review', 'auto_routed', 'routed')")
+        where.append(f"status IN ({', '.join('?' * len(OPEN_STATUSES))})")
+        params.extend(OPEN_STATUSES)
     rows = store.tickets(" AND ".join(where), params)
 
     def key(r):
@@ -193,14 +211,14 @@ def queue(store: Store, *, ward=None, department=None, status=None, now: datetim
     out = []
     for r in sorted(rows, key=key):
         d = dict(r)
-        d["overdue"] = bool(r["deadline_utc"] and r["status"] not in ("resolved", "merged")
-                            and parse(r["deadline_utc"]) < now)
+        d["overdue"] = is_overdue(r, now)
+        d["awaiting"] = closure.awaiting(r, now)
         out.append(d)
     return out
 
 
 def export_rows(store: Store, ward: str, now=None):
-    return [r for r in queue(store, ward=ward, now=now) if r["status"] in ("review", "auto_routed", "routed")]
+    return [r for r in queue(store, ward=ward, now=now) if r["status"] in OPEN_STATUSES]
 
 
 def corrections_jsonl(store: Store) -> str:

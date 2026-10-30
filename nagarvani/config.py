@@ -36,6 +36,12 @@ CLASSIFIER_C = 10.0
 # Only one value depends on it (simulated-noise ward accuracy at 20% CER); see docs/DECISIONS.md F4.
 EVAL_HASH_SEED = "3"
 
+# ---- closure verification (v2.0, M9) ----------------------------------------------------
+# A resolved ticket waits for the citizen's answer. After this many hours without one it is
+# flagged "awaiting confirmation", but it is never closed automatically.
+CONFIRMATION_WINDOW_HOURS = float(os.environ.get("NAGARVANI_CONFIRMATION_HOURS", "72"))
+RESOLUTION_PHOTO_MAX_BYTES = 5 * 1024 * 1024
+
 # ---- ASR ---------------------------------------------------------------------------------
 ASR_MODEL = os.environ.get("NAGARVANI_ASR_MODEL", "small")
 ASR_DEVICE = os.environ.get("NAGARVANI_ASR_DEVICE", "auto")      # auto | cpu | cuda

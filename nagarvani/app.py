@@ -12,7 +12,7 @@ from flask import Flask, Response, abort, flash, jsonify, redirect, render_templ
 from . import config, data, service
 from . import speech as asr
 from . import triage as triage_mod
-from .tickets import Store, parse, utcnow
+from .tickets import Store
 
 log = logging.getLogger("nagarvani")
 AUDIO_EXT = {"wav", "mp3", "m4a", "ogg", "oga", "opus", "webm", "mp4", "aac"}
@@ -150,8 +150,7 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
         asr_info = json.loads(t["asr_json"]) if t["asr_json"] else None
         parent = store_.get(t["parent_id"]) if t["parent_id"] else None
         candidate = store_.get(t["dup_candidate_id"]) if t["dup_candidate_id"] else None
-        overdue = bool(t["deadline_utc"] and t["status"] not in ("resolved", "merged")
-                       and parse(t["deadline_utc"]) < utcnow())
+        overdue = service.is_overdue(t)
         return render_template("ticket.html", t=t, trace=trace, asr_info=asr_info, parent=parent,
                                candidate=candidate, children=store_.children(tid), overdue=overdue)
 
