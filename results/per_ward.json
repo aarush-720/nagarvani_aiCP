@@ -1,0 +1,117 @@
+{
+ "test_set": "v1",
+ "wards": {
+  "AUB": {
+   "n": 11,
+   "dept_correct": 11,
+   "ward_correct": 11,
+   "auto": 11,
+   "auto_correct": 11
+  },
+  "SGR": {
+   "n": 7,
+   "dept_correct": 6,
+   "ward_correct": 7,
+   "auto": 7,
+   "auto_correct": 6
+  },
+  "KOB": {
+   "n": 7,
+   "dept_correct": 6,
+   "ward_correct": 7,
+   "auto": 5,
+   "auto_correct": 5
+  },
+  "WKN": {
+   "n": 5,
+   "dept_correct": 5,
+   "ward_correct": 5,
+   "auto": 5,
+   "auto_correct": 5
+  },
+  "SHR": {
+   "n": 8,
+   "dept_correct": 7,
+   "ward_correct": 8,
+   "auto": 6,
+   "auto_correct": 6
+  },
+  "DSN": {
+   "n": 11,
+   "dept_correct": 11,
+   "ward_correct": 11,
+   "auto": 11,
+   "auto_correct": 11
+  },
+  "BIB": {
+   "n": 5,
+   "dept_correct": 3,
+   "ward_correct": 5,
+   "auto": 2,
+   "auto_correct": 2
+  },
+  "KYW": {
+   "n": 12,
+   "dept_correct": 12,
+   "ward_correct": 12,
+   "auto": 11,
+   "auto_correct": 11
+  },
+  "WRT": {
+   "n": 8,
+   "dept_correct": 5,
+   "ward_correct": 8,
+   "auto": 4,
+   "auto_correct": 3
+  },
+  "HMU": {
+   "n": 12,
+   "dept_correct": 11,
+   "ward_correct": 12,
+   "auto": 11,
+   "auto_correct": 11
+  },
+  "NWS": {
+   "n": 15,
+   "dept_correct": 13,
+   "ward_correct": 15,
+   "auto": 12,
+   "auto_correct": 12
+  },
+  "YKD": {
+   "n": 10,
+   "dept_correct": 9,
+   "ward_correct": 10,
+   "auto": 8,
+   "auto_correct": 8
+  },
+  "DPR": {
+   "n": 10,
+   "dept_correct": 9,
+   "ward_correct": 10,
+   "auto": 6,
+   "auto_correct": 6
+  },
+  "KVB": {
+   "n": 7,
+   "dept_correct": 6,
+   "ward_correct": 7,
+   "auto": 6,
+   "auto_correct": 6
+  },
+  "BHP": {
+   "n": 8,
+   "dept_correct": 6,
+   "ward_correct": 8,
+   "auto": 7,
+   "auto_correct": 6
+  },
+  "NONE": {
+   "n": 24,
+   "dept_correct": 19,
+   "ward_correct": 24,
+   "auto": 0,
+   "auto_correct": 0
+  }
+ }
+}

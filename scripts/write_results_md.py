@@ -10,11 +10,12 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from nagarvani import config, results_view  # noqa: E402
+from nagarvani import config, data, results_view  # noqa: E402
 from nagarvani.console import safe_console  # noqa: E402
 
 OUT = config.ROOT / "RESULTS.md"
 V2_JSON = config.RESULTS / "test_v2" / "results.json"
+PER_WARD = {"test_v1": config.RESULTS / "per_ward.json", "test_v2": config.RESULTS / "test_v2" / "per_ward.json"}
 EVAL = "`python experiments/run_eval.py`"
 EVAL_V2 = "`python experiments/run_eval.py --test v2`"
 
@@ -53,6 +54,23 @@ def rows(S):
     ]
 
 
+def per_ward_section(name, path):
+    P = results_view.load(path)
+    if P is None:
+        return []
+    wards = data.ward_names()
+    cmd = "`python experiments/per_ward.py" + (" --test v2`" if name == "test_v2" else "`")
+    L = [f"## Per ward office, v2.0 on {name}", "",
+         f"Grouped by the ward office of the gold locality. Written by {cmd} (`{path.relative_to(config.ROOT).as_posix()}`).",
+         "Each ward has only a handful of complaints, so one complaint moves a ward's rate by many points.", "",
+         "| Ward office | Complaints | Department correct | Auto-routed | Correct when auto-routed |", "|---|---|---|---|---|"]
+    for w, c in P["wards"].items():
+        label = "No place named" if w == "NONE" else f"{wards[w]['en']} ({w})"
+        L.append(f"| {label} | {c['n']} | {pct(dict(count=c['dept_correct'], total=c['n'], rate=c['dept_correct'] / c['n']), 0)} | "
+                 f"{c['auto']} | {pct(dict(count=c['auto_correct'], total=c['auto'], rate=c['auto_correct'] / c['auto']), 0) if c['auto'] else '–'} |")
+    return L + [""]
+
+
 def main():
     safe_console()
     v1 = results_view.summary(results_view.load(config.RESULTS / "results_shipped.json"))
@@ -81,6 +99,8 @@ def main():
         for (name, a), (_, b) in zip(rows(v2), s2 or [(n, "–") for n, _ in rows(v2)]):
             L.append(f"| {name} | {a} | {b} | {EVAL_V2} |")
         L += [""]
+    for name, path in PER_WARD.items():
+        L += per_ward_section(name, path)
     OUT.write_text("\n".join(L), encoding="utf-8")
     print(f"wrote {OUT}")
 

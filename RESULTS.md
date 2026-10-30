@@ -30,3 +30,27 @@ Do not edit by hand. Changes between versions are explained in `docs/DECISIONS.m
 ## v2.0 on test_v2 (held out)
 
 Not run yet: the test_v2 files are evaluated once, after the Phase 2 fixes are committed.
+
+## Per ward office, v2.0 on test_v1
+
+Grouped by the ward office of the gold locality. Written by `python experiments/per_ward.py` (`results/per_ward.json`).
+Each ward has only a handful of complaints, so one complaint moves a ward's rate by many points.
+
+| Ward office | Complaints | Department correct | Auto-routed | Correct when auto-routed |
+|---|---|---|---|---|
+| Aundh-Baner (AUB) | 11 | 100% (11/11) | 11 | 100% (11/11) |
+| Shivajinagar-Ghole Road (SGR) | 7 | 86% (6/7) | 7 | 86% (6/7) |
+| Kothrud-Bavdhan (KOB) | 7 | 86% (6/7) | 5 | 100% (5/5) |
+| Warje-Karvenagar (WKN) | 5 | 100% (5/5) | 5 | 100% (5/5) |
+| Sinhagad Road (SHR) | 8 | 88% (7/8) | 6 | 100% (6/6) |
+| Dhankawadi-Sahakarnagar (DSN) | 11 | 100% (11/11) | 11 | 100% (11/11) |
+| Bibwewadi (BIB) | 5 | 60% (3/5) | 2 | 100% (2/2) |
+| Kondhwa-Yewalewadi (KYW) | 12 | 100% (12/12) | 11 | 100% (11/11) |
+| Wanowrie-Ramtekdi (WRT) | 8 | 62% (5/8) | 4 | 75% (3/4) |
+| Hadapsar-Mundhwa (HMU) | 12 | 92% (11/12) | 11 | 100% (11/11) |
+| Nagar Road-Wadgaon Sheri (NWS) | 15 | 87% (13/15) | 12 | 100% (12/12) |
+| Yerawada-Kalas-Dhanori (YKD) | 10 | 90% (9/10) | 8 | 100% (8/8) |
+| Dhole Patil Road (DPR) | 10 | 90% (9/10) | 6 | 100% (6/6) |
+| Kasba-Vishrambaugwada (KVB) | 7 | 86% (6/7) | 6 | 100% (6/6) |
+| Bhavani Peth (BHP) | 8 | 75% (6/8) | 7 | 86% (6/7) |
+| No place named | 24 | 79% (19/24) | 0 | – |
