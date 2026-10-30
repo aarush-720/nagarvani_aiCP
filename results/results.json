@@ -39,7 +39,7 @@
     "mr-rom": 0.8666666666666667,
     "mix": 0.8
    },
-   "fit_seconds": 3.1907000050068746e-05
+   "fit_seconds": 3.168599994296528e-05
   },
   "Word TF-IDF + Naive Bayes": {
    "acc": 0.8125,
@@ -51,7 +51,7 @@
     "mr-rom": 0.7666666666666667,
     "mix": 0.8666666666666667
    },
-   "fit_seconds": 0.06860740399997667
+   "fit_seconds": 0.05659088899994913
   },
   "Word TF-IDF + LogReg": {
    "acc": 0.81875,
@@ -63,7 +63,7 @@
     "mr-rom": 0.7666666666666667,
     "mix": 0.8666666666666667
    },
-   "fit_seconds": 2.2742564570000354
+   "fit_seconds": 1.7350680499999953
   },
   "Char n-gram TF-IDF + LogReg": {
    "acc": 0.8875,
@@ -75,7 +75,7 @@
     "mr-rom": 0.8333333333333334,
     "mix": 0.9666666666666667
    },
-   "fit_seconds": 2.606942610000033
+   "fit_seconds": 3.180572616999939
   },
   "Char + word TF-IDF + LogReg (proposed)": {
    "acc": 0.86875,
@@ -87,7 +87,7 @@
     "mr-rom": 0.8333333333333334,
     "mix": 0.9333333333333333
    },
-   "fit_seconds": 1.3878892390000033
+   "fit_seconds": 1.60875910499999
   }
  },
  "E1_cv_template": {
@@ -1062,8 +1062,8 @@
   "n": 160,
   "auto_rate": 0.7,
   "auto_precision": 0.9732142857142857,
-  "latency_ms_mean": 9.300308937493895,
-  "latency_ms_p95": 30.38427375000196,
+  "latency_ms_mean": 9.58193996249932,
+  "latency_ms_p95": 26.567180550046007,
   "queue_files": [
    "queue_KOB.csv",
    "queue_WKN.csv",

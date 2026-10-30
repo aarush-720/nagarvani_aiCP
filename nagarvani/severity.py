@@ -23,7 +23,9 @@ CUES = {
                "injur", "jakhmi", "chavla", "chavto", "chavat", "घसरून", "घसरतात", "slip होऊन",
                "अपघात झाला", "accident झाला", "हादसा हुआ"],
     "COVER": ["झाकण", "jhakan", "zakan", "ढक्कन", "slab नाही", "cover नाही", "manhole open", "चेंबर उघड"],
-    "OPEN": ["उघड", "ughad", "खुला", "open", "नाही", "nahi", "तुटल", "tutl"],
+    "OPEN": ["उघड", "ughad", "खुला", "open", "नाही", "nahi", "तुटल", "tutl",
+             # v2.0 (F2): missing / stolen / broken in Marathi, Hindi and romanised spellings
+             "गायब", "gayab", "gaayab", "हरवल", "चोरी", "chori", "missing", "खुल", "टूट", "toot", "broken", "फुटल"],
     "CURRENT": ["करंट", "current", "shock", "शॉक"],
     "WIRE": ["तार", "वायर", "wire", "taar"],
     "DANGLING": ["लोंबक", "लटक", "lombkal", "latak", "तुटून", "tutun", "बाहेर", "खाली पडल"],
