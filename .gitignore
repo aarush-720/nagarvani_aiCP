@@ -12,3 +12,5 @@ data/audio/*
 uploads/
 results/nagarvani_demo.db
 *.db
+results/test_v2/nagarvani_demo.db
+results/test_v2/model.pkl

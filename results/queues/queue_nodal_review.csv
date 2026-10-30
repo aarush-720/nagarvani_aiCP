@@ -3,7 +3,7 @@
 57,2026-09-28T15:32:00,P1,2026-09-29T15:32,DRAIN,0.8796,,,57,new,NODAL_REVIEW,"Storm water drain वर slab नाही, पूर्ण open आहे, रात्री कोणी पडेल"
 59,2026-09-28T15:46:00,P1,2026-09-29T15:46,DRAIN,0.3559,tadiwala_road,DPR,59,new,NODAL_REVIEW,"chamber cha zakan nahi, rastyavar ughada khadda, tadiwala road"
 72,2026-09-28T17:17:00,P1,2026-09-29T17:17,ELEC,0.9196,,,72,new,NODAL_REVIEW,"Signal च्या जवळच्या light pole ला shock लागतोय, पाऊस आल्यावर"
-80,2026-09-28T18:13:00,P1,2026-09-29T18:13,ELEC,0.49,baner,AUB,80,new,NODAL_REVIEW,"डीपी बॉक्सचं दार उघडं आहे आणि वायर बाहेर आलेत, मुलं जवळ खेळतात"
+80,2026-09-28T18:13:00,P1,2026-09-29T18:13,ELEC,0.49,,,80,new,NODAL_REVIEW,"डीपी बॉक्सचं दार उघडं आहे आणि वायर बाहेर आलेत, मुलं जवळ खेळतात"
 82,2026-09-28T18:27:00,P1,2026-09-29T18:27,BUILD,0.3296,kothrud,KOB,82,new,NODAL_REVIEW,"इमारतीत तीन जणांना डेंग्यू झालाय, औषध फवारणी तातडीने करा, कोथरूड"
 88,2026-09-28T19:09:00,P1,2026-09-29T19:09,HEALTH,0.9556,,,88,new,NODAL_REVIEW,"Dengue चे cases वाढलेत society मध्ये, urgent fogging पाहिजे"
 98,2026-09-28T20:19:00,P1,2026-09-29T20:19,ELEC,0.445,,,98,new,NODAL_REVIEW,"झाडाची मोठी फांदी विजेच्या तारांवर लोंबकळतेय, कधीही पडेल, एरंडवणे"

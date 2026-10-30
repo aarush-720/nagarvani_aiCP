@@ -33,12 +33,33 @@ from nagarvani.dedup import DuplicateDetector
 from nagarvani.asr import simulate_asr_noise
 from nagarvani.normalise import normalise
 
+# [v2.0 change] Which test set. The default is test_v1 (corpus/test_handwritten.tsv), which
+# gives every reported number. "--test v2" evaluates the held-out test_v2 (all
+# corpus/test_v2_<writer>.tsv files) into results/test_v2/; "--test-file PATH" any file in the
+# same format. The duplicate-pair experiment (E6) always uses test_v1, whose ids the pairs name.
+import argparse, glob
+_ap = argparse.ArgumentParser()
+_ap.add_argument("--test", choices=["v1", "v2"], default="v1")
+_ap.add_argument("--test-file", nargs="+")
+_args = _ap.parse_args()
+_V1 = os.path.join(ROOT, "corpus", "test_handwritten.tsv")
+if _args.test_file:
+    _test_files = _args.test_file
+elif _args.test == "v2":
+    _test_files = sorted(f for f in glob.glob(os.path.join(ROOT, "corpus", "test_v2_*.tsv")) if "TEMPLATE" not in f)
+    if not _test_files:
+        sys.exit("No corpus/test_v2_<writer>.tsv files yet (see docs/TEST_V2_GUIDE.md).")
+else:
+    _test_files = [_V1]
+
 # [build change] NAGARVANI_RESULTS_DIR lets the tests write to a temporary folder.
-OUT = os.environ.get("NAGARVANI_RESULTS_DIR", os.path.join(ROOT, "results"))
+OUT = os.environ.get("NAGARVANI_RESULTS_DIR",
+                     os.path.join(ROOT, "results", "test_v2") if _args.test == "v2" else os.path.join(ROOT, "results"))
 FIG = os.path.join(OUT, "figures"); os.makedirs(FIG, exist_ok=True)
 R = {}
 train = load_tsv(os.path.join(ROOT, "corpus", "train_template.tsv"))
-test = load_tsv(os.path.join(ROOT, "corpus", "test_handwritten.tsv"))
+test = [r for f in _test_files for r in load_tsv(f)]
+test_v1 = load_tsv(_V1)
 Xtr, ytr = [r["text"] for r in train], [r["dept"] for r in train]
 Xte, yte = [r["text"] for r in test], [r["dept"] for r in test]
 LABELS = sorted(DEPARTMENTS)
@@ -66,6 +87,7 @@ for name, m in models.items():
     by_lang = {}
     for lg in ["mr", "hi", "mr-rom", "mix"]:
         idx = [i for i, r in enumerate(test) if r["lang"] == lg]
+        if not idx: continue                     # [v2.0 change] a test set may lack a variety
         by_lang[lg] = accuracy_score([yte[i] for i in idx], [p[i] for i in idx])
     E1[name] = dict(acc=accuracy_score(yte, p), macro_f1=f1_score(yte, p, average="macro"),
                     top3=float(top3), by_lang=by_lang, fit_seconds=fit_s)
@@ -113,7 +135,7 @@ b1 = ax.bar(x - w/2, [E1[n]["acc"] for n in names], w, color=C1, label="Accuracy
 b2 = ax.bar(x + w/2, [E1[n]["macro_f1"] for n in names], w, color=C2, label="Macro-F1")
 for b in list(b1) + list(b2):
     ax.text(b.get_x() + b.get_width()/2, b.get_height() + 0.01, f"{b.get_height():.2f}", ha="center", fontsize=7)
-ax.set_xticks(x); ax.set_xticklabels(short); ax.set_ylim(0, 1.05); ax.set_ylabel("Score (hand-written test set, n=160)")
+ax.set_xticks(x); ax.set_xticklabels(short); ax.set_ylim(0, 1.05); ax.set_ylabel(f"Score (hand-written test set, n={len(test)})")
 ax.legend(frameon=False, loc="upper left", ncol=2)
 fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_models.png"), dpi=200); plt.close(fig)
 
@@ -209,7 +231,7 @@ fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig_severity.png"), dpi=200);
 # ------------------------------------------------ E6  duplicate detection
 import csv
 pairs = list(csv.DictReader(open(os.path.join(ROOT, "corpus", "dup_pairs.tsv"), encoding="utf-8"), delimiter="\t"))
-byid = {r["id"]: r for r in test}
+byid = {r["id"]: r for r in test_v1}
 dd = DuplicateDetector(res).fit(Xtr)
 rows6 = []
 for pr in pairs:
