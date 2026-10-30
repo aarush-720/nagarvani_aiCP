@@ -130,6 +130,39 @@ location and urgency frames plus common words for "trouble", "please look", pron
 auxiliaries. It was written before any test-set measurement and checked only on the training
 data, where it flags none. It flags no test_v1 complaint either, so F6 changes no reported number.
 
+## R12. Closure verification is citizen confirmation, enforced in the web-app layer (M9 light)
+
+Answering the PMC Standing Committee directive that no complaint be closed without the
+complainant's feedback (`nagarvani/closure.py`, Phase 3):
+
+* "Mark resolved" needs a note and moves the ticket to `pending_confirmation`. It does not close it.
+* Only the citizen's answer on `/status/<id>` moves it on: Yes → `closed`, No → `reopened`.
+  Every change goes through one transition table, and a test checks that only the citizen's Yes
+  leads to `closed`.
+* **Reopening raises the priority one band** (P1 stays P1) and restarts the deadline from the
+  SLA of the new band. FINAL_PLAN said "priority kept"; PBL-3 Algorithm 4 says a rejected
+  closure escalates, and the team chose PBL-3.
+* No answer within `CONFIRMATION_WINDOW_HOURS` (72 h, a setting) only raises a flag. PBL-3's
+  "or does not object within the response window" is deliberately not implemented: nothing
+  closes without a Yes.
+* The officer's photo is checked (JPEG, PNG or WebP by content, at most 5 MB), stored under
+  `instance/uploads/resolution/` (git-ignored, beside the audio uploads, rather than the
+  `data/uploads/` of the plan) and shown. It is not analysed: no geotag, timestamp or
+  visual-detector check from PBL-3 is implemented.
+* Every status change, from triage onward, is written to `ticket_events` with the actor
+  (system, officer, citizen). Older databases gain the new columns at start-up.
+* No login: anyone with the ticket number can answer. Acceptable for a single-machine demo;
+  a deployment would need the complainant's channel (an OTP or a reply on WhatsApp).
+* Merged reports close with their parent. A new report of the same issue while the parent is
+  pending is not merged into it (pending is not an open status for duplicate blocks).
+
+## R13. Per-ward audit (PBL-1 objective 10)
+
+`experiments/per_ward.py` breaks the end-to-end results down by the ward office of the gold
+locality. It runs the same `triage()` as the evaluation and its totals equal the E8 counts
+(tested), so it adds a view, not a new number to tune against. With 5–15 complaints per ward
+it can show a gross gap, not a fine one.
+
 # Fixed in v2.0 (formerly "Found but not changed")
 
 Defects F1–F6 were found on v1.0 and fixed in the v2.0 re-freeze (R10). The table keeps the

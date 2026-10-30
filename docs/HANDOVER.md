@@ -30,10 +30,12 @@ Written for the developer. Read section 1 first.
    reported numbers that moved are listed in `RESULTS.md`. The held-out `test_v2` has not been
    evaluated yet: run `python experiments/run_eval.py --test v2` once the writers' files are in
    `corpus/`, then `python scripts/write_results_md.py`.
-3. **Only verified on Linux.** The Windows and macOS instructions were not run on those
+3. **Closure is confirmed by the citizen only** (v2.0, `docs/DECISIONS.md` R12). The officer's
+   photo is stored and shown but not checked: no geotag, timestamp or image analysis.
+4. **Only verified on Linux.** The Windows and macOS instructions were not run on those
    systems. No microphone was used. The recording path (MediaRecorder) has no automated
    test, but the upload path was driven in headless Chromium.
-4. **All data is team-constructed**, as the report already states. No real PMC complaints
+5. **All data is team-constructed**, as the report already states. No real PMC complaints
    were used.
 
 ## 2. What happened in this build
@@ -117,10 +119,8 @@ F1–F6 were fixed in v2.0 (`docs/DECISIONS.md`, "Fixed in v2.0"). Nothing new h
 2. **Real-audio evaluation.** Record clips following `data/audio/README.md` and run
    `python eval/asr_eval.py`. `/about` then shows WER/CER. The report can say voice was
    tested only once this is done.
-3. **Decide on F1–F6.** Any fix is a deliberate re-freeze: update `data/FROZEN.sha256`, the
-   expected values in `tests/test_frozen_metrics.py`, and the report, together.
-4. **Finish the documents.** Fill in the author names, emails and PRNs in the PBL-5 paper and
+3. **Finish the documents.** Fill in the author names, emails and PRNs in the PBL-5 paper and
    on the PBL-4 title page, then re-export both PDFs from Word.
-5. **Rehearse on the demo laptop:** setup, microphone in the demo browser, and a ward CSV
+4. **Rehearse on the demo laptop:** setup, microphone in the demo browser, and a ward CSV
    opened in Excel. Then run `python scripts/reset_demo.py --yes` and follow
    `docs/DEMO_SCRIPT.md`.

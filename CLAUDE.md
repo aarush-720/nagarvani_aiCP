@@ -31,7 +31,9 @@ work in this release.
 * `nagarvani/triage.py` holds `triage(text, ward_hint=None, store=None)`, the single entry
   point. It wraps the original components. The evaluation and the web app both call it.
 * `nagarvani/speech.py` is the faster-whisper backend (M2), with input guards.
-* `nagarvani/tickets.py` and `service.py` hold the web-app ticket store and officer actions.
+* `nagarvani/tickets.py` and `service.py` hold the web-app ticket store (with the `ticket_events`
+  history) and officer actions. `nagarvani/closure.py` is closure verification: the only way to
+  move a ticket to `pending_confirmation`, `closed` or `reopened`; only the citizen's Yes closes.
 * `nagarvani/app.py`, `nagarvani/templates/` and `nagarvani/static/` are the Flask app. `run.py` starts it.
 * `nagarvani/{config,data,console,examples,results_view}.py` are helpers: paths and settings,
   data loading, the Windows console fix, demo examples, and reading `results/` for the UI.
@@ -41,6 +43,7 @@ work in this release.
   `corpus/test_v2*` is the held-out set written by teammates (see the evaluation rules).
 * `data/gazetteer.json` is frozen. `data/taxonomy.json` is display metadata only. Checksums are in `data/FROZEN.sha256`.
 * `data/audio/` holds the real recordings and `manifest.csv` (git-ignored except the README and example).
+* `experiments/per_ward.py` writes the per-ward audit (`results/per_ward.json`).
 * `experiments/run_eval.py` produces every reported number (`results/results.json`); with
   `--test v2` it evaluates the held-out set into `results/test_v2/`. `results/results_shipped.json`
   is the permanent v1.0 record. `scripts/write_results_md.py` writes `RESULTS.md` from these files.
@@ -60,6 +63,7 @@ python -m pytest -q                       # all tests; tests/test_frozen_metrics
 python scripts/reproduce.py               # verify every reported number
 python experiments/run_eval.py            # regenerate results/results.json and figures
 python experiments/run_eval.py --test v2  # held-out test_v2 -> results/test_v2/ (only after Phase 2)
+python experiments/per_ward.py [--test v2]   # per-ward audit -> results/per_ward.json
 python scripts/write_results_md.py        # rewrite RESULTS.md from the result files
 python -m nagarvani.train                 # rebuild results/model.pkl
 python scripts/checksums.py --verify      # check data/FROZEN.sha256
