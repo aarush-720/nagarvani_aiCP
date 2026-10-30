@@ -67,3 +67,15 @@ def test_f3_trace_names_the_no_cover_phrase():
     fired = triage("कोथरूडमध्ये मॅनहोलचे झाकण नाही, मुलं पडू शकतात").severity["fired"]
     r02 = next(f for f in fired if f["rule"] == "R02")
     assert r02["cues"]["OPEN"] == "झाकण नाही"
+
+
+@pytest.mark.parametrize("text", [
+    "चार दिवसांपासून नळाला पाणी आलेले नाही",              # the reported input (standard spelling)
+    "तीन दिवसांपासून पाणी आलं नाही",
+    "दोन दिवसांपासून पाणीच नाही",
+    "4 divas pasun pani aala nahi",
+    "तीन दिन से पानी नहीं है",
+])
+def test_f5_outage_spellings_fire_r12(text):
+    r = infer(text, "WATER")
+    assert r["band"] == "P2" and "R12" in r["fired"]

@@ -52,6 +52,10 @@ CUES = {
                  "गंदा पानी सड़क", "मेलेल", "मरा हुआ",
                  "मरी हुई", "dead", "melela", "शौच", "shauch"],
     "OUTAGE": ["पाणी येत नाही", "पाणीच आलेलं नाही", "पाणी आलेलं नाही", "pani yet nahi", "पानी नहीं आ",
+               # v2.0 (F5): the standard spelling आलेले and other common forms
+               "पाणी आलेले नाही", "पाणीच आलेले नाही", "पाणी आले नाही", "पाणी आलं नाही", "पाणी आला नाही",
+               "पाणी नाही", "पाणीच नाही", "pani aala nahi", "pani ala nahi", "pani aale nahi", "pani nahi",
+               "पानी नहीं",
                "supply बंद", "पुरवठा बंद", "purvatha band", "पाणी नव्हतं", "सप्लाई बंद"],
     "WASTAGE": ["फुटली", "futli", "burst", "फट गई", "वाया जा", "vaya ja", "बर्बाद"],
     "REQUEST": ["मागणी", "request", "छाटणी", "chhatni", "trimming", "निर्बीजीकरण", "नसबंदी", "nasbandi",
