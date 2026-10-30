@@ -39,7 +39,7 @@
     "mr-rom": 0.8666666666666667,
     "mix": 0.8
    },
-   "fit_seconds": 1.73690000337956e-05
+   "fit_seconds": 2.6674999986653347e-05
   },
   "Word TF-IDF + Naive Bayes": {
    "acc": 0.8125,
@@ -51,7 +51,7 @@
     "mr-rom": 0.7666666666666667,
     "mix": 0.8666666666666667
    },
-   "fit_seconds": 0.0497007769999982
+   "fit_seconds": 0.05807936899998367
   },
   "Word TF-IDF + LogReg": {
    "acc": 0.81875,
@@ -63,7 +63,7 @@
     "mr-rom": 0.7666666666666667,
     "mix": 0.8666666666666667
    },
-   "fit_seconds": 1.318177966999997
+   "fit_seconds": 1.5700698079999995
   },
   "Char n-gram TF-IDF + LogReg": {
    "acc": 0.8875,
@@ -75,7 +75,7 @@
     "mr-rom": 0.8333333333333334,
     "mix": 0.9666666666666667
    },
-   "fit_seconds": 1.190225005000002
+   "fit_seconds": 2.819736672999994
   },
   "Char + word TF-IDF + LogReg (proposed)": {
    "acc": 0.86875,
@@ -87,7 +87,7 @@
     "mr-rom": 0.8333333333333334,
     "mix": 0.9333333333333333
    },
-   "fit_seconds": 1.2615049129999534
+   "fit_seconds": 1.8696150060000036
   }
  },
  "E1_cv_template": {
@@ -1054,7 +1054,7 @@
    "dept_macro_f1": 0.7550750150075789,
    "dept_macro_f1_sd": 0.030759248004995344,
    "dept_acc": 0.75625,
-   "ward_acc": 0.7852941176470589,
+   "ward_acc": 0.7867647058823529,
    "ward_acc_exact": 0.2485294117647059,
    "sev_acc": 0.61125
   },
@@ -1079,8 +1079,8 @@
   "n": 160,
   "auto_rate": 0.7,
   "auto_precision": 0.9732142857142857,
-  "latency_ms_mean": 6.220185768746944,
-  "latency_ms_p95": 17.324433250018952,
+  "latency_ms_mean": 8.752776231252213,
+  "latency_ms_p95": 21.690508949990313,
   "queue_files": [
    "queue_KOB.csv",
    "queue_WKN.csv",

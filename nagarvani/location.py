@@ -19,7 +19,7 @@ class WardResolver:
         for key, v in g["localities"].items():
             for a in v["aliases"]:
                 pairs.append((normalise(a), key))
-        self.aliases = sorted(set(pairs), key=lambda p: -len(p[0]))
+        self.aliases = sorted(set(pairs), key=lambda p: (-len(p[0]), p))   # v2.0 (F4): ties alphabetical
         self.ambiguous = {normalise(a): ks for a, ks in g["ambiguous"].items()}
 
     @staticmethod

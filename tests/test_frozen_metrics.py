@@ -110,6 +110,8 @@ def test_matches_committed_results(R):
 # from the shipped v1.0 results: flattened path -> (v1.0 value, v2.0 value). "<absent>" marks a
 # path that exists in only one version.
 V2_CHANGES = {
+    # F4: deterministic alias order changes one fuzzy tie-break in the simulated-noise loop
+    "/E7_asr_noise[4]/ward_acc": (0.7852941176470589, 0.7867647058823529),   # 20% CER: 78.5% -> 78.7%
 }
 
 
