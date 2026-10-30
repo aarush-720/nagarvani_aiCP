@@ -89,6 +89,18 @@ These apply only in the live app. The offline evaluation never uses them.
 `data/taxonomy.json` holds only Marathi display names and band labels. SLA hours come from
 `severity.SLA_HOURS`.
 
+## R9. Speech clips are recorded from test_v1 sentences
+
+Phase 1 needs to compare each spoken complaint with the same complaint typed, so the 48
+clips use `test_v1` rows (`eval/recording_assignments.csv`, picked by `eval/recordings.py`
+with seed 2026). That reverses rule 3 of the earlier recording protocol in
+`data/audio/README.md` ("do not reuse the test set").
+
+The cost: on these sentences the classifier has already been evaluated, and the team wrote
+both the sentences and the rules. Spoken-input results therefore measure **how much ASR
+degrades** a known input, not how well the system generalises. Report the spoken and typed
+results side by side and say so. Generalisation is what `test_v2` measures.
+
 # Found but not changed
 
 Each item is a defect in frozen data or logic. Fixing it would change reported numbers, or

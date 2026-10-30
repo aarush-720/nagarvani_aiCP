@@ -42,7 +42,8 @@ work in this release.
 * `data/audio/` holds the real recordings and `manifest.csv` (git-ignored except the README and example).
 * `experiments/run_eval.py` produces every reported number (`results/results.json`).
 * `eval/asr_eval.py` produces WER/CER and the end-to-end results from real audio (`results/asr_eval.json`).
-  `eval/recording_assignments.csv` lists who records which test complaint.
+  `eval/recordings.py` writes `eval/recording_assignments.csv` (who records which test_v1
+  complaint) and builds `data/audio/manifest.csv` from the clip names.
 * `scripts/` holds `fetch_models`, `reset_demo`, `run_demo_script`, `reproduce` and `checksums`.
 * `tests/` is the pytest suite.
 * `docs/HANDOVER.md` gives current status. `docs/DECISIONS.md` records choices and
@@ -57,6 +58,7 @@ python scripts/reproduce.py               # verify every reported number
 python experiments/run_eval.py            # regenerate results/results.json and figures
 python -m nagarvani.train                 # rebuild results/model.pkl
 python scripts/checksums.py --verify      # check data/FROZEN.sha256
+python eval/recordings.py manifest        # build data/audio/manifest.csv from the clips present
 python eval/asr_eval.py [--model NAME]    # real-audio evaluation (needs data/audio/manifest.csv)
 python scripts/fetch_models.py [--benchmark CLIP]   # download Whisper once; time the model sizes
 python run.py                             # start the app on 127.0.0.1:5000

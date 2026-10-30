@@ -27,19 +27,13 @@ See `manifest.example.csv`.
 
 ## Recording protocol
 
+For the v2.0 evaluation, follow `docs/RECORDING_GUIDE.md`. Each of four speakers records 12
+assigned `test_v1` complaints, and `python eval/recordings.py manifest` builds `manifest.csv`
+from the clip names. This replaces the earlier protocol, which asked for new sentences rather
+than test-set rows (see `docs/DECISIONS.md` R9). Its other points still apply:
+
 1. **Consent.** Every speaker agrees to the clip being stored in the team's private repo and
    used for evaluation. Record no names, phone numbers or addresses of real people.
-2. **Script.** Each speaker reads 10 complaints and speaks 5 more in their own words. Write
-   the reference text down **before** recording (read items) or transcribe it by hand
-   **after** (free items). Never copy Whisper's output as the reference.
-3. **Do not reuse the test set.** Read complaints should be new sentences, not rows from
-   `data/test_handwritten.csv` or the training templates. Otherwise ASR errors and
-   classifier memorisation get mixed up.
-4. **Coverage.** At least 5 speakers, men and women, of different ages. Cover all 10
-   departments. Include about 20% Hindi (set `language=hi`) and some code-mixed English.
-   Mention a locality in about 80% of clips.
-5. **Conditions.** Record each speaker in at least two conditions: `quiet` indoors and one
-   noisy condition (`street`, `fan`). Record some clips as WhatsApp voice notes (OGG/Opus),
-   since that is a demo moment.
-6. **Length.** 4 to 20 seconds. The app rejects clips under 1 s or over 60 s.
-7. **Files.** Keep the original file the device produced. Do not convert or trim it.
+2. **Conditions.** Record some clips in real background noise (`street`, `fan`, `tv`).
+3. **Length.** The app rejects clips under 1 s or over 60 s.
+4. **Files.** Keep the original file the device produced. Do not convert or trim it.
