@@ -3,10 +3,12 @@
 Runs experiments/run_eval.py (the prototype's own evaluation, with its end-to-end stream
 routed through nagarvani.triage.triage) into a temporary folder, then
   1. asserts every reported value (counts exactly, rates to the precision reported), and
-  2. checks that the whole results.json equals both the committed results/results.json and the
-     prototype's shipped results/results_shipped.json (timings excluded; floats to 1e-12).
+  2. checks that the whole results.json equals the committed results/results.json, and differs
+     from the prototype's shipped v1.0 results (results/results_shipped.json) in exactly the
+     values listed in V2_CHANGES (timings excluded; floats to 1e-12).
 If this fails, something changed behaviour on the frozen data. Do not edit the expected values
-to make it pass (see CLAUDE.md).
+to make it pass. They change only in the Phase 2 re-freeze (see CLAUDE.md), with the v1.0
+value kept in a comment.
 """
 import json
 import math
@@ -104,6 +106,27 @@ def test_matches_committed_results(R):
     assert _same(R, committed) == []
 
 
-def test_matches_prototype_shipped_results(R):
+# Every value of results.json that v2.0 (docs/FINAL_PLAN.md Phase 2, defects F1-F6) changed
+# from the shipped v1.0 results: flattened path -> (v1.0 value, v2.0 value). "<absent>" marks a
+# path that exists in only one version.
+V2_CHANGES = {
+}
+
+
+def test_differs_from_v1_only_as_listed(R):
     shipped = json.loads((ROOT / "results" / "results_shipped.json").read_text(encoding="utf-8"))
-    assert _same(R, shipped) == []
+    fr, fs = _flat(R), _flat(shipped)
+    got = {}
+    for k in set(fr) | set(fs):
+        if "second" in k or "latency" in k:
+            continue
+        old, new = fs.get(k, "<absent>"), fr.get(k, "<absent>")
+        if isinstance(old, float) and isinstance(new, float) and (
+                (math.isnan(old) and math.isnan(new)) or abs(old - new) <= 1e-12):
+            continue
+        if old != new:
+            got[k] = (old, new)
+    assert set(got) == set(V2_CHANGES)
+    for k, (old, new) in V2_CHANGES.items():
+        assert got[k][0] == pytest.approx(old, abs=1e-12) if isinstance(old, float) else got[k][0] == old, k
+        assert got[k][1] == pytest.approx(new, abs=1e-12) if isinstance(new, float) else got[k][1] == new, k
