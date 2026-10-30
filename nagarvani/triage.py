@@ -24,6 +24,7 @@ from functools import lru_cache
 
 from . import config, data
 from .dedup import DuplicateDetector
+from .issue import issue_stated
 from .location import WardResolver
 from .normalise import normalise
 from .severity import CUES, RULES, SLA_HOURS, extract_facts, infer, open_evidence
@@ -231,12 +232,15 @@ def triage(text: str, *, ward_hint: str | None = None, now: datetime | None = No
     sev = _explain_severity(text, dept, csize)
     hours = SLA_HOURS[sev["band"]]
 
-    # 5. gate: original rule (confidence >= tau AND ward resolved); a dropdown ward counts as known
+    # 5. gate: original rule (confidence >= tau AND ward resolved); a dropdown ward counts as known;
+    # v2.0 (F6): and the complaint states a problem
     conf_ok = conf >= TAU
-    gate_passed = conf_ok and ward.ward is not None
-    route_original = "AUTO_ROUTED" if (conf_ok and loc["status"] == "resolved") else "NODAL_REVIEW"
+    stated = issue_stated(text, [f["rule"] for f in sev["fired"]], [a for a, _ in resolver().aliases])
+    gate_passed = conf_ok and ward.ward is not None and stated
+    route_original = "AUTO_ROUTED" if (conf_ok and loc["status"] == "resolved" and stated) else "NODAL_REVIEW"
     conds = (f"confidence {conf:.2f} {'≥' if conf_ok else '<'} {TAU}; "
-             f"ward office {'known (' + ward.method + ')' if ward.ward else 'not resolved (' + loc['status'] + ')'}")
+             f"ward office {'known (' + ward.method + ')' if ward.ward else 'not resolved (' + loc['status'] + ')'}"
+             + ("" if stated else "; NO_ISSUE_STATED: no problem is described, only a place and general words"))
     if not gate_passed:
         decision, reason = "SENT_TO_REVIEW", f"Gate failed: {conds}."
         if dup["decision"] in ("merge", "review"):

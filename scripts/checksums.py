@@ -28,6 +28,7 @@ FROZEN = [
     "nagarvani/store.py",
     "nagarvani/pipeline.py",
     "nagarvani/asr.py",
+    "nagarvani/issue.py",          # added in v2.0 (F6)
     # the prototype's own outputs, as shipped
     "results/results_shipped.json",
     "results/model_shipped.pkl",

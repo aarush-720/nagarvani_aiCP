@@ -79,3 +79,36 @@ def test_f3_trace_names_the_no_cover_phrase():
 def test_f5_outage_spellings_fire_r12(text):
     r = infer(text, "WATER")
     assert r["band"] == "P2" and "R12" in r["fired"]
+
+
+from nagarvani.triage import triage  # noqa: E402
+
+
+@pytest.mark.parametrize("text", [
+    "कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या",     # the reported input (HEALTH 0.61, auto-routed)
+    "बाणेरमध्ये खूप problem आहे, कोणी तरी बघा",
+    "aamchya bhagat khup tras aahe, kothrud",
+    "हडपसर में बहुत परेशानी है, कोई ध्यान दो",
+    "please help kothrud",
+])
+def test_f6_content_free_complaint_is_deferred(text):
+    r = triage(text)
+    assert r.gate.decision == "SENT_TO_REVIEW" and not r.gate.gate_passed
+    assert "NO_ISSUE_STATED" in r.gate.reason and r.route_original == "NODAL_REVIEW"
+
+
+@pytest.mark.parametrize("text", [
+    "हडप्सर मध्ये कचऱ्याचा मोठा ढीग साचला आहे",          # no lexicon keyword (ऱ), but a stated problem
+    "koregaon park yethe, pathdive band aahet",
+    "कोथरूडमध्ये रस्त्यावर खूप खड्डे आहेत, लक्ष द्या",
+])
+def test_f6_stated_problems_are_not_flagged(text):
+    assert "NO_ISSUE_STATED" not in triage(text).gate.reason
+
+
+def test_f6_no_training_complaint_is_flagged():
+    from nagarvani import data
+    from nagarvani.issue import issue_stated
+    from nagarvani.triage import resolver
+    aliases = [a for a, _ in resolver().aliases]
+    assert all(issue_stated(r["text"], infer(r["text"], r["dept"])["fired"], aliases) for r in data.load_train())

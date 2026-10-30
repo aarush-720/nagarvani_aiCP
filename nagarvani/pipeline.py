@@ -7,6 +7,7 @@ from .classifier import char_word_lr, DEPARTMENTS
 from .severity import infer
 from .dedup import DuplicateDetector
 from .store import TicketStore
+from .issue import issue_stated
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 MODEL_PATH = os.path.join(ROOT, "results", "model.pkl")
@@ -54,8 +55,11 @@ class Triage:
                 csize = self.store.cluster_size(cluster_id) + 1
 
         sev = infer(text, dept, cluster_size=csize)
-        route = "AUTO_ROUTED" if (conf >= self.tau and loc["status"] == "resolved") else "NODAL_REVIEW"
+        stated = issue_stated(text, sev["fired"], [a for a, _ in self.resolver.aliases])   # v2.0 (F6)
+        route = ("AUTO_ROUTED" if (conf >= self.tau and loc["status"] == "resolved" and stated)
+                 else "NODAL_REVIEW")
         reasons = []
+        if not stated: reasons.append("NO_ISSUE_STATED: no problem is described")
         if conf < self.tau: reasons.append(f"department confidence {conf:.2f} < τ={self.tau}")
         if loc["status"] != "resolved": reasons.append(f"location {loc['status']}")
         rec = dict(created_at=now.isoformat(timespec="seconds"), channel=channel, raw_text=text,

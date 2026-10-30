@@ -102,11 +102,11 @@ def main():
         return out
     L += ["## Inputs that were tried and rejected (re-run just now)", "",
           "* For item 7 (low confidence → review):", *tried(REJECTED_LOW_CONFIDENCE),
-          "  The first shows a real weakness: a vague complaint is confidently sent to Health and auto-routed.",
+          "  The first is a vague complaint. v1.0 sent it to Health with confidence 0.61 and auto-routed it;",
+          "  since v2.0 (F6) the gate defers it with NO_ISSUE_STATED (it is still not a low-confidence case).",
           "* For item 6 (unknown locality): these places turned out to be in the gazetteer:", *tried(REJECTED_UNKNOWN_PLACE),
-          "* For item 4 (life safety): 'झाकण गायब' (cover missing) does not fire R02, because 'गायब' is not in the",
-          "  OPEN cue list, so the band is decided by other rules:", *tried(REJECTED_LIFE_SAFETY),
-          "  This is a gap in the rule lexicon (docs/DECISIONS.md, Found but not changed).",
+          "* For item 4 (life safety): 'झाकण गायब' (cover missing). v1.0 missed it because 'गायब' was not in",
+          "  the OPEN cue list; since v2.0 (F2) R02 fires:", *tried(REJECTED_LIFE_SAFETY),
           "* Exact-text repeats were not used for item 8: paraphrases show that matching is not literal."]
     out = config.ROOT / "docs" / "DEMO_SCRIPT.md"
     out.write_text("\n".join(L) + "\n", encoding="utf-8")

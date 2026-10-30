@@ -163,14 +163,14 @@ A WhatsApp voice note (.ogg) can be uploaded with the file button.
 ## Inputs that were tried and rejected (re-run just now)
 
 * For item 7 (low confidence → review):
-  * `कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या` → HEALTH 0.61, ward KOB, P3, AUTO_ROUTED
+  * `कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या` → HEALTH 0.61, ward KOB, P3, SENT_TO_REVIEW
   * `कर्वेनगरमध्ये बांधकामाचे साहित्य रस्त्यावर ठेवले आहे` → ENCROACH 0.96, ward WKN, P3, AUTO_ROUTED
-  The first shows a real weakness: a vague complaint is confidently sent to Health and auto-routed.
+  The first is a vague complaint. v1.0 sent it to Health with confidence 0.61 and auto-routed it;
+  since v2.0 (F6) the gate defers it with NO_ISSUE_STATED (it is still not a low-confidence case).
 * For item 6 (unknown locality): these places turned out to be in the gazetteer:
   * `उंड्री येथे रस्त्यावर मोठे खड्डे पडले आहेत` → ROAD 0.94, ward KYW, P3, AUTO_ROUTED
   * `लोहगाव मध्ये कचरा उचलला जात नाही` → SWM 0.99, ward YKD, P3, AUTO_ROUTED
-* For item 4 (life safety): 'झाकण गायब' (cover missing) does not fire R02, because 'गायब' is not in the
-  OPEN cue list, so the band is decided by other rules:
-  * `धनकवडीत मॅनहोलचे झाकण गायब आहे, शाळकरी मुले रोज इथून जातात` → DRAIN 0.87, ward DSN, P2, AUTO_ROUTED
-  This is a gap in the rule lexicon (docs/DECISIONS.md, Found but not changed).
+* For item 4 (life safety): 'झाकण गायब' (cover missing). v1.0 missed it because 'गायब' was not in
+  the OPEN cue list; since v2.0 (F2) R02 fires:
+  * `धनकवडीत मॅनहोलचे झाकण गायब आहे, शाळकरी मुले रोज इथून जातात` → DRAIN 0.87, ward DSN, P1, AUTO_ROUTED
 * Exact-text repeats were not used for item 8: paraphrases show that matching is not literal.
