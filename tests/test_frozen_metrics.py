@@ -125,6 +125,8 @@ V2_CHANGES = {
     # T080 is still deferred (confidence 0.49), but now with the right (empty) ward
     "/E8_end_to_end/counts/deferred_would_have_been_right": (29, 30),
     "/E8_end_to_end/counts/deferred_would_have_been_wrong": (19, 18),
+    # F3: a stray नाही no longer makes a cover "open"; one noisy complaint in 800 changes band
+    "/E7_asr_noise[4]/sev_acc": (0.61125, 0.61),                             # 20% CER: 61.1% -> 61.0%
 }
 
 

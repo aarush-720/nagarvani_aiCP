@@ -26,7 +26,7 @@ from . import config, data
 from .dedup import DuplicateDetector
 from .location import WardResolver
 from .normalise import normalise
-from .severity import CUES, RULES, SLA_HOURS, extract_facts, infer
+from .severity import CUES, RULES, SLA_HOURS, extract_facts, infer, open_evidence
 
 TAU = 0.50   # the original Triage default; kept identical (see config.py)
 
@@ -128,7 +128,11 @@ def _explain_location(text: str, loc: dict):
 def _cue_terms(norm: str, groups) -> dict:
     out = {}
     for g in groups:
-        if g in CUES:
+        if g == "OPEN":                                    # negation-aware since v2.0 (F3)
+            hit = open_evidence(norm)
+            if hit:
+                out[g] = hit
+        elif g in CUES:
             hit = next((c for c in CUES[g] if c.lower() in norm), None)
             if hit:
                 out[g] = hit

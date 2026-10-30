@@ -38,3 +38,32 @@ from nagarvani.severity import infer  # noqa: E402
 def test_f2_missing_or_broken_cover_is_an_open_manhole(text):
     r = infer(text, "DRAIN")
     assert r["band"] == "P1" and "R02" in r["fired"]
+
+
+@pytest.mark.parametrize("text", [
+    "मॅनहोलचे झाकण नवीन बसवले, आता काही समस्या नाही",   # the reported input: resolved, not a hazard
+    "गटाराचे झाकण तुटलेलं नाही पण घाण वास येतो",          # "not broken"
+    "चेंबरचं झाकण उघडं नाही, फक्त थोडं हललेलं आहे",        # "not open"
+])
+def test_f3_negated_or_unrelated_nahi_is_not_an_open_manhole(text):
+    assert "R02" not in infer(text, "DRAIN")["fired"]
+
+
+@pytest.mark.parametrize("text", [
+    "मॅनहोलचे झाकण नाही, मुलं पडू शकतात",                 # "no cover" is still the hazard
+    "झाकणच नाही",
+    "chamber cha jhakan nahi aahe",
+    "मैनहोल का ढक्कन नहीं है",
+    "drainage chya chamber la slab नाही",
+    "मॅनहोलचे झाकण उघडे आहे, कोणी लक्ष देत नाही",         # open, and a later unrelated नाही
+])
+def test_f3_no_cover_is_still_an_open_manhole(text):
+    r = infer(text, "DRAIN")
+    assert r["band"] == "P1" and "R02" in r["fired"]
+
+
+def test_f3_trace_names_the_no_cover_phrase():
+    from nagarvani.triage import triage
+    fired = triage("कोथरूडमध्ये मॅनहोलचे झाकण नाही, मुलं पडू शकतात").severity["fired"]
+    r02 = next(f for f in fired if f["rule"] == "R02")
+    assert r02["cues"]["OPEN"] == "झाकण नाही"

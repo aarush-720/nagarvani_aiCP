@@ -23,7 +23,8 @@ CUES = {
                "injur", "jakhmi", "chavla", "chavto", "chavat", "घसरून", "घसरतात", "slip होऊन",
                "अपघात झाला", "accident झाला", "हादसा हुआ"],
     "COVER": ["झाकण", "jhakan", "zakan", "ढक्कन", "slab नाही", "cover नाही", "manhole open", "चेंबर उघड"],
-    "OPEN": ["उघड", "ughad", "खुला", "open", "नाही", "nahi", "तुटल", "tutl",
+    # v2.0 (F3): the bare "नाही"/"nahi" moved to ABSENT below, where it counts only right after the cover
+    "OPEN": ["उघड", "ughad", "खुला", "open", "तुटल", "tutl",
              # v2.0 (F2): missing / stolen / broken in Marathi, Hindi and romanised spellings
              "गायब", "gayab", "gaayab", "हरवल", "चोरी", "chori", "missing", "खुल", "टूट", "toot", "broken", "फुटल"],
     "CURRENT": ["करंट", "current", "shock", "शॉक"],
@@ -61,6 +62,33 @@ CUES = {
     "VULNERABLE": ["शाळ", "school", "स्कूल", "shal", "हॉस्पिटल", "hospital", "अस्पताल", "दवाखान"],
 }
 
+# v2.0 (F3): "no cover" is a hazard only when an absence word follows the cover (or DP box) cue
+# within ABSENT_WINDOW words, so "... आता काही समस्या नाही" no longer fires R02. An OPEN word
+# followed within the window by a negator is negated ("झाकण उघडं नाही" = the cover is not open).
+ABSENT = ("नाही", "nahi", "नहीं", "nahin", "नाहीये", "nahiye")
+NEGATORS = ABSENT + ("not",)
+ABSENT_WINDOW = 2
+
+
+def open_evidence(t: str):
+    """The words of normalised text t that make the OPEN fact true, or None."""
+    toks = t.replace(",", " ").replace(".", " ").split()
+    is_open = lambda w: any(c.lower() in w for c in CUES["OPEN"])
+    for i, w in enumerate(toks):
+        if is_open(w) and not any(x in NEGATORS for x in toks[i + 1:i + 1 + ABSENT_WINDOW]):
+            return w
+    joined = " ".join(toks)
+    for obj in CUES["COVER"] + CUES["DP_OPEN"]:
+        for m in re.finditer(re.escape(obj.lower()), joined):
+            first, last = joined.count(" ", 0, m.start()), joined.count(" ", 0, m.end())
+            for k in range(first, min(last + 1 + ABSENT_WINDOW, len(toks))):
+                if k > last and is_open(toks[k]):
+                    break                          # "झाकण तुटलेलं नाही": the negator belongs to तुटल
+                if toks[k] in ABSENT:
+                    return " ".join(toks[first:k + 1])
+    return None
+
+
 _NUMW = {"एक": 1, "दोन": 2, "दो": 2, "तीन": 3, "चार": 4, "पाच": 5, "पांच": 5, "सहा": 6, "छह": 6,
          "सात": 7, "आठ": 8, "नऊ": 9, "दहा": 10, "दस": 10, "पंधरा": 15, "पंद्रह": 15, "वीस": 20,
          "बीस": 20, "ek": 1, "don": 2, "teen": 3, "char": 4, "pach": 5}
@@ -86,6 +114,7 @@ def parse_duration_days(t: str) -> int:
 def extract_facts(text: str, dept: str, cluster_size: int = 1) -> dict:
     t = normalise(text)
     has = {k: any(c.lower() in t for c in v) for k, v in CUES.items()}
+    has["OPEN"] = open_evidence(t) is not None              # v2.0 (F3): negation-aware
     has["DEPT"] = dept
     has["DAYS"] = parse_duration_days(t)
     has["CLUSTER"] = cluster_size
