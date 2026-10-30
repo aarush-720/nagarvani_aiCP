@@ -125,7 +125,7 @@
 {% if t.resolution_note %}
 <section class="card">
   <h2>काम पूर्ण झाल्याची नोंद<span class="en">Resolution and citizen confirmation</span></h2>
-  <p><strong>अधिकाऱ्याची नोंद / Officer's note:</strong> {{ t.resolution_note }}</p>
+  <p><strong>अधिकाऱ्याची नोंद / Officer's note{% if t.status == 'reopened' %} (rejected by the citizen){% endif %}:</strong> {{ t.resolution_note }}</p>
   {% if t.resolution_photo %}<p><img src="{{ url_for('ticket_photo', tid=t.id) }}" alt="resolution photo" class="evidence"></p>{% endif %}
   {% if t.status == 'pending_confirmation' %}
     <p>नागरिकाच्या उत्तराची प्रतीक्षा (स्वतःहून बंद होत नाही). <span class="en">Waiting for the citizen since {{ ist(t.pending_since_utc) }}.

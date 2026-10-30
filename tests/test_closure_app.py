@@ -121,3 +121,24 @@ def test_submission_page_links_to_the_citizen_page(client, app):
     r = client.post("/submit", data={"text": TEXT, "submission_key": "k1"})
     page = client.get(r.headers["Location"]).get_data(as_text=True)
     assert "/status/" in page
+
+
+def test_queue_shows_pending_and_awaiting(client, app):
+    from datetime import timedelta
+    from nagarvani import closure
+    a, b = open_ticket(app), open_ticket(app)
+    closure.transition(store(app), a, "resolve", note="done",
+                       now=utcnow() - timedelta(hours=config.CONFIRMATION_WINDOW_HOURS + 1))
+    closure.transition(store(app), b, "resolve", note="done")
+    page = client.get("/queue").get_data(as_text=True)
+    assert "waiting for the citizen to confirm" in page and page.count("awaiting confirmation &gt;") == 1
+    assert client.get("/queue?status=pending_confirmation").status_code == 200
+    assert store(app).get(a)["status"] == "pending_confirmation"
+
+
+def test_reopened_page_marks_the_old_resolution_as_rejected(client, app):
+    tid = open_ticket(app)
+    resolve(client, tid)
+    client.post(f"/status/{tid}/answer", data={"answer": "no"})
+    assert "you said it was not fixed" in client.get(f"/status/{tid}").get_data(as_text=True)
+    assert "rejected by the citizen" in client.get(f"/ticket/{tid}").get_data(as_text=True)

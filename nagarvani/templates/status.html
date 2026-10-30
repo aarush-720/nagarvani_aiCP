@@ -28,7 +28,8 @@
 
 {% if t.resolution_note %}
 <section class="card">
-  <h2>अधिकाऱ्यांनी कळवले<span class="en">The ward office reports the work as done</span></h2>
+  {% if t.status == 'reopened' %}<h2>अधिकाऱ्यांनी आधी कळवले होते<span class="en">What the ward office reported earlier (you said it was not fixed)</span></h2>
+  {% else %}<h2>अधिकाऱ्यांनी कळवले<span class="en">The ward office reports the work as done</span></h2>{% endif %}
   <p>{{ t.resolution_note }}</p>
   {% if t.resolution_photo %}<p><img src="{{ url_for('ticket_photo', tid=t.id) }}" alt="photo of the completed work" class="evidence"></p>{% endif %}
 </section>

@@ -261,8 +261,10 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
         rows = service.queue(store_, **f)
         review = [r for r in rows if r["status"] == "review"]
         other = [r for r in rows if r["status"] != "review"]
+        pending = [] if f["status"] else service.queue(store_, ward=f["ward"], department=f["department"],
+                                                       status=closure.PENDING)
         n_corr = len(store_.corrections())
-        return render_template("queue.html", review=review, other=other, f=f, n_corrections=n_corr)
+        return render_template("queue.html", review=review, other=other, pending=pending, f=f, n_corrections=n_corr)
 
     @app.get("/export/<ward>.csv")
     def export(ward):
