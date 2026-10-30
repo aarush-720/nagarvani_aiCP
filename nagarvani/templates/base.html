@@ -10,6 +10,7 @@
 <header>
   <span class="brand">नगरवाणी <span class="muted" style="color:#d8e6f5;font-weight:400">NagarVani · prototype</span></span>
   <a href="{{ url_for('intake') }}" class="{{ 'active' if request.endpoint == 'intake' }}">तक्रार नोंदवा / Report</a>
+  <a href="{{ url_for('citizen_lookup') }}" class="{{ 'active' if request.endpoint in ('citizen_lookup', 'citizen_status') }}">माझी तक्रार / My complaint</a>
   <a href="{{ url_for('queue') }}" class="{{ 'active' if request.endpoint == 'queue' }}">अधिकारी रांग / Officer queue</a>
   <a href="{{ url_for('about') }}" class="{{ 'active' if request.endpoint == 'about' }}">मूल्यमापन व मर्यादा / About</a>
 </header>

@@ -27,6 +27,15 @@ IST = timezone(timedelta(hours=5, minutes=30), "IST")   # fixed offset: India ha
 STATUS_FROM_GATE = {"AUTO_ROUTED": "auto_routed", "SENT_TO_REVIEW": "review", "MERGED": "merged"}
 
 
+STATUS_LABELS = {                                    # (Marathi, English) for the UI
+    "received": ("नोंदवली", "received"), "auto_routed": ("थेट विभागाकडे", "auto-routed"),
+    "review": ("तपासणीसाठी", "awaiting review"), "routed": ("विभागाकडे पाठवली", "routed"),
+    "merged": ("एकत्र केली", "merged"), "reopened": ("पुन्हा उघडली", "reopened"),
+    closure.PENDING: ("नागरिकाच्या पुष्टीची प्रतीक्षा", "awaiting citizen confirmation"),
+    closure.CLOSED: ("बंद (नागरिकाने पुष्टी केली)", "closed (confirmed by the citizen)"),
+    "resolved": ("निकाली (v2.0 पूर्वी)", "resolved (before v2.0)"),
+}
+
 NOT_DUE = ("resolved", "merged", closure.PENDING, closure.CLOSED)   # no deadline running
 
 

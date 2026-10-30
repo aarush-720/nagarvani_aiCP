@@ -4,9 +4,12 @@
 {% macro ward(code) %}{% if code and WARDS.get(code) %}{{ WARDS[code].mr }} <span class="muted">({{ WARDS[code].en }}, {{ code }})</span>{% else %}—{% endif %}{% endmacro %}
 {% block content %}
 <h1>तक्रार #{{ t.id }} — निर्णय कसा झाला<span class="en">Ticket #{{ t.id }} — how each decision was made</span></h1>
-<p class="muted">नोंद / Received: {{ ist(t.created_utc) }} · स्थिती / Status: <strong>{{ t.status }}</strong>
+<p class="muted">नोंद / Received: {{ ist(t.created_utc) }} · स्थिती / Status:
+  <strong>{{ STATUS[t.status][0] if t.status in STATUS else t.status }}</strong> ({{ STATUS[t.status][1] if t.status in STATUS else t.status }})
   {% if t.priority %}· <span class="badge {{ t.priority }}">{{ t.priority }}</span>{% endif %}
   {% if overdue %}<span class="flag overdue">मुदत संपली / OVERDUE</span>{% endif %}
+  {% if awaiting %}<span class="flag warn">पुष्टीची प्रतीक्षा / AWAITING CONFIRMATION</span>{% endif %}
+  {% if t.reopen_count %}<span class="flag warn">{{ t.reopen_count }}× पुन्हा उघडली / reopened</span>{% endif %}
   {% if t.transcript_uncertain %}<span class="flag warn">⚠ अनिश्चित मजकूर / transcript uncertain</span>{% endif %}
 </p>
 
@@ -119,10 +122,38 @@
 </section>
 {% endif %}
 
+{% if t.resolution_note %}
+<section class="card">
+  <h2>काम पूर्ण झाल्याची नोंद<span class="en">Resolution and citizen confirmation</span></h2>
+  <p><strong>अधिकाऱ्याची नोंद / Officer's note:</strong> {{ t.resolution_note }}</p>
+  {% if t.resolution_photo %}<p><img src="{{ url_for('ticket_photo', tid=t.id) }}" alt="resolution photo" class="evidence"></p>{% endif %}
+  {% if t.status == 'pending_confirmation' %}
+    <p>नागरिकाच्या उत्तराची प्रतीक्षा (स्वतःहून बंद होत नाही). <span class="en">Waiting for the citizen since {{ ist(t.pending_since_utc) }}.
+      The ticket never closes by itself{% if awaiting %}; no answer within {{ cfg.CONFIRMATION_WINDOW_HOURS|int }} h{% endif %}.</span></p>
+  {% endif %}
+  {% if t.citizen_comment %}<p><strong>नागरिकाचा अभिप्राय / Citizen's comment:</strong> {{ t.citizen_comment }}</p>{% endif %}
+  <p><a href="{{ url_for('citizen_status', tid=t.id) }}">नागरिकाचे पान / Citizen page for #{{ t.id }}</a></p>
+</section>
+{% endif %}
+
+{% if events %}
+<section class="card">
+  <h2>स्थितीचा इतिहास<span class="en">Status history — every change, with who made it</span></h2>
+  <table>
+    <tr><th>वेळ / Time</th><th>कोणी / Actor</th><th>स्थिती / Status</th><th>टीप / Note</th></tr>
+    {% for e in events %}
+    <tr><td>{{ ist(e.at_utc) }}</td><td>{{ {'system': 'प्रणाली / system', 'officer': 'अधिकारी / officer', 'citizen': 'नागरिक / citizen'}.get(e.actor, e.actor) }}</td>
+      <td>{{ e.from_status or '—' }} → <strong>{{ e.to_status }}</strong></td><td>{{ e.note or '' }}</td></tr>
+    {% endfor %}
+  </table>
+</section>
+{% endif %}
+
 <div class="card ack">
   तुमची तक्रार नोंदवली गेली आहे. तक्रार क्रमांक: #{{ t.id }}.
   {% if t.status == 'review' %}अधिकारी ती तपासून योग्य विभागाकडे पाठवतील.{% elif t.status == 'merged' %}याच समस्येची तक्रार आधीच नोंदवलेली आहे; तुमची तक्रार तिच्यासोबत जोडली आहे.{% else %}ती संबंधित विभागाकडे पाठवली आहे.{% endif %}
   <span class="en">Your complaint is registered as ticket #{{ t.id }}.</span>
+  <br>स्थिती पाहण्यासाठी / To follow it: <a href="{{ url_for('citizen_status', tid=t.id) }}">{{ url_for('citizen_status', tid=t.id, _external=True) }}</a>
 </div>
 
 <!-- Officer actions -->
@@ -135,7 +166,7 @@
     <button name="action" value="dup_keep" class="secondary">वेगळे ठेवा / Keep separate</button>
   </form>
   {% endif %}
-  {% if t.status not in ('resolved', 'merged') %}
+  {% if t.status in OPEN_STATUSES %}
   <form method="post" action="{{ url_for('ticket_action', tid=t.id) }}">
     <div class="row">
       <div><label>विभाग / Department</label><select name="department">{% for c, d in DEPTS.items() %}<option value="{{ c }}" {{ 'selected' if c == t.department }}>{{ d.mr }} / {{ d.en }}</option>{% endfor %}</select></div>
@@ -144,9 +175,15 @@
     </div>
     <label>टीप / Note (optional)</label><input type="text" name="note">
     <p><button name="action" value="correct" class="secondary">दुरुस्ती जतन करा / Save correction</button>
-      <button name="action" value="confirm">पुष्टी करा / Confirm</button>
-      <button name="action" value="resolve" class="danger">निकाली / Mark resolved</button></p>
+      <button name="action" value="confirm">पुष्टी करा / Confirm</button></p>
   </form>
-  {% else %}<p class="muted">No actions: ticket is {{ t.status }}.</p>{% endif %}
+  <form method="post" action="{{ url_for('ticket_action', tid=t.id) }}" enctype="multipart/form-data" class="resolve">
+    <h3>काम पूर्ण झाले<span class="en">Mark resolved — the ticket then waits for the citizen to confirm; it does not close</span></h3>
+    <label>काय काम केले / What was done (required)</label><input type="text" name="note" required>
+    <label>फोटो / Photo of the completed work (optional; JPEG, PNG or WebP, up to {{ (cfg.RESOLUTION_PHOTO_MAX_BYTES / 1048576)|int }} MB)</label>
+    <input type="file" name="photo" accept="image/jpeg,image/png,image/webp">
+    <p><button name="action" value="resolve" class="danger">निकाली / Mark resolved</button></p>
+  </form>
+  {% else %}<p class="muted">कृती नाही / No officer actions: ticket is {{ STATUS[t.status][1] if t.status in STATUS else t.status }}.</p>{% endif %}
 </section>
 {% endblock %}

@@ -9,7 +9,7 @@ from pathlib import Path
 
 from flask import Flask, Response, abort, flash, jsonify, redirect, render_template, request, send_file, url_for
 
-from . import config, data, service
+from . import closure, config, data, service
 from . import speech as asr
 from . import triage as triage_mod
 from .tickets import Store
@@ -61,7 +61,8 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
     @app.context_processor
     def globals_():
         return dict(DEPTS=depts, WARDS=wards, BANDS=bands, ist=service.to_ist, state=state,
-                    asr_model=config.ASR_MODEL, cfg=config)
+                    asr_model=config.ASR_MODEL, cfg=config, STATUS=service.STATUS_LABELS,
+                    OPEN_STATUSES=service.OPEN_STATUSES)
 
     # ---- citizen intake ---------------------------------------------------------------------
     @app.get("/")
@@ -152,7 +153,8 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
         candidate = store_.get(t["dup_candidate_id"]) if t["dup_candidate_id"] else None
         overdue = service.is_overdue(t)
         return render_template("ticket.html", t=t, trace=trace, asr_info=asr_info, parent=parent,
-                               candidate=candidate, children=store_.children(tid), overdue=overdue)
+                               candidate=candidate, children=store_.children(tid), overdue=overdue,
+                               awaiting=closure.awaiting(t), events=store_.events(tid))
 
     @app.get("/ticket/<int:tid>/audio")
     def ticket_audio(tid):
@@ -160,6 +162,16 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
         if not t or not t["audio_path"] or not Path(t["audio_path"]).exists():
             abort(404)
         p = Path(t["audio_path"]).resolve()
+        if uploads.resolve() not in p.parents:
+            abort(404)
+        return send_file(p)
+
+    @app.get("/ticket/<int:tid>/photo")
+    def ticket_photo(tid):
+        t = app.extensions["nagarvani"]["store"].get(tid)
+        if not t or not t["resolution_photo"] or not Path(t["resolution_photo"]).exists():
+            abort(404)
+        p = Path(t["resolution_photo"]).resolve()
         if uploads.resolve() not in p.parents:
             abort(404)
         return send_file(p)
@@ -184,13 +196,62 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
                 service.decide_duplicate(store_, tid, merge=action == "dup_merge", note=note)
                 flash(f"#{tid}: " + ("merged / एकत्र केले" if action == "dup_merge" else "kept separate / वेगळे ठेवले"))
             elif action == "resolve":
-                service.resolve(store_, tid, note)
-                flash(f"#{tid} resolved / निकाली काढली.")
+                if not note.strip():
+                    raise service.ActionError("a resolution note is required: say what was done / काय काम केले ते लिहा")
+                photo = None
+                f = request.files.get("photo")
+                if f and f.filename:
+                    try:
+                        photo = closure.save_photo(f.read(), uploads / "resolution")
+                    except closure.ClosureError as e:
+                        raise service.ActionError(str(e)) from e
+                try:
+                    service.resolve(store_, tid, note, photo=photo)
+                except service.ActionError:
+                    if photo:
+                        Path(photo).unlink(missing_ok=True)
+                    raise
+                flash(f"#{tid}: नागरिकाच्या पुष्टीची प्रतीक्षा / marked resolved; waiting for the citizen to confirm.")
             else:
                 abort(400)
         except service.ActionError as e:
             flash(f"#{tid}: {e}")
         return redirect(request.form.get("next") or url_for("ticket", tid=tid))
+
+    # ---- citizen status page and closure confirmation (no login: single-machine demo) -----------
+    @app.get("/status")
+    def citizen_lookup():
+        tid = request.args.get("id", "").strip().lstrip("#")
+        if tid.isdigit():
+            return redirect(url_for("citizen_status", tid=int(tid)))
+        return render_template("status.html", t=None, asked=bool(tid))
+
+    @app.get("/status/<int:tid>")
+    def citizen_status(tid):
+        store_ = app.extensions["nagarvani"]["store"]
+        t = store_.get(tid)
+        if not t:
+            return render_template("status.html", t=None, asked=True), 404
+        parent = store_.get(t["parent_id"]) if t["parent_id"] else None
+        return render_template("status.html", t=t, parent=parent, awaiting=closure.awaiting(t))
+
+    @app.post("/status/<int:tid>/answer")
+    def citizen_answer(tid):
+        store_ = app.extensions["nagarvani"]["store"]
+        if not store_.get(tid):
+            abort(404)
+        answer = request.form.get("answer")
+        if answer not in ("yes", "no"):
+            abort(400)
+        try:
+            closure.transition(store_, tid, "confirm_fixed" if answer == "yes" else "report_not_fixed",
+                               note=(request.form.get("comment") or "")[:500])
+            flash("धन्यवाद! तुमचे उत्तर नोंदवले. / Thank you, your answer is recorded."
+                  if answer == "yes" else
+                  "तक्रार पुन्हा उघडली आहे आणि प्राधान्य वाढवले आहे. / The complaint is reopened with a higher priority.")
+        except closure.ClosureError:
+            flash("या तक्रारीसाठी आत्ता उत्तर देता येत नाही. / This complaint is not waiting for your answer.")
+        return redirect(url_for("citizen_status", tid=tid))
 
     # ---- officer queue -------------------------------------------------------------------------
     @app.get("/queue")

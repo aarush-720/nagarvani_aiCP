@@ -23,12 +23,11 @@
           {% if r.confirmed %}<span class="flag">confirmed</span>{% endif %}
           {% if r.escalation %}<span class="flag warn">escalated</span>{% endif %}</div>
         {% if r.review_reason %}<div class="muted" style="font-size:.8em">{{ r.review_reason }}</div>{% endif %}</td>
-      <td>{% if r.status not in ('resolved', 'merged') %}
+      <td>{% if r.status in OPEN_STATUSES %}
         <form method="post" action="{{ url_for('ticket_action', tid=r.id) }}">
           <input type="hidden" name="next" value="{{ request.full_path }}">
           {% if r.department and r.ward %}<button class="small" name="action" value="confirm">Confirm</button>{% endif %}
-          <button class="small secondary" name="action" value="resolve">Resolve</button>
-          <a class="button small secondary" href="{{ url_for('ticket', tid=r.id) }}">Correct…</a>
+          <a class="button small secondary" href="{{ url_for('ticket', tid=r.id) }}">Correct / resolve…</a>
         </form>{% endif %}</td>
     </tr>
     {% endfor %}

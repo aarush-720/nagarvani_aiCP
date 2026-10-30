@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}तक्रारीची स्थिती{% endblock %}
+{% block content %}
+<h1>तक्रारीची स्थिती<span class="en">Complaint status — for the citizen who reported it</span></h1>
+{% if not t %}
+<form method="get" action="{{ url_for('citizen_lookup') }}" class="card row">
+  <div><label>तक्रार क्रमांक / Ticket number</label><input type="text" name="id" inputmode="numeric" placeholder="उदा. 12"></div>
+  <div><label>&nbsp;</label><button>पहा / Show</button></div>
+</form>
+{% if asked %}<p class="flash">ही तक्रार सापडली नाही. / No complaint with that number.</p>{% endif %}
+{% else %}
+<section class="card">
+  <h2>तक्रार #{{ t.id }}<span class="en">Ticket #{{ t.id }}, received {{ ist(t.created_utc) }}</span></h2>
+  <p>{{ t.text }}</p>
+  <p><strong>स्थिती / Status:</strong> {{ STATUS[t.status][0] if t.status in STATUS else t.status }}
+    <span class="en inline">({{ STATUS[t.status][1] if t.status in STATUS else t.status }})</span></p>
+  {% if t.department %}<p><strong>विभाग / Department:</strong> {{ DEPTS[t.department].mr }} <span class="en inline">({{ DEPTS[t.department].en }})</span></p>{% endif %}
+  {% if t.ward %}<p><strong>वॉर्ड कार्यालय / Ward office:</strong> {{ WARDS[t.ward].mr }} <span class="en inline">({{ WARDS[t.ward].en }})</span></p>{% endif %}
+  {% if t.priority and t.status in OPEN_STATUSES %}<p><strong>प्राधान्य / Priority:</strong> <span class="badge {{ t.priority }}">{{ t.priority }}</span>
+    · मुदत / due {{ ist(t.deadline_utc) }}</p>{% endif %}
+</section>
+
+{% if parent %}
+<div class="card notice">याच समस्येची तक्रार आधीच नोंदवली होती; तुमची तक्रार तिच्यासोबत जोडली आहे.
+  <span class="en">The same problem was already reported, so your report was added to it. Follow it here:
+  <a href="{{ url_for('citizen_status', tid=parent.id) }}">#{{ parent.id }}</a>.</span></div>
+{% endif %}
+
+{% if t.resolution_note %}
+<section class="card">
+  <h2>अधिकाऱ्यांनी कळवले<span class="en">The ward office reports the work as done</span></h2>
+  <p>{{ t.resolution_note }}</p>
+  {% if t.resolution_photo %}<p><img src="{{ url_for('ticket_photo', tid=t.id) }}" alt="photo of the completed work" class="evidence"></p>{% endif %}
+</section>
+{% endif %}
+
+{% if t.status == 'pending_confirmation' %}
+<form method="post" action="{{ url_for('citizen_answer', tid=t.id) }}" class="card">
+  <h2>हे काम झाले का?<span class="en">Was this fixed?</span></h2>
+  <p class="muted">तुमच्या उत्तराशिवाय तक्रार बंद होणार नाही. <span class="en inline">The complaint is not closed without your answer.</span></p>
+  <label>अभिप्राय / Comment (optional)</label><input type="text" name="comment" maxlength="500">
+  <p><button name="answer" value="yes">हो, काम झाले / Yes, it is fixed</button>
+    <button name="answer" value="no" class="danger">नाही, समस्या अजून आहे / No, the problem is still there</button></p>
+</form>
+{% elif t.status == 'closed' %}
+<div class="card ack">तुम्ही पुष्टी केल्यामुळे तक्रार बंद झाली. धन्यवाद! <span class="en">Closed after you confirmed the fix. Thank you.</span></div>
+{% elif t.status == 'reopened' %}
+<div class="card notice">तुम्ही कळवल्यामुळे तक्रार पुन्हा उघडली आहे. <span class="en">Reopened after you reported the problem is still there.</span></div>
+{% endif %}
+{% endif %}
+{% endblock %}

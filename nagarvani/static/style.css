@@ -66,3 +66,6 @@ details summary { cursor: pointer; font-weight: 600; }
 .rec { background: var(--bad); border-color: var(--bad); }
 .hidden { display: none; }
 footer { text-align: center; color: var(--muted); font-size: .7rem; padding: 2rem 1rem; }
+img.evidence { max-width: 100%; max-height: 320px; border: 1px solid var(--line); border-radius: 6px; }
+form.resolve { border-top: 1px solid var(--line); margin-top: 1rem; padding-top: .5rem; }
+form.resolve h3 { margin: .2rem 0 .5rem; font-size: 1rem; }
