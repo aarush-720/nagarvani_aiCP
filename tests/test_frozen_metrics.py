@@ -112,6 +112,19 @@ def test_matches_committed_results(R):
 V2_CHANGES = {
     # F4: deterministic alias order changes one fuzzy tie-break in the simulated-noise loop
     "/E7_asr_noise[4]/ward_acc": (0.7852941176470589, 0.7867647058823529),   # 20% CER: 78.5% -> 78.7%
+    # F1: बाहेर no longer fuzzy-matches बाणेर, so T080's false resolution (the only one) is gone
+    "/E4_ward/counts/correctly_unresolved": (23, 24),
+    "/E4_ward/counts/false_resolution": (1, "<absent>"),
+    "/E4_ward/overall_acc": (0.99375, 1.0),
+    **{f"/E4_ward/errors[0]/{k}": (v, "<absent>") for k, v in [
+        ("got/candidates[0]", "baner"), ("got/fuzzy", True), ("got/locality", "baner"),
+        ("got/status", "resolved"), ("got/ward", "AUB"), ("got/ward_name", "Aundh-Baner"), ("id", "T080"),
+        ("kind", "false_resolution"),
+        ("text", "डीपी बॉक्सचं दार उघडं आहे आणि वायर बाहेर आलेत, मुलं जवळ खेळतात")]},
+    "/E7_asr_noise[2]/ward_acc": (0.9264705882352942, 0.9294117647058823),   # 10% CER: 92.6% -> 92.9%
+    # T080 is still deferred (confidence 0.49), but now with the right (empty) ward
+    "/E8_end_to_end/counts/deferred_would_have_been_right": (29, 30),
+    "/E8_end_to_end/counts/deferred_would_have_been_wrong": (19, 18),
 }
 
 

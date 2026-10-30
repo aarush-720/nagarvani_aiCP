@@ -7,6 +7,12 @@ _GAZ_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "gazetteer.jso
 
 from difflib import SequenceMatcher
 
+# v2.0 (F1): words that come within the fuzzy threshold of a locality alias but are not places.
+# बाहेर ("outside") is the reported case; the rest are every training-corpus token that
+# fuzzy-matches an alias it does not start with (kara ≈ katraj, undir ≈ undri, banners ≈ baner),
+# plus baher and bandh (≈ aundh). A window containing one is never matched fuzzily.
+FUZZY_STOPWORDS = {"बाहेर", "baher", "kara", "bandh", "undir", "banner", "banners"}
+
 
 class WardResolver:
     def __init__(self, path=_GAZ_PATH, fuzzy=True, fuzzy_threshold=0.80):
@@ -62,14 +68,20 @@ class WardResolver:
         """Fallback for transcription errors: best alias whose similarity to some token window
         (same number of tokens, compared on the window prefix so Marathi suffixes are tolerated)
         is >= fuzzy_threshold. Only aliases of 4+ characters are considered."""
+        best, _, best_key = self.fuzzy_best(t)
+        return best_key if best >= self.fuzzy_threshold else None
+
+    def fuzzy_best(self, t):
+        """(similarity, alias, locality key) of the best window in normalised text t."""
         toks = t.split()
-        best, best_key = 0.0, None
+        best, best_alias, best_key = 0.0, None, None
         for alias, key in self.aliases:
             if len(alias) < 4: continue
             n = len(alias.split())
             for i in range(len(toks) - n + 1):
+                if FUZZY_STOPWORDS.intersection(toks[i:i + n]): continue      # v2.0 (F1)
                 win = " ".join(toks[i:i + n])[:len(alias) + 1]
                 r = SequenceMatcher(None, alias, win).ratio()
                 if r > best:
-                    best, best_key = r, key
-        return best_key if best >= self.fuzzy_threshold else None
+                    best, best_alias, best_key = r, alias, key
+        return best, best_alias, best_key

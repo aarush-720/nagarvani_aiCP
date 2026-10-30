@@ -39,7 +39,7 @@
     "mr-rom": 0.8666666666666667,
     "mix": 0.8
    },
-   "fit_seconds": 2.6674999986653347e-05
+   "fit_seconds": 3.1907000050068746e-05
   },
   "Word TF-IDF + Naive Bayes": {
    "acc": 0.8125,
@@ -51,7 +51,7 @@
     "mr-rom": 0.7666666666666667,
     "mix": 0.8666666666666667
    },
-   "fit_seconds": 0.05807936899998367
+   "fit_seconds": 0.06860740399997667
   },
   "Word TF-IDF + LogReg": {
    "acc": 0.81875,
@@ -63,7 +63,7 @@
     "mr-rom": 0.7666666666666667,
     "mix": 0.8666666666666667
    },
-   "fit_seconds": 1.5700698079999995
+   "fit_seconds": 2.2742564570000354
   },
   "Char n-gram TF-IDF + LogReg": {
    "acc": 0.8875,
@@ -75,7 +75,7 @@
     "mr-rom": 0.8333333333333334,
     "mix": 0.9666666666666667
    },
-   "fit_seconds": 2.819736672999994
+   "fit_seconds": 2.606942610000033
   },
   "Char + word TF-IDF + LogReg (proposed)": {
    "acc": 0.86875,
@@ -87,7 +87,7 @@
     "mr-rom": 0.8333333333333334,
     "mix": 0.9333333333333333
    },
-   "fit_seconds": 1.8696150060000036
+   "fit_seconds": 1.3878892390000033
   }
  },
  "E1_cv_template": {
@@ -447,30 +447,13 @@
  "E4_ward": {
   "counts": {
    "correct": 136,
-   "correctly_unresolved": 23,
-   "false_resolution": 1
+   "correctly_unresolved": 24
   },
   "n_with_locality": 136,
   "n_without": 24,
   "acc_with_locality": 1.0,
-  "overall_acc": 0.99375,
-  "errors": [
-   {
-    "id": "T080",
-    "kind": "false_resolution",
-    "text": "डीपी बॉक्सचं दार उघडं आहे आणि वायर बाहेर आलेत, मुलं जवळ खेळतात",
-    "got": {
-     "locality": "baner",
-     "ward": "AUB",
-     "ward_name": "Aundh-Baner",
-     "status": "resolved",
-     "candidates": [
-      "baner"
-     ],
-     "fuzzy": true
-    }
-   }
-  ]
+  "overall_acc": 1.0,
+  "errors": []
  },
  "E5_severity": {
   "rules_gold_dept": {
@@ -1036,7 +1019,7 @@
    "dept_macro_f1": 0.8112411718586063,
    "dept_macro_f1_sd": 0.014695310411112597,
    "dept_acc": 0.81125,
-   "ward_acc": 0.9264705882352942,
+   "ward_acc": 0.9294117647058823,
    "ward_acc_exact": 0.49411764705882355,
    "sev_acc": 0.7775
   },
@@ -1072,15 +1055,15 @@
   "counts": {
    "auto_correct": 109,
    "deferred": 48,
-   "deferred_would_have_been_right": 29,
-   "deferred_would_have_been_wrong": 19,
+   "deferred_would_have_been_right": 30,
+   "deferred_would_have_been_wrong": 18,
    "auto_wrong_dept": 3
   },
   "n": 160,
   "auto_rate": 0.7,
   "auto_precision": 0.9732142857142857,
-  "latency_ms_mean": 8.752776231252213,
-  "latency_ms_p95": 21.690508949990313,
+  "latency_ms_mean": 9.300308937493895,
+  "latency_ms_p95": 30.38427375000196,
   "queue_files": [
    "queue_KOB.csv",
    "queue_WKN.csv",

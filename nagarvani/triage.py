@@ -20,7 +20,6 @@ from __future__ import annotations
 import pickle
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timedelta, timezone
-from difflib import SequenceMatcher
 from functools import lru_cache
 
 from . import config, data
@@ -118,17 +117,7 @@ def _explain_location(text: str, loc: dict):
                 masked = masked.replace(alias, " ")
         return None, 1.0, f"exact match (locality {loc['locality']})"
     if loc.get("fuzzy"):
-        toks = t.split()
-        best, best_alias = 0.0, None
-        for alias, key in r.aliases:                       # same scan as WardResolver._fuzzy
-            if len(alias) < 4:
-                continue
-            n = len(alias.split())
-            for i in range(len(toks) - n + 1):
-                win = " ".join(toks[i:i + n])[:len(alias) + 1]
-                s = SequenceMatcher(None, alias, win).ratio()
-                if s > best:
-                    best, best_alias = s, alias
+        best, best_alias, _ = r.fuzzy_best(t)              # the scan WardResolver._fuzzy uses
         return best_alias, round(best, 3), (f"no exact alias; fuzzy match to '{best_alias}' with similarity "
                                             f"{best:.2f} ≥ {r.fuzzy_threshold}")
     if loc["status"] == "ambiguous":
