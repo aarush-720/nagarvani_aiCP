@@ -42,7 +42,11 @@ band, fired rules, route and deadline equal the original on all 160 test complai
 3. **E8 through `triage()`.** The end-to-end stream goes through `triage()` with a live ticket
    store, and the original `Triage` runs alongside with every decision asserted equal.
 
-With these changes the full `results.json` still equals the shipped one.
+With these changes the full `results.json` equals the shipped one at v1.0. Since v2.0 it
+differs in exactly the values listed in `tests/test_frozen_metrics.py` (`V2_CHANGES`).
+The F4 fix makes the hash-seed pin unnecessary; it is kept so that the script still runs the
+same way. v2.0 adds a fourth change: `--test v2` and `--test-file` choose another test set,
+written to `results/test_v2/` (R10).
 
 ## R5. scikit-learn pinned to 1.8.0
 
@@ -101,10 +105,46 @@ both the sentences and the rules. Spoken-input results therefore measure **how m
 degrades** a known input, not how well the system generalises. Report the spoken and typed
 results side by side and say so. Generalisation is what `test_v2` measures.
 
-# Found but not changed
+## R10. The v2.0 re-freeze (Phase 2): F1–F6 fixed
 
-Each item is a defect in frozen data or logic. Fixing it would change reported numbers, or
-could, so it's left for the team to decide in a deliberate re-freeze.
+The team decided to fix the six logged defects in the original modules (docs/FINAL_PLAN.md,
+Phase 2). Each fix has its own commit with a test that reproduces the reported input
+(`tests/test_v2_fixes.py`), a regenerated `data/FROZEN.sha256`, and the changed values in
+`tests/test_frozen_metrics.py`. Tag `v1.0` keeps the code behind the submitted numbers, and
+`results/results_shipped.json` stays as the v1.0 record. `RESULTS.md` (written by
+`scripts/write_results_md.py`) puts v1.0 and v2.0 side by side. No threshold or classifier
+setting changed, and the classifier was not retrained.
+
+`test_v2` is evaluated with `python experiments/run_eval.py --test v2`, once, after these
+commits. None of its rows was opened while the fixes were designed.
+
+## R11. F6: "no issue stated" is decided on what is left after place names and generic words
+
+The plan's rule was: defer when no severity cue and no department keyword fires. With the
+keyword-baseline lexicon that flagged 193 of the 2,000 training complaints (all of which state
+a problem, e.g. "bewaras gadya padun aahet", "पथदिवे बंद आहेत"), 7 of the 160 test_v1 complaints
+and the app's own misspelt-locality example ("कचऱ्याचा" does not contain "कचर"). So a third
+condition was added: nothing may be left once gazetteer aliases and a fixed list of generic
+words are removed (`nagarvani/issue.py`). The list is the training generator's greeting,
+location and urgency frames plus common words for "trouble", "please look", pronouns and
+auxiliaries. It was written before any test-set measurement and checked only on the training
+data, where it flags none. It flags no test_v1 complaint either, so F6 changes no reported number.
+
+# Fixed in v2.0 (formerly "Found but not changed")
+
+Defects F1–F6 were found on v1.0 and fixed in the v2.0 re-freeze (R10). The table keeps the
+original description; the fix and its effect on the reported numbers follow it.
+
+| # | Fix in v2.0 | Effect on reported numbers |
+|---|---|---|
+| F1 | `location.FUZZY_STOPWORDS` (बाहेर, baher, kara, bandh, undir, banner, banners) never match fuzzily. All but बाहेर are the training-corpus words that fuzzy-match an alias they are not a form of. | test_v1 ward: correctly unresolved 23/24 → 24/24, no false resolution. Simulated 10% CER ward accuracy 92.6% → 92.9%. |
+| F2 | OPEN gains गायब, gayab, हरवल, चोरी, missing, खुल, टूट, toot, broken, फुटल. | None. |
+| F3 | "नाही"/"nahi" (and Hindi "नहीं") count as "no cover" only within two words after the cover or DP-box cue; an OPEN word followed by a negator within two words is negated (`severity.open_evidence`). | Simulated 20% CER severity accuracy 61.1% → 61.0%. |
+| F4 | Aliases sorted by `(-len, alias, key)`. | Simulated 20% CER ward accuracy 78.5% → 78.7% (Table 5.4). |
+| F5 | OUTAGE gains पाणी आलेले नाही, आले नाही, आलं नाही, पाणी नाही, pani aala nahi, पानी नहीं and similar. | None. |
+| F6 | The gate defers a complaint that states no problem, with NO_ISSUE_STATED (R11). | None. |
+
+Original descriptions:
 
 | # | Where | Reproducing input | What happens |
 |---|---|---|---|
@@ -114,3 +154,10 @@ could, so it's left for the team to decide in a deliberate re-freeze.
 | F4 | `location.py`: `sorted(set(pairs), key=lambda p: -len(p[0]))` | `PYTHONHASHSEED=0` vs `2` on the E7 noise loop | Aliases of equal length are ordered by per-process string hashing, so fuzzy tie-breaks can differ between runs. Only one stored value moves: simulated-noise ward accuracy at 20% CER (0.7853 vs 0.7868). **The PBL-4 report prints it** (Table 5.4: 78.5%, and "79% at 20%" in Section 5.7), so the seed pin in `run_eval.py` is what keeps that figure reproducible. Do not apply the sort fix without updating the report. The fix would be `key=lambda p: (-len(p[0]), p)`. |
 | F5 | `severity.py` cue OUTAGE | `चार दिवसांपासून नळाला पाणी आलेले नाही` (WATER) | The cue lists the colloquial "आलेलं नाही" but not the standard spelling "आलेले नाही", so R12 (outage ≥ 2 days → P2) does not fire. |
 | F6 | Classifier calibration (behaviour, not a bug) | `कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या` | A vague complaint gets HEALTH at 0.61 and is auto-routed. |
+
+# Found but not changed
+
+Each item is a defect in frozen data or logic found after the v2.0 re-freeze. Fixing it would
+change reported numbers, or could, so it's left for the team to decide.
+
+(None yet.)

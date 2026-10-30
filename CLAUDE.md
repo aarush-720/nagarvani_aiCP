@@ -26,7 +26,8 @@ work in this release.
 ## Layout
 
 * `nagarvani/{normalise,classifier,location,severity,dedup,store,pipeline,asr}.py` are the
-  **original prototype logic, checksummed** (triage core, M3–M7). See the frozen-numbers rule.
+  **original prototype logic, checksummed** (triage core, M3–M7), with the v2.0 fixes for F1–F6.
+  `nagarvani/issue.py` (the F6 "no issue stated" check) is checksummed with them. See the frozen-numbers rule.
 * `nagarvani/triage.py` holds `triage(text, ward_hint=None, store=None)`, the single entry
   point. It wraps the original components. The evaluation and the web app both call it.
 * `nagarvani/speech.py` is the faster-whisper backend (M2), with input guards.
@@ -40,7 +41,9 @@ work in this release.
   `corpus/test_v2*` is the held-out set written by teammates (see the evaluation rules).
 * `data/gazetteer.json` is frozen. `data/taxonomy.json` is display metadata only. Checksums are in `data/FROZEN.sha256`.
 * `data/audio/` holds the real recordings and `manifest.csv` (git-ignored except the README and example).
-* `experiments/run_eval.py` produces every reported number (`results/results.json`).
+* `experiments/run_eval.py` produces every reported number (`results/results.json`); with
+  `--test v2` it evaluates the held-out set into `results/test_v2/`. `results/results_shipped.json`
+  is the permanent v1.0 record. `scripts/write_results_md.py` writes `RESULTS.md` from these files.
 * `eval/asr_eval.py` produces WER/CER and the end-to-end results from real audio (`results/asr_eval.json`).
   `eval/recordings.py` writes `eval/recording_assignments.csv` (who records which test_v1
   complaint) and builds `data/audio/manifest.csv` from the clip names.
@@ -56,6 +59,8 @@ work in this release.
 python -m pytest -q                       # all tests; tests/test_frozen_metrics.py guards the numbers (~2 min)
 python scripts/reproduce.py               # verify every reported number
 python experiments/run_eval.py            # regenerate results/results.json and figures
+python experiments/run_eval.py --test v2  # held-out test_v2 -> results/test_v2/ (only after Phase 2)
+python scripts/write_results_md.py        # rewrite RESULTS.md from the result files
 python -m nagarvani.train                 # rebuild results/model.pkl
 python scripts/checksums.py --verify      # check data/FROZEN.sha256
 python eval/recordings.py manifest        # build data/audio/manifest.csv from the clips present
@@ -90,7 +95,7 @@ When you find a bug in frozen logic outside Phase 2:
 * If the fix would change any number, do not apply it. Log it in `docs/DECISIONS.md` under
   "Found but not changed", with a reproducing input.
 
-**Phase 2 is the team's deliberate re-freeze** (defects F1–F6 only). Any edit to a core file or
+**Phase 2 was the team's deliberate re-freeze** (defects F1–F6 only, done; `docs/DECISIONS.md` R10). Any edit to a core file or
 frozen data file must, in the same commit:
 
 * regenerate `data/FROZEN.sha256`;

@@ -26,12 +26,10 @@ Written for the developer. Read section 1 first.
    is verified for real. The model was not chosen by measurement: `small` is a placeholder.
    There are no real clips, so `results/asr_eval.json` does not exist. The report and paper
    already say voice input was not tested, and that is still true.
-2. **Known defects in the frozen rules and gazetteer** are logged, not fixed (`docs/DECISIONS.md` F1–F6):
-   * "मॅनहोलचे झाकण **गायब**" (cover missing) does not fire the open-manhole rule.
-   * "…आता काही समस्या **नाही**" (no problem now) wrongly fires it.
-   * The standard spelling "पाणी आलेले नाही" misses the outage rule.
-   * The word बाहेर ("outside") resolves to Baner.
-   * Vague complaints are auto-routed with confidence just over 0.5.
+2. **Defects F1–F6 are fixed in v2.0** (Phase 2 re-freeze, `docs/DECISIONS.md` R10–R11). The
+   reported numbers that moved are listed in `RESULTS.md`. The held-out `test_v2` has not been
+   evaluated yet: run `python experiments/run_eval.py --test v2` once the writers' files are in
+   `corpus/`, then `python scripts/write_results_md.py`.
 3. **Only verified on Linux.** The Windows and macOS instructions were not run on those
    systems. No microphone was used. The recording path (MediaRecorder) has no automated
    test, but the upload path was driven in headless Chromium.
@@ -108,13 +106,7 @@ Written for the developer. Read section 1 first.
 
 ## 6. Found but not changed
 
-See `docs/DECISIONS.md`. In brief, F1–F6:
-* the बाहेर→बाणेर fuzzy match (already reported in the paper);
-* "गायब" missing from the open-cover cue;
-* "नाही" in the open-cover cue;
-* hash-order nondeterminism in alias sorting;
-* the "आलेले नाही" spelling missing from the outage cue;
-* over-confident routing of vague complaints.
+F1–F6 were fixed in v2.0 (`docs/DECISIONS.md`, "Fixed in v2.0"). Nothing new has been logged since.
 
 ## 7. What the team still has to do by hand
 
