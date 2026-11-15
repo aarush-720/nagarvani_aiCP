@@ -266,6 +266,18 @@ def create_app(db_path=None, *, load_asr: bool = True, upload_dir=None) -> Flask
         n_corr = len(store_.corrections())
         return render_template("queue.html", review=review, other=other, pending=pending, f=f, n_corrections=n_corr)
 
+    # ---- ward dashboard (M11) -------------------------------------------------------------------
+    @app.get("/dashboard")
+    def dashboard():
+        from . import dashboard as dash
+        store_ = app.extensions["nagarvani"]["store"]
+        f = {k: request.args.get(k) or None for k in ("ward", "department")}
+        if f["ward"] not in wards:
+            f["ward"] = None
+        if f["department"] not in depts:
+            f["department"] = None
+        return render_template("dashboard.html", d=dash.build(store_, **f), f=f)
+
     @app.get("/export/<ward>.csv")
     def export(ward):
         import csv

@@ -69,3 +69,14 @@ footer { text-align: center; color: var(--muted); font-size: .7rem; padding: 2re
 img.evidence { max-width: 100%; max-height: 320px; border: 1px solid var(--line); border-radius: 6px; }
 form.resolve { border-top: 1px solid var(--line); margin-top: 1rem; padding-top: .5rem; }
 form.resolve h3 { margin: .2rem 0 .5rem; font-size: 1rem; }
+/* ward dashboard */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .6rem; margin: 1rem 0; }
+.tile { background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--brand); border-radius: 8px; padding: .5rem .8rem; font-size: .85rem; }
+.tile b { display: block; font-size: 1.8rem; line-height: 1.1; }
+.tile.bad { border-left-color: var(--bad); } .tile.warn { border-left-color: var(--warn); } .tile.ok { border-left-color: var(--ok); }
+.big { font-size: 1.8rem; font-weight: 800; }
+.bar.thin { height: .8rem; margin: .3rem 0; }
+.num-bad { color: var(--bad); font-weight: 700; }
+.scroll { overflow-x: auto; }
+table.heat td, table.heat th { text-align: center; padding: .25rem .3rem; min-width: 2.2rem; }
+table.heat td a { color: inherit; }

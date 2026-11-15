@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}वॉर्ड डॅशबोर्ड{% endblock %}
+{% block content %}
+<h1>वॉर्ड डॅशबोर्ड<span class="en">Ward dashboard — counted live from the ticket store</span></h1>
+<form method="get" class="card row">
+  <div><label>वॉर्ड / Ward office</label><select name="ward"><option value="">सर्व / All</option>
+    {% for c, w in WARDS.items() %}<option value="{{ c }}" {{ 'selected' if f.ward == c }}>{{ w.mr }} / {{ w.en }}</option>{% endfor %}</select></div>
+  <div><label>विभाग / Department</label><select name="department"><option value="">सर्व / All</option>
+    {% for c, dd in DEPTS.items() %}<option value="{{ c }}" {{ 'selected' if f.department == c }}>{{ dd.mr }} / {{ dd.en }}</option>{% endfor %}</select></div>
+  <div><label>&nbsp;</label><button>फिल्टर / Filter</button>
+    {% if f.ward or f.department %}<a class="button secondary" href="{{ url_for('dashboard') }}">सर्व / Clear</a>{% endif %}</div>
+</form>
+
+{% set T = d.totals %}{% set o = d.override %}
+<section class="tiles">
+  <div class="tile"><b>{{ T.open or 0 }}</b>उघड्या<span class="en">Open</span></div>
+  <div class="tile bad"><b>{{ T.p1_open or 0 }}</b>P1 उघड्या<span class="en">P1 open</span></div>
+  <div class="tile bad"><b>{{ T.breached or 0 }}</b>मुदत संपली<span class="en">Deadline breached</span></div>
+  <div class="tile warn"><b>{{ T.pending or 0 }}</b>नागरिकाची पुष्टी<span class="en">Waiting for citizen{% if T.awaiting %} ({{ T.awaiting }} &gt; {{ cfg.CONFIRMATION_WINDOW_HOURS|int }} h){% endif %}</span></div>
+  <div class="tile warn"><b>{{ T.deferred or 0 }}</b>नोडल अधिकाऱ्याकडे<span class="en">Deferred to nodal officer</span></div>
+  <div class="tile bad"><b>{{ T.reopened or 0 }}</b>पुन्हा उघडल्या<span class="en">Reopened by citizen</span></div>
+  <div class="tile ok"><b>{{ T.closed or 0 }}</b>बंद (पुष्टीसह)<span class="en">Closed, citizen confirmed</span></div>
+</section>
+
+<section class="card">
+  <h2>अधिकारी बदल दर<span class="en">Officer override rate — auto-routed tickets an officer later corrected (the pilot metric proposed in PBL-4)</span></h2>
+  {% if o.rate is none %}<p class="muted">अजून स्वयंचलित तक्रारी नाहीत / No auto-routed tickets yet.</p>
+  {% else %}
+  <p><span class="big">{{ '%.1f'|format(o.rate * 100) }}%</span> = {{ o.overridden }} / {{ o.auto_routed }}
+    <span class="muted">(department {{ o.by_field.department }}, ward {{ o.by_field.ward }}, priority {{ o.by_field.priority }}; a ticket corrected in two fields counts once)</span></p>
+  <div class="bar"><span style="width: {{ '%.1f'|format(o.rate * 100) }}%; background: var(--warn)"></span></div>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h2>वॉर्ड कार्यालयनिहाय<span class="en">Per ward office</span></h2>
+  {% set mx = d.rows|map(attribute='open')|max if d.rows else 0 %}
+  <table>
+    <tr><th>वॉर्ड / Ward office</th><th>Open</th><th style="width:22%"></th><th>P1 open</th><th>Breached</th>
+        <th>Waiting for citizen</th><th>Deferred</th><th>Reopened</th><th>Closed</th></tr>
+    {% for r in d.rows %}
+    <tr>
+      <td>{% if r.ward %}<a href="{{ url_for('queue', ward=r.ward, department=f.department) }}">{{ WARDS[r.ward].mr }} / {{ WARDS[r.ward].en }}</a>
+          {% else %}<span class="muted">वॉर्ड ठरला नाही / No ward office yet</span>{% endif %}</td>
+      <td>{{ r.open }}</td>
+      <td><div class="bar thin"><span style="width: {{ (100 * r.open / mx) if mx else 0 }}%"></span></div></td>
+      <td>{% if r.p1_open %}<span class="badge P1">{{ r.p1_open }}</span>{% else %}0{% endif %}</td>
+      <td class="{{ 'num-bad' if r.breached }}">{{ r.breached }}</td>
+      <td>{{ r.pending }}{% if r.awaiting %} <span class="flag warn">{{ r.awaiting }} &gt; {{ cfg.CONFIRMATION_WINDOW_HOURS|int }} h</span>{% endif %}</td>
+      <td>{{ r.deferred }}</td>
+      <td class="{{ 'num-bad' if r.reopened }}">{{ r.reopened }}</td>
+      <td>{{ r.closed }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p class="muted" style="font-size:.8em">Open = auto-routed, routed, under review or reopened. Waiting for the citizen is not open: its deadline has stopped. Nothing is ever closed without the citizen's Yes.</p>
+</section>
+
+<section class="card">
+  <h2>पुनरावृत्त तक्रारींचे गट<span class="en">Duplicate clusters — 3 or more reports of one problem</span></h2>
+  {% if d.clusters %}
+  <table>
+    <tr><th>#</th><th>Reports</th><th>Priority</th><th>विभाग / Dept</th><th>वॉर्ड / Ward</th><th>तक्रार / First report</th></tr>
+    {% for c in d.clusters %}
+    <tr><td><a href="{{ url_for('ticket', tid=c.id) }}">#{{ c.id }}</a></td>
+      <td><span class="flag">{{ c.size }} reports</span></td>
+      <td><span class="badge {{ c.priority }}">{{ c.priority }}</span>{% if c.escalation %} <span class="flag warn">escalated</span>{% endif %}</td>
+      <td>{{ DEPTS[c.department].en if c.department in DEPTS else '—' }}</td>
+      <td>{{ WARDS[c.ward].en if c.ward else '—' }}</td>
+      <td>{{ c.text[:90] }}{{ '…' if c.text|length > 90 }}</td></tr>
+    {% endfor %}
+  </table>
+  {% else %}<p class="muted">काहीही नाही / No cluster of 3 or more.</p>{% endif %}
+</section>
+
+<section class="card">
+  <h2>विभाग × वॉर्ड<span class="en">Open tickets by department and ward office</span></h2>
+  {% set h = d.heat %}
+  <div class="scroll">
+  <table class="heat">
+    <tr><th></th>{% for w in h.wards %}<th title="{{ WARDS[w].en }}">{{ w }}</th>{% endfor %}<th>Σ</th></tr>
+    {% for dep in h.depts %}{% set row = h.cells[dep] %}
+    <tr><th title="{{ DEPTS[dep].en }}">{{ dep }}</th>
+      {% for w in h.wards %}{% set v = row[w] %}
+      <td style="{% if v %}background: rgba(11,92,173,{{ '%.2f'|format(0.15 + 0.75 * v / h.max) }}); color: {{ '#fff' if v / h.max > 0.5 else 'inherit' }}{% endif %}">
+        {% if v %}<a href="{{ url_for('queue', ward=w, department=dep) }}">{{ v }}</a>{% endif %}</td>
+      {% endfor %}
+      <td><b>{{ row.values()|sum }}</b></td></tr>
+    {% endfor %}
+  </table>
+  </div>
+  <p class="muted" style="font-size:.8em">Ward codes: {% for w in h.wards %}{{ w }} = {{ WARDS[w].en }}{{ '; ' if not loop.last }}{% endfor %}.</p>
+</section>
+{% endblock %}
