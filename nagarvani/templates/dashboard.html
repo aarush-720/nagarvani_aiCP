@@ -35,7 +35,7 @@
 <section class="card">
   <h2>वॉर्ड कार्यालयनिहाय<span class="en">Per ward office</span></h2>
   {% set mx = d.rows|map(attribute='open')|max if d.rows else 0 %}
-  <table>
+  <div class="scroll"><table>
     <tr><th>वॉर्ड / Ward office</th><th>Open</th><th style="width:22%"></th><th>P1 open</th><th>Breached</th>
         <th>Waiting for citizen</th><th>Deferred</th><th>Reopened</th><th>Closed</th></tr>
     {% for r in d.rows %}
@@ -52,14 +52,14 @@
       <td>{{ r.closed }}</td>
     </tr>
     {% endfor %}
-  </table>
+  </table></div>
   <p class="muted" style="font-size:.8em">Open = auto-routed, routed, under review or reopened. Waiting for the citizen is not open: its deadline has stopped. Nothing is ever closed without the citizen's Yes.</p>
 </section>
 
 <section class="card">
   <h2>पुनरावृत्त तक्रारींचे गट<span class="en">Duplicate clusters — 3 or more reports of one problem</span></h2>
   {% if d.clusters %}
-  <table>
+  <div class="scroll"><table>
     <tr><th>#</th><th>Reports</th><th>Priority</th><th>विभाग / Dept</th><th>वॉर्ड / Ward</th><th>तक्रार / First report</th></tr>
     {% for c in d.clusters %}
     <tr><td><a href="{{ url_for('ticket', tid=c.id) }}">#{{ c.id }}</a></td>
@@ -69,7 +69,7 @@
       <td>{{ WARDS[c.ward].en if c.ward else '—' }}</td>
       <td>{{ c.text[:90] }}{{ '…' if c.text|length > 90 }}</td></tr>
     {% endfor %}
-  </table>
+  </table></div>
   {% else %}<p class="muted">काहीही नाही / No cluster of 3 or more.</p>{% endif %}
 </section>
 

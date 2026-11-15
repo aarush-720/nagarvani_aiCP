@@ -27,7 +27,17 @@ def test_seed_mix(seeded):
     st = {t["status"] for t in seeded.tickets()}
     assert {"auto_routed", "review", "closed"} <= st
     assert any(r["overdue"] for r in service.queue(seeded))
-    assert not seeded.corrections()
+    assert {"reopened", "pending_confirmation", "merged"} <= st      # dashboard seed (P4)
+    assert len(seeded.corrections()) == 2
+
+
+def test_seed_for_dashboard(seeded):
+    from nagarvani import dashboard
+    d = dashboard.build(seeded)
+    assert [c["size"] for c in d["clusters"]] == [4] and "R32" in d["clusters"][0]["escalation"]
+    T = d["totals"]
+    assert T["reopened"] == 2 and T["pending"] == 2 and T["awaiting"] == 1 and T["breached"] > 0
+    assert d["override"]["overridden"] == 2
 
 
 def test_demo_behaviours(seeded):

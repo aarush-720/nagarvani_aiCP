@@ -1,4 +1,5 @@
-"""Wipe the demo database and seed 25 tickets for a realistic officer queue.
+"""Wipe the demo database and seed 25 tickets for a realistic officer queue, plus a duplicate
+cluster of 4 and some closure and correction activity for the ward dashboard (seed_dashboard).
 
     python scripts/reset_demo.py            # asks for confirmation
     python scripts/reset_demo.py --yes
@@ -61,7 +62,40 @@ def seed(store):
         if i % 9 == 8 and store.get(tid)["status"] in OPEN_STATUSES:     # resolved and confirmed by the citizen
             closure.transition(store, tid, "resolve", note="काम पूर्ण / work done", now=when + timedelta(hours=12))
             closure.transition(store, tid, "confirm_fixed", now=when + timedelta(hours=20))
+    seed_dashboard(store, rng, now)
     return chosen
+
+
+# Four citizens report the same dark street in Market Yard (Bibwewadi, ELEC: not a demo block).
+# Hand-written paraphrases, run through the real pipeline: the duplicate detector merges them and
+# R32 escalates at the third report. This gives the dashboard a cluster of 4.
+CLUSTER = ["मार्केट यार्ड परिसरात रस्त्यावरचे दिवे बंद आहेत, रात्री खूप अंधार असतो",
+           "मार्केट यार्डमध्ये रस्त्यावरचे दिवे बंद आहेत, रात्री अंधार असतो",
+           "मार्केट यार्ड येथे रस्त्यावरचे दिवे आठवडाभर बंद आहेत, रात्री खूप अंधार",
+           "मार्केट यार्ड परिसरातील रस्त्यावरचे दिवे बंद आहेत, रात्री अंधार असतो"]
+
+
+def seed_dashboard(store, rng, now):
+    """Closure and officer activity so /dashboard shows every state: a duplicate cluster of 4,
+    two tickets reopened by the citizen, two waiting for the citizen (one past the confirmation
+    window), and two officer corrections of auto-routed tickets (the override rate)."""
+    for k, text in enumerate(CLUSTER):
+        service.submit(store, text=text, channel="seed", now=now - timedelta(hours=30 - 6 * k))
+    cluster_root = store.tickets("parent_id IS NULL AND report_count >= 4")[0]["id"]
+    auto = [t["id"] for t in store.tickets("status = 'auto_routed' AND channel = 'seed' ORDER BY id")
+            if t["id"] != cluster_root and t["report_count"] == 1]
+    reopen, pending, corrected = auto[0:2], auto[2:4], auto[4:6]
+    for tid in reopen:
+        closure.transition(store, tid, "resolve", note="खड्डा/काम केले / work reported done", now=now - timedelta(hours=40))
+        closure.transition(store, tid, "report_not_fixed", note="काहीच बदल नाही / nothing has changed",
+                           now=now - timedelta(hours=20))
+    closure.transition(store, pending[0], "resolve", note="काम पूर्ण / work done", now=now - timedelta(hours=100))
+    closure.transition(store, pending[1], "resolve", note="काम पूर्ण / work done", now=now - timedelta(hours=5))
+    depts = data.dept_codes()
+    for tid in corrected:
+        t = store.get(tid)
+        new = depts[(depts.index(t["department"]) + 1 + rng.randrange(len(depts) - 1)) % len(depts)]
+        service.correct(store, tid, department=new, note="अधिकाऱ्याची दुरुस्ती / officer correction (demo seed)")
 
 
 def main():

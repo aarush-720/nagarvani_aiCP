@@ -45,3 +45,16 @@ templated and has to be edited by hand.
 | PBL-5 paper, system description (after the routing gate) | — | One sentence: "A resolved ticket closes only when the complainant confirms the fix; a rejection reopens it at a higher priority." |
 | PBL-6 Table 2.1, CO5 row | — | Optionally add: "the closure rule never closes without confirmation; silence is not consent". |
 | PBL-6 §4.2 (O2), "Description" | "…Includes an officer console (Flask) and per-ward CSV export." | "…Includes an officer console (Flask), per-ward CSV export, and citizen-confirmed closure with a status history." |
+
+## Phase 4 (ward dashboard, M11)
+
+| Where | Old | New |
+|---|---|---|
+| PBL-4 Table 3.1, row "M11 Ward dashboard" (or the dashboard / analytics module, whatever its number in the report), prototype status | "Not implemented" / "Future scope" | "Implemented (offline, server-rendered): per-ward open, P1 open, deadline breached, waiting for citizen, deferred to nodal officer, reopened and closed counts; duplicate clusters of 3+ reports; department × ward table of open tickets; officer override rate; filters by ward and department." |
+| PBL-4 Chapter 4, new section after closure verification (§4.x "Ward dashboard") | — | "The `/dashboard` page counts every figure from the ticket store when the page is opened; nothing is cached or typed in. For each of the 15 ward offices it shows open tickets, open P1 tickets, tickets past their deadline, tickets waiting for the citizen's confirmation (flagging those past the 72-hour window), tickets deferred to the nodal officer, tickets reopened by the citizen and tickets closed with the citizen's confirmation. It lists duplicate clusters of three or more reports, shows a department × ward table of open tickets, and reports the officer override rate: the share of auto-routed tickets that an officer later corrected in department, ward or priority. This is the metric proposed for a pilot (§6.3): it measures how often the automatic routing was overruled in practice. The page uses no external scripts and works offline." Add a screenshot of `/dashboard` after `python scripts/reset_demo.py --yes`. |
+| PBL-4 §6.3 Future scope, dashboard / pilot bullet | dashboard listed as future work | "A ward dashboard is implemented in v2.0. A pilot would measure the override rate it reports on real complaints." |
+| PBL-5 paper, system description | — | Optional one sentence: "A ward dashboard reports open, breached and reopened tickets per ward office and the officer override rate." |
+| PBL-6 §4.2 (O2), "Description" | "…per-ward CSV export, and citizen-confirmed closure with a status history." | "…per-ward CSV export, citizen-confirmed closure with a status history, and a ward dashboard." |
+
+Demo seed values on the dashboard (`python scripts/reset_demo.py --yes`) are illustrative only and
+must not be quoted as results: they come from training-corpus complaints with random back-dated times.
