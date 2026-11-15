@@ -13,7 +13,8 @@ It is a course prototype in Python 3.11 with scikit-learn 1.8.0, Flask, SQLite a
 faster-whisper. Templates are server-rendered, with plain CSS and a little vanilla JS. There is
 no build step and no ORM, and nothing runs on the network at runtime.
 
-**Final demo: Monday 2 November 2026. Code freeze: Sunday 1 November, 22:00.**
+**v2.0 tagged 15 Nov 2026** (the original plan's 2 Nov demo date passed). Remaining work is
+test_v2, real-speech evaluation and the Windows check; see `docs/HANDOVER.md` §0.
 The schedule and the prompt for each phase are in `docs/FINAL_PLAN.md`.
 
 ## Scope boundary (never violate)
@@ -52,7 +53,8 @@ work in this release.
   complaint) and builds `data/audio/manifest.csv` from the clip names.
 * `scripts/` holds `fetch_models`, `reset_demo`, `run_demo_script`, `reproduce` and `checksums`.
 * `tests/` is the pytest suite.
-* `docs/HANDOVER.md` gives current status. `docs/DECISIONS.md` records choices and
+* `nagarvani/dashboard.py` holds the ward dashboard aggregations (`/dashboard`, M11).
+* `docs/HANDOVER.md` gives current status. `docs/REPORT_EDIT_CHECKLIST.md` is the consolidated list of document edits. `docs/DECISIONS.md` records choices and
   "Found but not changed". `docs/REPORT_CHANGES.md` lists every report and paper edit.
 * `archive/` holds superseded work: the midsem notebook and the 2026-10-02 rebuild. Never use it.
 

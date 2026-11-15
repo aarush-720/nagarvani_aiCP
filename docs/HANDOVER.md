@@ -2,6 +2,19 @@
 
 Written for the developer. Read section 1 first.
 
+## 0. Status at v2.0 (15 Nov 2026)
+
+Done and tested: F1–F6 fixes (Phase 2), closure verification (Phase 3), ward dashboard `/dashboard`
+(Phase 4), the 10-minute demo run sheet with fallbacks and README (Phase 6b), and the consolidated
+edit list `docs/REPORT_EDIT_CHECKLIST.md` (Phase 6c). 343 tests pass; `python scripts/reproduce.py`
+passes. Tags: `v1.0` (main before the final-version work, the code behind the submitted numbers)
+and `v2.0`.
+
+Not done, because they need the team rather than code: the held-out **test_v2** has not been
+evaluated (no writers' files in `corpus/`), **no real speech** has been recorded or evaluated
+(Phase 1), the **Windows** setup was not checked (Phase 6a), and the optional transformer baseline
+(Phase 5) does not exist. The open items below still apply.
+
 ## 1. What does not work, or was not verified
 
 ### Definition of done (from the brief)
