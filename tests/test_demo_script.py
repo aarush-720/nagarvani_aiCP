@@ -59,3 +59,32 @@ def test_demo_behaviours(seeded):
     assert parent["report_count"] == 3 and parent["priority"] == "P2" and "R32" in parent["escalation"]
     t = run(s, "failure")
     assert t["department"] == "SWM" and t["status"] == "auto_routed"        # gold is DRAIN (T054): an uncaught error
+
+
+def test_run_sheet_v2_examples():
+    """Phase 6b run-sheet inputs: Hindi routes, 'झाकण गायब' is P1 via R02 (F2), the vague
+    complaint is deferred with NO_ISSUE_STATED (F6), and a citizen's No reopens one band higher."""
+    from nagarvani import closure
+    s = Store(":memory:")             # own store: the run sheet's order, on top of the seed
+    reset_demo.seed(s)
+    t = run(s, "clean_marathi")
+    tid1 = t["id"]
+    t = run(s, "hindi")
+    assert t["status"] == "auto_routed" and t["department"] == "SWM" and t["ward"] == "YKD"
+    t = run(s, "cover_missing")
+    assert t["status"] == "auto_routed" and t["priority"] == "P1" and '"rule": "R02"' in t["trace_json"]
+    t = run(s, "vague")
+    assert t["status"] == "review" and "NO_ISSUE_STATED" in t["trace_json"]
+    closure.transition(s, tid1, "resolve", note="pipeline repaired")
+    closure.transition(s, tid1, "report_not_fixed")
+    r = s.get(tid1)
+    assert r["status"] == "reopened" and r["priority"] == "P1"
+
+
+def test_run_sheet_generates():
+    from scripts import run_demo_script
+    ex = {e["key"]: e for e in EXAMPLES}
+    text = "\n".join(run_demo_script.run_sheet(ex))
+    for step in range(1, 8):
+        assert f"### Step {step}" in text
+    assert "Fallback" in text and "NO_ISSUE_STATED" in text and "reopened" in text

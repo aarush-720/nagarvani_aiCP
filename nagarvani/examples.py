@@ -36,4 +36,14 @@ EXAMPLES = [
     {"key": "failure", "label": "९. खरी चूक / An honest failure",
      "behaviour": "A real misclassification from the test set (T054)",
      "text": "गटाराचा प्रचंड वास येतो आणि डास झालेत, रामटेकडी"},
+    # v2.0 additions for the 10-minute run sheet (docs/DEMO_SCRIPT.md)
+    {"key": "hindi", "label": "१०. हिंदी तक्रार / Hindi (read aloud)",
+     "behaviour": "A Hindi complaint (to be spoken) that auto-routes",
+     "text": "येरवडा में कचरा तीन दिन से नहीं उठाया गया, बहुत बदबू आ रही है"},
+    {"key": "cover_missing", "label": "११. झाकण गायब → P1 / Cover missing (F2 fix)",
+     "behaviour": "Open manhole worded as 'cover missing' (गायब): P1 since the v2.0 F2 fix",
+     "text": "येरवड्यात मॅनहोलचे झाकण गायब आहे, शाळकरी मुले रोज इथून जातात"},
+    {"key": "vague", "label": "१२. अस्पष्ट तक्रार / Vague (F6 fix)",
+     "behaviour": "A complaint that states no problem: deferred with NO_ISSUE_STATED since the v2.0 F6 fix",
+     "text": "कोथरूडमध्ये खूप त्रास होतोय, कोणीतरी लक्ष द्या"},
 ]

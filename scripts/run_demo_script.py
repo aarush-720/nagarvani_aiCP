@@ -50,17 +50,100 @@ def row(store, tid):
             f"* Gate reason: {tr['gate']['reason']}"]
 
 
+def run_sheet(ex):
+    """The 10-minute demo in FINAL_PLAN Phase 6b order, run on top of the reset_demo seed so the
+    ticket numbers printed here are the ones the presenter will see after `reset_demo --yes`."""
+    from nagarvani import closure, dashboard
+    from scripts import reset_demo
+    s = Store(":memory:")
+    reset_demo.seed(s)
+
+    def go(key):
+        tid, _ = service.submit(s, text=ex[key]["text"], channel="typed")
+        return tid, s.get(tid), json.loads(s.get(tid)["trace_json"])
+
+    def line(t, tr):
+        rules = ", ".join(f["rule"] for f in tr["severity"]["fired"]) or "none"
+        return (f"**{tr['gate']['decision']}** → {t['department']} ({tr['top3'][0][1]:.2f}), ward {t['ward'] or '—'}, "
+                f"{t['priority']}, rules {rules}")
+
+    L = ["## 10-minute run sheet", "",
+         "Before the demo: `python scripts/reset_demo.py --yes`, then `python run.py`, and open",
+         "http://127.0.0.1:5000 in a browser. Keep `/queue` and `/dashboard` open in other tabs.",
+         "Outputs below are real, produced on top of the seed, so the ticket numbers match the live app",
+         "if the steps are done in this order and nothing else is submitted first.", ""]
+    tid1, t, tr = go("clean_marathi")
+    L += ["### Step 1 (1 min): typed Marathi complaint → auto-routed with its trace", "",
+          f"Type or click example 1: `{ex['clean_marathi']['text']}`", "",
+          f"* Ticket #{tid1}: {line(t, tr)}",
+          "* Show on the trace page: top-3 departments with probabilities, ward via exact alias, the fired rule, the gate reason.",
+          "* Fallback: none needed (typed).", ""]
+    tid, t, tr = go("hindi")
+    L += ["### Step 2 (1.5 min): spoken Hindi complaint → check transcript → routed", "",
+          f"Switch the language toggle to Hindi, press record and say: `{ex['hindi']['text']}`", "",
+          f"* The transcript appears in the text box. Correct it if needed, tick the confirmation box, submit.",
+          f"* With this exact text: ticket #{tid}: {line(t, tr)}",
+          "* Say: zero-shot Whisper makes mistakes in Marathi and Hindi; that is why the citizen confirms the transcript before anything is filed.",
+          "* Fallback (no microphone, or the Whisper model is missing): click example 10 (same text, typed), or upload a pre-recorded",
+          "  `.ogg`/`.wav` with the file button. If ASR is unavailable the audio is still saved as a review ticket — show that, it is a designed behaviour.", ""]
+    tid, t, tr = go("cover_missing")
+    L += ["### Step 3 (1 min): open manhole → P1 by a visible rule (F2 fix)", "",
+          f"Click example 11: `{ex['cover_missing']['text']}`", "",
+          f"* Ticket #{tid}: {line(t, tr)}",
+          "* Say: 'गायब' (missing) was not a cue in v1.0, so R02 did not fire (defect F2). v2.0 adds it, with a test. The rule base, not the model, decides life safety.",
+          "* Fallback: example 4 (`उघडे`, open) shows the same rule. Do not submit both: they are different wards, but keep the run predictable.", ""]
+    ids = [go(k)[0] for k in ("dup1", "dup2", "dup3")]
+    p = s.get(ids[0])
+    L += ["### Step 4 (1.5 min): third duplicate report → R32 escalation", "",
+          "Click examples 8a, 8b, 8c one after another (three wordings of the same pothole).", "",
+          f"* Tickets #{ids[0]}, #{ids[1]}, #{ids[2]}: the second and third are `{s.get(ids[1])['status']}` / `{s.get(ids[2])['status']}` into #{ids[0]}.",
+          f"* #{ids[0]} now shows {p['report_count']} reports, priority **{p['priority']}**, escalation: \"{p['escalation']}\".",
+          "* Show #" + str(ids[0]) + " in the officer queue: marked '3 reports' and 'escalated'.",
+          "* Fallback: none needed (typed).", ""]
+    tid, t, tr = go("vague")
+    L += ["### Step 5 (1 min): vague complaint → deferred, NO_ISSUE_STATED (F6 fix)", "",
+          f"Click example 12: `{ex['vague']['text']}`", "",
+          f"* Ticket #{tid}: {line(t, tr)}",
+          f"* Gate reason: {tr['gate']['reason']}",
+          "* Say: v1.0 auto-routed this to Health at 0.61 confidence although no problem is described (defect F6). v2.0 sends it to the nodal officer instead of guessing.", ""]
+    closure.transition(s, tid1, "resolve", note="नळजोडणी दुरुस्त केली / pipeline repaired")
+    closure.transition(s, tid1, "report_not_fixed", note="अजूनही पाणी येत नाही / still no water")
+    t = s.get(tid1)
+    L += ["### Step 6 (2 min): officer resolves → citizen says No → reopened", "",
+          f"1. Open ticket #{tid1} (step 1). In 'Mark resolved' write a note, e.g. `नळजोडणी दुरुस्त केली / pipeline repaired`, optionally attach a photo, submit.",
+          "   The status becomes *waiting for citizen confirmation*, not closed.",
+          f"2. Go to 'My complaint', enter {tid1}. The citizen page asks *हे काम झाले का? / Was this fixed?* Press **No**.",
+          f"3. Result: status `{t['status']}`, priority {t['priority']} (one band up), deadline restarted; the history on the ticket page lists every change with time and actor.",
+          "* Say: this answers the Standing Committee directive — nothing closes without the complainant. Only the citizen's Yes reaches *closed*; tests check there is no other path.",
+          "* Fallback: none needed.", ""]
+    d = dashboard.build(s)
+    T = d["totals"]
+    L += ["### Step 7 (1.5 min): ward dashboard", "",
+          "Open `/dashboard`. After steps 1–6 it shows (seed + demo):", "",
+          f"* {T['open']} open, {T['p1_open']} P1 open, {T['breached']} past deadline, {T['pending']} waiting for the citizen "
+          f"({T['awaiting']} past 72 h), {T['deferred']} deferred to the nodal officer, {T['reopened']} reopened.",
+          f"* Duplicate clusters: " + "; ".join(f"#{c['id']} {c['size']} reports, {c['department']} {c['ward']}" for c in d["clusters"]) + ".",
+          f"* Officer override rate: {d['override']['overridden']}/{d['override']['auto_routed']} auto-routed tickets corrected.",
+          "* Filter by Kothrud-Bavdhan to show the escalated pothole. Say: the override rate is the metric we would measure in a pilot.",
+          "* Say clearly: the seed tickets come from the training corpus with made-up times. These counts are a demo state, not results.", "",
+          "Spare time: the honest failure (example 9) and the About page with the evaluation numbers and limitations.", ""]
+    return L
+
+
 def main():
     safe_console()
     store = Store(":memory:")
     ex = {e["key"]: e for e in EXAMPLES}
     L = ["# Demo script", "",
          "Generated by `python scripts/run_demo_script.py`. Each input below was run through the real",
-         "pipeline (the same `service.submit` → `triage()` code the web app uses, on a fresh database), and",
+         "pipeline (the same `service.submit` → `triage()` code the web app uses), and",
          "the output shown is what it produced. Run `python scripts/reset_demo.py` before the demo: the",
          "seeded tickets do not touch these inputs' duplicate blocks, but re-check item 8 after any seed change.",
          "Every input is also a one-click example on the intake page (the fallback if the microphone fails).", "",
          f"Classifier: the original char + word TF-IDF logistic regression (C = 10), loaded from results/model.pkl.", ""]
+    L += run_sheet(ex)
+    L += ["## Behaviour catalogue", "",
+          "Each behaviour on its own, on a fresh empty database (so ticket numbers start at 1).", ""]
     n = 0
     for key in ["clean_marathi", "romanised", "code_mixed", "life_safety", "fuzzy", "unknown_place", "low_confidence"]:
         n += 1

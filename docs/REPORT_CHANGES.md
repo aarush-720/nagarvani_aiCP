@@ -58,3 +58,10 @@ templated and has to be edited by hand.
 
 Demo seed values on the dashboard (`python scripts/reset_demo.py --yes`) are illustrative only and
 must not be quoted as results: they come from training-corpus complaints with random back-dated times.
+
+## Phase 6b (demo run sheet, README)
+
+No report or paper numbers change. `docs/DEMO_SCRIPT.md` now opens with the 10-minute run sheet
+(seven steps in the FINAL_PLAN order, each with a fallback). Three one-click examples were added
+for it (Hindi complaint; "झाकण गायब" for the F2 fix; the vague complaint for the F6 fix).
+If the report's demo or screenshot appendix lists the example complaints, add these three.

@@ -12,6 +12,10 @@ system then:
 
 Every decision is shown step by step on a trace page.
 
+**Version 2.0** adds fixes for six known defects (F1–F6), closure that needs the citizen's
+confirmation, and a ward dashboard. Tag `v1.0` is the code behind every number in the PBL-4
+report and PBL-5 paper; `RESULTS.md` lists every number that changed in v2.0.
+
 It is a course prototype for IT3232 Artificial Intelligence (VIT Pune). It is a proposal, not a
 production system, and it does not connect to PMC CARE (which has no public API).
 
@@ -75,14 +79,17 @@ the port.
 |---|---|
 | `/` | Citizen intake: microphone, audio upload (WhatsApp `.ogg` works) or typing. Marathi/Hindi toggle (forced, not auto-detected). The transcript must be checked before submitting. Optional ward dropdown. One-click example complaints. No name or phone number is collected. |
 | `/ticket/<id>` | The trace: what was heard, department top 3, location match, every severity rule that fired (with its cue words), the duplicate score against the thresholds, and the gate decision with its exact condition. |
-| `/queue` | Officer view: review list and routed list. Filter by ward, department and status; sorted by priority then deadline; overdue flagged. Confirm, correct department/ward/priority, decide duplicates, resolve. |
+| `/queue` | Officer view: review list, routed list, and tickets waiting for the citizen. Filter by ward, department and status; sorted by priority then deadline; overdue flagged. Confirm, correct department/ward/priority, decide duplicates, mark resolved (note required, photo optional). |
+| `/status/<id>` | Citizen page (no login): ticket status, the officer's resolution note and photo, and *हे काम झाले का? / Was this fixed?* Yes closes the ticket; No reopens it one priority band higher with a new deadline. Nothing else can close a ticket. |
+| `/dashboard` | Ward dashboard: per ward office open, P1 open, past deadline, waiting for the citizen, deferred to the nodal officer, reopened and closed; duplicate clusters of 3+ reports; department × ward table; officer override rate. Filters by ward and department. |
 | `/export/<ward>.csv` | One ward office's open queue (codes as in `data/gazetteer.json`, e.g. `/export/KOB.csv`). UTF-8 with BOM, so Excel shows Devanagari. |
 | `/corrections.jsonl` | Every officer correction, logged as possible training data. Retraining is **not** implemented. |
 | `/about` | Headline results read from `results/results.json`, plus the limitations. |
 | `/health` | Whether the classifier, database and ASR model are loaded. |
 
-The demo walkthrough, with the real output of every input, is in
-[`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
+The 10-minute demo run sheet (seven steps, each with a fallback if the microphone or Whisper
+fails) and the real output of every input are in [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
+Run `python scripts/reset_demo.py --yes` first: it loads the exact state the run sheet expects.
 
 ## Reproducing every number
 
@@ -118,7 +125,7 @@ python scripts/run_demo_script.py  # regenerate docs/DEMO_SCRIPT.md from real ou
 | Ward office | Gazetteer aliases, longest first (Devanagari as substrings, Latin as whole words); ambiguous names deferred; fuzzy fallback with difflib ≥ 0.80 | `nagarvani/location.py`, `data/gazetteer.json` |
 | Severity | Forward-chaining production system: 23 cue groups, 19 rules in salience order, default P3; R32 escalates at ≥ 3 reports | `nagarvani/severity.py` |
 | Duplicates | Block on (ward, department), remove place names, char 2–4-gram TF-IDF cosine: ≥ 0.45 merge, 0.30–0.45 officer decides | `nagarvani/dedup.py` |
-| Gate | Auto-route only if top probability ≥ 0.50 **and** the ward office is resolved | `nagarvani/pipeline.py` |
+| Gate | Auto-route only if top probability ≥ 0.50 **and** the ward office is resolved **and** a problem is stated (v2.0, F6) | `nagarvani/pipeline.py`, `nagarvani/issue.py` |
 | Entry point | `triage()`: calls the components above in the original order; adds explanations for the trace page | `nagarvani/triage.py` |
 | ASR | faster-whisper, zero-shot, language forced, int8 on CPU; guards for length, silence, empty and repeated output | `nagarvani/speech.py` |
 
@@ -135,6 +142,9 @@ nagarvani/                   the package
   train.py                   python -m nagarvani.train
   speech.py                  faster-whisper backend and guards
   tickets.py service.py      web-app ticket store; submission and officer-action logic
+  closure.py                 closure verification: the only path to pending / closed / reopened
+  dashboard.py               ward dashboard aggregations
+  issue.py                   F6 "no issue stated" check (frozen with the core)
   app.py templates/ static/  Flask app (server-rendered, plain CSS, small vanilla JS)
   results_view.py            headline figures derived from results/results.json
   examples.py                demo inputs (also the one-click examples)
@@ -167,10 +177,10 @@ The original methodology proposed twelve modules.
 | Severity | **Built**: rules only (19-rule forward chaining). A learned model exists only as an evaluation baseline. |
 | Duplicates | **Built**: character n-gram cosine with ward/department blocking. No embeddings or geo-distance. |
 | Routing and gate | **Built.** |
-| Dashboard | **Built, officer queue only** (filters, sorting, overdue flags, corrections, CSV export). |
+| Dashboard | **Built**: officer queue (filters, sorting, overdue flags, corrections, CSV export) and, in v2.0, the ward dashboard (`/dashboard`). |
 | Feedback | **Corrections logged only** (JSONL export). No retraining. |
 | Clarification dialogue | Not built. |
-| Closure verification | Not built. |
+| Closure verification | **Partly built (v2.0)**: closing needs the citizen's Yes; No reopens at a higher priority; every change is in the ticket history. The officer's photo is stored, not checked (no geotag or image analysis). |
 | PMC CARE adapter | Not built. Output is SQLite plus per-ward CSV. |
 
 ## Limitations
@@ -186,7 +196,9 @@ The original methodology proposed twelve modules.
   **simulation**.
 * No integration with PMC CARE. Output is a local SQLite database and per-ward CSV files.
 * SLA hours are proposed values, not official PMC figures.
-* No authentication: single user, single machine.
+* No authentication: single user, single machine. The citizen page is reached by ticket number.
+* Dashboard figures after `reset_demo` are a demo state built from training-corpus complaints with
+  made-up times. They are not results.
 
 ## Rules for changing things
 
